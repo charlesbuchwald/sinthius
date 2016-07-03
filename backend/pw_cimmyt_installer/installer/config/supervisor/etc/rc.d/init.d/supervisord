@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# supervisord - Startup script for supervisord
+
+# chkconfig: 345 83 04
+# description: supervisor is a process control utility. It has a web based
+#              xmlrpc interface as well as a few other nifty features.
+# processname: supervisord
+# config: /etc/supervisord.conf
+# pidfile: /var/run/supervisord/supervisord.pid
+
+. /etc/rc.d/init.d/functions
+
+NAME="supervisord"
+CONFIGFILE="/etc/$NAME.conf"
+OPTIONS="-c $CONFIGFILE"
+LOCKFILEPATH=/var/lock/subsys/supervisord
+PIDFILEPATH=`awk -F'[:=]' -v IGNORECASE=1 '/^[[:blank:]]*pidfile[[:blank:]]*[:=][[:blank:]]*/{print $2}' "$CONFIGFILE" | tr -d '[:blank:]'`
+supervisord=${SUPERVISORD-/usr/local/bin/supervisord}
+supervisorctl=${SUPERVISORCTL-/usr/local/bin/supervisorctl}
+USER=supervisord
+
+start() {
+    echo -n $"Starting $NAME:"
+    daemon --user "$USER" "$supervisord $OPTIONS >/dev/null 2>&1"
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $LOCKFILEPATH
+}
+
+stop() {
+    echo -n $"Stopping $NAME: "
+    $supervisorctl $OPTIONS shutdown >/dev/null 2>&1
+    killproc -p "$PIDFILEPATH" -d 10 $supervisord
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $LOCKFILEPATH
+}
+
+restart() {
+    stop
+    start
+}
+
+
+RETVAL=0
+
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  restart|reload|force-reload)
+    restart
+    ;;
+  condrestart)
+    [ -f $LOCKFILEPATH ] && restart || :
+    ;;
+  status)
+    status $supervisord
+    RETVAL=$?
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|status|restart|reload|force-reload|condrestart}"
+    RETVAL=1
+esac
+
+exit $RETVAL

@@ -1,0 +1,29 @@
+server {
+    listen 80 default;
+    server_name www.domain.tld;
+    limit_conn conn_limit_per_ip 10;
+    limit_req zone=req_limit_per_ip burst=5 nodelay;
+    
+    if ($request_method !~ ^(GET)$){
+        return 405;
+    }
+
+    include /server/etc/nginx/errors.conf;
+    
+    location / {
+        add_header Cache-Control "public";
+        add_header Last-Modified "";
+        add_header ETag "";
+        expires 90d;
+        if ($query_string) {
+            expires max;
+        }
+        access_log off;
+        log_not_found off;
+        break;
+    }
+    
+    try_files $uri /maintenance.html;
+    access_log /dev/null;
+    error_log /dev/null crit;
+}

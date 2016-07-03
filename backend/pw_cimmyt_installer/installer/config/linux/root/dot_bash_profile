@@ -1,0 +1,140 @@
+#!/bin/bash
+
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+
+# (ak) paths
+DATA_PATH=/server
+DEPLOY_PATH=/deploy
+ADMIN_USER=sysadmin
+ADMIN_GROUP=www
+
+# (ak) config
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export PATH=$PATH:$HOME/bin:$DATA_PATH/bin
+export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH
+export HISTCONTROL=ignoredups:ignorespace
+export HISTSIZE=5000
+export HISTFILESIZE=1000
+export HISTIGNORE="ls:cd:[bf]g:exit:..:...:l:l.:ll:la:h:history"
+
+# (ak) helpers
+alias l="ls -l";
+alias l.="ls -d .*"
+alias ll="ls -Al";
+alias la="ls -A";
+alias rshutdown="shutdown -r now"
+alias rdown=rshutdown
+alias pshutdown="shutdown -P now"
+alias pdown=pshutdown
+alias edit-profile="vim ~/.bash_profile"
+alias ep=edit-profile
+alias reload-profile=". ~/.bash_profile"
+alias rp=reload-profile
+alias rmdot="find . -name ".*" -exec rm -rf {} \;"
+alias rmdss="find . -name ".DS_Store" -exec rm -rf {} \;"
+alias rmgarbage="rmpyc;rmpyo;rmdss;"
+alias h="history"
+alias c="cd ~"
+
+# (ak) python
+alias py="/usr/local/bin/python2.7"
+alias python="/usr/local/bin/python2.7"
+alias python27="/usr/local/bin/python2.7"
+alias pypackage="cd /usr/local/lib/python2.7/site-packages"
+alias pybuild="python setup.py build"
+alias pyinstall="python setup.py install"
+alias rmpyc='find . -name "*.pyc" -exec rm -rf {} \;'
+alias rmpyo='find . -name "*.pyc" -exec rm -rf {} \;'
+
+# (ak) system
+alias meminfo="free -m -l -t"
+alias psmem="ps auxf | sort -nr -k 4"
+alias psmem10="ps auxf | sort -nr -k 4 | head -10"
+alias pscpu="ps auxf | sort -nr -k 3"
+alias pscpu10="ps auxf | sort -nr -k 3 | head -10"
+alias pspy="ps -A x | grep -i -e python*"
+alias cpuinfo="lscpu"
+alias cpumodel='grep "model\ name" /proc/cpuinfo'
+alias df="df -H"
+alias du="du -ch"
+alias vips="ifconfig | grep 'inet addr:' | awk -F'inet addr:' '{ print \$2 }' | awk '{ print \$1 }'"
+alias g8password="openssl rand -base64 8"
+alias g16password="openssl rand -base64 16"
+alias g32password="openssl rand -base64 32"
+alias g48password="openssl rand -base64 48"
+alias g741password="openssl rand -base64 741"
+
+# (ak) services
+alias up-super="service supervisord start"
+alias down-super="service supervisord stop"
+alias ps-super="ps -A x |grep -i -e supervisor"
+alias up-nginx="service nginx start"
+alias down-nginx="service nginx stop"
+alias ps-nginx="ps -A x |grep -i -e nginx"
+
+# (ak) applications
+alias backend-start="supervisorctl start backend:*"
+alias backend-stop="supervisorctl stop backend:*"
+alias backend-restart="supervisorctl restart backend:*"
+# alias backoffice-start="supervisorctl start backoffice:*"
+# alias backoffice-stop="supervisorctl stop backoffice:*"
+# alias backoffice-restart="supervisorctl restart backoffice:*"
+alias all-start="supervisorctl start all"
+alias all-stop="supervisorctl stop all"
+alias all-restart="supervisorctl restart all"
+alias all-status="supervisorctl status"
+
+# (ak) git
+alias app-commit="git add --all .; git commit -m 'FIX+UPD // Server Side';"
+alias app-push="app_commit; git push;"
+alias app-pull="git pull;"
+
+# (ak) perms
+function www-permissions() {
+    declare -a FOLDERS=(
+        "${DATA_PATH}/bin"
+        "${DATA_PATH}/lib"
+        "${DATA_PATH}/src"
+    )
+    for folder in "${FOLDERS[@]}"
+    do
+        chown -R ${ADMIN_USER}:${ADMIN_GROUP} ${folder}
+        chmod 2775 ${folder}
+        find ${folder}/* -type d -exec chmod 2775 {} +
+        find ${folder}/* -type f -exec chmod 0664 {} +
+    done
+}
+
+function create-administrator() {
+    password_value=$(echo ${2} | openssl passwd -1 -stdin)
+    useradd -g sysadmin \
+            -G www,wheel \
+            -s /bin/bash \
+            -c "System Administrator" \
+            -p "${password_value}" \
+            -m ${1} > /dev/null 2>&1
+    [ $? -eq 0 ] && echo "* User has been added to system: ${1}" \
+        || echo "* Failed to add a user: ${1}"
+}
+
+function create-developer() {
+    password_value=$(echo ${2} | openssl passwd -1 -stdin)
+    useradd -g developer \
+            -G www,wheel \
+            -s /bin/bash \
+            -c "Developer" \
+            -p "${password_value}" \
+            -m ${1} > /dev/null 2>&1
+    [ $? -eq 0 ] && echo "* User has been added to system: ${1}" \
+        || echo "* Failed to add a user: ${1}"
+}
+
+# (ak) data
+alias d="cd ${DATA_PATH}"
+alias dto="cd ${DATA_PATH}/bin"
+alias ddb="cd ${DATA_PATH}/db"
+alias dap="cd ${DATA_PATH}/sys"
