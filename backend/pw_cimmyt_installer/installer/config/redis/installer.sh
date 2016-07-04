@@ -19,6 +19,7 @@ tar xfvz redis-3.2.1.tar.gz
 cd redis-3.2.1
 make
 make test
+make install
 
 groupadd -r redis
 
@@ -28,14 +29,11 @@ useradd -M -r -g redis \
         -s /bin/false \
         -c "Redis" redis > /dev/null 2>&1
 
-mkdir -p /server/etc/redis \
-         /server/var/log/redis \
-         /server/var/run/redis
+mkdir -p "${DATA_PATH}/etc/redis" \
+         "${DATA_PATH}/var/log/redis" \
+         "${DATA_PATH}/var/run/redis" \
+         "${DATA_PATH}/data/redis"
 
-# Crear una copia para establecer los binarios... /usr/local/bin/
-# redis-server --> redisd
-
-cp -bfv "${DOWNLOAD_PATH}/redis-3.2.1/bin/redis-server" /usr/local/bin/redisd
 cp -bfv "${LOCAL_CFG_PATH}/etc/rc.d/init.d/redisd" /etc/rc.d/init.d/redisd
 cp -bfv "${LOCAL_CFG_PATH}/etc/redisd.conf" /etc/redisd.conf
 

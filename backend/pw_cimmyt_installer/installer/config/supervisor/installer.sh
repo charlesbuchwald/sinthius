@@ -22,18 +22,18 @@ useradd -M -r -g supervisord \
         -s /bin/false \
         -c "Supervisor" supervisord > /dev/null 2>&1
 
-mkdir -p /server/etc/supervisord \
-         /server/var/log/supervisord \
-         /server/var/run/supervisord
+mkdir -p "${DATA_PATH}/etc/supervisord" \
+         "${DATA_PATH}/var/log/supervisord" \
+         "${DATA_PATH}/var/run/supervisord"
 
-cp -bfv "${LOCAL_CFG_PATH}/server/etc/supervisord/backend.conf" /server/etc/supervisord/backend.conf
-cp -bfv "${LOCAL_CFG_PATH}/server/etc/supervisord/backoffice.conf" /server/etc/supervisord/backoffice.conf
+cp -bfv "${LOCAL_CFG_PATH}/server/etc/supervisord/backend.conf" "${DATA_PATH}/etc/supervisord/backend.conf"
+cp -bfv "${LOCAL_CFG_PATH}/server/etc/supervisord/backoffice.conf" "${DATA_PATH}/etc/supervisord/backoffice.conf"
 cp -bfv "${LOCAL_CFG_PATH}/etc/rc.d/init.d/supervisord" /etc/rc.d/init.d/supervisord
 cp -bfv "${LOCAL_CFG_PATH}/etc/supervisord.conf" /etc/supervisord.conf
 
-chown -R supervisord:supervisord /server/etc/supervisord \
-                                 /server/var/log/supervisord \
-                                 /server/var/run/supervisord
+chown -R supervisord:supervisord "${DATA_PATH}/etc/supervisord" \
+                                 "${DATA_PATH}/var/log/supervisord" \
+                                 "${DATA_PATH}/var/run/supervisord"
 
 chmod a+x /etc/rc.d/init.d/supervisord
 chkconfig --add supervisord

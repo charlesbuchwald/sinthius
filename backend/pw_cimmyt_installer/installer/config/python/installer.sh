@@ -26,10 +26,9 @@ cd ${DOWNLOAD_PATH}
 curl -O https://pypi.python.org/packages/source/s/setuptools/setuptools-23.1.0.tar.gz
 tar xfvz setuptools-23.1.0.tar.gz
 
-cd setuptools-5.3
+cd setuptools-23.1.0
 python2.7 setup.py build
 python2.7 setup.py install
 
 easy_install pip
-
 pip install -r "${LOCAL_CFG_PATH}/tmp/requirements.txt"
