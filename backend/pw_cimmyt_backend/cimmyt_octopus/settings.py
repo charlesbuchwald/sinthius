@@ -6,6 +6,11 @@
 # Created: 13/jun/2016 13:15
 # ~
 
+# Erase for production
+DISABLE_BROWSER = True
+SHUTDOWN_SECONDS = 0
+# ~
+
 # Nuc
 NUC_NAME = 'NUC'
 NUC_IP = '127.0.0.1'
@@ -13,20 +18,13 @@ NUC_PORT = 8040
 NUC_MODE = 0
 NUC_DESCRIPTION = 'Nuc description here...'
 
-# Generic
-DEBUG = False
-if DEBUG is True:
-    AUTORELOAD = True
-DISABLE_BROWSER = True
-SHUTDOWN_SECONDS = 0
-
 # Server
 PORT = NUC_PORT
 APPLICATION = 'cimmyt_octopus.backend.base.SocketApplication'
 
-PULL_TIME = 4000
-PULL_RECONNECT_TIME = 2000
-PULL_CHECK_TIMES = 4
+PULL_DELAY = 4  # in seconds
+PULL_RECONNECT_DELAY = 2  # in seconds
+PULL_CHECK_TIMES = 2
 
 HANDLERS = (
     'cimmyt_octopus.backend.observer',

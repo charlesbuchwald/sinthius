@@ -125,6 +125,7 @@ def start_server(*args, **kwargs):
     })
 
     io_loop = ioloop.IOLoop.current()
+    application.set_exit_callback(partial(stop_loop, io_loop))
 
     with stack_context.NullContext():
         if settings.PREFORK_PROCESS > -1:
@@ -150,23 +151,26 @@ def start_server(*args, **kwargs):
     yield gen.Task(lambda callback: None)
 
 
+def stop_loop(loop):
+    logging.debug(' * Stopping loop...')
+    loop.stop()
+    logging.info('Shutdown server')
+
+
 @gen.coroutine
 def stop_server(*args, **kwargs):
-    def stop_loop(loop):
-        loop.stop()
-        logging.info('Shutdown server')
-
     debugcolorizer('### SERVER ###', fg='black', bg='blue')
     logging.warn('Shutting down server...')
 
     env = server()
 
+    logging.debug(' * Stopping server...')
+    yield env.server.close_all_connections()
+    env.server.stop()
+
     logging.debug(' * Stopping application...')
     yield env.application.shutdown()
 
-    logging.debug(' * Stopping server...')
-    env.server.stop()
-
-    logging.debug(' * Stopping loop...')
+    logging.debug(' * Setting timeout...')
     seconds = time.time() + settings.SHUTDOWN_SECONDS
     env.loop.add_timeout(seconds, partial(stop_loop, env.loop))

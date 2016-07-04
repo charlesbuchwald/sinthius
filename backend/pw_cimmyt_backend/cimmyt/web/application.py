@@ -228,6 +228,14 @@ class ServerApplication(web.Application):
 
     # shutdown
 
+    def set_exit_callback(self, callback):
+        setattr(self, '_exit_callback', callback)
+
+    def exit_callback(self):
+        callback = getattr(self, '_exit_callback')
+        if callable(callback):
+            callback()
+
     @gen.coroutine
     def shutdown(self, **kwargs):
         raise gen.Return()

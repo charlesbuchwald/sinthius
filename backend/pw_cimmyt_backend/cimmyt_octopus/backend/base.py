@@ -19,7 +19,9 @@ from cimmyt.web.base import APIHandler, StatsHandler, PingHandler, \
     ConnectorsMixin
 from cimmyt.web.application import ServerApplication
 from cimmyt_octopus.backend.scheme import api_reset
+from datetime import timedelta
 from tornado import gen, web, ioloop, httpclient
+from tornadoredis import ConnectionError
 
 _RESOURCES = {}
 _CHANNEL = 'mission_control'
@@ -208,10 +210,8 @@ class SocketApplication(ServerApplication):
             .get_client(self.mission_control_config, async=True)
         try:
             _mission_control.connect()
-            yield gen.Task(_mission_control.subscribe, _CHANNEL)
-            _mission_control.listen(self._on_message)
             _MISSION_CONTROL = _mission_control
-            response = True
+            response = yield self._subscribe_mission_control()
         except Exception, e:
             logging.error(' ! Mission control (stopped)', exc_info=e)
             response = False
@@ -223,7 +223,8 @@ class SocketApplication(ServerApplication):
         logging.debug(' * Stopping mission control...')
         try:
             if self.mission_control is not None:
-                yield gen.Task(self.mission_control.unsubscribe, _CHANNEL)
+                if _CHANNEL in self.mission_control.subscribed:
+                    yield gen.Task(self.mission_control.unsubscribe, _CHANNEL)
                 yield gen.Task(self.mission_control.disconnect)
                 yield self.unregister()
                 yield self.commit('UNSUBSCRIBE')
@@ -233,7 +234,19 @@ class SocketApplication(ServerApplication):
         raise gen.Return(True)
 
     @gen.coroutine
-    def _on_message(self, message):
+    def _subscribe_mission_control(self, **kwargs):
+        logging.debug(' * Subscribe mission control channel...')
+        try:
+            yield gen.Task(self.mission_control.subscribe, _CHANNEL)
+            self.mission_control.listen(self._on_subscribe)
+            response = True
+        except Exception, e:
+            logging.error(' ! Mission control channel (stopped)', exc_info=e)
+            response = False
+        raise gen.Return(response)
+
+    @gen.coroutine
+    def _on_subscribe(self, message):
         if message.kind == 'message':
             _body, body = strucloads(message.body)
             if body.node_id != self.node_id:
@@ -244,10 +257,7 @@ class SocketApplication(ServerApplication):
                         and body.node_id in self.nodes:
                     del self.nodes[body.node_id]
                 logging.warn(' + (%s) %s', body.action, body.node_id)
-            if len(self.nodes) < 1:
-                self._stop_pull()
-            elif len(self.nodes) > 0:
-                self._start_pull()
+            self._resume_pull()
         raise gen.Return(True)
 
     def _connect_pull(self):
@@ -255,7 +265,7 @@ class SocketApplication(ServerApplication):
         self._disconnect_pull()
         logging.debug(' * Starting pull...')
         _PULL = ioloop\
-            .PeriodicCallback(self._on_pull, self.settings['pull_time'])
+            .PeriodicCallback(self._on_pull, self.settings['pull_delay'] * 1000)
         _PULL_COUNTER = 0
 
     def _disconnect_pull(self):
@@ -278,6 +288,13 @@ class SocketApplication(ServerApplication):
                 self.pull.stop()
                 logging.debug(' * Pull task stopped...')
 
+    def _resume_pull(self):
+        nodes = len(self.nodes)
+        if nodes > 0:
+            self._start_pull()
+        else:
+            self._stop_pull()
+
     @gen.coroutine
     def _on_pull(self, **kwargs):
         global _PULL_COUNTER
@@ -285,13 +302,19 @@ class SocketApplication(ServerApplication):
         if self._SHUTTING_DOWN is False:
             check_times = self.settings['pull_check_times']
             if _PULL_COUNTER is None or _PULL_COUNTER >= check_times:
-                if self.publisher.connection.connected():
-                    yield self._fetch_pull()
-                else:
-                    logging.error(' ! Check connection refused')
-                    if self._RECONNECTING is None:
-                        self._on_try_reconnect()
-                    raise gen.Return(False)
+                try:
+                    response = yield self._fetch_pull()
+                except:
+                    response = False
+                if not response:
+                    if response is False:
+                        logging.error(' ! Connection refused')
+                        if self._RECONNECTING is None:
+                            self._on_try_reconnect()
+                    else:
+                        logging.error(' ! Node removed by administrator')
+                        yield self.shutdown(True)
+                    raise gen.Return(response)
                 _PULL_COUNTER = 0
                 logging.debug(' * Check reset')
             for node, value in self.nodes.iteritems():
@@ -315,7 +338,7 @@ class SocketApplication(ServerApplication):
             logging.debug(' * Fallen ~ %s of %s nodes', fallen, check)
             logging.debug(' * Pull ~ %s of %s to reset', _PULL_COUNTER,
                           check_times)
-            self._start_pull()
+            self._resume_pull()
         raise gen.Return(True)
 
     @gen.coroutine
@@ -327,6 +350,8 @@ class SocketApplication(ServerApplication):
             _FALLEN_NODES = set()
             logging.debug(' ~ Recovered nodes:')
             response = yield gen.Task(self.publisher.keys, 'node:*')
+            if self.node_id not in response:
+                raise gen.Return(None)
             for node in response:
                 value = yield gen.Task(self.publisher.get, node)
                 _data, data = strucloads(value)
@@ -355,21 +380,25 @@ class SocketApplication(ServerApplication):
 
     @gen.coroutine
     def _on_try_reconnect(self, **kwargs):
-        if self._SHUTTING_DOWN is False:
-            loop = ioloop.IOLoop.current()
-            logging.warn(' * Trying reconnect...')
-            try:
-                if self._RECONNECTING is not None:
-                    loop.remove_timeout(self._RECONNECTING)
-                response = yield self.reconnect()
-                assert response is True, 'Connection refused'
-                self._RECONNECTING = None
-            except Exception, e:
-                logging.error(' ! Try reconnect (error)', exc_info=e)
-                self._RECONNECTING = loop.\
-                    add_timeout(self.settings['pull_reconnect_time'],
-                                self._on_try_reconnect)
-        raise gen.Return(True)
+        loop = ioloop.IOLoop.current()
+        logging.warn(' * Trying reconnect...')
+        try:
+            if self._RECONNECTING is not None:
+                loop.remove_timeout(self._RECONNECTING)
+            self.publisher.connect()
+            self.mission_control.connect()
+            yield self._subscribe_mission_control()
+            self._resume_pull()
+            logging.info(' + Reconnected')
+        except ConnectionError, e:
+            logging.error(' ! Try reconnect (error): %s', e.message)
+            deadline = \
+                timedelta(seconds=self.settings['pull_reconnect_delay'])
+            self._RECONNECTING = \
+                loop.add_timeout(deadline, self._on_try_reconnect)
+        except Exception, e:
+            logging.error(' ! Try reconnect (critical)...', exc_info=e)
+            exit()
 
     def _release_try_reconnect(self):
         try:
@@ -393,7 +422,7 @@ class SocketApplication(ServerApplication):
     _SHUTTING_DOWN = False
 
     @gen.coroutine
-    def shutdown(self, **kwargs):
+    def shutdown(self, force=False, exit_callback=None, **kwargs):
         self._SHUTTING_DOWN = True
         self._disconnect_pull()
         self._release_try_reconnect()
@@ -401,6 +430,11 @@ class SocketApplication(ServerApplication):
         yield self._disconnect_mission_control()
         yield self._disconnect_publisher()
         self._SHUTTING_DOWN = False
+        if force is True:
+            if callable(exit_callback):
+                exit_callback()
+            else:
+                self.exit_callback()
         raise gen.Return(True)
 
 
