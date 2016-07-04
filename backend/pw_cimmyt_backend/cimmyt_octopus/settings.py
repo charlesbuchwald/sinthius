@@ -14,17 +14,17 @@ SHUTDOWN_SECONDS = 0
 # Nuc
 NUC_NAME = 'NUC'
 NUC_IP = '127.0.0.1'
-NUC_PORT = 8040
+NUC_PORT = 4000
 NUC_MODE = 0
 NUC_DESCRIPTION = 'Nuc description here...'
+MASTER = False
 
 # Server
 PORT = NUC_PORT
 APPLICATION = 'cimmyt_octopus.backend.base.SocketApplication'
-
-PULL_DELAY = 4  # in seconds
+PULL_DELAY = 2  # in seconds
 PULL_RECONNECT_DELAY = 2  # in seconds
-PULL_CHECK_TIMES = 2
+PULL_CHECK_TIMES = 4
 
 HANDLERS = (
     'cimmyt_octopus.backend.observer',

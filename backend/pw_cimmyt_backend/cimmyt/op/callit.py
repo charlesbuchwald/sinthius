@@ -6,7 +6,7 @@
 # Created: 13/Jun/2016 21:21
 #
 
-'''
+"""
 Call In Thread using thread pool
 Created on Mar 27, 2012
 
@@ -15,7 +15,7 @@ Created on Mar 27, 2012
 
 licensed under APACHE license.
 
-'''
+"""
 
 import Queue
 import time
@@ -23,22 +23,22 @@ import threading
 import logging
 import traceback
 
+
 class CallITException(Exception):
-    '''
+    """
     Raised by CallIT constructor when not started or none idle thread can be found for its running
     or stopped. RUN_ERROR exception is raised when executing the called if failed
-    '''
+    """
     NOT_STARTED = 1
     TOO_BUSY = 2
     STOPPED = 3
     RUN_ERROR = 4
 
     def __init__(self, errcode, org_exc=None, org_traceback=None):
-        '''
+        """
         NOT_STARTED, TOO_BUSY or STOPPED
-        '''
+        """
         self.__error_code = errcode
-
         self.__org_exc = org_exc
         self.__org_traceback = org_traceback
 
@@ -57,11 +57,11 @@ class CallITException(Exception):
     def org_traceback(self):
         return self.__org_traceback
 
-class CallIT(object):
-    '''
-    Call functions or method using thread pool.
-    '''
 
+class CallIT(object):
+    """
+    Call functions or method using thread pool.
+    """
     __quit = False
     __pool_size = 0
     __pool_pending_calls = None
@@ -70,18 +70,18 @@ class CallIT(object):
 
     @classmethod
     def has_pendings(cls):
-        '''
+        """
         True if pending calls exist
-        '''
+        """
         return cls.__pool_pending_calls != None and not cls.__pool_pending_calls.empty()
 
     @classmethod
     def start_pool(cls, poolsize):
-        '''
+        """
         start thread pool and prepare to handle calling requests.
         poolsize specifies how many threads should be used to run calling requests 
         and should be greater than or equal to 1. 
-        '''
+        """
         if cls.__pool_pending_calls != None:
             # started already
             return
@@ -100,7 +100,6 @@ class CallIT(object):
         for ndx in xrange(0, cls.__pool_size):
             cls.__pool_idle_callit_objs.put(CallIT())
 
-
     @classmethod
     def stop_pool(cls):
         if not cls.__pool_pending_calls:
@@ -109,8 +108,10 @@ class CallIT(object):
         cls.__quit = True
 
         for ndx in xrange(0, cls.__pool_size):
-            try: CallIT.run(None, cls.__dummy_stopping_call)
-            except CallITException: pass
+            try: 
+                CallIT.run(None, cls.__dummy_stopping_call)
+            except CallITException: 
+                pass
 
         while not cls.__pool_thread_ids.empty():
             time.sleep(0.05)
@@ -124,7 +125,6 @@ class CallIT(object):
         cls.__pool_thread_ids = None
         cls.__pool_pending_calls = None
         cls.__pool_idle_callit_objs = None
-
 
     def __init__(self):
         self.callee_callback = None
@@ -148,7 +148,7 @@ class CallIT(object):
 
     @classmethod
     def gen_run(cls, callee, *args, **kwargs):
-        '''
+        """
         Should be used only with tornado.gen
 
         Using tornado.gen.Task to yield a async call to fucntion callee with args and kwargs.
@@ -167,7 +167,7 @@ class CallIT(object):
             else:
                 handle(response)
 
-        '''        
+        """        
 
         if CallIT.__quit and callee != CallIT.__dummy_stopping_call:
             raise CallITException(CallITException.STOPPED)
@@ -192,10 +192,9 @@ class CallIT(object):
         # add to pool, try is not need
         CallIT.__pool_pending_calls.put(idle)
 
-
     @classmethod
     def run(cls, callee_callback, callee, *args, **kwargs):
-        '''        
+        """        
         Call a callee function with args and kwargs in thread pool and 
         the callee_callback(if not None) with response, error will be 
         called when finished. 
@@ -212,7 +211,7 @@ class CallIT(object):
         The class method start_pool(poolsize) should be called before this,
         and it can be used directly without tornado.gen
 
-        '''
+        """
         if CallIT.__quit and callee != CallIT.__dummy_stopping_call:
             raise CallITException(CallITException.STOPPED)
         if not CallIT.__pool_pending_calls:
@@ -233,14 +232,14 @@ class CallIT(object):
         CallIT.__pool_pending_calls.put(idle)
 
     def __run(self):
-        '''
+        """
         Pick up an idle thread and run self.callee in the thread, 
         if failed to found a idle thread, TooBusyException is raised.
-        '''
+        """
         res = None
         err = None
         try:
-            res = self.callee(*self.args, **self.kwargs);            
+            res = self.callee(*self.args, **self.kwargs)            
         except Exception as inst:
             tb = traceback.format_exc()
             logging.error(" >>>\n%s\nCallIT run error:\n%s%s\n", '-' * 80, tb, '-' * 80)
@@ -273,9 +272,9 @@ class CallIT(object):
 
     @classmethod
     def __dummy_stopping_call(cls):
-        '''
+        """
         dummy task used to stop thread pooling immediately. 
-        '''
+        """
         pass
 
     @classmethod
@@ -285,10 +284,7 @@ class CallIT(object):
         while not cls.__quit:
             callit = cls.__pool_pending_calls.get(block=True)
             callit.__run()
-
             cls.__pool_idle_callit_objs.put(callit)
-
-
         logging.info("CallIT worker[%d] stopped" % id)
         cls.__pool_thread_ids.get(block=True)
 

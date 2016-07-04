@@ -14,7 +14,6 @@ from functools import partial
 class Message(object):
     MIN_VERSION = 0
     MAX_VERSION = 100
-
     ADD_HEADERS_VERSION = 1
 
     _VERSION_HEADER_SCHEMA = {
@@ -64,7 +63,7 @@ class Message(object):
         if self.version < min_version:
             raise MessageError('Version "%s" of this message is not supported '
                                'by the server. The server only support this '
-                               'message starting at version "%s".'
+                               'message starting at version "%s"'
                                % (self.version, min_version))
 
     @property
@@ -97,7 +96,7 @@ class Message(object):
     def sanitize(self):
         if self._schema is None:
             raise MessageError('No schema available. Sanitize may only be '
-                               'called after Validate has been called.')
+                               'called after Validate has been called')
         self._find_extra_fields(self._message, self._schema, False)
 
     def migrate(self, client, version, callback, migrators=None):

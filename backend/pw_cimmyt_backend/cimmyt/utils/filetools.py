@@ -30,7 +30,7 @@ def is_file(value, root=None, raising=True):
     value = abspath(value, root)
     if not os.path.isfile(value):
         if raising:
-            raise FileError('File "%s" not found.' % value)
+            raise FileError('File "%s" not found' % value)
         return False
     return value
 

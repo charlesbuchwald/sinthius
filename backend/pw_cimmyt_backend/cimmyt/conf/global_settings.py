@@ -11,6 +11,7 @@ from __future__ import unicode_literals
 
 # SERVER
 # ~~~~~~
+
 DEBUG = False
 TRACK = False
 SSL = False
@@ -32,11 +33,12 @@ LOG_ERROR_FLUSH_INTERVAL = 2 * 60
 MAIN = 'cimmyt.server.main'
 APPLICATION = 'cimmyt.web.application.ServerApplication'
 DISABLE_BROWSER = False
-PING_RESPONSE = 'hello, kitty.'
+PING_RESPONSE = 'hello kitty, =^.^='
 
 
 # DOMAINS
 # ~~~~~~~
+
 # Default
 IP = '127.0.0.1'
 DOMAIN = 'localhost'
@@ -64,6 +66,7 @@ DOMAINS = {
 
 # PATHS
 # ~~~~~
+
 # Root '/value'
 ROOT_PATH = '../server'
 

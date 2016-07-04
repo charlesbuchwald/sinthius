@@ -47,7 +47,7 @@ def run(start_callback, stop_callback=None, _initializer=initializer, **kwargs):
     io_loop = ioloop.IOLoop.current()
 
     def _on_signal(signum, frame):
-        logging.warn('Process stopped with signal: %s' % signum)
+        logging.warn(' > Process stopped with signal: %s' % signum)
         try:
             stop_callback(**kwargs)
         except:
@@ -86,7 +86,7 @@ def run(start_callback, stop_callback=None, _initializer=initializer, **kwargs):
     except Exception, e:
         if not isinstance(e, ioloop.TimeoutError):
             shutdown_by_exception = True
-            logging.error('Unhandled exception in %s' % sys.argv[0])
+            logging.error(' ! Unhandled exception in %s' % sys.argv[0])
             trace(e)
 
     if shutdown_by_exception:

@@ -16,7 +16,7 @@ def no_callback(*args, **kwargs):
 
 
 def log_exception_callback(error, value, tback):
-    logging.error('Unexpected error', exc_info=(error, value, tback))
+    logging.error(' ! Unexpected error', exc_info=(error, value, tback))
 
 
 def dispatch(response, **kwargs):

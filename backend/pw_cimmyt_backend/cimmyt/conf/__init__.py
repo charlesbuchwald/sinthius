@@ -23,7 +23,7 @@ class LazySettings(LazyObject):
             raise ConfigurationError(
                 'Requested %s, but settings are not configured. '
                 'You must either define the environment variable %s '
-                'or call settings.configure() before accessing settings.'
+                'or call settings.configure() before accessing settings'
                 % (desc, constants.ENV_SETTINGS_MODULE))
         self._wrapped = Settings(settings_module)
 
@@ -34,7 +34,7 @@ class LazySettings(LazyObject):
 
     def configure(self, default_settings=global_settings, **options):
         if self._wrapped is not compat.empty:
-            raise RuntimeError('Settings already configured.')
+            raise RuntimeError('Settings already configured')
         holder = UserSettingsHolder(default_settings)
         for name, value in options.iteritems():
             setattr(holder, name, value)
@@ -42,9 +42,9 @@ class LazySettings(LazyObject):
 
     def options_parse(self, options):
         if self._wrapped is compat.empty:
-            raise RuntimeError('Settings are not configured.')
+            raise RuntimeError('Settings are not configured')
         if not isinstance(options, dict):
-            raise ConfigurationError('Options must be a dictionary.')
+            raise ConfigurationError('Options must be a dictionary')
         for key, value in options.iteritems():
             setting_key = key.upper()
             if not hasattr(self._wrapped, setting_key) \
@@ -58,7 +58,7 @@ class LazySettings(LazyObject):
 
     def as_dict(self):
         if self._wrapped is compat.empty:
-            raise RuntimeError('Settings are not configured.')
+            raise RuntimeError('Settings are not configured')
         return {item.lower(): getattr(self._wrapped, item)
                 for item in dir(self._wrapped)
                 if item.isupper() and item != constants.ENV_OPTIONS_PARSER}
@@ -153,11 +153,11 @@ class Settings(BaseSettings):
                         and not isinstance(setting_value, compat.list_type):
                     raise ConfigurationError('The "%s" setting must be a list '
                                              'or a tuple. Please fix your '
-                                             'settings.' % setting)
+                                             'settings' % setting)
                 if setting in dict_settings \
                         and not isinstance(setting_value, dict):
                     raise ConfigurationError('The "%s" setting must be a dict. '
-                                             'Please fix your settings.'
+                                             'Please fix your settings'
                                              % setting)
                 setattr(self, setting, setting_value)
                 self._explicit_settings.add(setting)

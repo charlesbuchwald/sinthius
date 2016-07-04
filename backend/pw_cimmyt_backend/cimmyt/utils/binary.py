@@ -64,11 +64,11 @@ def base64_hex_encode(value, padding=True):
 def base64_hex_decode(value, padding=True):
     value = escape.utf8(value)
     if not rx_valid_char.match(value):
-        raise TypeError('Invalid characters.')
+        raise TypeError('Invalid characters')
     pad_needed = len(value) % 4
     if pad_needed:
         if padding:
-            raise TypeError('Invalid padding.')
+            raise TypeError('Invalid padding')
         else:
             value += '=' * pad_needed
     translated = value.translate(_to_std)

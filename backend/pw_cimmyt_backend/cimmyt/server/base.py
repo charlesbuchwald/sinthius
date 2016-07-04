@@ -27,8 +27,8 @@ __project_name__ = 'CPS'
 __project_full_name__ = 'CIMMYT Python Server'
 __project_owner__ = ('Asumi Kamikaze, inc',)
 __project_author__ = ('Alejandro M. Bernardis',)
-__project_created__ = (2015, 3)
-__project_modified__ = (2016, 1)
+__project_created__ = (2016, 6)
+__project_modified__ = (2016, 6)
 
 # Versions schema:
 #  * 1.0 (production)
@@ -117,7 +117,7 @@ def start_server(*args, **kwargs):
 
     if settings.DEBUG:
         code = jsoncolorize(jsondumps(settings_dict, indent=2, sort_keys=True))
-        logging.debug(' * Settings:\n\n%s\n\n' % code)
+        logging.debug(' * Settings:\n\n%s\n\n', code)
 
     http_server = httpserver.HTTPServer(application, **{
         'xheaders': settings.XHEADERS,
@@ -125,7 +125,7 @@ def start_server(*args, **kwargs):
     })
 
     io_loop = ioloop.IOLoop.current()
-    application.set_exit_callback(partial(stop_loop, io_loop))
+    application.set_exit_callback(partial(_stop_loop, io_loop))
 
     with stack_context.NullContext():
         if settings.PREFORK_PROCESS > -1:
@@ -140,8 +140,8 @@ def start_server(*args, **kwargs):
         settings.SERVER_NAME, application, http_server, io_loop)
 
     url = 'http://{domain}:{port}'.format(**settings_dict)
-    logging.info('%s v%s' % (__SERVER.name.upper(), __SERVER.version.value))
-    logging.info('Running server on %s' % url)
+    logging.info('%s v%s', __SERVER.name.upper(), __SERVER.version.value)
+    logging.info('Running server on %s', url)
     logging.info('--')
 
     if not compat.WIN and settings.DEBUG and not settings.DISABLE_BROWSER:
@@ -151,7 +151,7 @@ def start_server(*args, **kwargs):
     yield gen.Task(lambda callback: None)
 
 
-def stop_loop(loop):
+def _stop_loop(loop):
     logging.debug(' * Stopping loop...')
     loop.stop()
     logging.info('Shutdown server')
@@ -173,4 +173,4 @@ def stop_server(*args, **kwargs):
 
     logging.debug(' * Setting timeout...')
     seconds = time.time() + settings.SHUTDOWN_SECONDS
-    env.loop.add_timeout(seconds, partial(stop_loop, env.loop))
+    env.loop.add_timeout(seconds, partial(_stop_loop, env.loop))

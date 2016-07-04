@@ -19,7 +19,7 @@ def make_optional(property_dict, test_key):
 def copy_properties(target_dict, source_dict):
     for key, value in source_dict['properties'].iteritems():
         if key in target_dict['properties']:
-            raise KeyError('Key "%s" can\'t be in properties.' % key)
+            raise KeyError('Key "%s" can\'t be in properties' % key)
         if target_dict['properties'][key] != value:
             raise ValueError('Key(%s) Value(%s) is not equal to "%s".'
                              % (key, value, target_dict['properties'][key]))

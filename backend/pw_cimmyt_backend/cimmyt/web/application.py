@@ -219,7 +219,6 @@ class ServerApplication(web.Application):
         kwargs.setdefault('uptime', uptime_calculate(self._start_time))
         return kwargs
 
-
     # start
 
     @gen.coroutine

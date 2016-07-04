@@ -45,7 +45,7 @@ class LazyObject(object):
 
     def _setup(self):
         raise NotImplementedError('Subclasses of LazyObject must provide a '
-                                  '_setup() method.')
+                                  '_setup() method')
 
     def __getstate__(self):
         if self._wrapped is compat.empty:

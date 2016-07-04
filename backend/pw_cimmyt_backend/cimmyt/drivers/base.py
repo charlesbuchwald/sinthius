@@ -31,9 +31,9 @@ def is_read_only(method):
 def _is_read_only(reference):
     method = getattr(reference, 'read_only', None)
     if method is None:
-        raise ClientError('Read only attribute is not defined.')
+        raise ClientError('Read only attribute is not defined')
     if method is False:
-        raise ClientError('Client can to read only.')
+        raise ClientError('Client can to read only')
 
 
 def _make_adapter(adapter, settings, attributes=None):
@@ -49,7 +49,7 @@ def _make_serializer(serializer):
     methods = [hasattr(module, method) for method in ('dumps', 'loads')]
     if not methods or not all(methods):
         raise ClientError('Serializer "%s" does not define a "dumps/loads" '
-                          'attribute.' % serializer)
+                          'attribute' % serializer)
     return module
 
 
@@ -86,7 +86,7 @@ def _parse_arguments(module, settings, attributes):
             del settings[key]
         else:
             if require:
-                raise ClientError('Argument required: %s.' % key)
+                raise ClientError('Argument required: %s' % key)
             value = default
         setattr(module, '_%s' % key, value)
     return settings

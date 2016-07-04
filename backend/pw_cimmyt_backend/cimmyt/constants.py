@@ -17,7 +17,7 @@ SECONDS_PER_MONTH = SECONDS_PER_WEEK * 4
 PRIMITIVE_METHODS = ('to_python', 'to_object', 'to_dict', 'to_mongo',
                      'to_mongodb', 'to_primitive')
 BINARY_SERIALIZER = ('marshal', 'msgpack', 'umsgpack')
-JSON_SERIALIZER = ('json', 'simplejson', 'ujson')
+JSON_SERIALIZER = ('json', 'simplejson')  # , 'ujson')
 PYTHON_SERIALIZER = ('pickle', 'cPickle')
 SERIALIZERS = BINARY_SERIALIZER + JSON_SERIALIZER + PYTHON_SERIALIZER
 ASCII = 'ascii'

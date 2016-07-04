@@ -6,6 +6,24 @@
 # Created: 13/Jun/2016 20:33
 #
 
+"""
+
+TODO(berna): varios...
+======================
+
+    1. Implementar un esquema de semáforos para el apagado del server.-
+
+    2. Implementar un esquema de colas para la gestión de tareas.-
+
+       2.1. Se podría implmentar AMQP (RabbitMQ or ZMQ).-
+
+    3. Mejorar el driver para redis (reescribirlo) o reemplazar el manejo del
+       pub/sub vía ZMQ.-
+
+    4. Mejorar el manejo de errores.-
+
+"""
+
 import re
 import logging
 import collections
@@ -130,14 +148,14 @@ class SocketApplication(ServerApplication):
     def register(self, **kwargs):
         response = yield gen \
             .Task(self.publisher.set, self.node_id, self.node_info)
-        logging.debug(' ~ Register: %s', response)
+        logging.info(' # Register: %s', response)
         raise gen.Return(response)
 
     @gen.coroutine
     def unregister(self, **kwargs):
         response = yield gen \
             .Task(self.publisher.delete, self.node_id)
-        logging.debug(' ~ Unregister: %s', response)
+        logging.info(' # Unregister: %s', response)
         raise gen.Return(response)
 
     # Clients
@@ -166,7 +184,7 @@ class SocketApplication(ServerApplication):
                 config = self.settings['keyvalues'][_CHANNEL]['config']
             except:
                 config = {
-                    'host': 'localhost',
+                    'host': '127.0.0.1',
                     'port': 6379,
                     'selected_db': 0,
                     'autoconnect': True
@@ -256,7 +274,7 @@ class SocketApplication(ServerApplication):
                 elif body.action == 'UNSUBSCRIBE' \
                         and body.node_id in self.nodes:
                     del self.nodes[body.node_id]
-                logging.warn(' + (%s) %s', body.action, body.node_id)
+                logging.warn(' > (%s) %s', body.action, body.node_id)
             self._resume_pull()
         raise gen.Return(True)
 
@@ -312,8 +330,8 @@ class SocketApplication(ServerApplication):
                         if self._RECONNECTING is None:
                             self._on_try_reconnect()
                     else:
-                        logging.error(' ! Node removed by administrator')
-                        yield self.shutdown(True)
+                        logging.warn(' > Node removed by administrator')
+                        self.shutdown(True)
                     raise gen.Return(response)
                 _PULL_COUNTER = 0
                 logging.debug(' * Check reset')
@@ -348,17 +366,18 @@ class SocketApplication(ServerApplication):
             logging.debug(' * Recovering nodes...')
             _NODES = {}
             _FALLEN_NODES = set()
-            logging.debug(' ~ Recovered nodes:')
             response = yield gen.Task(self.publisher.keys, 'node:*')
             if self.node_id not in response:
+                logging.error(' ! Node not registered: %s', self.node_id)
                 raise gen.Return(None)
+            logging.debug(' * Recovered nodes:')
             for node in response:
                 value = yield gen.Task(self.publisher.get, node)
                 _data, data = strucloads(value)
                 node_id = _NODE.format(ip=data.ip, port=data.port)
                 if node_id != self.node_id:
                     self.nodes[node_id] = _data
-            logging.debug(' - Not found' if not self.nodes
+            logging.debug(' ~ Not found' if not self.nodes
                           else jsondumps(self.nodes, indent=2))
         raise gen.Return(True)
 
@@ -381,15 +400,15 @@ class SocketApplication(ServerApplication):
     @gen.coroutine
     def _on_try_reconnect(self, **kwargs):
         loop = ioloop.IOLoop.current()
-        logging.warn(' * Trying reconnect...')
+        logging.warn(' > Trying reconnect...')
         try:
             if self._RECONNECTING is not None:
                 loop.remove_timeout(self._RECONNECTING)
             self.publisher.connect()
             self.mission_control.connect()
-            yield self._subscribe_mission_control()
-            self._resume_pull()
             logging.info(' + Reconnected')
+            yield self._subscribe_mission_control()
+            yield self._on_pull()
         except ConnectionError, e:
             logging.error(' ! Try reconnect (error): %s', e.message)
             deadline = \

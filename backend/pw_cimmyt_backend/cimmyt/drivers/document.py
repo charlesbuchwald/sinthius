@@ -12,7 +12,6 @@ from cimmyt.drivers.base import SerializerAbstract, _parse_arguments
 from cimmyt.utils.async import dispatch
 from cimmyt.utils.filetools import abspath
 from functools import wraps
-from tornado import gen
 
 
 def verify_filename(method):
@@ -21,7 +20,7 @@ def verify_filename(method):
         filename = kwargs.get('filename')
         if not filename:
             if not self.filename:
-                raise ValueError('The file name is not defined.')
+                raise ValueError('The file name is not defined')
             kwargs['filename'] = self.filename
         result = method(self, *args, **kwargs)
         if 'callback' in kwargs:
@@ -41,7 +40,7 @@ class DocumentClient(SerializerAbstract):
                 filename = settings['filename']
                 del settings['filename']
             else:
-                filename = 'cimmyt.file'
+                filename = 'default.file'
 
         root = settings.get('root', '{tmp}').format(**global_settings.PATHS)
         self.filename = '%s/%s' % (root, filename)

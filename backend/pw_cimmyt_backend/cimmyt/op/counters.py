@@ -16,23 +16,23 @@ class CounterManager(DotDict):
     def register(self, counter):
         name = counter.name
         if not name:
-            raise CounterError('Cannot register counter with a blank name.')
+            raise CounterError('Cannot register counter with a blank name')
         existing = self.get(name, None)
         if existing:
             if isinstance(existing, DotDict):
                 raise CounterError('Cannot register counter with name %s '
                                    'because a namespace with the same name '
-                                   'was previously registered.' % name)
+                                   'was previously registered' % name)
             else:
                 raise CounterError('Cannot register counter with name %s '
                                    'because a counter with the same name '
-                                   'was previously registered.' % name)
+                                   'was previously registered' % name)
         try:
             self[name] = counter
         except KeyError:
             raise CounterError('Cannot register counter with name %s because a '
                                'portion of its namespace conflicts with a '
-                               'previously registered counter.' % name)
+                               'previously registered counter' % name)
 
 
 class BaseCounter(object):

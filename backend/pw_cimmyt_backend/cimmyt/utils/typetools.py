@@ -33,7 +33,7 @@ def to_boolean(value):
         return True
     elif value in compat.false_values:
         return False
-    raise TypeError('Expected for true%s or false%s.'
+    raise TypeError('Expected for true%s or false%s'
                     % (compat.true_values, compat.false_values))
 
 

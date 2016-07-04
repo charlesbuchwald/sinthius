@@ -6,7 +6,8 @@
 # Created: 13/jun/2016 09:49
 # ~
 
-from cimmyt.drivers.base import SerializerAbstract, _parse_arguments
+from cimmyt.drivers.base import SerializerAbstract, _parse_arguments, _fetch
+from tornado import gen
 
 
 class APIHTTPClient(SerializerAbstract):
@@ -36,3 +37,8 @@ class APIHTTPClient(SerializerAbstract):
 
     def _sanitize_body(self, *args, **kwargs):
         raise NotImplementedError()
+
+    @gen.coroutine
+    def fetch(self, url, method='GET', body=None, headers=None, **kwargs):
+        response = yield _fetch(url, method, body, headers, **kwargs)
+        raise gen.Return(response)

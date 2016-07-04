@@ -22,7 +22,7 @@ class BaseConverter(object):
         self.sign = sign
         self.digits = digits
         if sign in self.digits:
-            raise ValueError('Sign character found in converter base digits.')
+            raise ValueError('Sign character found in converter base digits')
 
     def __repr__(self):
         return '<BaseConverter: base%s (%s)>' % (len(self.digits), self.digits)
