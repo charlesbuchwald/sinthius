@@ -6,11 +6,21 @@ function menuSetup(){
 jQuery('slide').each(function(){
 
 var newMenuItem = jQuery(this).attr('id')+'';
+var newMenuItemTriggerIn = jQuery(this).attr('data-triggerin');
+var newMenuItemTriggerOut = jQuery(this).attr('data-triggerout');
+
+
 newMenuItemTitle = newMenuItem.replace(/_/g , " ");
 newMenuItemTitle = newMenuItemTitle.replace(/plus/g , "&");
 jQuery('menu').append('<a href="#'+newMenuItem+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></a>');
+var triggers = [];
 
-
+var trigger1 = {
+'triggerin':newMenuItemTriggerIn,
+'triggerout':newMenuItemTriggerOut
+};
+triggers.push(trigger1);
+console.log(triggers);
 })
 // ------------------------ SETUP BUTTONS-----------------------------
 jQuery('.closeParent').click(function(){
@@ -69,7 +79,9 @@ jQuery('menu').addClass('white');
 jQuery('menu > a').removeClass('current');
 
 }
-					if(data.curTop > 250){
+
+
+					if(data.curTop > 100){
   						 jQuery('menu').addClass('hide');
                		} else {
   						 jQuery('menu').removeClass('hide');
@@ -80,32 +92,32 @@ jQuery('menu > a').removeClass('current');
   						jQuery('menu > a').eq(1).addClass('current');
                		}
                		
-               		if(data.curTop > 500 && data.curTop < 700){
+               		if(data.curTop > 499 && data.curTop < 700){
                			black();
                			jQuery('menu > a').eq(2).addClass('current');
                		}
                		
-               		if(data.curTop > 700){
+               		if(data.curTop > 700 && data.curTop < 1300 ){
                			white();
   						 jQuery('menu > a').eq(3).addClass('current');
                		}
-               		if(data.curTop > 1450 ){
+               		if(data.curTop > 1450 && data.curTop < 1700){
                			black();
   						 jQuery('menu > a').eq(4).addClass('current');
                		}
-               			if(data.curTop > 1850 ){
+               			if(data.curTop > 1850 && data.curTop < 2000){
                			white();
   						 jQuery('menu > a').eq(5).addClass('current');
                		}
-               		if(data.curTop > 2150 ){
+               		if(data.curTop > 2150 && data.curTop < 2300){
                			black();
   						 jQuery('menu > a').eq(6).addClass('current');
                		}
-               		if(data.curTop > 2450 ){
+               		if(data.curTop > 2450 && data.curTop < 3350){
                			white();
   						 jQuery('menu > a').eq(7).addClass('current');
                		}
-               		if(data.curTop > 3450 ){
+               		if(data.curTop > 3450 && data.curTop < 3600){
                			white();
   						 jQuery('menu > a').eq(8).addClass('current');
                		}
@@ -141,8 +153,8 @@ jQuery('menu > a').removeClass('current');
   
   	link = link.toString().split('"');
     link = link[0].toString().split('#');
-console.log(jQuery('#'+link[1]).attr('data-trigger'));
-     return jQuery('#'+link[1]).attr('data-trigger');
+console.log(jQuery('#'+link[1]).attr('data-triggerin'));
+     return jQuery('#'+link[1]).attr('data-triggerin');
        //  return 400; Hardcoding 400 doesn't make much sense.
     },
     //By default skrollr-menu will only react to links whose href attribute contains a hash and nothing more, e.g. `href="#foo"`.
@@ -164,11 +176,32 @@ console.log(jQuery('#'+link[1]).attr('data-trigger'));
     updateUrl: true //defaults to `true`.
 });  
 }
+
+function triggerSetup(){
+var triggerFuncIf = '';
+jQuery('slide').each(function(){
+
+
+var newMenuItemTriggerIn = jQuery(this).attr('data-triggerin');
+var newMenuItemTriggerOut = jQuery(this).attr('data-triggerout');
+var triggers = [];
+
+var trigger1 = {
+'triggerin':newMenuItemTriggerIn,
+'triggerout':newMenuItemTriggerOut
+};
+triggers.push(trigger1);
+
+
+ 
+})
+
+}
    jQuery(document).ready(function(){
    
 menuSetup();
 parallaxSetup();
-
+triggerSetup();
 
 	});
 	// ------------------------ SETUP SKROLLR-----------------------------

@@ -94,7 +94,7 @@ p, .p{font-size: 1.3em;letter-spacing: 0.05em;line-height: 140%;}
 /* ------------------------------instructions/menu ----------------------------*/
 menu {
     position: fixed;
-    bottom: 10vh;
+    bottom: 0vh;
     right: 1%;
     width: 300px;
     z-index: 999;
@@ -110,18 +110,35 @@ menu > a {
     text-decoration: none;
     color: #FFF;
     float: left;
-    margin-bottom: 3vh;
+    margin-bottom: 1.2vh;
     /* background-image: url('../assets/menu-btn-next.svg'); */
     background-position: top right;
     background-size: auto 100%;
     background-repeat: no-repeat;
     width: 100%;
     height: 5vh;
-    line-height: 5vh;
+    line-height: 1vh;
     opacity:0.5;
-        -webkit-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
+}
+menu .menuHide{
+position:absolute;top:-7vh;
+
+-ms-transform: rotate(0deg);-webkit-transform: rotate(0deg);transform: rotate(0deg);
+-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;
+width: auto;height: 3vh;}
+
+menu.hide .menuHide{
+top:-8vh;
+-ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+   -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    
 }
 menu  a.current{opacity:1;}
 menu.black > a{
@@ -173,6 +190,14 @@ display:none;
 #counter{
 position:fixed;
 left:0;top:0;
+color:#FFF;
+z-index:99;
+background-color:#000;
+width:30px;
+}
+#currSlide{
+position:fixed;
+left:40px;top:0;
 color:#FFF;
 z-index:99;
 background-color:#000;
