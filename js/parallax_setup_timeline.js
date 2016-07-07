@@ -130,7 +130,7 @@ slideAttr.push(slide9Attr);
   
     jQuery.each(slideAttr, function(index, object) {
        jQuery.each(object,function(attribute, value){
-      	console.log(attribute+': '+value);
+      	
         jQuery('slide').eq(index).attr('data-'+attribute, value);
    		})
 	});
@@ -166,7 +166,6 @@ var content5Attr = {
 contentAttr.push(content5Attr);
     jQuery.each(contentAttr, function(index, object) {
        jQuery.each(object,function(attribute, value){
-      console.log('content'+ attribute+': '+value);
         jQuery('.content.animate').eq(index).attr('data-'+attribute, value);
    		})
 	});
@@ -183,7 +182,7 @@ backAttr.push(back1Attr);
 
     jQuery.each(backAttr, function(index, object) {
        jQuery.each(object,function(attribute, value){
-      console.log('back'+ attribute+': '+value);
+
         jQuery('#ORIGINS_OF_WHEAT').children('.background').attr('data-'+attribute, value);
   		 })
 	});

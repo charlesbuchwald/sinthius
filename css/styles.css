@@ -44,6 +44,9 @@ border-spacing: 0;
 a img {
 border: none;
 }
+a:hover{
+cursor:pointer;
+}
 /* ------------------------------fonts ----------------------------*/
 
 @font-face {
@@ -91,6 +94,37 @@ h2, span.h2 {
     column-count: 3;
 }
 p, .p{font-size: 1.3em;letter-spacing: 0.05em;line-height: 140%;}
+
+.addCross{background-image:url(../assets/menu-btn-close.svg);width: 50px;height: 35px;/* text-align: center; */background-size: contain;background-repeat: no-repeat;background-position: center center;-ms-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
+.addInfo{
+background-image:url(../assets/menu-btn-info.svg);
+width: 100%;
+height: 52px;
+/* text-align: center; */
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center center;
+}
+.addArrow{background-image: url(../assets/arrow.svg);width: 100%;height: 52px;/* text-align: center; */background-size: contain;background-repeat: no-repeat;background-position: center center;}
+.black .addCross{
+background-image:url(../assets/menu-btn-close-black.svg);
+
+}
+.black .addInfo{
+    background-image:url(../assets/menu-btn-info-black.svg);
+  }
+  .black .addArrow{
+    background-image:url(../assets/menu-btn-next-black.svg);
+  }
+  
+  #progress{
+  position:absolute;
+  top:0;
+  left:0;
+  width:2px;
+  height:0;
+  background-color:#FFF;
+  }
 /* ------------------------------instructions/menu ----------------------------*/
 menu {
     position: fixed;
@@ -123,22 +157,11 @@ menu > a {
     -moz-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
-menu .menuHide{
-position:absolute;top:-7vh;
+menu .menuHide{position:absolute;opacity: 1;top:-7vh;-ms-transform: rotate(0deg);-webkit-transform: rotate(0deg);transform: rotate(0deg);-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;width: 50px;left: -1%;height: 4vh;}
 
--ms-transform: rotate(0deg);-webkit-transform: rotate(0deg);transform: rotate(0deg);
--webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;
-width: auto;height: 3vh;}
-
-menu.hide .menuHide{
-top:-8vh;
--ms-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-   -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    
+menu.hide .menuHide{top: -7vh;-ms-transform: rotate(180deg);-webkit-transform: rotate(180deg);transform: rotate(180deg);-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
+.menuHide h2 {
+    font-weight: 100;
 }
 menu  a.current{opacity:1;}
 menu.black > a{
@@ -182,10 +205,10 @@ opacity: 0;
     width: 50px;
 }
 
-.instructions {
-z-index:99;
-display:none;
-}
+
+menutop {position: fixed;top: 1.5vh;right: 1%;width: 50px;z-index: 999;font-weight: 900 !important;margin: 0;padding: 0;text-align: center;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
+
+menutop a{text-decoration: none;color: #FFF;margin-bottom: 2vh;float: left;width: 100%;}
 /* ------------------------------main ----------------------------*/
 #counter{
 position:fixed;
@@ -222,8 +245,25 @@ slide.top {
 slide.ground {
     z-index: 0;
 }
-.background,.instructions {position:absolute;left:0;right:0;top:0;bottom:0;height: 100%;width: 100%;background-position:center center;background-size:cover;}
+.background,.instructions {
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    height: 100%;
+    width: 100%;
+    background-position:center center;
+    background-size:cover;
+    }
+    .instructions {
+z-index:99;
+display:none;
+}
+.instructions.hide {
 
+display:block;
+}
 
 /* ------------------------------map ----------------------------*/
 
@@ -326,6 +366,18 @@ top:100vh;
 .content span{z-index:10;position: absolute;}
 .content.overImage {
     color: #FFF;
+}
+.captionHide {
+    position: absolute;
+    right: 1%;
+    top: 10vh;
+    -ms-transform: rotate(0deg);
+    /* -webkit-transform: rotate(0deg); */
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: 999;
+    transform: rotate(45deg);
 }
 /* ------------------------------slide1 ----------------------------*/
 
@@ -474,6 +526,8 @@ top:100vh;
     width: 28%;
     /* text-align: justify; */
 }
+/* ------------------------------slide5----------------------------*/
+
 .slide5 .title {
     top: 9vh;
     left: 10%;
@@ -484,6 +538,10 @@ top:100vh;
     left: 19%;
 }
 .slide5 .text {
+position: absolute;
+    left: 12%;
+ 
+    width: 28%;
     top: 30vh !important;
 }
 .slide1 .title {
@@ -514,11 +572,20 @@ div#slideBtn3 {
     -moz-transition: all 0.8s ease-in-out;
     transition: all 0.8s ease-in-out;
     z-index:30;
+    width: 30%;
     font-family: museo-sans;
     background-color: rgba(255,255,255,0.8);
     -webkit-box-shadow: 0px 10px 23px -6px rgba(0,0,0,0.66);
     -moz-box-shadow: 0px 10px 23px -6px rgba(0,0,0,0.66);
     box-shadow: 0px 10px 23px -6px rgba(0,0,0,0.66);
+}
+.slideIn.caption{
+  background-color: rgba(0,0,0,0.5);
+  color:#FFF;
+  padding:3%;
+}
+.slideIn.caption img{
+margin:4vh 0;
 }
 .slideIn img {
     width: 100%;
@@ -535,6 +602,11 @@ div#slideBtn3 {
 .slideIn.out {
 
     right:10%;
+
+}
+.slideIn.caption.out {
+
+    right:4.5%;
 
 }
 .slideIn.scroll{
@@ -559,29 +631,26 @@ div#slideIn0 {
 div#slideBtn4 {
     width: 60px;
     height: 60px;
-    left: 27%;
-    top: 30vh;
-
+    left: 22%;
+    top: 31vh;
 }
 div#slideBtn5 {
     width: 60px;
     height: 60px;
-    left: 31.5%;
-    top: 32vh;
+    left: 27%;
+    top: 36vh;
 }
 div#slideBtn6 {
     width: 60px;
     height: 60px;
-    left: 41%;
-    top: 37vh;
-
+    left: 37%;
+    top: 39vh;
 }
 div#slideBtn7 {
     width: 60px;
     height: 60px;
-    left: 27%;
-    top: 42vh;
-
+    left: 22.5%;
+    top: 45vh;
 }
 div#slideBtn8 {
     width: 60px;

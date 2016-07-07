@@ -13,47 +13,67 @@ var newMenuItemTriggerOut = jQuery(this).attr('data-triggerout');
 newMenuItemTitle = newMenuItem.replace(/_/g , " ");
 newMenuItemTitle = newMenuItemTitle.replace(/plus/g , "&");
 jQuery('menu').append('<a href="#'+newMenuItem+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></a>');
-var triggers = [];
 
-var trigger1 = {
-'triggerin':newMenuItemTriggerIn,
-'triggerout':newMenuItemTriggerOut
-};
-triggers.push(trigger1);
-console.log(triggers);
 })
+
 // ------------------------ SETUP BUTTONS-----------------------------
-jQuery('.closeParent').click(function(){
+
+jQuery('.closeParent').click(function(e){
+e.preventDefault();
 jQuery(this).parent().fadeOut(800); 
+return false;
 })
-jQuery('.flag.one').click(function(){
+
+jQuery('.flag.one').click(function(e){
+e.preventDefault();
 jQuery('.popup.one').css({'opacity': '1', 'display':'block'});
 console.log('flag one click');
+return false;
 })
 
-jQuery('.menuHide').click(function(){
+jQuery('.menuHide').click(function(e){
+e.preventDefault();
 jQuery(this).parent().toggleClass('hide');
-
+if(!jQuery(this).hasClass()){
+jQuery('.slideIn.caption').removeClass('out');
+}
+return false;
 })
 
-jQuery('.slideBtn').click(function(){
-that = jQuery(this).attr('id')+'';
+jQuery('.captionHide').click(function(e){
+e.preventDefault();
+jQuery(this).siblings('.slideIn.caption').toggleClass('out');
+jQuery(this).toggleClass('out');
+jQuery('menu').addClass('hide');
+console.log('slide caption click');
+return false;
+})
 
+jQuery('.slideBtn').click(function(e){
+e.preventDefault();
+that = jQuery(this).attr('id')+'';
 slide = that.replace(/Btn/g , "In");
 jQuery('.slideIn').not('#'+slide).removeClass('out');
 jQuery('#'+slide).toggleClass('out');
 console.log(that+'clicked'+slide+'opened');
+return false;
 })
 
 
-jQuery('.slideIn').click(function(){
+jQuery('.slideIn').click(function(e){
+e.preventDefault();
 that = jQuery(this).attr('id');
 jQuery(this).toggleClass('out');
 console.log(that+'clicked');
+return false;
 })
+
 }
+
 function skrollrSetup(){
-var currentSlide = '';
+	var currentSlide = '';
+	var totalHeight = jQuery('body').css('height');
+	console.log(totalHeight);
       // Init Skrollr
 	        var s = skrollr.init(
 
@@ -62,23 +82,26 @@ var currentSlide = '';
 	 				render: function(data) {
         			//Log the current scroll position.
        				 jQuery('#counter').html(data.curTop);
+       				 progress = (data.curTop/totalHeight)*100;
+       				 jQuery('#progress').css('height',progress+'%');
+       				 console.log('progress'+progress);
        				 
        	 // ------------------------ menu hide-----------------------------
         // ------------------------ menu color-----------------------------
 
 
-function black(){
-jQuery('menu').removeClass('white black trans');
-jQuery('menu').addClass('black');
-jQuery('menu > a').removeClass('current');
+			function black(){
+			jQuery('menu').removeClass('white black trans');
+			jQuery('menu').addClass('black');
+			jQuery('menu > a').removeClass('current');
 
-}
-function white(){
-jQuery('menu').removeClass('white black trans');
-jQuery('menu').addClass('white');
-jQuery('menu > a').removeClass('current');
+			}
+			function white(){
+			jQuery('menu').removeClass('white black trans');
+			jQuery('menu').addClass('white');
+			jQuery('menu > a').removeClass('current');
 
-}
+			}
 
 
 					if(data.curTop > 100){
@@ -153,7 +176,7 @@ jQuery('menu > a').removeClass('current');
   
   	link = link.toString().split('"');
     link = link[0].toString().split('#');
-console.log(jQuery('#'+link[1]).attr('data-triggerin'));
+	console.log(jQuery('#'+link[1]).attr('data-triggerin'));
      return jQuery('#'+link[1]).attr('data-triggerin');
        //  return 400; Hardcoding 400 doesn't make much sense.
     },
