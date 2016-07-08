@@ -36,6 +36,21 @@
 }, 500);
   console.log('standby Off');
  }
+ 
+ // ------------------------ scrollhor-----------------------------
+ function setupScrollHor(){
+	 
+	 jQuery('.scrollor').each(function() {
+	 var width = 0;
+    	
+		
+		jQuery(this).children('div').each(function() {
+    	width += jQuery(this).outerWidth( true );
+		});
+		jQuery(this).css('width',width+'px')
+		});
+  
+  }
   
 function menuSetup(){
 // ------------------------ SETUP Menu-----------------------------
@@ -259,14 +274,15 @@ triggers.push(trigger1);
 }
    jQuery(document).ready(function(){
    
-menuSetup();
-parallaxSetup();
-triggerSetup();
+		menuSetup();
+		parallaxSetup();
+		triggerSetup();
 
 	});
 	// ------------------------ SETUP SKROLLR-----------------------------
 
   jQuery(window).load(function(){
-skrollrSetup();
+		skrollrSetup();
+		setupScrollHor();
 		jQuery('body').css('opacity','1');
 	});

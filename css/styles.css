@@ -21,6 +21,7 @@ body {line-height: 1;min-height: 100vh;opacity:0;
     -webkit-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
     transition: opacity 0.5s ease-in-out;
+    color:#FFF;
 }
 h1, h2, h3, h4, h5, h6 {
 clear: both;
@@ -93,7 +94,7 @@ h2, span.h2 {
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
 }
-p, .p{font-size: 1.3em;letter-spacing: 0.05em;line-height: 140%;}
+p, .p{font-size: 1.1em;letter-spacing: 0.05em;line-height: 140%;}
 
 .addCross{background-image:url(../assets/menu-btn-close.svg);width: 50px;height: 35px;/* text-align: center; */background-size: contain;background-repeat: no-repeat;background-position: center center;-ms-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
 .addInfo{
@@ -592,7 +593,31 @@ position: absolute;
 .slide1 .title {
     top: 12vh;
 }
-
+/* ------------------------------slide7----------------------------*/
+.slide7 .title {
+    top: 12vh;
+    left: 8%;
+}
+.slide7 .midtitle {
+    top: 87vh;
+    right: 8%;
+    position: absolute;
+    z-index: 22;
+}
+.slide7 .pretitle {
+    top: 17vh;
+    left: 8%;
+}
+.slide7 .text {
+position: absolute;
+    left: 12%;
+ 
+    width: 28%;
+    top: 30vh !important;
+}
+.slide7 .pretext{
+    top: 12vh;
+}
 /* ------------------------------slideins----------------------------*/
 .slideBtn {
     position: absolute;
@@ -617,13 +642,13 @@ div#slideBtn3 {
     -moz-transition: all 0.8s ease-in-out;
     transition: all 0.8s ease-in-out;
     z-index:30;
-    width: 30%;
+    width: 25%;
     font-family: museo-sans;
     background-color: rgba(255,255,255,0.8);
     -webkit-box-shadow: 0px 10px 23px -6px rgba(0,0,0,0.66);
     -moz-box-shadow: 0px 10px 23px -6px rgba(0,0,0,0.66);
     box-shadow: 0px 10px 23px -6px rgba(0,0,0,0.66);
-      padding: 3vh 3%;
+    padding: 3vh 3%;
 }
 .slideIn.caption{
   background-color: rgba(0,0,0,0.5);
@@ -641,15 +666,17 @@ margin:4vh 0;
 
     margin-bottom:1em
 }
-.slideIn p{
-
-    margin-bottom:2em
-}
+.slideIn p{margin-bottom:2em;text-align: justify;}
 .slideIn.out {
 
     right:10%;
 
 }
+.slideIn.white {
+    color: #000;
+}
+
+
 .slideIn.caption.out {
 
     right:4.5%;
@@ -664,9 +691,8 @@ overflow-y:scroll;
 
 div#slideIn0 {
     left: 5%;
-    width: 30%;
+    /* width: 25%; */
     padding: 5vh 3%;
-
 }
 
 .slideIn.out.scroll {

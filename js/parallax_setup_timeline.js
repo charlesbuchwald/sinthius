@@ -66,7 +66,7 @@ var slide5Attr = {
 '1700':"transform:translate(0,100vh);",
 '1800':"transform:translate(0,0vh);",
 '2100':"transform:translate(0,0vh);",
-'2201':"transform:translate(0,-100vh);",
+'2200':"transform:translate(0,-100vh);",
 'triggerin':"1800",
 'triggerout':"2100",
 'color':"white"};
@@ -79,7 +79,7 @@ var slide6Attr = {
 '1800':"transform:translate(0,110vh);",
 '1820':"transform:translate(0,100vh);",
 '2100':"transform:translate(0,100vh);",
-'2200':"transform:translate(0,0vh);",
+'2101':"transform:translate(0,0vh);",
 '2401':"transform:translate(0,0vh);",
 '2501':"transform:translate(0,-100vh);",
 'triggerin':"2200",
@@ -155,24 +155,23 @@ var content3Attr = {
 };
 contentAttr.push(content3Attr);
   var content4Attr = {
-'1350':"transform:translate(-100%,0vh);",
-'1450':"transform:translate(0,0vh);"
+'1000':"transform:translate(-100%,0vh);",
+'1100':"transform:translate(0,0vh);"
 };
 contentAttr.push(content4Attr);
   var content4_1Attr = {
-'1350':"transform:translate(-100%,0vh);",
-'1450':"transform:translate(0,0vh);"
+'1300':"transform:translate(-100%,0vh);",
+'1400':"transform:translate(0,0vh);"
 };
 contentAttr.push(content4_1Attr);
 var content5Attr = {
-'0':"transform:translate(0,110vh);",
-'1800':"transform:translate(0,110vh);",
-'1950':"transform:translate(0,0vh);"
+'1320':"transform:translate(-100%,0vh);",
+'1420':"transform:translate(0,0vh);"
 };
 contentAttr.push(content5Attr);
     jQuery.each(contentAttr, function(index, object) {
        jQuery.each(object,function(attribute, value){
-        jQuery('.animate').eq(index).attr('data-'+attribute, value).attr('animatecount',index);
+        jQuery('.animate').eq(index).attr('data-'+attribute, value).attr('animatecount',index+1);
    		})
 	});
 	
