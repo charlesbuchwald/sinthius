@@ -618,28 +618,72 @@ position: absolute;
 .slide7 .pretext{
     top: 12vh;
 }
+/* ------------------------------slide7----------------------------*/
+.slide8 .title {
+    top: 12vh;
+    left: 8%;
+}
+.slide8 .midtitle {
+    top: 87vh;
+    right: 8%;
+    position: absolute;
+    z-index: 22;
+}
+.slide8 .pretitle {
+    top: 17vh;
+    left: 8%;
+}
+.slide8 .text {
+position: absolute;
+    left: 12%;
+ 
+    width: 28%;
+    top: 30vh !important;
+}
+.slide8 .pretext{
+    top: 12vh;
+}
 /* ------------------------------scrollhor----------------------------*/
 .scrollhor{
 overflow:scroll;
 }
 .scrollhorSlide {
     float: left;
-    height: 60vh;
+    margin-top: 10vh;
+    height: 80vh;
 }
 
 .scrollhorcont {
     float: left;
-    width: 25%;
-    padding:5%;
+    position: relative;
+    width: 20%;
+    padding: 50px;
+    height: 100%;
 }
 .scrollhorcont.doublewidth {
     float: left;
     width: 50%;
-    padding:5%;
+    padding: 50px;
 }
 .scrollhorcont img{
     float: left;
     width: 100%;
+}
+.quote {
+    position: absolute;
+    left: 110%;
+    width: 50%;
+    height: 50%;
+}
+
+.scrollhorSlide .quote.bot {
+    top: 50%;
+}
+
+.scrollhorSlide .quote span {
+    float: left;
+    position: relative;
+    margin-top: 30px;
 }
 
 /* ------------------------------slideins----------------------------*/
