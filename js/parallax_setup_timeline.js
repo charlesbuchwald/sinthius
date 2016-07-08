@@ -44,14 +44,15 @@ var slide3Attr = {
 slideAttr.push(slide3Attr);
 // ------ SETUP SLIDE 4-------
 var slide4Attr = {
-'0':"transform:translate(0,110vh);",
-'1300':"transform:translate(0,110vh);",
-'1500':"transform:translate(0,0vh);",
+'1300':"transform:translate(0,100vh);",
+
+'1301':"transform:translate(0,0vh);",
+'1400':"transform:translate(0,0vh);",
 '1800':"transform:translate(0,0vh);",
-'1900':"transform:translate(0,-100vh);",
+'1810':"transform:translate(0,-100vh);",
 '2101':"transform:translate(0,-100vh);",
 '2202':"transform:translate(0,-100vh);",
-'triggerin':"1500",
+'triggerin':"1400",
 'triggerout':"1800",
 'color':"white"};
 slideAttr.push(slide4Attr);
@@ -62,11 +63,11 @@ var slide5Attr = {
 '0':"transform:translate(0,110vh);",
 '1480':"transform:translate(0,110vh);",
 '1500':"transform:translate(0,100vh);",
-'1800':"transform:translate(0,100vh);",
-'1900':"transform:translate(0,0vh);",
+'1700':"transform:translate(0,100vh);",
+'1800':"transform:translate(0,0vh);",
 '2100':"transform:translate(0,0vh);",
 '2201':"transform:translate(0,-100vh);",
-'triggerin':"1900",
+'triggerin':"1800",
 'triggerout':"2100",
 'color':"white"};
 slideAttr.push(slide5Attr);
@@ -153,11 +154,16 @@ var content3Attr = {
 '1000':"transform:translate(0,-100vh);"
 };
 contentAttr.push(content3Attr);
-  var content3_1Attr = {
-'1000':"transform:translate(-100%,0vh);",
-'1100':"transform:translate(0,0vh);"
+  var content4Attr = {
+'1350':"transform:translate(-100%,0vh);",
+'1450':"transform:translate(0,0vh);"
 };
-contentAttr.push(content3_1Attr);
+contentAttr.push(content4Attr);
+  var content4_1Attr = {
+'1350':"transform:translate(-100%,0vh);",
+'1450':"transform:translate(0,0vh);"
+};
+contentAttr.push(content4_1Attr);
 var content5Attr = {
 '0':"transform:translate(0,110vh);",
 '1800':"transform:translate(0,110vh);",
@@ -166,7 +172,7 @@ var content5Attr = {
 contentAttr.push(content5Attr);
     jQuery.each(contentAttr, function(index, object) {
        jQuery.each(object,function(attribute, value){
-        jQuery('.content.animate').eq(index).attr('data-'+attribute, value);
+        jQuery('.animate').eq(index).attr('data-'+attribute, value).attr('animatecount',index);
    		})
 	});
 	

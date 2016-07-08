@@ -114,7 +114,7 @@ background-image:url(../assets/menu-btn-close-black.svg);
     background-image:url(../assets/menu-btn-info-black.svg);
   }
   .black .addArrow{
-    background-image:url(../assets/menu-btn-next-black.svg);
+    background-image: url(../assets/arrow-black.svg);
   }
   
   #progress{
@@ -125,6 +125,34 @@ background-image:url(../assets/menu-btn-close-black.svg);
   height:0;
   background-color:#FFF;
   }
+  /* ------------------------------standby ----------------------------*/
+standby{
+display:none;
+opacity:0;
+    height: 100vh;
+    z-index: 0;
+    position: fixed;
+    top: 0vh;
+    left: 0;
+    right: 0;
+    width: 100%;
+    right: 0;
+    z-index:1000;
+        -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+  standby video{
+      height: 100vh;
+    z-index: 0;
+    position: absolute;
+    top: 0vh;
+    left: 0;
+    right: 0;
+    width: 100%;
+    right: 0;
+    
+    }
 /* ------------------------------instructions/menu ----------------------------*/
 menu {
     position: fixed;
@@ -164,12 +192,12 @@ menu.hide .menuHide{top: -7vh;-ms-transform: rotate(180deg);-webkit-transform: r
     font-weight: 100;
 }
 menu  a.current{opacity:1;}
-menu.black > a{
+body.black menu > a{
 
 color:#000;
 
 }
-menu.black, menu.white{
+ body.black menu, body.black menu{
 
 opacity: 1;
 }
@@ -379,6 +407,23 @@ top:100vh;
     z-index: 999;
     transform: rotate(45deg);
 }
+.captionHide.out {
+
+    -ms-transform: rotate(0deg);
+    /* -webkit-transform: rotate(0deg); */
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    z-index: 999;
+    transform: rotate(0deg);
+}
+.slideIn.caption.doubleheight {
+    top: 100vh;
+}
+
+.captionHide.doubleheight {
+    top: 110vh;
+}
 /* ------------------------------slide1 ----------------------------*/
 
 
@@ -565,8 +610,8 @@ div#slideBtn3 {
 }
 .slideIn {
     position: absolute;
-    height: 100%;
-    top: -1vh;
+    height: 94vh;
+    top: 0vh;
     right: -50%;
     -webkit-transition: all 0.8s ease-in-out;
     -moz-transition: all 0.8s ease-in-out;
@@ -578,11 +623,12 @@ div#slideBtn3 {
     -webkit-box-shadow: 0px 10px 23px -6px rgba(0,0,0,0.66);
     -moz-box-shadow: 0px 10px 23px -6px rgba(0,0,0,0.66);
     box-shadow: 0px 10px 23px -6px rgba(0,0,0,0.66);
+      padding: 3vh 3%;
 }
 .slideIn.caption{
   background-color: rgba(0,0,0,0.5);
   color:#FFF;
-  padding:3%;
+
 }
 .slideIn.caption img{
 margin:4vh 0;

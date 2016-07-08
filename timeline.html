@@ -13,6 +13,14 @@
 	<script type="text/javascript" charset="utf-8" src="js/parallax_setup_timeline.js"></script>
 </head>
 <body>
+<!-- ----------- standBy--------------- -->
+<standby class="museo">
+<video autoplay="autoplay" loop="loop">   
+<source src="assets/wheat-standby.mp4" type="video/mp4" /> 
+Your browser does not support the video tag. 
+</video> 
+
+</standby>
 <!-- ----------- menuInstruction --------------- -->
 <menutop class="museo">
 <a class="instructionsHide addInfo" ></a>
@@ -52,6 +60,7 @@ Burgeoning agriculture impacted more than just food cultivation. This was the st
 
 <!-- ----------- slide 2 --------------- -->
 <slide id="ORIGINS_OF_WHEAT" class="ground slide2" >
+
 <div class="content slide2 animate" >
 <span class="museo h1 title">ORIGINS</span>
 <span class="museo h3 posttitle">OF WHEAT</span>
@@ -76,6 +85,25 @@ Mesopotamia, directly to the west of the Levant, is the region in and around the
 
 <!-- ----------- slide 3 --------------- -->
 <slide id="BRANDING_AGRICULTURE" class="top doubleheight slide3">
+<a class="captionHide addCross caption"></a>
+<div class="slideIn caption">
+<p>
+GOBEKLI TEPE
+<br><br>
+Archeologists claim the first permanent buildings were constructed for communal or ritual purposes. An example is Göbekli Tepe (10,000 BCE), the first religious center ever built. The hundreds of massive, T-shaped stone pillars found at this site in the Karacadağ mountain range, which is believed to be the place where wheat was first domesticated, were erected by nomadic groups just before the Neolithic era. </p>
+<br>
+<img src="assets/Gobekli-Tepe-2.jpg" />
+
+</div>
+<a class="captionHide doubleheight addCross caption"></a>
+<div class="slideIn caption doubleheight">
+<p>
+BOTH EMMER AND EINKORN WHEAT SHARE A NATURAL AND PRIMITIVE TRAIT: WHEN MATURE, THE GRAIN OF THE WILD VARIETIES FALLS TO THE GROUND SO THAT IT CAN BE SPREAD BY THE WIND.
+</p>
+<br>
+<img style="position:absolute; right:0;bottom:0; width:100%;height:auto;" src="assets/broken-wheat.png" />
+
+</div>
 <div class="content overImage animate slide3">
 <span class="museo h1 title">THE FIRST</span>
 <span class="heuristica h2 posttitle">DOMESTICATIONS</span>
@@ -111,29 +139,53 @@ Though einkorn and emmer were essential to humanity for several millennia, they 
 </slide>
 <!-- ----------- slide 4 --------------- -->
 <slide id="DOMESTICATION_OF_WHEAT" class="ground slide4" >
-<div class="content slide4" >
+<div class="content slide4 animate" >
 <span class="museo h1 title">DOMESTICATION</span>
 <span class="museo h3 posttitle">OF WHEAT</span>
+<div id="slideIn0" class="slideIn animate">
+<img src="assets/karapinar.jpg" />
+<br>
+<p>
+The first domestication of einkorn and emmer wheat has been traced to an area of the Levant in the Karacadağ mountains in what is now southeast Turkey, between 8,500–7,000 BCE. What’s even more surprising is that some scientists estimate that it may have only taken 20 to 30 years for these domesticated strains of wheat to be developed.
+</p>
+
+</div>
 </div>
 <div class="background map" >
-<img class="mapLayText" src="assets/map5-text.png" />
-<img class="mapLay" src="assets/Map5-over.png" />
+
 <img class="mapBot" src="assets/Map3.jpg" />
-<div class="popup one">
-<a class="closeParent popupClose" >
-<img class="popupCloseBtn" src="assets/menu-btn-close.svg" /></a>
-<div class="popupImage">
-<img src="assets/Gobekli-Tepe-excavation.jpg" />
-</div>
-<div class="popupText museo">
-In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec tincidunt eros id enim tempor placerat. Duis pretium consequat enim bibendum elementum. Duis vitae ligula dapibus ex venenatis auctor. Aenean eget dui ornare enim mattis pharetra nec sed est. Quisque efficitur orci non augue porta, vitae consectetur metus rutrum. Vestibulum placerat et mi sed egestas. Duis ac urna at augue varius tincidunt. Praesent malesuada bibendum purus vitae rhoncus. Integer scelerisque pellentesque justo a malesuada.
-</div>
-</div>
+
 </div>
 </slide>
 <!-- ----------- slide 5 --------------- -->
 <slide id="FROM_SEED_TO_CITY" class="top slide5" >
 <div class="content overImage slide5">
+<div id="slideBtn1" class="slideBtn">
+<img src="assets/city-btn-1.png" />
+</div>
+<div id="slideBtn2" class="slideBtn">
+<img src="assets/city-btn-2.png" />
+</div>
+<div id="slideBtn3" class="slideBtn">
+<img src="assets/city-btn-3.png" />
+</div>
+<div id="slideIn1" class="slideIn">
+<img src="assets/sickle.jpg" />
+<br>
+<p>
+The <strong>sickle</strong> is one of the oldest farming tools. Though it was used in pre-Neolithic campsites for harvesting plants, during the Neolithic era, a standardized, improved design emerged to make grain cultivation more efficient.  
+</p>
+</div>
+<div id="slideIn2" class="slideIn">
+<img src="assets/scratch_plow.jpg" />
+<br>
+<p>
+Whereas hand plows had been used prior, the advent of agriculture brought advances such as the domestication of animals which made preparation of fields for cultivation more efficient. The <strong>scratch plow</strong> (6,000 BCE) is a tool pulled by an animal, which turns over the upper layers of soil, burying weeds and old crops as it brings fresh nutrients to the surface in preparation for sowing a new crop.  
+</p>
+</div>
+<div id="slideIn3" class="slideIn">
+<img src="assets/city-slide-3.png" />
+</div>
 <span class="heuristica h2 pretitle">TO CITY</span>
 <span class="museo h1 title">FROM SEED</span>
 <span class="museo p text">
@@ -148,24 +200,7 @@ This shift to a sedentary way of life was perhaps the most iconic change associa
 </span>
 </div>
 <div class="background" style="background-image:url(assets/cubilete.jpg)" >
-<div id="slideBtn1" class="slideBtn">
-<img src="assets/city-btn-1.png" />
-</div>
-<div id="slideBtn2" class="slideBtn">
-<img src="assets/city-btn-2.png" />
-</div>
-<div id="slideBtn3" class="slideBtn">
-<img src="assets/city-btn-3.png" />
-</div>
-<div id="slideIn1" class="slideIn">
-<img src="assets/city-slide-1.png" />
-</div>
-<div id="slideIn2" class="slideIn">
-<img src="assets/city-slide-2.png" />
-</div>
-<div id="slideIn3" class="slideIn">
-<img src="assets/city-slide-3.png" />
-</div>
+
 </div>
 </slide>
 <!-- ----------- slide 6 --------------- -->

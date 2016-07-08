@@ -1,4 +1,41 @@
   console.log('js loaded');
+
+// ------------------------ SETUP Standby-----------------------------
+  function standBy(){
+   
+
+    // idleTimer() takes an optional object argument that defines any/all setting
+    jQuery( document ).idleTimer( {
+        timeout:10000, 
+        idle:true,
+        events:'touchstart'
+    });
+
+   jQuery( document ).on( "idle.idleTimer", function(event, elem, obj){
+       stopStandBy();
+    });
+
+    jQuery( document ).on( "active.idleTimer", function(event, elem, obj, triggerevent){
+       startStandBy();
+    });
+
+
+}
+ function startStandBy(){
+ 
+ jQuery('standby').css('display','block');
+
+ jQuery('standby').css('opacity',1);
+ console.log('standby On');
+ }
+ function stopStandBy(){
+ 
+ jQuery('standby').css('opacity',0);
+  setTimeout(function () {
+    jQuery('standby').css('display','none');
+}, 500);
+  console.log('standby Off');
+ }
   
 function menuSetup(){
 // ------------------------ SETUP Menu-----------------------------
@@ -91,14 +128,14 @@ function skrollrSetup(){
 
 
 			function black(){
-			jQuery('menu').removeClass('white black trans');
-			jQuery('menu').addClass('black');
+			jQuery('body').removeClass('white black trans');
+			jQuery('body').addClass('black');
 			jQuery('menu > a').removeClass('current');
 
 			}
 			function white(){
-			jQuery('menu').removeClass('white black trans');
-			jQuery('menu').addClass('white');
+			jQuery('body').removeClass('white black trans');
+			jQuery('body').addClass('white');
 			jQuery('menu > a').removeClass('current');
 
 			}
