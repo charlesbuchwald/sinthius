@@ -618,6 +618,30 @@ position: absolute;
 .slide7 .pretext{
     top: 12vh;
 }
+/* ------------------------------scrollhor----------------------------*/
+.scrollhor{
+overflow:scroll;
+}
+.scrollhorSlide {
+    float: left;
+    height: 60vh;
+}
+
+.scrollhorcont {
+    float: left;
+    width: 25%;
+    padding:5%;
+}
+.scrollhorcont.doublewidth {
+    float: left;
+    width: 50%;
+    padding:5%;
+}
+.scrollhorcont img{
+    float: left;
+    width: 100%;
+}
+
 /* ------------------------------slideins----------------------------*/
 .slideBtn {
     position: absolute;

@@ -40,12 +40,14 @@
  // ------------------------ scrollhor-----------------------------
  function setupScrollHor(){
 	 
-	 jQuery('.scrollor').each(function() {
+	 jQuery('.scrollhorSlide').each(function() {
 	 var width = 0;
     	
 		
 		jQuery(this).children('div').each(function() {
     	width += jQuery(this).outerWidth( true );
+    	console.log(width+' - '+jQuery(this).outerWidth( true ))
+    	jQuery(this).css('width',jQuery(this).outerWidth( true )+'px')
 		});
 		jQuery(this).css('width',width+'px')
 		});
