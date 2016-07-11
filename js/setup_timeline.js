@@ -46,8 +46,7 @@
 		
 		jQuery(this).children('div').each(function() {
     	width += jQuery(this).outerWidth( true );
-    	console.log(width+' - '+jQuery(this).outerWidth( true ))
-    	jQuery(this).css('width',jQuery(this).outerWidth( true )+'px')
+    	jQuery(this).attr('jswidth',jQuery(this).outerWidth( true ));
 		});
 		jQuery(this).css('width',width+'px')
 		});

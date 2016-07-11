@@ -83,6 +83,9 @@ h1, span.h1 {
 h4, span.h4 {
     font-size: 1.3em;
 }
+h5, span.h5 {
+    font-size: 1.2em;
+}
 h2, span.h2 {
     font-size: 3em;
 }
@@ -306,7 +309,7 @@ img.mapLay {
     width: auto;
     position: absolute;
     z-index:1;
-    /* left: 0; */
+    left: 0;
     right: 0;
     }
 
@@ -314,7 +317,7 @@ img.mapBot {
     height: 100%;
     width: auto;
     position: absolute;
-    /* left: 0; */
+    left: 0;
     right: 0;
 }
 img.mapLayText {
@@ -379,6 +382,16 @@ img.mapLayText {
     top: 5px;
     width: 30px;
     height: 30px;
+}
+/* ------------------------------svg ----------------------------*/
+
+.svgholder {
+    z-index: 2;
+     height: 100%;
+    width: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 /* ------------------------------content ----------------------------*/
 
@@ -618,63 +631,56 @@ position: absolute;
 .slide7 .pretext{
     top: 12vh;
 }
-/* ------------------------------slide7----------------------------*/
-.slide8 .title {
-    top: 12vh;
-    left: 8%;
-}
-.slide8 .midtitle {
-    top: 87vh;
-    right: 8%;
-    position: absolute;
-    z-index: 22;
-}
-.slide8 .pretitle {
-    top: 17vh;
-    left: 8%;
-}
-.slide8 .text {
-position: absolute;
-    left: 12%;
- 
-    width: 28%;
-    top: 30vh !important;
-}
-.slide8 .pretext{
-    top: 12vh;
-}
 /* ------------------------------scrollhor----------------------------*/
 .scrollhor{
 overflow:scroll;
 }
 .scrollhorSlide {
     float: left;
-    margin-top: 10vh;
+    padding-top: 10vh;
     height: 80vh;
+    -webkit-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
+-moz-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
+box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
+
+}
+
+.scrollhorcont.indicator {
+    position : absolute;
+    width: 40px !important;
+    margin-top: -40px;
+    padding: 0;
+    margin-left: 40px;
 }
 
 .scrollhorcont {
     float: left;
     position: relative;
-    width: 20%;
-    padding: 50px;
+    width: 30vw;
+    padding: 0 5vw;
     height: 100%;
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
 }
 .scrollhorcont.doublewidth {
     float: left;
-    width: 50%;
-    padding: 50px;
+    width: 50vw;
+    padding: 5vw;
+}
+.scrollhorcont.oneplushalf{
+ width: 33vw;
+  
+}
+.scrollhorcont.quote{
+width:250px !important;
+  
 }
 .scrollhorcont img{
     float: left;
     width: 100%;
 }
-.quote {
-    position: absolute;
-    left: 110%;
-    width: 50%;
-    height: 50%;
-}
+
 
 .scrollhorSlide .quote.bot {
     top: 50%;
@@ -711,12 +717,15 @@ div#slideBtn3 {
     transition: all 0.8s ease-in-out;
     z-index:30;
     width: 25%;
+    /* padding-top: 5vh; */
     font-family: museo-sans;
     background-color: rgba(255,255,255,0.8);
+    color: #000;
     -webkit-box-shadow: 0px 10px 23px -6px rgba(0,0,0,0.66);
     -moz-box-shadow: 0px 10px 23px -6px rgba(0,0,0,0.66);
     box-shadow: 0px 10px 23px -6px rgba(0,0,0,0.66);
-    padding: 3vh 3%;
+    padding: 6vh 3%;
+    text-align: left;
 }
 .slideIn.caption{
   background-color: rgba(0,0,0,0.5);
@@ -750,12 +759,7 @@ margin:4vh 0;
     right:4.5%;
 
 }
-.slideIn.scroll{
-background-image:url(../assets/slide-window.png);
-background-size: 100% auto;
-background-repeat:no-repeat;
-overflow-y:scroll;
-}
+.slideIn.scroll{background-image: url(../assets/menu-btn-close-black.svg);background-size: 30px auto;background-repeat:no-repeat;background-position: 95% 7vh;overflow-y:scroll;}
 
 div#slideIn0 {
     left: 5%;
@@ -767,6 +771,14 @@ div#slideIn0 {
 
     right:4%;
 
+}
+
+.slideIn .orange {
+    color: #EF6E45;
+}
+
+.slideIn * {
+    margin-bottom: 3vh;
 }
 div#slideBtn4 {
     width: 60px;
@@ -795,49 +807,49 @@ div#slideBtn7 {
 div#slideBtn8 {
     width: 60px;
     height: 60px;
-    left: 18.5%;
-    top: 31vh;
+    left: 13.5%;
+    top: 32vh;
 }
 div#slideBtn9 {
     width: 60px;
     height: 60px;
-    left: 24%;
-    top: 19vh;
+    left: 19%;
+    top: 20vh;
 }
 div#slideBtn10 {
     width: 60px;
     height: 60px;
-    left: 27%;
-    top: 43vh;
+    left: 23%;
+    top: 45vh;
 }
 div#slideBtn11 {
     width: 60px;
     height: 60px;
-    left: 34%;
-    top: 42vh;
+    left: 30%;
+    top: 44vh;
 }
 div#slideBtn12 {
     width: 60px;
     height: 60px;
-    left: 34%;
-    top: 50vh;
+    left: 29%;
+    top: 52vh;
 }
 div#slideBtn13 {
     width: 60px;
     height: 60px;
-    left: 39%;
-    top: 62vh;
+    left: 35%;
+    top: 66vh;
 }
 div#slideBtn14 {
     width: 60px;
     height: 60px;
-    left: 44.5%;
-    top: 56vh;
+    left: 40.5%;
+    top: 59vh;
 }
 div#slideBtn15 {
     width: 60px;
     height: 60px;
-    left: 69%;
-    top: 73vh;
+    left: 67%;
+    top: 76vh;
 }
 

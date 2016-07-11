@@ -181,7 +181,6 @@ var backAttr = [];
 var back1Attr = {
 '0':"transform:translate(0,0vh);",
 '200':"transform:translate(0,0vh);",
-'400':"transform:scale(1,1);",
 '450':"transform:scale(1.2,1.2);"};
 backAttr.push(back1Attr);
 
@@ -191,6 +190,22 @@ backAttr.push(back1Attr);
         jQuery('#ORIGINS_OF_WHEAT').children('.background').attr('data-'+attribute, value);
   		 })
 	});
+	
+// ------------------------ SETUP SVG LINES-----------------------------
+var svgAttr = [];
+
+var svg1Attr = {
+'3750':"stroke-dashoffset:1000;stroke-dasharray:1000,1000;",
+'3900':"stroke-dashoffset:0; stroke-dasharray: 4, 7;"
+};
+svgAttr.push(svg1Attr);
+
+    jQuery.each(svgAttr, function(index, object) {
+       jQuery.each(object,function(attribute, value){
+
+        jQuery('svg').find('path').attr('data-'+attribute, value);
+  		 })
+	});	
 // ------------------------ SETUP INSTRUCTIONS-----------------------------
 
 // -----
