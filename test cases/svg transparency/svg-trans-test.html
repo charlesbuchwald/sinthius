@@ -2,10 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Untitled</title>
+	<title>svg transparency test</title>
 </head>
 <body>
-<style>img.mapLay {
+<style>
+.svgholder {
+    z-index: 2;
+    height: 100%;
+    width: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+img.mapLay {
     height: 100%;
     width: auto;
     position: absolute;
@@ -47,8 +56,8 @@ img.mapBot {
 
 
 </div>
-<img class="mapLay" src="assets/back9-dots-places.svg" />
-<img class="mapBot" src="assets/back9.jpg" />
+<img class="mapLay" src="../../assets/back9-dots-places.svg" />
+<img class="mapBot" src="../../assets/back9.jpg" />
 </div>
 </body>
 </html>
