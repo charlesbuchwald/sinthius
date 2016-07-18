@@ -1,0 +1,3 @@
+[submodule "sinthius-backend"]
+	path = sinthius-backend
+	url = https://github.com/charlesbuchwald/sinthius-backend.git
