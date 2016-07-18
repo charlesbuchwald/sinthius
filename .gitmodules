@@ -1,3 +1,6 @@
 [submodule "sinthius-backend"]
 	path = sinthius-backend
 	url = https://github.com/charlesbuchwald/sinthius-backend.git
+[submodule "sinthius-installer"]
+	path = sinthius-installer
+	url = https://github.com/charlesbuchwald/sinthius-installer.git
