@@ -1,5 +1,0 @@
-supervisor
-greenlet
-dateutils
-fabric
-werkzeug
