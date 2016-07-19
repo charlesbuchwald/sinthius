@@ -666,8 +666,19 @@ top:100vh;
     left: 5vw;
     }
 
-
-
+/* ------------------------------slide6----------------------------*/
+.slide6 .scrollhorSlide{padding: 0;height: 100vh;}
+.slide6 .background, .instructions {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-position: 100% 110%;
+    background-size: auto 100%;
+}
 /* ------------------------------slide7----------------------------*/
 .slide7 .title {
     top: 12vh;
@@ -701,10 +712,9 @@ overflow:scroll;
     float: left;
     padding-top: 10vh;
     height: 80vh;
-    -webkit-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
--moz-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
-
+    /* -webkit-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1); */
+    -moz-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
+    /* box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1); */
 }
 
 .scrollhorcont.indicator {
@@ -719,12 +729,13 @@ box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgb
     float: left;
     position: relative;
     width: 30vw;
-    padding: 0 5vw;
-    height: 100%;
+    padding: 0;
+    height: 100vh;
     background-size: contain;
     background-position: center top;
     background-repeat: no-repeat;
 }
+.fullwidth .scrollhorcont{width:100vw;height: 100vh;}
 .scrollhorcont.doublewidth {
     float: left;
     width: 50vw;
@@ -741,8 +752,19 @@ width:250px !important;
 .scrollhorcont img{
     float: left;
     width: 100%;
+    height: auto;
 }
-
+.scrollhorcont .mapLay{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    right: 0;
+}
+.scrollhorcont .slideIn img{
+    float: left;
+    width: 70%;
+}
 
 .scrollhorSlide .quote.bot {
     top: 50%;
@@ -789,6 +811,7 @@ div#slideBtn3 {
     padding: 6vh 3%;
     text-align: left;
 }
+.scrollhorcont .slideIn{right: auto;width: 30vw;}
 .slideIn.caption{
   background-color: rgba(0,0,0,0.5);
   color:#FFF;

@@ -72,14 +72,11 @@ slideAttr.push(slide5Attr);
 // ------ SETUP SLIDE 6-------
 var slide6Attr = {
 '0':"transform:translate(0,110vh);",
-'1800':"transform:translate(0,110vh);",
-'1820':"transform:translate(0,100vh);",
-'2100':"transform:translate(0,100vh);",
+'1800':"transform:translate(0,0vh);",
 '2101':"transform:translate(0,0vh);",
-'2401':"transform:translate(0,0vh);",
-'2501':"transform:translate(0,-100vh);",
-'triggerin':"2200",
-'triggerout':"2400",
+'2201':"transform:translate(0,-100vh);",
+'triggerin':"1800",
+'triggerout':"2100",
 'color':"black"};
 slideAttr.push(slide6Attr);
 // ------ SETUP SLIDE 7-------
