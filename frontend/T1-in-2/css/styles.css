@@ -451,8 +451,11 @@ img.mapLayText {
     position: absolute;
     width: 100%;
     height: 100vh;
+    bottom: 0;
     top: 0;
+    left: 0;
     z-index: 21;
+    right: 0;
 }
 .content.bot{
 top:100vh;
@@ -667,9 +670,22 @@ top:100vh;
     }
 
 /* ------------------------------slide6----------------------------*/
-.slide6 .scrollhorSlide{padding: 0;height: 100vh;}
+.slide6 .scrollhorSlide{
+ position: absolute;
+ padding: 0;
+ /* width: 100vw; */
+ height: 100vh;
+ -webkit-transition: all 0.5s ease-in-out;
+ -moz-transition: all 0.5s ease-in-out;
+ transition: all 0.5s ease-in-out;
+ left: 0;
+ right: 0;
+ top: 0vh;
+ bottom: 0;
+ left: 0;
+}
 .slide6 .background, .instructions {
-    position: fixed;
+    position: absolute;
     left: 0;
     right: 0;
     top: 0;
@@ -678,6 +694,44 @@ top:100vh;
     width: 100%;
     background-position: 100% 110%;
     background-size: auto 100%;
+}
+.slide6.scrollhor{
+  overflow: hidden;
+}
+menuHor{position:absolute;z-index:99;left: 40vw;right:0;top: 5vh;width: 32vw;}
+menuHor a{
+
+  display:inline-block;
+  text-align:center;
+}
+.horLink {
+    text-decoration: none;
+    color: #000;
+    float: left;
+    margin-bottom: 2vh;
+    /* background-image: url('../assets/menu-btn-next.svg'); */
+    background-position: top right;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 2vh;
+    line-height: 1vh;
+    opacity:0.5;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.horLink.active{opacity: 1;}
+menuHor .menuDot {
+    float: left;
+    font-size: 2em;
+    width: 20%;
+}
+
+menuHor .menuTitle {
+    float: left;
+    width: 80%;
+    text-align: left;
 }
 /* ------------------------------slide7----------------------------*/
 .slide7 .title {
@@ -709,7 +763,8 @@ position: absolute;
 overflow:scroll;
 }
 .scrollhorSlide {
-    float: left;
+    position: absolute;
+    top: 0;
     padding-top: 10vh;
     height: 80vh;
     /* -webkit-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1); */

@@ -47,6 +47,7 @@ var slide4Attr = {
 '1100':"transform:translate(0,0vh);",
 '1400':"transform:translate(0,0vh);",
 '1401':"transform:translate(0,0vh);",
+'1699':"transform:translate(0,0vh);",
 '1700':"transform:translate(0,-100vh);",
 
 'triggerin':"1100",
@@ -72,6 +73,7 @@ slideAttr.push(slide5Attr);
 // ------ SETUP SLIDE 6-------
 var slide6Attr = {
 '0':"transform:translate(0,110vh);",
+'1799':"transform:translate(0,110vh);",
 '1800':"transform:translate(0,0vh);",
 '2101':"transform:translate(0,0vh);",
 '2201':"transform:translate(0,-100vh);",

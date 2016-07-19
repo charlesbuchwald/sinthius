@@ -39,18 +39,45 @@
  
  // ------------------------ scrollhor-----------------------------
  function setupScrollHor(){
-	 
+	
 	 jQuery('.scrollhorSlide').each(function() {
 	 var width = 0;
     	
 		
-		jQuery(this).children('div').each(function() {
+		jQuery(this).children('div').not('.indicator').each(function(i) {
+		newMenuItem = jQuery(this).attr('id');
+		newMenuItemTitle = newMenuItem.replace(/_/g , " ");
+newMenuItemTitle = newMenuItemTitle.replace(/plus/g , "&");
+jQuery('menuHor').append('<div class="horLink '+i+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></div>');
+
     	width += jQuery(this).outerWidth( true );
     	jQuery(this).attr('jswidth',jQuery(this).outerWidth( true ));
 		});
-		jQuery(this).css('width',width+'px')
+		jQuery(this).css('width',width+'px');
+		 jQuery('.horLink').first().addClass('active');
 		});
+  var currentMenu = 0;
   
+  
+  
+		 jQuery('.horLink').click(function(e){
+e.preventDefault();
+
+jQuery('.horLink').removeClass('active');
+that = jQuery(this).attr('class').split(" ")[1];
+offset = that*100;
+distance = Math.abs(currentMenu - that);
+time = distance*0.5;
+margin = '-'+offset+'vw';
+jQuery(this).addClass('active');
+jQuery('.slide6 .scrollhorSlide')
+.css('transition', 'all '+time+'s ease-in-out')
+.css('margin-left', margin);
+
+console.log(that+'clicked -'+offset+'vw - distance - '+distance);
+currentMenu = that;
+return false;
+})
   }
   
 function menuSetup(){
@@ -285,5 +312,6 @@ triggers.push(trigger1);
   jQuery(window).load(function(){
 		skrollrSetup();
 		setupScrollHor();
+			
 		jQuery('body').css('opacity','1');
 	});
