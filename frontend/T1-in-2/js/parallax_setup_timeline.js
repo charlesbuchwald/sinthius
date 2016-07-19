@@ -36,24 +36,21 @@ var slide3Attr = {
 '800':"transform:translate(0,0vh);", 
 '1000':"transform:translate(0,0vh);", 
 '1100':"transform:translate(0,-100vh);",
-'1300':"transform:translate(0,-100vh);",
-'1400':"transform:translate(0,-200vh);",
-'triggerin':"880",
-'triggerout':"1300",
+'triggerin':"800",
+'triggerout':"1000",
 'color':"white"};
 slideAttr.push(slide3Attr);
 // ------ SETUP SLIDE 4-------
 var slide4Attr = {
-'1300':"transform:translate(0,100vh);",
+'1000':"transform:translate(0,100vh);",
 
-'1301':"transform:translate(0,0vh);",
+'1100':"transform:translate(0,0vh);",
 '1400':"transform:translate(0,0vh);",
-'1800':"transform:translate(0,0vh);",
-'1810':"transform:translate(0,-100vh);",
-'2101':"transform:translate(0,-100vh);",
-'2202':"transform:translate(0,-100vh);",
-'triggerin':"1400",
-'triggerout':"1800",
+'1401':"transform:translate(0,0vh);",
+'1700':"transform:translate(0,-100vh);",
+
+'triggerin':"1100",
+'triggerout':"1400",
 'color':"white"};
 slideAttr.push(slide4Attr);
 
@@ -61,14 +58,13 @@ slideAttr.push(slide4Attr);
 // ------ SETUP SLIDE 5-------
 var slide5Attr = {
 '0':"transform:translate(0,110vh);",
-'1480':"transform:translate(0,110vh);",
-'1500':"transform:translate(0,100vh);",
-'1700':"transform:translate(0,100vh);",
+'1400':"transform:translate(0,110vh);",
+'1500':"transform:translate(0,0vh);",
+
 '1800':"transform:translate(0,0vh);",
-'2100':"transform:translate(0,0vh);",
-'2200':"transform:translate(0,-100vh);",
-'triggerin':"1800",
-'triggerout':"2100",
+'1900':"transform:translate(0,-100vh);",
+'triggerin':"1500",
+'triggerout':"1800",
 'color':"white"};
 slideAttr.push(slide5Attr);
 
@@ -142,30 +138,31 @@ var content1Attr = {
 contentAttr.push(content1Attr);
 var content2Attr = {
 '0':"transform:translate(0,100vh);",
-'450':"transform:translate(-100%,0);",
+'420':"transform:translate(-100%,0);",
 '500':"transform:translate(0,0);",
 
 
 };
 contentAttr.push(content2Attr);
 var content3Attr = {
-'800':"transform:translate(0,100vh);",
-'1000':"transform:translate(0,-100vh);"
+'0':"transform:translate(0,100vh);",
+'450':"transform:translate(-100%,0);",
+'550':"transform:translate(0,0);",
 };
 contentAttr.push(content3Attr);
   var content4Attr = {
-'1000':"transform:translate(-100%,0vh);",
-'1100':"transform:translate(0,0vh);"
+'750':"transform:translate(-100%,0vh);",
+'850':"transform:translate(0,0vh);"
 };
 contentAttr.push(content4Attr);
   var content4_1Attr = {
-'1300':"transform:translate(-100%,0vh);",
-'1400':"transform:translate(0,0vh);"
+'1050':"transform:translate(-100%,0vh);",
+'1150':"transform:translate(0,0vh);"
 };
 contentAttr.push(content4_1Attr);
 var content5Attr = {
-'1320':"transform:translate(-100%,0vh);",
-'1420':"transform:translate(0,0vh);"
+'1450':"transform:translate(-100%,0vh);",
+'1550':"transform:translate(0,0vh);"
 };
 contentAttr.push(content5Attr);
     jQuery.each(contentAttr, function(index, object) {
