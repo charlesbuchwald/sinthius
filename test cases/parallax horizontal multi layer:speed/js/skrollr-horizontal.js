@@ -43,7 +43,7 @@
 
 	var SKROLLR_CLASS = 'skrollr';
 	var NO_SKROLLR_CLASS = 'no-' + SKROLLR_CLASS;
-	var SKROLLR_DESKTOP_CLASS = SKROLLR_CLASS + '-desktop';
+	var SKROLLR_DESKTOP_CLASS = SKROLLR_CLASS + '-deskleft';
 	var SKROLLR_MOBILE_CLASS = SKROLLR_CLASS + '-mobile';
 
 	var DEFAULT_EASING = 'linear';
@@ -67,7 +67,7 @@
 	var rxTrim = /^\s+|\s+$/g;
 
 	//Find all data-attributes. data-[_constant]-[offset]-[anchor]-[anchor].
-	var rxKeyframeAttribute = /^data(?:-(_\w+))?(?:-?(-?\d*\.?\d+p?))?(?:-?(start|end|top|center|bottom))?(?:-?(top|center|bottom))?$/;
+	var rxKeyframeAttribute = /^data(?:-(_\w+))?(?:-?(-?\d*\.?\d+p?))?(?:-?(start|end|left|center|bottom))?(?:-?(left|center|bottom))?$/;
 
 	var rxPropValue = /\s*(@?[\w\-\[\]]+)\s*:\s*(.+?)\s*(?:;|$)/gi;
 
@@ -270,7 +270,7 @@
 
 		//Dummy object. Will be overwritten in the _render method when smooth scrolling is calculated.
 		_smoothScrolling = {
-			targetTop: _instance.getScrollLeft()
+			targetLeft: _instance.getScrollLeft()
 		};
 
 		//A custom check function may be passed.
@@ -556,20 +556,20 @@
 	};
 
 	/**
-	 * Animates scroll top to new position.
+	 * Animates scroll left to new position.
 	 */
-	Skrollr.prototype.animateTo = function(top, options) {
+	Skrollr.prototype.animateTo = function(left, options) {
 		options = options || {};
 
 		var now = _now();
-		var scrollTop = _instance.getScrollLeft();
+		var scrollLeft = _instance.getScrollLeft();
 		var duration = options.duration === undefined ? DEFAULT_DURATION : options.duration;
 
-		//Setting this to a new value will automatically cause the current animation to stop, if any.
+		//Setting this to a new value will automatically cause the current animation to sleft, if any.
 		_scrollAnimation = {
-			startTop: scrollTop,
-			topDiff: top - scrollTop,
-			targetTop: top,
+			startLeft: scrollLeft,
+			leftDiff: left - scrollLeft,
+			targetLeft: left,
 			duration: duration,
 			startTime: now,
 			endTime: now + duration,
@@ -578,7 +578,7 @@
 		};
 
 		//Don't queue the animation if there's nothing to animate.
-		if(!_scrollAnimation.topDiff) {
+		if(!_scrollAnimation.leftDiff) {
 			if(_scrollAnimation.done) {
 				_scrollAnimation.done.call(_instance, false);
 			}
@@ -590,9 +590,9 @@
 	};
 
 	/**
-	 * Stops animateTo animation.
+	 * Slefts animateTo animation.
 	 */
-	Skrollr.prototype.stopAnimateTo = function() {
+	Skrollr.prototype.sleftAnimateTo = function() {
 		if(_scrollAnimation && _scrollAnimation.done) {
 			_scrollAnimation.done.call(_instance, true);
 		}
@@ -611,27 +611,27 @@
 		return _isMobile;
 	};
 
-	Skrollr.prototype.setScrollTop = function(top, force) {
+	Skrollr.prototype.setscrollLeft = function(left, force) {
 		_forceRender = (force === true);
 
 		if(_isMobile) {
-			_mobileOffset = Math.min(Math.max(top, 0), _maxKeyFrame);
+			_mobileOffset = Math.min(Math.max(left, 0), _maxKeyFrame);
 		} else {
-			window.scrollTo(0, top);
+			window.scrollTo(0, left);
 		}
 
 		return _instance;
 	};
 
-	Skrollr.prototype.getScrollTop = function() {
+	Skrollr.prototype.getscrollLeft = function() {
 		if(_isMobile) {
 			return _mobileOffset;
 		} else {
-			return window.pageYOffset || documentElement.scrollTop || body.scrollTop || 0;
+			return window.pageXOffset || documentElement.scrollLeft || body.scrollLeft || 0;
 		}
 	};
 
-	Skrollr.prototype.getMaxScrollTop = function() {
+	Skrollr.prototype.getMaxscrollLeft = function() {
 		return _maxKeyFrame;
 	};
 
@@ -662,7 +662,7 @@
 		}
 
 		documentElement.style.overflow = body.style.overflow = '';
-		documentElement.style.height = body.style.height = '';
+		documentElement.style.width = body.style.width = '';
 
 		if(_skrollrBody) {
 			skrollr.setStyle(_skrollrBody, 'transform', 'none');
@@ -677,7 +677,7 @@
 		_constants = undefined;
 		_mobileDeceleration = undefined;
 		_direction = 'down';
-		_lastTop = -1;
+		_lastLeft = -1;
 		_lastViewportWidth = 0;
 		_lastviewportWidth = 0;
 		_requestReflow = false;
@@ -737,7 +737,7 @@
 						initialElement.blur();
 					}
 
-					_instance.stopAnimateTo();
+					_instance.sleftAnimateTo();
 
 					initialElement = currentElement;
 
@@ -755,7 +755,7 @@
 					deltaY = currentTouchY - lastTouchY;
 					deltaTime = currentTouchTime - lastTouchTime;
 
-					_instance.setScrollTop(_mobileOffset - deltaY, true);
+					_instance.setscrollLeft(_mobileOffset - deltaY, true);
 
 					lastTouchY = currentTouchY;
 					lastTouchTime = currentTouchTime;
@@ -790,25 +790,25 @@
 
 					var duration = Math.abs(speed / _mobileDeceleration);
 					var targetOffset = speed * duration + 0.5 * _mobileDeceleration * duration * duration;
-					var targetTop = _instance.getScrollLeft() - targetOffset;
+					var targetLeft = _instance.getScrollLeft() - targetOffset;
 
 					//Relative duration change for when scrolling above bounds.
 					var targetRatio = 0;
 
 					//Change duration proportionally when scrolling would leave bounds.
-					if(targetTop > _maxKeyFrame) {
-						targetRatio = (_maxKeyFrame - targetTop) / targetOffset;
+					if(targetLeft > _maxKeyFrame) {
+						targetRatio = (_maxKeyFrame - targetLeft) / targetOffset;
 
-						targetTop = _maxKeyFrame;
-					} else if(targetTop < 0) {
-						targetRatio = -targetTop / targetOffset;
+						targetLeft = _maxKeyFrame;
+					} else if(targetLeft < 0) {
+						targetRatio = -targetLeft / targetOffset;
 
-						targetTop = 0;
+						targetLeft = 0;
 					}
 
 					duration = duration * (1 - targetRatio);
 
-					_instance.animateTo((targetTop + 0.5) | 0, {easing: 'outCubic', duration: duration});
+					_instance.animateTo((targetLeft + 0.5) | 0, {easing: 'outCubic', duration: duration});
 					break;
 			}
 		});
@@ -944,7 +944,7 @@
 			//If we are before/after the first/last frame, set the styles according to the given edge strategy.
 			if(beforeFirst || afterLast) {
 				//Check if we already handled this edge case last time.
-				//Note: using setScrollTop it's possible that we jumped from one edge to the other.
+				//Note: using setscrollLeft it's possible that we jumped from one edge to the other.
 				if(beforeFirst && skrollable.edge === -1 || afterLast && skrollable.edge === 1) {
 					continue;
 				}
@@ -1067,7 +1067,7 @@
 		}
 
 		//We may render something else than the actual scrollbar position.
-		var renderTop = _instance.getScrollLeft();
+		var renderLeft = _instance.getScrollLeft();
 
 		//If there's an animation, which ends in current render call, call the callback after rendering.
 		var afterAnimationCallback;
@@ -1078,28 +1078,28 @@
 		if(_scrollAnimation) {
 			//It's over
 			if(now >= _scrollAnimation.endTime) {
-				renderTop = _scrollAnimation.targetTop;
+				renderLeft = _scrollAnimation.targetLeft;
 				afterAnimationCallback = _scrollAnimation.done;
 				_scrollAnimation = undefined;
 			} else {
 				//Map the current progress to the new progress using given easing function.
 				progress = _scrollAnimation.easing((now - _scrollAnimation.startTime) / _scrollAnimation.duration);
 
-				renderTop = (_scrollAnimation.startTop + progress * _scrollAnimation.topDiff) | 0;
+				renderLeft = (_scrollAnimation.startLeft + progress * _scrollAnimation.leftDiff) | 0;
 			}
 
-			_instance.setScrollTop(renderTop, true);
+			_instance.setscrollLeft(renderLeft, true);
 		}
 		//Smooth scrolling only if there's no animation running and if we're not forcing the rendering.
 		else if(!_forceRender) {
-			var smoothScrollingDiff = _smoothScrolling.targetTop - renderTop;
+			var smoothScrollingDiff = _smoothScrolling.targetLeft - renderLeft;
 
 			//The user scrolled, start new smooth scrolling.
 			if(smoothScrollingDiff) {
 				_smoothScrolling = {
-					startTop: _lastTop,
-					topDiff: renderTop - _lastTop,
-					targetTop: renderTop,
+					startLeft: _lastLeft,
+					leftDiff: renderLeft - _lastLeft,
+					targetLeft: renderLeft,
 					startTime: _lastRenderCall,
 					endTime: _lastRenderCall + _smoothScrollingDuration
 				};
@@ -1110,21 +1110,21 @@
 				//Map the current progress to the new progress using easing function.
 				progress = easings.sqrt((now - _smoothScrolling.startTime) / _smoothScrollingDuration);
 
-				renderTop = (_smoothScrolling.startTop + progress * _smoothScrolling.topDiff) | 0;
+				renderLeft = (_smoothScrolling.startLeft + progress * _smoothScrolling.leftDiff) | 0;
 			}
 		}
 
 		//Did the scroll position even change?
-		if(_forceRender || _lastTop !== renderTop) {
+		if(_forceRender || _lastLeft !== renderLeft) {
 			//Remember in which direction are we scrolling?
-			_direction = (renderTop > _lastTop) ? 'down' : (renderTop < _lastTop ? 'up' : _direction);
+			_direction = (renderLeft > _lastLeft) ? 'down' : (renderLeft < _lastLeft ? 'up' : _direction);
 
 			_forceRender = false;
 
 			var listenerParams = {
-				curTop: renderTop,
-				lastTop: _lastTop,
-				maxTop: _maxKeyFrame,
+				curLeft: renderLeft,
+				lastLeft: _lastLeft,
+				maxLeft: _maxKeyFrame,
 				direction: _direction
 			};
 
@@ -1134,7 +1134,7 @@
 			//The beforerender listener function is able the cancel rendering.
 			if(continueRendering !== false) {
 				//Now actually interpolate all the styles.
-				_calcSteps(renderTop, _instance.getScrollLeft());
+				_calcSteps(renderLeft, _instance.getScrollLeft());
 
 				//That's were we actually "scroll" on mobile.
 				if(_isMobile && _skrollrBody) {
@@ -1143,7 +1143,7 @@
 				}
 
 				//Remember when we last rendered.
-				_lastTop = renderTop;
+				_lastLeft = renderLeft;
 
 				if(_listeners.render) {
 					_listeners.render.call(_instance, listenerParams);
@@ -1528,12 +1528,12 @@
 			body.style.width = (_maxKeyFrame + documentElement.clientHeight) + 'px';
 		}
 
-		//The scroll offset may now be larger than needed (on desktop the browser/os prevents scrolling farther than the bottom).
+		//The scroll offset may now be larger than needed (on deskleft the browser/os prevents scrolling farther than the bottom).
 		if(_isMobile) {
-			_instance.setScrollTop(Math.min(_instance.getScrollLeft(), _maxKeyFrame));
+			_instance.setscrollLeft(Math.min(_instance.getScrollLeft(), _maxKeyFrame));
 		} else {
 			//Remember and reset the scroll pos (#217).
-			_instance.setScrollTop(pos, true);
+			_instance.setscrollLeft(pos, true);
 		}
 
 		_forceRender = true;
@@ -1719,8 +1719,8 @@
 	//Current direction (up/down).
 	var _direction = 'down';
 
-	//The last top offset value. Needed to determine direction.
-	var _lastTop = -1;
+	//The last left offset value. Needed to determine direction.
+	var _lastLeft = -1;
 
 	//The last time we called the render method (doesn't mean we rendered!).
 	var _lastRenderCall = _now();
