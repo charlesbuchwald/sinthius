@@ -52,6 +52,7 @@
 		newMenuItemTitle = newMenuItem.replace(/_/g , " ");
 newMenuItemTitle = newMenuItemTitle.replace(/plus/g , "&");
 newMenuItemTitle = newMenuItemTitle.replace(/comma/g , ",");
+newMenuItemTitle = newMenuItemTitle.replace(/dpunkt/g , ":");
 jQuery('menuHor').eq(index).append('<div class="horLink '+i+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></div>');
 
     	width += jQuery(this).outerWidth( true );
@@ -76,6 +77,7 @@ var newMenuItemTriggerOut = jQuery(this).attr('data-triggerout');
 newMenuItemTitle = newMenuItem.replace(/_/g , " ");
 newMenuItemTitle = newMenuItemTitle.replace(/plus/g , "&");
 newMenuItemTitle = newMenuItemTitle.replace(/comma/g , ",");
+newMenuItemTitle = newMenuItemTitle.replace(/dpunkt/g , ":");
 jQuery('menu').append('<a href="#'+newMenuItem+'" data-triggerin="'+newMenuItemTriggerIn+'" data-triggerout="'+newMenuItemTriggerOut+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></a>');
 
 })
