@@ -194,7 +194,12 @@ function skrollrSetup(){
                		top8 = jQuery('menu > a').eq(8).attr('data-triggerout');
                		bot9 = jQuery('menu > a').eq(9).attr('data-triggerin');
                		top9 = jQuery('menu > a').eq(9).attr('data-triggerout');
-               		
+               		bot10 = jQuery('menu > a').eq(10).attr('data-triggerin');
+               		top10 = jQuery('menu > a').eq(10).attr('data-triggerout');
+               		bot11 = jQuery('menu > a').eq(11).attr('data-triggerin');
+               		top11 = jQuery('menu > a').eq(11).attr('data-triggerout');
+               		bot12 = jQuery('menu > a').eq(12).attr('data-triggerin');
+               		top12 = jQuery('menu > a').eq(12).attr('data-triggerout');
                		if(currentPos < top){
                			white();
   						that.eq(1).addClass('current');
@@ -255,6 +260,21 @@ function skrollrSetup(){
                			white();
   						 jQuery('menu > a').eq(9).addClass('current');
   						 console.log(jQuery('menu > a').eq(9).attr('href')+'white');
+               		}
+               		else if(currentPos > bot10 && currentPos < top10){
+               			black();
+  						 jQuery('menu > a').eq(10).addClass('current');
+  						 console.log(jQuery('menu > a').eq(10).attr('href')+'white');
+               		}
+               		else if(currentPos > bot11 && currentPos < top11){
+               			white();
+  						 jQuery('menu > a').eq(11).addClass('current');
+  						 console.log(jQuery('menu > a').eq(11).attr('href')+'white');
+               		}
+               		else if(currentPos > bot12 && currentPos < top12){
+               			white();
+  						 jQuery('menu > a').eq(12).addClass('current');
+  						 console.log(jQuery('menu > a').eq(12).attr('href')+'white');
                		}
    		 		}
 				}

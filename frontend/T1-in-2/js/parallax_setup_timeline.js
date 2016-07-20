@@ -123,6 +123,8 @@ var slide10Attr = {
 '3300':"transform:translate(0,0vh);", 
 '3700':"transform:translate(0,0vh);",
 '4000':"transform:translate(0,0vh);",
+'4100':"transform:translate(0,0vh);",
+'4101':"transform:translate(0,-110vh);",
 'triggerin':"3400",
 'triggerout':"3700",
 'color':"black"};
@@ -135,10 +137,23 @@ var slide11Attr = {
 '3800':"transform:translate(0,0vh);", 
 
 '4100':"transform:translate(0,0vh);",
+'4200':"transform:translate(0,-110vh);",
 'triggerin':"3800",
 'triggerout':"4100",
 'color':"black"};
 slideAttr.push(slide11Attr);
+// ------ SETUP SLIDE 12-------
+var slide12Attr = {
+
+'0':"transform:translate(0,110vh);", 
+'4099':"transform:translate(0,110vh);", 
+'4100':"transform:translate(0,0vh);", 
+
+'4400':"transform:translate(0,0vh);",
+'triggerin':"4200",
+'triggerout':"4400",
+'color':"black"};
+slideAttr.push(slide12Attr);
 // ------ APPLY MOTION-------
   
     jQuery.each(slideAttr, function(index, object) {
