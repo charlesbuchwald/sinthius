@@ -40,44 +40,27 @@
  // ------------------------ scrollhor-----------------------------
  function setupScrollHor(){
 	
-	 jQuery('.scrollhorSlide').each(function() {
+	 jQuery('.scrollhorSlide').each(function(index) {
 	 var width = 0;
-    	
+    	var i = 0;
+
 		
 		jQuery(this).children('div').not('.indicator').each(function(i) {
+				 console.log('setup scroll hor '+index +'slide'+i);
+
 		newMenuItem = jQuery(this).attr('id');
 		newMenuItemTitle = newMenuItem.replace(/_/g , " ");
 newMenuItemTitle = newMenuItemTitle.replace(/plus/g , "&");
-jQuery('menuHor').append('<div class="horLink '+i+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></div>');
+newMenuItemTitle = newMenuItemTitle.replace(/comma/g , ",");
+jQuery('menuHor').eq(index).append('<div class="horLink '+i+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></div>');
 
     	width += jQuery(this).outerWidth( true );
     	jQuery(this).attr('jswidth',jQuery(this).outerWidth( true ));
 		});
 		jQuery(this).css('width',width+'px');
-		 jQuery('.horLink').first().addClass('active');
+		jQuery('menuHor').eq(index).children('.horLink').first().addClass('active');
 		});
-  var currentMenu = 0;
-  
-  
-  
-		 jQuery('.horLink').click(function(e){
-e.preventDefault();
-
-jQuery('.horLink').removeClass('active');
-that = jQuery(this).attr('class').split(" ")[1];
-offset = that*100;
-distance = Math.abs(currentMenu - that);
-time = distance*0.5;
-margin = '-'+offset+'vw';
-jQuery(this).addClass('active');
-jQuery('.slide6 .scrollhorSlide')
-.css('transition', 'all '+time+'s ease-in-out')
-.css('margin-left', margin);
-
-console.log(that+'clicked -'+offset+'vw - distance - '+distance);
-currentMenu = that;
-return false;
-})
+ 
   }
   
 function menuSetup(){
@@ -92,7 +75,8 @@ var newMenuItemTriggerOut = jQuery(this).attr('data-triggerout');
 
 newMenuItemTitle = newMenuItem.replace(/_/g , " ");
 newMenuItemTitle = newMenuItemTitle.replace(/plus/g , "&");
-jQuery('menu').append('<a href="#'+newMenuItem+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></a>');
+newMenuItemTitle = newMenuItemTitle.replace(/comma/g , ",");
+jQuery('menu').append('<a href="#'+newMenuItem+'" data-triggerin="'+newMenuItemTriggerIn+'" data-triggerout="'+newMenuItemTriggerOut+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></a>');
 
 })
 
@@ -162,15 +146,23 @@ function skrollrSetup(){
 	 				render: function(data) {
         			//Log the current scroll position.
        				 jQuery('#counter').html(data.curTop);
-       				 progress = (data.curTop/totalHeight)*100;
-       				 jQuery('#progress').css('height',progress+'%');
-       				 console.log('progress'+progress);
+       				
+       				 console.log('progress'+data.curTop);
        				 
        	 // ------------------------ menu hide-----------------------------
         // ------------------------ menu color-----------------------------
 
 
-			function black(){
+			
+
+
+					if(data.curTop > 100){
+  						 jQuery('menu').addClass('hide');
+               		} else {
+  						 jQuery('menu').removeClass('hide');
+               		}
+               		currentPos = data.curTop;
+               		function black(){
 			jQuery('body').removeClass('white black trans');
 			jQuery('body').addClass('black');
 			jQuery('menu > a').removeClass('current');
@@ -182,51 +174,85 @@ function skrollrSetup(){
 			jQuery('menu > a').removeClass('current');
 
 			}
-
-
-					if(data.curTop > 100){
-  						 jQuery('menu').addClass('hide');
-               		} else {
-  						 jQuery('menu').removeClass('hide');
-               		}
-
-               		if(data.curTop < 398){
+					bot = jQuery('menu > a').eq(1).attr('data-triggerin');
+               		top = jQuery('menu > a').eq(1).attr('data-triggerout');
+               		bot2 = jQuery('menu > a').eq(2).attr('data-triggerin');
+               		top2 = jQuery('menu > a').eq(2).attr('data-triggerout');
+               		bot3 = jQuery('menu > a').eq(3).attr('data-triggerin');
+               		top3 = jQuery('menu > a').eq(3).attr('data-triggerout');
+               		bot4 = jQuery('menu > a').eq(4).attr('data-triggerin');
+               		top4 = jQuery('menu > a').eq(4).attr('data-triggerout');
+               		bot5 = jQuery('menu > a').eq(5).attr('data-triggerin');
+               		top5 = jQuery('menu > a').eq(5).attr('data-triggerout');
+               		bot6 = jQuery('menu > a').eq(6).attr('data-triggerin');
+               		top6 = jQuery('menu > a').eq(6).attr('data-triggerout');
+               		bot7 = jQuery('menu > a').eq(7).attr('data-triggerin');
+               		top7 = jQuery('menu > a').eq(7).attr('data-triggerout');
+               		bot8 = jQuery('menu > a').eq(8).attr('data-triggerin');
+               		top8 = jQuery('menu > a').eq(8).attr('data-triggerout');
+               		bot9 = jQuery('menu > a').eq(9).attr('data-triggerin');
+               		top9 = jQuery('menu > a').eq(9).attr('data-triggerout');
+               		
+               		if(currentPos < top){
                			white();
-  						jQuery('menu > a').eq(1).addClass('current');
+  						that.eq(1).addClass('current');
+  						console.log(jQuery('menu > a').eq(1).attr('href')+'white');
+
                		}
                		
-               		if(data.curTop > 499 && data.curTop < 700){
+               		else if(currentPos > bot2 && currentPos < top2){
                			black();
                			jQuery('menu > a').eq(2).addClass('current');
+               			console.log(jQuery('menu > a').eq(2).attr('href')+'black');
                		}
                		
-               		if(data.curTop > 700 && data.curTop < 1300 ){
+               		
+               		else if(currentPos > bot3 && currentPos < top3){
                			white();
   						 jQuery('menu > a').eq(3).addClass('current');
+  						 console.log(jQuery('menu > a').eq(3).attr('href')+'white');
                		}
-               		if(data.curTop > 1450 && data.curTop < 1700){
+               		
+               		
+               		else if(currentPos > bot4 && currentPos < top4){
                			black();
   						 jQuery('menu > a').eq(4).addClass('current');
+  						 console.log(jQuery('menu > a').eq(4).attr('href')+'black');
                		}
-               			if(data.curTop > 1850 && data.curTop < 2000){
+               		
+               		
+               		else if(currentPos > bot5 && currentPos < top5){
                			white();
   						 jQuery('menu > a').eq(5).addClass('current');
+  						 console.log(jQuery('menu > a').eq(5).attr('href')+'white');
                		}
-               		if(data.curTop > 2150 && data.curTop < 2300){
+               		
+               		
+               		else if(currentPos > bot6 && currentPos < top6){
                			black();
   						 jQuery('menu > a').eq(6).addClass('current');
+  						 console.log(jQuery('menu > a').eq(6).attr('href')+'black');
                		}
-               		if(data.curTop > 2450 && data.curTop < 3350){
+               		
+               		
+               		else if(currentPos > bot7 && currentPos < top7){
                			white();
   						 jQuery('menu > a').eq(7).addClass('current');
+  						 console.log(jQuery('menu > a').eq(7).attr('href')+'white');
                		}
-               		if(data.curTop > 3450 && data.curTop < 3600){
-               			white();
-  						 jQuery('menu > a').eq(8).addClass('current');
-               		}
-               		if(data.curTop > 3700 ){
+               		
+               		
+               		else if(currentPos > bot8 && currentPos < top8){
                			black();
+  						 jQuery('menu > a').eq(8).addClass('current');
+  						 console.log(jQuery('menu > a').eq(8).attr('href')+'black');
+               		}
+               		
+               		
+               		else if(currentPos > bot9 && currentPos < top9){
+               			white();
   						 jQuery('menu > a').eq(9).addClass('current');
+  						 console.log(jQuery('menu > a').eq(9).attr('href')+'white');
                		}
    		 		}
 				}
@@ -280,31 +306,13 @@ function skrollrSetup(){
 });  
 }
 
-function triggerSetup(){
-var triggerFuncIf = '';
-jQuery('slide').each(function(i){
 
-
-var newMenuItemTriggerIn = jQuery(this).attr('data-triggerin');
-var newMenuItemTriggerOut = jQuery(this).attr('data-triggerout');
-var triggers = [];
-
-var trigger1 = {
-'triggerin':newMenuItemTriggerIn,
-'triggerout':newMenuItemTriggerOut
-};
-triggers.push(trigger1);
-
-
- 
-})
-
-}
    jQuery(document).ready(function(){
 
-		menuSetup();
+		
 		parallaxSetup();
-		triggerSetup();
+		menuSetup();
+		
 
 	});
 	// ------------------------ SETUP SKROLLR-----------------------------
@@ -312,6 +320,29 @@ triggers.push(trigger1);
   jQuery(window).load(function(){
 		skrollrSetup();
 		setupScrollHor();
-			
+			 var currentMenu = 0;
+  
+  
+  
+		 jQuery('.horLink').click(function(e){
+e.preventDefault();
+menuID = jQuery(this).parent().parent().parent().attr('id');
+menuNr = jQuery('#'+menuID).index();
+
+jQuery(this).siblings('.horLink').removeClass('active');
+that = jQuery(this).attr('class').split(" ")[1];
+offset = that*100;
+distance = Math.abs(currentMenu - that);
+time = distance*0.5;
+margin = '-'+offset+'vw';
+jQuery(this).addClass('active');
+jQuery('#'+menuID).find('.scrollhorSlide')
+.css('transition', 'all '+time+'s ease-in-out')
+.css('margin-left', margin);
+
+console.log(that+'clicked -'+offset+'vw - distance - '+distance+'menunr - '+menuNr+menuID);
+currentMenu = that;
+return false;
+})
 		jQuery('body').css('opacity','1');
 	});

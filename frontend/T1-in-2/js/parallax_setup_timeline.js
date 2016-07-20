@@ -10,7 +10,7 @@ var slide1Attr = {
 '400':"transform:translate(0,-100vh);",
 '700':"transform:translate(0,-100vh);",
 '800':"transform:translate(0,-100vh);",
-'triggerin':"200",
+'triggerin':"0",
 'triggerout':"300",
 'color':"white"};
 slideAttr.push(slide1Attr);
@@ -23,8 +23,8 @@ var slide2Attr = {
 '801':"transform:translate(0,-100vh);",
 '1099':"transform:translate(0,-100vh);",
 '1100':"transform:translate(0,-100vh);",
-'triggerin':"500",
-'triggerout':"800",
+'triggerin':"400",
+'triggerout':"700",
 'color':"black"};
 slideAttr.push(slide2Attr);
 // ------ SETUP SLIDE 3-------
@@ -35,7 +35,7 @@ var slide3Attr = {
 '700':"transform:translate(0,100vh);", 
 '800':"transform:translate(0,0vh);", 
 '1000':"transform:translate(0,0vh);", 
-'1100':"transform:translate(0,-100vh);",
+'1100':"transform:translate(0,-110vh);",
 'triggerin':"800",
 'triggerout':"1000",
 'color':"white"};
@@ -48,7 +48,7 @@ var slide4Attr = {
 '1400':"transform:translate(0,0vh);",
 '1401':"transform:translate(0,0vh);",
 '1699':"transform:translate(0,0vh);",
-'1700':"transform:translate(0,-100vh);",
+'1700':"transform:translate(0,-110vh);",
 
 'triggerin':"1100",
 'triggerout':"1400",
@@ -63,7 +63,7 @@ var slide5Attr = {
 '1500':"transform:translate(0,0vh);",
 
 '1800':"transform:translate(0,0vh);",
-'1900':"transform:translate(0,-100vh);",
+'1900':"transform:translate(0,-110vh);",
 'triggerin':"1500",
 'triggerout':"1800",
 'color':"white"};
@@ -75,8 +75,8 @@ var slide6Attr = {
 '0':"transform:translate(0,110vh);",
 '1799':"transform:translate(0,110vh);",
 '1800':"transform:translate(0,0vh);",
-'2101':"transform:translate(0,0vh);",
-'2201':"transform:translate(0,-100vh);",
+'2501':"transform:translate(0,0vh);",
+'2502':"transform:translate(0,-110vh);",
 'triggerin':"1800",
 'triggerout':"2100",
 'color':"black"};
@@ -84,41 +84,35 @@ slideAttr.push(slide6Attr);
 // ------ SETUP SLIDE 7-------
 var slide7Attr = {
 '0':"transform:translate(0,100vh);",
-'2200':"transform:translate(0,100vh);", 
-'2220':"transform:translate(0,100vh);", 
-'2400':"transform:translate(0,100vh);", 
+'2100':"transform:translate(0,100vh);",
+'2200':"transform:translate(0,0vh);", 
 '2500':"transform:translate(0,0vh);", 
-'2700':"transform:translate(0,0vh);", 
-'2800':"transform:translate(0,-100vh);",
-'3400':"transform:translate(0,-100vh);",
-'3500':"transform:translate(0,-200vh);",
-'3600':"transform:translate(0,-200vh);",
-'triggerin':"2500",
-'triggerout':"2700",
+'2600':"transform:translate(0,-110vh);",
+'3600':"transform:translate(0,-110vh);",
+'triggerin':"2200",
+'triggerout':"2500",
 'color':"white"};
 slideAttr.push(slide7Attr);
 // ------ SETUP SLIDE 8-------
 var slide8Attr = {
+'2499':"transform:translate(0,-100vh);", 
+'2500':"transform:translate(0,0vh);", 
 
-'2500':"transform:translate(0,100vh);", 
-'2700':"transform:translate(0,100vh);", 
-'3400':"transform:translate(0,100vh);",
-'3450':"transform:translate(0,0vh);",
-'3650':"transform:translate(0,0vh);",
-'3750':"transform:translate(0,-100vh);",
-'triggerin':"3450",
-'triggerout':"3650",
+'2900':"transform:translate(0,0vh);",
+'3300':"transform:translate(0,0vh);",
+'triggerin':"2600",
+'triggerout':"2900",
 'color':"black"};
 slideAttr.push(slide8Attr);
 // ------ SETUP SLIDE 9-------
 var slide9Attr = {
 
-'3649':"transform:translate(0,100vh);", 
-'3650':"transform:translate(0,0vh);",
+'2900':"transform:translate(0,100vh);", 
+'3000':"transform:translate(0,0vh);", 
 '3750':"transform:translate(0,0vh);",
 '3950':"transform:translate(0,0vh);",
-'triggerin':"3900",
-'triggerout':"4050",
+'triggerin':"3000",
+'triggerout':"3300",
 'color':"black"};
 slideAttr.push(slide9Attr);
 // ------ APPLY MOTION-------
