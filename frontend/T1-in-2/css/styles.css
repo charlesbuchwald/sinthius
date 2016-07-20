@@ -321,8 +321,8 @@ slide.top {
 slide.ground {
     z-index: 0;
 }
-.background,.instructions {
-    position: fixed;
+.background{
+    position: absolute;
     left:0;
     right:0;
     top:0;
@@ -852,7 +852,24 @@ note > *{
 margin-bottom:2vh;
   }
 
-
+/* ------------------------------slide10----------------------------*/
+.slide10 .title{left: 38vw;bottom: 20vh;position: absolute;}
+.slide10 .posttitle{left: 38vw;bottom: 8vh;position: absolute;}
+.slide10 .slideIn{
+  /* right: auto; */
+  /* width: 30vw; */
+  /* overflow-y:scroll; */
+  padding-top: 30vh;
+  left: 0;
+  background-color: rgba(255,255,255,0.8);
+}
+.slide10 img{
+ position: absolute;
+ width: 100vw;
+ padding-top: 16vh;
+ right: -40vw;
+ background-color: rgba(255,255,255,0.8);
+}
 /* ------------------------------scrollhor----------------------------*/
 .scrollhor{
 overflow:scroll;
