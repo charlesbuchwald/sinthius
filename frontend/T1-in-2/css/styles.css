@@ -509,8 +509,8 @@ top:100vh;
 }
 .slide1 .title {
     position: absolute;
-    top: 0vh;
-    left: 10%;
+    top: 10vh;
+    left: 13vw;
 }
 .slide1 .text{position: absolute;left: 0vw;bottom: 0vh;width: 40vw;/* font-size: 2em; *//* color: #191919; */}
  slide .image{
@@ -877,6 +877,25 @@ margin-bottom:2vh;
 
 margin-bottom:2vh;
   }
+/* ------------------------------slide13----------------------------*/
+
+.slide13 .content {
+     position: absolute;
+     left: 0vw;
+     top: 0vh;
+     width: 38vw;
+}
+.slide13 .text {
+     position: absolute;
+     left: 13vw;
+     top: 30vh;
+     width: 30vw;
+}
+.slide13 .title{
+    top: 17vh;
+    left: 5vw;
+    }
+.slide13 .posttitle{top: 12vh;left: 5vw;}
 
 /* ------------------------------scrollhor----------------------------*/
 .scrollhor{

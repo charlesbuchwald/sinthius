@@ -149,11 +149,24 @@ var slide12Attr = {
 '4099':"transform:translate(0,110vh);", 
 '4100':"transform:translate(0,0vh);", 
 
-'4400':"transform:translate(0,0vh);",
+'4500':"transform:translate(0,0vh);",
 'triggerin':"4200",
-'triggerout':"4400",
+'triggerout':"4500",
 'color':"black"};
 slideAttr.push(slide12Attr);
+// ------ SETUP SLIDE 13-------
+var slide13Attr = {
+
+'0':"transform:translate(0,110vh);",
+'4400':"transform:translate(0,110vh);",  
+'4500':"transform:translate(0,0vh);", 
+'4800':"transform:translate(0,0vh);", 
+
+'5000':"transform:translate(0,0vh);",
+'triggerin':"4500",
+'triggerout':"4800",
+'color':"white"};
+slideAttr.push(slide13Attr);
 // ------ APPLY MOTION-------
   
     jQuery.each(slideAttr, function(index, object) {
@@ -162,47 +175,65 @@ slideAttr.push(slide12Attr);
         jQuery('slide').eq(index).attr('data-'+attribute, value);
    		})
 	});
-// ------------------------ SETUP SLIDES CONTENT-----------------------------
-var contentAttr = [];
-var content1Attr = {
-'0':"transform:translate(0,200vh);",
-'200':"transform:translate(0,0vh);"};
-contentAttr.push(content1Attr);
-var content2Attr = {
-'0':"transform:translate(0,100vh);",
-'420':"transform:translate(-100%,0);",
-'500':"transform:translate(0,0);",
+// ------------------------ SETUP SLIDES CONTENT DOMINO DELAY -----------------------------
 
-
-};
-contentAttr.push(content2Attr);
-var content3Attr = {
-'0':"transform:translate(0,100vh);",
-'450':"transform:translate(-100%,0);",
-'550':"transform:translate(0,0);",
-};
-contentAttr.push(content3Attr);
-  var content4Attr = {
-'750':"transform:translate(-100%,0vh);",
-'850':"transform:translate(0,0vh);"
-};
-contentAttr.push(content4Attr);
-  var content4_1Attr = {
-'1050':"transform:translate(-100%,0vh);",
-'1150':"transform:translate(0,0vh);"
-};
-contentAttr.push(content4_1Attr);
-var content5Attr = {
-'1450':"transform:translate(-100%,0vh);",
-'1550':"transform:translate(0,0vh);"
-};
-contentAttr.push(content5Attr);
-    jQuery.each(contentAttr, function(index, object) {
-       jQuery.each(object,function(attribute, value){
-        jQuery('.animate').eq(index).attr('data-'+attribute, value).attr('animatecount',index+1);
-   		})
+jQuery('slide').each( function(index) {
+i = 0;
+		 jQuery('.animate').each( function() {
+		 inTrig = 0;
+		 outTrig = 0;
+		inTrig = parseInt(jQuery('slide').eq(index).attr('data-triggerin')) + (40*i) - 100;
+       outTrig = parseInt(jQuery('slide').eq(index).attr('data-triggerin')) + (40*i);
+ 
+       console.log('id'+jQuery(this).parent('slide').attr('id')+i+'-'+inTrig+'<in out>'+outTrig);
+       jQuery('slide').eq(index).children('.animate').eq(i).attr('data-'+inTrig, 'transform:translate(-100vw,0vh)').attr('data-'+outTrig, 'transform:translate(0vw,0vh)').attr('animatecount',index+1);
+   		i++;
+		});
 	});
+
+
 	
+// ------------------------MANUAL SETUP SLIDES CONTENT  -----------------------------
+// var contentAttr = [];
+// var content1Attr = {
+// '0':"transform:translate(0,200vh);",
+// '200':"transform:translate(0,0vh);"};
+// contentAttr.push(content1Attr);
+// var content2Attr = {
+// '0':"transform:translate(0,100vh);",
+// '420':"transform:translate(-100%,0);",
+// '500':"transform:translate(0,0);",
+// 
+// 
+// };
+// contentAttr.push(content2Attr);
+// var content3Attr = {
+// '0':"transform:translate(0,100vh);",
+// '450':"transform:translate(-100%,0);",
+// '550':"transform:translate(0,0);",
+// };
+// contentAttr.push(content3Attr);
+//   var content4Attr = {
+// '750':"transform:translate(-100%,0vh);",
+// '850':"transform:translate(0,0vh);"
+// };
+// contentAttr.push(content4Attr);
+//   var content4_1Attr = {
+// '1050':"transform:translate(-100%,0vh);",
+// '1150':"transform:translate(0,0vh);"
+// };
+// contentAttr.push(content4_1Attr);
+// var content5Attr = {
+// '1450':"transform:translate(-100%,0vh);",
+// '1550':"transform:translate(0,0vh);"
+// };
+// contentAttr.push(content5Attr);
+//     jQuery.each(contentAttr, function(index, object) {
+//        jQuery.each(object,function(attribute, value){
+//         jQuery('.animate').eq(index).attr('data-'+attribute, value).attr('animatecount',index+1);
+//    		})
+// 	});
+// 	
 // ------------------------ SETUP SLIDES BACKGROUND-----------------------------
 var backAttr = [];
 
