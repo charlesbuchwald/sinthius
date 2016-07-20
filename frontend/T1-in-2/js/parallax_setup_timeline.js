@@ -5,13 +5,13 @@ var totalSlides = jQuery('slide').length;
 var slideAttr = [];
 // ------ SETUP SLIDE 1-------
 var slide1Attr = {
-'0':"transform:translate(0,0vh);",
-'300':"transform:translate(0,0vh);", 
-'400':"transform:translate(0,-100vh);",
+'200':"transform:translate(0,0vh);",
+'400':"transform:translate(0,0vh);", 
+'500':"transform:translate(0,-100vh);",
 '700':"transform:translate(0,-100vh);",
 '800':"transform:translate(0,-100vh);",
-'triggerin':"0",
-'triggerout':"300",
+'triggerin':"200",
+'triggerout':"400",
 'color':"white"};
 slideAttr.push(slide1Attr);
 // ------ SETUP SLIDE 2-------
@@ -23,7 +23,7 @@ var slide2Attr = {
 '801':"transform:translate(0,-100vh);",
 '1099':"transform:translate(0,-100vh);",
 '1100':"transform:translate(0,-100vh);",
-'triggerin':"400",
+'triggerin':"500",
 'triggerout':"700",
 'color':"black"};
 slideAttr.push(slide2Attr);
@@ -175,7 +175,7 @@ slideAttr.push(slide13Attr);
         jQuery('slide').eq(index).attr('data-'+attribute, value);
    		})
 	});
-// ------------------------ SETUP SLIDES CONTENT DOMINO DELAY -----------------------------
+// ------------------------ SETUP SLIDES CONTENT DOMINO DELAY  -----------------------------
 
 jQuery('slide').each( function(index) {
 i = 0;

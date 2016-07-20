@@ -58,19 +58,35 @@ cursor:pointer;
   font-style: normal;
 }
 @font-face {
-  font-family: 'museo-sans';
+  font-family: 'museo-sans-100';
+  src: url('../fonts/MuseoSans-100.otf?#iefix') format('embedded-opentype'),  url('../fonts/MuseoSans-100.otf')  format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo-sans-500';
   src: url('../fonts/MuseoSans-500.otf?#iefix') format('embedded-opentype'),  url('../fonts/MuseoSans-500.otf')  format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'museo-sans';
+  font-family: 'museo-sans-900';
   src: url('../fonts/MuseoSans-900.otf?#iefix') format('embedded-opentype'),  url('../fonts/MuseoSans-900.otf')  format('opentype');
   font-weight:900;
   font-style: normal;
 }
+/* ------------------------------general misc setup ----------------------------*/
+
+.background.center-right {
+    background-position: 70% 30%;
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+body{  font-family: 'museo-sans-500';}
 .heuristica{font-family: 'Heuristica Italic';font-style:italic;font-weight:100;}
-.museo{font-family: "museo-sans";font-weight: 100;}
+.museo{font-family: "museo-sans-500";font-weight: 100;}
 h3, span.h3 {
     font-size: 1.8em;
 }
@@ -78,7 +94,7 @@ h3, span.h3 {
 
 h1, span.h1 {
     font-size: 4em;
-    font-weight: 900;
+  font-family: 'museo-sans-900';
 }
 h4, span.h4 {
     font-size: 1.3em;
@@ -97,13 +113,16 @@ h2, span.h2 {
 }
 .museo.slim {
     font-weight: 100;
+     font-family: 'museo-sans-100';
 }
 .columns3{
 -webkit-column-count: 3; /* Chrome, Safari, Opera */
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
 }
-p, .p{font-size: 1.1em;letter-spacing: 0.05em;line-height: 140%;}
+p, .p{
+  font-family: 'museo-sans-500';
+font-size: 1.1em;letter-spacing: 0.05em;line-height: 140%;}
 
 .addCross{background-image:url(../assets/menu-btn-close.svg);width: 50px;height: 35px;/* text-align: center; */background-size: contain;background-repeat: no-repeat;background-position: center center;-ms-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
 .addInfo{
@@ -776,9 +795,10 @@ position: absolute;
  top: 0vh;
  bottom: 0;
  left: 0;
+ z-index: 1;
 }
-.slide8 .title{left: 38vw;bottom: 20vh;}
-.slide8 .posttitle{left: 38vw;bottom: 8vh;}
+.slide8 .title{left: 38vw;bottom: 20vh;z-index: 0;}
+.slide8 .posttitle{left: 38vw;bottom: 8vh;z-index: 0;}
 .slide8 .scrollhorcont .slideIn{
   /* right: auto; */
   /* width: 30vw; */
@@ -789,12 +809,7 @@ position: absolute;
 .slide8.scrollhor{
   overflow: hidden;
 }
-.background.center-right {
-    background-position: 70% 30%;
-    background-size: auto 50%;
-    background-repeat: no-repeat;
-    position: absolute;
-}
+
 #CHICOMECOATL  .background.center-right, #CHALCHIUTLICUE .background.center-right{
     background-position: 75% 30%;
     background-size: auto 80%;
@@ -877,6 +892,14 @@ margin-bottom:2vh;
 
 margin-bottom:2vh;
   }
+  
+  /* ------------------------------slide12----------------------------*/
+  .slide12 .background.center-right {
+    background-position: 85% 25%;
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
 /* ------------------------------slide13----------------------------*/
 
 .slide13 .content {
@@ -1003,7 +1026,7 @@ div#slideBtn3 {
     z-index: 2;
     width: 30vw;
     /* padding-top: 5vh; */
-    font-family: museo-sans;
+    font-family: 'museo-sans-500';
     background-color: rgba(255,255,255,0.8);
     color: #000;
     -webkit-box-shadow: 0px 10px 23px -6px rgba(0,0,0,0.66);
