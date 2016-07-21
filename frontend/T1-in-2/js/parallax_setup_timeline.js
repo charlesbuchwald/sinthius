@@ -12,7 +12,7 @@ var slide1Attr = {
 '800':"transform:translate(0,-100vh);",
 'triggerin':"200",
 'triggerout':"400",
-'color':"white"};
+'color':"black"};
 slideAttr.push(slide1Attr);
 // ------ SETUP SLIDE 2-------
 var slide2Attr = {
@@ -113,7 +113,7 @@ var slide9Attr = {
 '3400':"transform:translate(0,-110vh);",
 'triggerin':"3000",
 'triggerout':"3300",
-'color':"black"};
+'color':"white"};
 slideAttr.push(slide9Attr);
 // ------ SETUP SLIDE 10-------
 var slide10Attr = {
@@ -140,7 +140,7 @@ var slide11Attr = {
 '4200':"transform:translate(0,-110vh);",
 'triggerin':"3800",
 'triggerout':"4100",
-'color':"black"};
+'color':"white"};
 slideAttr.push(slide11Attr);
 // ------ SETUP SLIDE 12-------
 var slide12Attr = {
@@ -186,7 +186,7 @@ i = 0;
        outTrig = parseInt(jQuery('slide').eq(index).attr('data-triggerin')) + (40*i);
  
        console.log('id'+jQuery(this).parent('slide').attr('id')+i+'-'+inTrig+'<in out>'+outTrig);
-       jQuery('slide').eq(index).children('.animate').eq(i).attr('data-'+inTrig, 'transform:translate(-100vw,0vh)').attr('data-'+outTrig, 'transform:translate(0vw,0vh)').attr('animatecount',index+1);
+       jQuery('slide').eq(index).children('.animate').eq(i).attr('data-'+inTrig, 'transform:translate(-50vw,0vh)').attr('data-'+outTrig, 'transform:translate(0vw,0vh)').attr('animatecount',index+1);
    		i++;
 		});
 	});

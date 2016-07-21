@@ -97,7 +97,7 @@ h2, span.h2 {
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
 }
-p, .p{font-size: 1.1em;letter-spacing: 0.05em;line-height: 140%;}
+p, .p{font-size: 1.3em;letter-spacing: 0.05em;line-height: 140%;}
 
 .addCross{background-image:url(../assets/menu-btn-close.svg);width: 50px;height: 35px;/* text-align: center; */background-size: contain;background-repeat: no-repeat;background-position: center center;-ms-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
 .addInfo{
@@ -285,18 +285,29 @@ background-color:#000;
 }
 parallax{float:left;width:100%;min-height: 100vh;}
 slide {
-  float: left;position: relative;/* right:0; *//* top:0; */z-index: 0;/* bottom:0; */height: 100vh;width: 100vw;-webkit-box-shadow: 0px 10px 43px -6px rgba(0,0,0,0.66);-moz-box-shadow: 0px 10px 43px -6px rgba(0,0,0,0.66);box-shadow: 0px 10px 43px -6px rgba(0,0,0,0.66);overflow:hidden;
-
-      -webkit-transition: all 0.8s ease-in-out;
-    -moz-transition: all 0.8s ease-in-out;
-    transition: all 0.8s ease-in-out;}
+  /* float: left; */
+  position: fixed;
+  left: 0;
+  top:0;
+  z-index: 0;
+  /* bottom:0; */
+  height: 100vh;
+  width: 100vw;
+  -webkit-box-shadow: 0px 10px 43px -6px rgba(0,0,0,0.66);
+  -moz-box-shadow: 0px 10px 43px -6px rgba(0,0,0,0.66);
+  box-shadow: 0px 10px 43px -6px rgba(0,0,0,0.66);
+  overflow:hidden;
+  /* -webkit-transition: all 0.8s ease-in-out; */
+  -moz-transition: all 0.8s ease-in-out;
+  /* transition: all 0.8s ease-in-out; */
+  }
 
 slide.doubleheight{
 height:200vh;
 
 }
 slide.top {
-    /* z-index: 10; */
+    z-index: 10;
 }
 
 slide.ground {
@@ -482,7 +493,7 @@ top:100vh;
     top: 0vh;
     left: 10%;
 }
-.slide1 .text{position: absolute;left: 100vw;top: 28vh;width: 40vw;font-size: 2em;color: #191919;}
+.slide1 .text{position: absolute;left: 13vw;top: 39vh;width: 40vw;/* font-size: 2em; *//* color: #191919; */}
  slide .image{
     position:absolute;
     bottom:0;
@@ -636,6 +647,14 @@ position: absolute;
 .slide1 .title {
     top: 12vh;
 }
+
+.slide6 img.mapBot {
+    height: 102%;
+    width: auto;
+    position: absolute;
+    left: -30%;
+    /* right: 2%; */
+}
 /* ------------------------------slide7----------------------------*/
 .slide7 .title {
     top: 12vh;
@@ -667,12 +686,11 @@ overflow:scroll;
 }
 .scrollhorSlide {
     float: left;
-    padding-top: 10vh;
+    padding-top: 20vh;
     height: 80vh;
     -webkit-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
--moz-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
-
+    -moz-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
+    box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
 }
 
 .scrollhorcont.indicator {
@@ -686,9 +704,9 @@ box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgb
 .scrollhorcont {
     float: left;
     position: relative;
-    width: 30vw;
+    width: 38vw;
     padding: 0 5vw;
-    height: 100%;
+    height: 70vh;
     background-size: contain;
     background-position: center top;
     background-repeat: no-repeat;
@@ -696,7 +714,7 @@ box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgb
 .scrollhorcont.doublewidth {
     float: left;
     width: 50vw;
-    padding: 5vw;
+    padding: 5vh;
 }
 .scrollhorcont.oneplushalf{
  width: 33vw;

@@ -1,4 +1,5 @@
   console.log('js loaded');
+  var triggers = [];
 
 // ------------------------ SETUP Standby-----------------------------
   function standBy(){
@@ -72,13 +73,13 @@ jQuery('slide').each(function(){
 var newMenuItem = jQuery(this).attr('id')+'';
 var newMenuItemTriggerIn = jQuery(this).attr('data-triggerin');
 var newMenuItemTriggerOut = jQuery(this).attr('data-triggerout');
-
+var newMenuItemColor = jQuery(this).attr('data-color');
 
 newMenuItemTitle = newMenuItem.replace(/_/g , " ");
 newMenuItemTitle = newMenuItemTitle.replace(/plus/g , "&");
 newMenuItemTitle = newMenuItemTitle.replace(/comma/g , ",");
 newMenuItemTitle = newMenuItemTitle.replace(/dpunkt/g , ":");
-jQuery('menu').append('<a href="#'+newMenuItem+'" data-triggerin="'+newMenuItemTriggerIn+'" data-triggerout="'+newMenuItemTriggerOut+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></a>');
+jQuery('menu').append('<a href="#'+newMenuItem+'" data-color="'+newMenuItemColor+'" data-triggerin="'+newMenuItemTriggerIn+'" data-triggerout="'+newMenuItemTriggerOut+'"><div class="menuDot">●</div><div class="menuDotCurrent">‣</div><div class="menuTitle">'+newMenuItemTitle+'</div></a>');
 
 })
 
@@ -135,8 +136,49 @@ return false;
 })
 
 }
+        		
 
+// ------------------------ setup triggers-----------------------------   
+function getTriggers(){
+triggers.push({
+			triggerin: 'filler',
+			triggerout: 'filler',
+			color: 'filler'
+		   });
+jQuery('menu > a').not('.menuHide').each(function(index){
+
+triggers.push({
+			triggerin: jQuery(this).attr('data-triggerin'),
+			triggerout: jQuery(this).attr('data-triggerout'),
+			color: jQuery(this).attr('data-color')
+		   });
+     
+   
+})
+
+}
+function trigger(number){
+
+
+}
+function black(){
+jQuery('body').removeClass('white black trans');
+
+jQuery('body').addClass('black');
+jQuery('menu > a').removeClass('current');
+jQuery('scrollIndicator').css('opacity', 1);
+}
+function white(){
+jQuery('body').removeClass('white black trans');
+jQuery('body').addClass('white');
+jQuery('menu > a').removeClass('current');
+jQuery('scrollIndicator').css('opacity', 1);
+}        
+
+// ------------------------ setup skrollr-----------------------------       		
 function skrollrSetup(){
+getTriggers();
+
 	var currentSlide = '';
 	var totalHeight = jQuery('body').css('height');
 	console.log(totalHeight);
@@ -151,130 +193,174 @@ function skrollrSetup(){
        				
        				 console.log('progress'+data.curTop);
        				 
-       	 // ------------------------ menu hide-----------------------------
-        // ------------------------ menu color-----------------------------
+       	 
+       
 
 
 			
-
-
+				
+					
+// ------------------------ menu hide-----------------------------
 					if(data.curTop > 100){
   						 jQuery('menu').addClass('hide');
                		} else {
   						 jQuery('menu').removeClass('hide');
                		}
+               		
+// ------------------------ top bottom indicators hide/show-----------------------------
+               		if(data.curTop < triggers[1].triggerout){
+  						 jQuery('.scrolltop').css('opacity', 0);
+               		} else {
+  						 jQuery('.scrolltop').css('opacity', 1);
+               		}
+               		if(data.curTop > triggers[13].triggerin){
+  						 jQuery('.scrollbottom').css('opacity', 0);
+               		} else {
+  						 jQuery('.scrollbottom').css('opacity', 1);
+               		}
                		currentPos = data.curTop;
-               		function black(){
-			jQuery('body').removeClass('white black trans');
-			jQuery('body').addClass('black');
-			jQuery('menu > a').removeClass('current');
-
-			}
-			function white(){
-			jQuery('body').removeClass('white black trans');
-			jQuery('body').addClass('white');
-			jQuery('menu > a').removeClass('current');
-
-			}
-					bot = jQuery('menu > a').eq(1).attr('data-triggerin');
-               		top = jQuery('menu > a').eq(1).attr('data-triggerout');
-               		bot2 = jQuery('menu > a').eq(2).attr('data-triggerin');
-               		top2 = jQuery('menu > a').eq(2).attr('data-triggerout');
-               		bot3 = jQuery('menu > a').eq(3).attr('data-triggerin');
-               		top3 = jQuery('menu > a').eq(3).attr('data-triggerout');
-               		bot4 = jQuery('menu > a').eq(4).attr('data-triggerin');
-               		top4 = jQuery('menu > a').eq(4).attr('data-triggerout');
-               		bot5 = jQuery('menu > a').eq(5).attr('data-triggerin');
-               		top5 = jQuery('menu > a').eq(5).attr('data-triggerout');
-               		bot6 = jQuery('menu > a').eq(6).attr('data-triggerin');
-               		top6 = jQuery('menu > a').eq(6).attr('data-triggerout');
-               		bot7 = jQuery('menu > a').eq(7).attr('data-triggerin');
-               		top7 = jQuery('menu > a').eq(7).attr('data-triggerout');
-               		bot8 = jQuery('menu > a').eq(8).attr('data-triggerin');
-               		top8 = jQuery('menu > a').eq(8).attr('data-triggerout');
-               		bot9 = jQuery('menu > a').eq(9).attr('data-triggerin');
-               		top9 = jQuery('menu > a').eq(9).attr('data-triggerout');
-               		bot10 = jQuery('menu > a').eq(10).attr('data-triggerin');
-               		top10 = jQuery('menu > a').eq(10).attr('data-triggerout');
-               		bot11 = jQuery('menu > a').eq(11).attr('data-triggerin');
-               		top11 = jQuery('menu > a').eq(11).attr('data-triggerout');
-               		bot12 = jQuery('menu > a').eq(12).attr('data-triggerin');
-               		top12 = jQuery('menu > a').eq(12).attr('data-triggerout');
-               		if(currentPos < top){
-               			white();
-  						that.eq(1).addClass('current');
-  						console.log(jQuery('menu > a').eq(1).attr('href')+'white');
-
+           
+// ------------------------ menu color and active slide-----------------------------
+               		if(currentPos > -1 && currentPos < triggers[1].triggerout){
+               			if(triggers[1].color == "black"){
+               				black();
+               				} else {
+               				white();
+               			}
+               			jQuery('menu > a').eq(1).addClass('current');
+  						console.log(triggers[1].triggerin+'<1>'+triggers[1].triggerout+'color'+triggers[1].color);
                		}
                		
-               		else if(currentPos > bot2 && currentPos < top2){
-               			black();
+               		else if(currentPos > triggers[2].triggerin && currentPos < triggers[2].triggerout){
+               			if(triggers[2].color == "black"){
+               				black();
+               				} else {
+               				white();
+               			}
                			jQuery('menu > a').eq(2).addClass('current');
-               			console.log(jQuery('menu > a').eq(2).attr('href')+'black');
+  						console.log(triggers[2].triggerin+'<2>'+triggers[2].triggerout+'color'+triggers[2].color);
                		}
                		
-               		
-               		else if(currentPos > bot3 && currentPos < top3){
-               			white();
-  						 jQuery('menu > a').eq(3).addClass('current');
-  						 console.log(jQuery('menu > a').eq(3).attr('href')+'white');
+               		else if(currentPos > triggers[3].triggerin && currentPos < triggers[3].triggerout){
+               			if(triggers[3].color == "black"){
+               				black();
+               				} else {
+               				white();
+               			}
+               			jQuery('menu > a').eq(3).addClass('current');
+  						console.log(triggers[3].triggerin+'<3>'+triggers[3].triggerout+'color'+triggers[3].color);
                		}
                		
-               		
-               		else if(currentPos > bot4 && currentPos < top4){
-               			black();
-  						 jQuery('menu > a').eq(4).addClass('current');
-  						 console.log(jQuery('menu > a').eq(4).attr('href')+'black');
+               		else if(currentPos > triggers[4].triggerin && currentPos < triggers[4].triggerout){
+               			if(triggers[4].color == "black"){
+               				black();
+               				} else {
+               				white();
+               			}
+               			jQuery('menu > a').eq(4).addClass('current');
+  						console.log(triggers[4].triggerin+'<4>'+triggers[4].triggerout+'color'+triggers[4].color);
+
                		}
                		
-               		
-               		else if(currentPos > bot5 && currentPos < top5){
-               			white();
-  						 jQuery('menu > a').eq(5).addClass('current');
-  						 console.log(jQuery('menu > a').eq(5).attr('href')+'white');
+               		else if(currentPos > triggers[5].triggerin && currentPos < triggers[5].triggerout){
+               			if(triggers[5].color == "black"){
+               				black();
+               				} else {
+               				white();
+               			}
+               			jQuery('menu > a').eq(5).addClass('current');
+  						console.log(triggers[5].triggerin+'<5>'+triggers[5].triggerout+'color'+triggers[5].color);
+
                		}
                		
-               		
-               		else if(currentPos > bot6 && currentPos < top6){
-               			black();
-  						 jQuery('menu > a').eq(6).addClass('current');
-  						 console.log(jQuery('menu > a').eq(6).attr('href')+'black');
+               		else if(currentPos > triggers[6].triggerin && currentPos < triggers[6].triggerout){
+               			if(triggers[6].color == "black"){
+               				black();
+               				} else {
+               				white();
+               			}
+               			jQuery('menu > a').eq(6).addClass('current');
+  						console.log(triggers[6].triggerin+'<6>'+triggers[6].triggerout+'color'+triggers[6].color);
+
                		}
                		
-               		
-               		else if(currentPos > bot7 && currentPos < top7){
-               			white();
-  						 jQuery('menu > a').eq(7).addClass('current');
-  						 console.log(jQuery('menu > a').eq(7).attr('href')+'white');
+               		else if(currentPos > triggers[7].triggerin && currentPos < triggers[7].triggerout){
+               			if(triggers[7].color == "black"){
+               				black();
+               				} else {
+               				white();
+               			}
+               			jQuery('menu > a').eq(7).addClass('current');
+  						console.log(triggers[7].triggerin+'<7>'+triggers[7].triggerout+'color'+triggers[7].color);
+
                		}
                		
-               		
-               		else if(currentPos > bot8 && currentPos < top8){
-               			black();
-  						 jQuery('menu > a').eq(8).addClass('current');
-  						 console.log(jQuery('menu > a').eq(8).attr('href')+'black');
+               		else if(currentPos > triggers[8].triggerin && currentPos < triggers[8].triggerout){
+               			if(triggers[8].color == "black"){
+               				black();
+               				} else {
+               				white();
+               			}
+               			jQuery('menu > a').eq(8).addClass('current');
+   						console.log(triggers[8].triggerin+'<8>'+triggers[8].triggerout+'color'+triggers[8].color);
+
                		}
                		
+               		else if(currentPos > triggers[9].triggerin && currentPos < triggers[9].triggerout){
+               			if(triggers[9].color == "black"){
+               				black();
+               				} else {
+               				white();
+               			}
+               			jQuery('menu > a').eq(9).addClass('current');
+  						console.log(triggers[9].triggerin+'<9>'+triggers[9].triggerout+'color'+triggers[9].color);
+
+               		}
                		
-               		else if(currentPos > bot9 && currentPos < top9){
-               			white();
-  						 jQuery('menu > a').eq(9).addClass('current');
-  						 console.log(jQuery('menu > a').eq(9).attr('href')+'white');
+               		else if(currentPos > triggers[10].triggerin && currentPos < triggers[10].triggerout){
+               			if(triggers[10].color == "black"){
+               				black();
+               				} else {
+               				white();
+               			}
+               			jQuery('menu > a').eq(10).addClass('current');
+  						console.log(triggers[10].triggerin+'<10>'+triggers[10].triggerout+'color'+triggers[10].color);
+
                		}
-               		else if(currentPos > bot10 && currentPos < top10){
-               			black();
-  						 jQuery('menu > a').eq(10).addClass('current');
-  						 console.log(jQuery('menu > a').eq(10).attr('href')+'white');
+               		
+               		else if(currentPos > triggers[11].triggerin && currentPos < triggers[11].triggerout){
+               			if(triggers[11].color == "black"){
+               				black();
+               				} else {
+               				white();
+               			}
+               			jQuery('menu > a').eq(11).addClass('current');
+  						console.log(triggers[11].triggerin+'<11>'+triggers[11].triggerout+'color'+triggers[11].color);
+
                		}
-               		else if(currentPos > bot11 && currentPos < top11){
-               			white();
-  						 jQuery('menu > a').eq(11).addClass('current');
-  						 console.log(jQuery('menu > a').eq(11).attr('href')+'white');
+               		
+               		else if(currentPos > triggers[12].triggerin && currentPos < triggers[12].triggerout){
+               			if(triggers[12].color == "black"){
+               				black();
+               				} else {
+               				white();
+               			}
+               			jQuery('menu > a').eq(12).addClass('current');
+  						console.log(triggers[12].triggerin+'<12>'+triggers[12].triggerout+'color'+triggers[12].color);
+
                		}
-               		else if(currentPos > bot12 && currentPos < top12){
-               			white();
-  						 jQuery('menu > a').eq(12).addClass('current');
-  						 console.log(jQuery('menu > a').eq(12).attr('href')+'white');
+               		
+               		else if(currentPos > triggers[13].triggerin && currentPos < triggers[13].triggerout){
+               			if(triggers[13].color == "black"){
+               				black();
+               				} else {
+               				white();
+               			}
+               			jQuery('menu > a').eq(13).addClass('current');
+  						console.log(triggers[13].triggerin+'<13>'+triggers[13].triggerout+'color'+triggers[13].color);
+
+               		} else {
+               		jQuery('scrollIndicator').css('opacity', 0);
                		}
    		 		}
 				}
@@ -337,7 +423,7 @@ function skrollrSetup(){
 		
 
 	});
-	// ------------------------ SETUP SKROLLR-----------------------------
+	// ------------------------ on load-----------------------------
 
   jQuery(window).load(function(){
 		skrollrSetup();
