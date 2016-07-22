@@ -1,6 +1,6 @@
   console.log('js loaded');
   var triggers = [];
-
+	 var currentMenu = 0;
 // ------------------------ SETUP Standby-----------------------------
   function standBy(){
    
@@ -41,67 +41,21 @@
  // ------------------------ scrollhor-----------------------------
  function setupScrollHor(){
 	
+
+
+ 
 	 $('.scrollhorSlide').each(function(index) {
 	 var width = 0;
     	var i = 0;
     	
-    	$('#scrollhorSlide'+(index+1)).hammer().bind("swipeleft", function(event) {
+$('#scrollhorSlide'+(index+1)).hammer().bind("swipeleft", function(event) {
     console.log("You swiped left - " + $(this).css('margin-left') );
-    event.preventDefault();
     
-	scrollContainer = $(this).attr('id');
-	
-	prevSlide = parseInt($('#'+scrollContainer).attr('current'));
-	if(prevSlide < $('#scrollhorSlide'+(index+1)).children().length - 1){
-
-		thisSlide = Math.abs(prevSlide+1);
-		$('#'+scrollContainer).attr('current', thisSlide);
-
-		$('#'+scrollContainer).siblings('menuhor').children('.horLink').removeClass('active');
-		$('#'+scrollContainer).siblings('menuhor').children('.horLink').eq(thisSlide).addClass('active');
-	
-		console.log(prevSlide +'..'+ thisSlide);
-		offset = thisSlide*100;
-		distance = Math.abs(prevSlide - thisSlide);
-		time = distance*0.5;
-		margin = '-'+offset+'vw';
-
-		$('#'+scrollContainer).css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
-		console.log(prevSlide+'prev - next'+thisSlide);
-	} else {console.log('end');}
-});
+    });
         	
 $('#scrollhorSlide'+(index+1)).hammer().bind("swiperight", function(event) {
     console.log("You swiped right - " + $(this).css('margin-left') );
-
-    event.preventDefault();
-	scrollContainer = $(this).attr('id');
-	
-	prevSlide = parseInt($('#'+scrollContainer).attr('current'));
-	if(!prevSlide < 1){
-	thisSlide = Math.abs(prevSlide-1);
-		$('#'+scrollContainer).attr('current', thisSlide);
-	
-	
-
-	$('#'+scrollContainer).siblings('menuhor').children('.horLink').removeClass('active');
-	$('#'+scrollContainer).siblings('menuhor').children('.horLink').eq(thisSlide).addClass('active');
-	
-	console.log(prevSlide +'..'+ thisSlide);
-
-
-	offset = thisSlide*100;
-	distance = Math.abs(prevSlide - thisSlide);
-	time = distance*0.5;
-	margin = '-'+offset+'vw';
-
-	$('#'+scrollContainer).css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
-
-	
-    } else {console.log('start');}
     });
-		
-
 		
 		$(this).children('div').not('.indicator').each(function(i) {
 				 console.log('setup scroll hor '+index +'slide'+i);
@@ -270,7 +224,7 @@ getTriggers();
                		} else {
   						 $('.scrolltop').css('opacity', 1);
                		}
-               		if(data.curTop > triggers[13].triggerin){
+               		if(data.curTop > triggers[3].triggerin){
   						 $('.scrollbottom').css('opacity', 0);
                		} else {
   						 $('.scrollbottom').css('opacity', 1);
@@ -474,46 +428,40 @@ getTriggers();
 
    $(document).ready(function(){
 
-		
-		parallaxSetup();
-		menuSetup();
+		// 
+// 		parallaxSetup();
+		// menuSetup();
 		
 
 	});
 	// ------------------------ on load-----------------------------
 
   $(window).load(function(){
-		skrollrSetup();
+		// skrollrSetup();
 		setupScrollHor();
-			 var currentMenu = 0;
+		
   
   
   
 		 $('.horLink').click(function(e){
-		e.preventDefault();
-		scrollContainer = $(this).parent().siblings('.scrollhorSlide').attr('id');
-		$('#'+scrollContainer).siblings('menuhor').children('.horLink').removeClass('active');
-		$(this).addClass('active');
-		prevSlide = $('#'+scrollContainer).attr('current');
+e.preventDefault();
+menuID = $(this).parent().parent().parent().attr('id');
+menuNr = $('#'+menuID).index();
 
-		that = parseInt($(this).index()-1);
-		$(this).parent().siblings('.scrollhorSlide').attr('current', that);
-		thisSlide = $('#'+scrollContainer).attr('current');
+$(this).siblings('.horLink').removeClass('active');
+that = $(this).attr('class').split(" ")[1];
+offset = that*100;
+distance = Math.abs(currentMenu - that);
+time = distance*0.5;
+margin = '-'+offset+'vw';
+$(this).addClass('active');
+$('#'+menuID).find('.scrollhorSlide')
+.css('transition', 'all '+time+'s ease-in-out')
+.css('margin-left', margin);
 
-
-		console.log(prevSlide +'..'+ thisSlide);
-
-
-		offset = thisSlide*100;
-		distance = Math.abs(prevSlide - thisSlide);
-		time = distance*0.5;
-		margin = '-'+offset+'vw';
-
-		$('#'+scrollContainer).css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
-
-		console.log(that+'clicked -'+offset+'vw - distance - '+distance+'menunr - '+scrollContainer);
-		currentMenu = that;
-		return false;
+console.log(that+'clicked -'+offset+'vw - distance - '+distance+'menunr - '+menuNr+menuID);
+currentMenu = that;
+return false;
 })
 		$('body').css('opacity','1');
 	});
