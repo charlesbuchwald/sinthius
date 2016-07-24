@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>cimmyt-timeline-1_0</title>
+	<link href="css/styles.css"  media="all" rel="stylesheet">
+	<script type="text/javascript" charset="utf-8" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/hammer.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery.hammer.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/skrollr.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/skrollr.menu.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/setup_timeline.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/parallax_setup_timeline.js"></script>
+</head>
+<body>
+<!-- ----------- standBy--------------- -->
+<standby class="museo">
+<video autoplay="autoplay" loop="loop">   
+<source src="assets/wheat-standby.mp4" type="video/mp4" /> 
+Your browser does not support the video tag. 
+</video> 
+
+</standby>
+<!-- ----------- menuInstruction --------------- -->
+<menutop class="museo">
+<a class="instructionsHide addInfo" ></a>
+
+</menutop>
+<!-- ----------- menu slides --------------- -->
+<menu class="museo">
+<div id="progress"></div>
+<a class="menuHide addArrow" ></a>
+</menu>
+<!-- ----------- instructions --------------- -->
+<div class="instructions" style="background-image:url(assets/instructions.svg)" ></div>
+
+<!-- ----------- slide 1 --------------- -->
+<slide id="NEOLITIC_REVOLUTION" class="top slide1" >
+<a class="captionHide addCross caption"></a>
+<div class="slideIn caption">
+<img src="assets/caption1.jpg" />
+<p>
+Burgeoning agriculture impacted more than just food cultivation. This was the start of humankind’s experimentation with modifying their natural environment, and in doing so, they began altering human society as well. Selective breeding supported surplus food production and populations gradually began to grow into permanent, centralized communities. This led to specialized work roles, new social hierarchies, and the emergence of government, trade and new forms of communication. 
+</p>
+</div>
+<div class="content overImage slide1 animate">
+	<span class="heuristica h3 pretitle">The Cradle of </span>
+	<span class="museo h1 title">CIVILIZATION</span>
+	<span class="museo h3 pretext">THE NEOLITIC REVOLUTION</span>
+	<span class="heuristica h4 pretext2">SOWING A NEW ERA  </span>
+	<span class="museo p text">
+	The Neolithic Revolution marked the emergence of agriculture and the lasting socioeconomic and cultural changes that it sowed in human civilization. 
+	This transition first took root in the Levantine corridor between 10,000 and 8,000 BCE. This is the narrow strip of the Middle East where Africa, Asia, and Europe merge—a region commonly known as the Fertile Crescent.
+	</br></br>
+	What occurred in this region soon spread to societies on other continents and would drastically alter the lifestyle and social organization of the groups of nomadic hunter-gatherers who had defined human civilization up to then. This transition took place over the course of thousands of years, crossing cultures and in some cases leading to the domestication of entirely new species of plants.
+	But how and why did such a dramatic transformation take place? </span>
+</div>
+<div class="background" style="background-image:url(assets/Tassili-N-Ajer.jpg)" ></div>
+</slide>
+
+<!-- ----------- slide 2 --------------- -->
+<slide id="ORIGINS_OF_WHEAT" class="ground slide2" >
+
+<div class="content slide2 animate" >
+<span class="museo h1 title">ORIGINS</span>
+<span class="museo h3 posttitle">OF WHEAT</span>
+<div id="slideIn0" class="slideIn">
+<img src="assets/slide-0-header.png" />
+<h4 class="green">LEVANTINE CORRIDOR</h4>
+<p>
+The Levantine Corridor (Levant), is located along the eastern coast of the Mediterranean sea. It includes the modern day countries of Israel, Palestine, southern Syria, Turkey, Jordan, and Lebanon.
+</p>
+</br>
+<h4 class="green">MESOPOTAMIA</h4>
+<p>
+Mesopotamia, directly to the west of the Levant, is the region in and around the Tigris and Euphrates rivers.  It encompasses modern day Iraq as well as western Syria and the southern edge of Turkey.
+</p>
+</div>
+</div>
+<div class="background map" >
+<img class="mapLay" src="assets/Map3-over.png" />
+<img class="mapBot" src="assets/Map3.jpg" />
+</div>
+</slide>
+
+<!-- ----------- slide 3 --------------- -->
+<slide id="BRANDING_AGRICULTURE" class="top doubleheight slide3">
+<a class="captionHide addCross caption"></a>
+<div class="slideIn caption">
+<p>
+GOBEKLI TEPE
+<br><br>
+Archeologists claim the first permanent buildings were constructed for communal or ritual purposes. An example is Göbekli Tepe (10,000 BCE), the first religious center ever built. The hundreds of massive, T-shaped stone pillars found at this site in the Karacadağ mountain range, which is believed to be the place where wheat was first domesticated, were erected by nomadic groups just before the Neolithic era. </p>
+<br>
+<img src="assets/Gobekli-Tepe-2.jpg" />
+
+</div>
+<a class="captionHide doubleheight addCross caption"></a>
+<div class="slideIn caption doubleheight">
+<p>
+BOTH EMMER AND EINKORN WHEAT SHARE A NATURAL AND PRIMITIVE TRAIT: WHEN MATURE, THE GRAIN OF THE WILD VARIETIES FALLS TO THE GROUND SO THAT IT CAN BE SPREAD BY THE WIND.
+</p>
+<br>
+<img style="position:absolute; right:0;bottom:0; width:100%;height:auto;" src="assets/broken-wheat.png" />
+
+</div>
+<div class="content overImage animate slide3">
+<span class="museo h1 title">THE FIRST</span>
+<span class="heuristica h2 posttitle">DOMESTICATIONS</span>
+<span class="museo p text">
+Wild einkorn, or “single-grain” wheat (Triticum boeoticum) was abundant in the Fertile Crescent since 10,000 BCE. It was found from the Balkans to Iran, primarily in the northern and eastern parts of the Fertile Crescent growing as a weed along paths and fields and is still found in mountain areas of the Middle East.
+</br></br>
+Wild emmer, or hulled wheat (Triticum turgidum ssp. dicoccoides) also grew in this region, though it is unique in that it is the only true wild polyploid wheat. Unlike the einkorn wheat which has two sets of chromosomes, wild emmer, which is a hybrid of two other wild species of wheat, has four chromosomes. It is the precursor to the durum and bread wheat varieties commonly used today.
+</br></br>
+Unlike einkorn, wild emmer does not grow as a weed but as a truly wild plant mostly confined to relatively undisturbed habitats. Therefore, it has not spread much outside of the Fertile Crescent, growing in a region extending from the southern Levant across Israel and Lebanon to southeastern Turkey and across northern Iraq and northwestern Iran. 
+Over time, cultivation and repeated harvesting and sowing of the grains of preferred wild grasses led to the development of domestic strains, or mutant forms of wheat with altered characteristics that were again preferentially chosen by farmers. Einkorn and emmer were some of the first subjects of this experimentation.
+</br></br>
+The high yield and nutritional value of wheat along with its ease of storage and moderately short growing season were undoubtedly factors that contributed to its cultivation.
+</br></br>
+Another asset was that, like other annual grains, einkorn and emmer are largely self-pollinating. This means that desirable traits manipulated or breeded by humans could be perpetuated with less risk of cross-fertilization with wild plants which might have less desirable traits like smaller seeds or seed heads. 
+</br></br>
+Other preferable traits were an evenly distributed ripening period and a reduction of the inedible chaff (glumes) that protects the seed kernels and which is separated from seeds during threshing. Domestication also improved the probability of positive yield of the seeds, which under normal circumstances don’t always germinate and form plants. The selected preference towards these or other preferable traits indicates a domesticated variety of cereal. 
+Thanks to the observations, imagination, and experimentation of ancient peoples,  human civilization has been forever transformed by two wild grains. 
+</span>
+</div>
+<div class="content bot overImage animate slide3">
+<span class="imageheader einkorn"><span class="title museo h3">EINKORN</span></span>
+<span class="imageheader emmer"><span class="title museo h3">EMMER</span></span>
+<span class="museo p text columns3">
+Both emmer and einkorn wheat share a natural and primitive trait: when mature, the grain of the wild varieties falls to the ground so that it can be spread by the wind. This is because of its fragile rachis, or stem at the very top of the plant where the spikelets, or compartments containing the seeds are held. Those who wish to harvest these grains either have to methodically pick up the grains one by one after they fall to the ground or cut the stem before it ripens. 
+However, in wild populations now and then a natural mutation occurs in individual plants: the rachis that supports the cereal doesn’t bend and break when the grain is mature.
+If someone is careful to only use these specimens as seed grain they can pass this genetic trait on to new generations of the plant. This is exactly what the first farmers did.
+</span>
+<span class="museo p text2">
+Though einkorn and emmer were essential to humanity for several millennia, they are now only grown commercially in a few places in the world. They have largely been replaced by durum (Triticum durum) used in pasta and bread, and wheat (Triticum aestivum) used in bread and other baked goods, both of which are hybridized forms of different cultivated wheats, which, though lower in nutritional value, produce a higher and more stable yields desirable for feeding the ever growing population dependent on these indispensable grains. Today, bread wheat comprises nearly 90 percent of the wheat produced in the world, and durum accounts for the remaining 10 percent.
+</span>
+</div>
+<div class="background" style="background-image:url(assets/fondo-domestication.jpg)"></div>
+</slide>
+<!-- ----------- slide 4 --------------- -->
+<slide id="DOMESTICATION_OF_WHEAT" class="ground slide4" >
+<div class="content slide4 animate" >
+<span class="museo h1 title">DOMESTICATION</span>
+<span class="museo h3 posttitle">OF WHEAT</span>
+<div id="slideIn0" class="slideIn animate">
+<img src="assets/karapinar.jpg" />
+<br>
+<p>
+The first domestication of einkorn and emmer wheat has been traced to an area of the Levant in the Karacadağ mountains in what is now southeast Turkey, between 8,500–7,000 BCE. What’s even more surprising is that some scientists estimate that it may have only taken 20 to 30 years for these domesticated strains of wheat to be developed.
+</p>
+
+</div>
+</div>
+<div class="background map" >
+
+<img class="mapBot" src="assets/Map3.jpg" />
+
+</div>
+</slide>
+<!-- ----------- slide 5 --------------- -->
+<slide id="FROM_SEED_TO_CITY" class="top slide5" >
+<div class="content overImage slide5">
+<div id="slideBtn1" class="slideBtn">
+<img src="assets/city-btn-1.png" />
+</div>
+<div id="slideBtn2" class="slideBtn">
+<img src="assets/city-btn-2.png" />
+</div>
+<div id="slideBtn3" class="slideBtn">
+<img src="assets/city-btn-3.png" />
+</div>
+<div id="slideIn1" class="slideIn white">
+<img src="assets/sickle.jpg" />
+<br><br>
+<p>
+The <strong>sickle</strong> is one of the oldest farming tools. Though it was used in pre-Neolithic campsites for harvesting plants, during the Neolithic era, a standardized, improved design emerged to make grain cultivation more efficient.  
+</p>
+</div>
+<div id="slideIn2" class="slideIn white">
+<img src="assets/scratch_plow.jpg" />
+<br><br>
+<p>
+Whereas hand plows had been used prior, the advent of agriculture brought advances such as the domestication of animals which made preparation of fields for cultivation more efficient. The <strong>scratch plow</strong> (6,000 BCE) is a tool pulled by an animal, which turns over the upper layers of soil, burying weeds and old crops as it brings fresh nutrients to the surface in preparation for sowing a new crop.  
+</p>
+</div>
+<div id="slideIn3" class="slideIn white">
+<img src="assets/quernstone.jpg" />
+<br><br>
+<p>
+The <strong>quern-stone</strong> (8000 BCE), is the oldest known tool used to grind grain into flour.  It was also used to grind fruits, herbs, spices, meats, bark, pigments, and other minerals used for the production of medicines and cosmetics.  It consists of a lower, stationary stone called the quern, and an upper, mobile, swiveling stone called the handstone.      
+</p>
+</div>
+<span class="heuristica h2 pretitle">TO CITY</span>
+<span class="museo h1 title">FROM SEED</span>
+<span class="museo p text">
+Early farmers discovered a cornucopia when they began domesticating wheat. Active cultivation efforts led to food surpluses that not only provided security, but prompted new social and physical structures to support the harvest of this important crop. 
+</br></br>
+Hunting and gathering efforts, which required frequent migrations, were gradually directed towards innovations to make the new agriculture more efficient and productive. Tools like the sickle, quern stone, and scratch plow are emblematic of this transition.   
+</br></br>
+Small villages began to emerge alongside these technological advances. Where necessity once forced groups into nomadic lifestyles, cultivating grains in a fixed location was now a better method for managing their survival. A chain began to emerge: improved technology led to even greater food yields, which promoted a more stable livelihood followed by population growth.   
+</br></br>
+This shift to a sedentary way of life was perhaps the most iconic change associated with the emergence of agriculture. These first settled communities were incubators for increasingly complex social organization, economic systems, religious beliefs, and artistic practices that germinated into civilizations of proportions and influence not seen before.
+</br></br>
+</span>
+</div>
+<div class="background" style="background-image:url(assets/cubilete.jpg)" >
+
+</div>
+</slide>
+<!-- ----------- slide 6 --------------- -->
+<slide id="CULTURE_plus_WHEAT" class="ground slide6" >
+<div class="background map map6" >
+<div id="slideBtn4" class="slideBtn"></div>
+<div id="slideBtn5" class="slideBtn"></div>
+<div id="slideBtn6" class="slideBtn"></div>
+<div id="slideBtn7" class="slideBtn"></div>
+<div id="slideIn4" class="slideIn white">
+<img src="assets/catal-huyuk.png" />
+<br><br>
+<p>
+<strong>Catal Hayuk</strong> (7500- 5700 BCE) is one of the most impressive early settlements. Located in what is now Anatolia, in southern Turkey, it may have housed up to 10,000 people and is by far the largest Neolithic settlement found to date. Evidence indicates that the people living here depended equally on hunting as on the cultivation of wheat, barley, peas, and lentils. Though sheep and goats were already domesticated, cattle domestication also began to emerge during this time. 
+Catal Hayuk is an example of the dramatic ways agriculture transformed social organization. It could even be considered a small city by today’s standards. Unlike Jerf el Ahmar, Catal Hayuk did not appear to have public buildings. Instead, it was composed of individual, but closely constructed domestic structures each containing cooking ovens and hearths. </p>
+</div>
+<div id="slideIn5" class="slideIn white">
+<img src="assets/Jerf-al-Ahmar02.jpg" />
+<br><br>
+<p>
+<strong>Jerf el Ahmar</strong> is one of the world’s oldest settlements, dating back to 9,600 BCE and located in what is now northern Syria. A large subterranean structure exists at this site which archeologists believe was used as a communal storage facility. </p>
+</div>
+<div id="slideIn6" class="slideIn white">
+<img src="assets/Jericho01.jpg" />
+<br><br>
+<p>
+Later settlements like <strong>Jericho</strong> (founded in 9600 BCE), in what is now the Israeli occupied West bank, and <strong>Jarmo</strong> (7000-5000 BCE) in northern Iraq, there is a clear move towards the construction of residential communities made up of mud-brick houses containing individual grain storage structures, and eventually multiple rooms. In these early settlements sickles, bowls, storage receptacles, and other tools associated with the cultivation and storage of grain were also found. </p>
+</div>
+<div id="slideIn7" class="slideIn white">
+<img src="assets/Jericho01.jpg" />
+<br><br>
+<p>
+Later settlements like <strong>Jericho</strong> (founded in 9600 BCE), in what is now the Israeli occupied West bank, and Jarmo (7000-5000 BCE) in northern Iraq, there is a clear move towards the construction of residential communities made up of mud-brick houses containing individual grain storage structures, and eventually multiple rooms. In these early settlements sickles, bowls, storage receptacles, and other tools associated with the cultivation and storage of grain were also found. </p>
+</div>
+<img class="mapBot" src="assets/Map6-block.jpg" />
+</div>
+</slide>
+<!-- ----------- slide 7 --------------- -->
+<slide id="CULTURE_plus_WHEAT" class="top doubleheight slide7">
+<div class="content slide7 animate" >
+<span class="heuristica h2 pretitle">OF THE WHEEL</span>
+<span class="museo h1 title">THE SPOKES</span>
+<span class="museo text blackback">
+<p>
+The story of ghosts in our house,a horizon that crosses our lips hidden by plow and threshing floor.
+<br><br>
+In itis our clay oven and our journeys,
+our dream of the unknown.
+From it <br>
+we leap to one universe after another,
+and fly one generation after the next.
+ADONIS
+Syrian poet (1930—)
+<br><br>
+The Neolithic Revolution is one of the most significant chapters in the history of humanity. It was during this period that art, trade, government, religion, science, and social structures took on forms that have since come to shape the order of life on this planet.  Without a doubt, agriculture is the spool around which further revolutions of humankind were spun, with wheat at the core of many great civilizations. 
+</p></span>
+</div>
+<span class="museo h2 midtitle animate">CULTURE<br>& WHEAT</span>
+<div class="content animate bot scrollhor" >
+<!-- ----------- horizontal scrolling container --------------- -->
+<div class="scrollhorSlide museo">
+<div class="scrollhorcont indicator"><img src="assets/arrow.svg" /></div>
+<!-- ----------- horizontal content 1 --------------- -->
+<div class="scrollhorcont doublewidth">
+<img src="assets/6-Standard-of-UR-peace2.jpg" />
+</div>
+<div class="scrollhorcont">
+<h3>SOCIAL STRATIFICATION</h3>
+<br><br>
+<p>
+As agriculture became the engine behind Neolithic societies, lifestyles were increasingly driven by the shifts of the growing seasons. Increased productivity and larger populations required specialized roles and responsibilities assigned to support this labor, while food surpluses and seasonal cycles meant there was more time for other concerns -no longer did everyone in the village need to dedicate themselves to food collection to ensure the community's survival.  
+This development paved the way for social stratification not seen before. Settlements like Catal Hayuk, despite its large population for the time, remained surprisingly egalitarian. However, when significant urbanization took place at the start of the Ubaid period (6500 to 3800 BCE), distinct gender roles and class divisions became increasingly predominant.  
+<br><br>
+Households that once depended on each other for survival became economically independent and competitive as resources such as access to waterways, land and animal ownership, and trade privileges led to differentiated productivity among groups.  
+<br><br>
+The emergence of a ruling class enforced and negotiated these divisions. Where decisions had once been made by the collective community, chieftains emerged with the authority to mediate conflicts and oversee economic and religious matters. The chieftains evolved into a ruling class with kings and city-states, and by the time of the Sumerians (5,000 BCE- 1750 BCE), there were governments that drafted contracts, established trade, granted land for irrigation, collected taxes, and enforced laws that safeguarded a clearly defined social order. 
+</p>
+</div>
+<!-- ----------- horizontal content 2 --------------- -->
+<div class="scrollhorcont">
+<img src="assets/1-Nippur-oldest-world-map.png" />
+</div>
+<div class="scrollhorcont">
+
+<h3>TRADE</h3>
+<br><br>
+<p>
+The existence of food surpluses created new opportunities for the evolving communities of the Neolithic era, and organized trade began to emerge, reflecting the needs required by larger populations. The commercial exchange of resources such as metals, animals, food, pottery, and tools demonstrated the sophisticated economic, religious and physical structures these early societies were erecting.   
+<br><br>
+Trade was carried out with other population centers by specialized merchants, and the waterways of the Tigris and Euphrates rivers enabled the exchange of goods with distant communities. Meanwhile the similar styles of the region’s arts and crafts and common working techniques throughout the Fertile Crescent point to an increasing interdependency and collaboration.  
+</p>
+</div>
+<!-- ----------- horizontal content 3 --------------- -->
+<div class="scrollhorcont">
+<img src="assets/Cuneiform-tablet.png" />
+</div>
+<div class="scrollhorcont">
+
+<h3>CUNEIFORM SCRIPT</h3>
+<p>
+<br><br>
+How can we confidently describe the faiths and re-tell the stories of the oldest farmers and civilizations? The answer lies in another remarkable innovation of these Neolithic civilizations: the emergence of the written language. 
+<br><br>
+To be sure, this written language, called the cuneiform script—meaning ‘wedged-shaped” in Latin— looked much different than our own.  It first took shape in Mesopotamia and consisted originally of pictograms— a series of wedge-shaped marks on clay tablets. Eventually (between 3100 BCE- 2900 BCE) this script became more abstract and included simpler designs pertaining to phonetic sounds.  
+<br><br>
+Initially, the clay cuneiform tablets served as administrative records listing the cultivation and distribution of grain in the community and the number of cattle and other animals in use. Between half a million and two million cuneiform tablets are estimated to have been excavated in modern times. Nevertheless, only approximately 30,000-100,000 of these have been deciphered. 
+<br><br>
+The most impressive of these is The Epic of Gilgamesh, which wasn’t deciphered until the 19th century. This Sumerian text, a compilation of many poems written in cuneiform script over the course of 2,000 years (the first one dating back to 2100 BCE) is just one of the many significant legacies left behind by the ancient Sumerians.  No doubt, however, the authors of this early written language still have many stories untold. 
+</p>
+</div>
+<!-- ----------- horizontal content 4 --------------- -->
+<div class="scrollhorcont" style="background-image:url(assets/Vessel-copia.png);">
+
+</div>
+<div class="scrollhorcont">
+
+<h3>POTTERY</h3>
+<p>
+<br><br>
+The first potter’s wheel emerged during this time, and traces of a diverse array of pottery and other crafts, serving both practical and symbolic functions allowed archaeologists to chart the course of agriculture in Mesopotamia to tell the story of the earliest permanent settlements and their growth into urban centers.  (IMAGE?)
+<br><br>
+Archeologists have found numerous, hand-crafted pots for cooking and storage, as well as clay figurines depicting the female form that appear to celebrate the harvest. These objects were used in both daily life and in worship, and were often placed in burial chambers where relationships between the afterlife, fertility and death were sown together by the allegory of the harvest, and its vital, life sustaining grains.   
+<br><br>
+Pottery also reveals the significance of beer to the ancient Mesopotamians. Considered the drink of the gods, it was a staple drink of the ancient Sumerians. Images of people and gods drinking beer through the long straws invented by the Sumerians frequently appear on painted pottery.  (Images?)
+<br><br>
+Despite the increasing stratification of the later Neolithic period, most of the population still labored as farmers and seasonal pastors, but cities then also contained specialized craftspeople: potters, weavers, and metalworkers whose creativity left an enduring legacy.  
+</p>
+</div>
+<!-- ----------- horizontal content 5 --------------- -->
+<div class="scrollhorcont" style="background-image:url(assets/sumerian-gods.png);">
+
+
+</div>
+<div class="scrollhorcont">
+
+<h3>RELIGION</h3>
+<p>
+<span class="heuristica">
+<br><br>
+The significance of wheat for these early groups began to shape their religious beliefs. Images of deer, birds, and other animals were common in pre-Neolithic temples, but archaeologists studying Neolithic sites have found papyrus images, crafts and other artifacts showing Mesopotamian deities dedicated to wheat.  
+<br><br>
+The Sumerian culture (5,000 BCE- 1750 BCE), located in modern day Iraq, was in many ways the culmination of the thousands of years of transformations that evolved over the Neolithic period. It is regarded as the world’s first urban civilization, and they worshipped specific deities such as Enten, a god of irrigation and agriculture and Ashnan, the goddess of grain. Sumerian mythology tells us her mission was to feed humanity.  
+<br><br>
+The ancient Sumerians also had a goddess of beer, Ninkasi, who was responsible with overseeing the daily preparation of this popular drink. The female association with beer is evidenced in the Sumerian text Hymn to Ninkasi (1800 BCE).   
+<br><br>
+Wheat and cultivation took on a new and widely diverse symbolism. It is no surprise that the female, associated with procreation, was also associated with wheat and harvest. Agriculture, after all, was directly sustaining the lives of these early peoples. The seasonal cycles of sowing, thrashing, collecting, then re-tilling the soil lent themselves to the emerging concept of reincarnation, rebirth, and continuity between life and death or between generations. These concepts coalesced into religious beliefs, rituals dedicated to the harvest of wheat. Still to this day, death is frequently depicted in many cultures with a scythe—the instrument that is used to sow the vital grain from its stem and which marks the end of a particular growing season. 
+</p>
+</div>
+<div class="scrollhorcont quote">
+<div class="quote top">	
+<span class="heuristica">
+“From sunrise till sunset, may the name of Grain be praised. People should submit to the yoke of Grain. Whoever has silver, whoever has jewels, whoever has cattle, whoever has sheep shall take a seat at the gate of whoever has grain, and pass his time there.”
+</span>
+<span class="museo">CLOSING PROVERB
+From the Debate between Sheep and Grain (Sumerian creation myth)</span>
+</div>
+<div class="quote bot">	
+<span class="museo">HYMN TO NINKASI</span>
+<span class="heuristica">
+...When you pour out the filtered beer
+of the collector vat,
+It is [like] the onrush of
+Tigris and Euphrates.
+Ninkasi, you are the one who pours out the
+filtered beer of the collector vat,
+It is [like] the onrush of
+Tigris and Euphrates. </span>
+</div>
+</div>
+<!-- ----------- horizontal content 6 --------------- -->
+
+<div class="scrollhorcont"  style="background-image:url(assets/2-estela-Code-of-Hammurabi.png);"> 
+
+</div>
+<div class="scrollhorcont">
+<h3>LAW MATHEMATICS, SCIENCE</h3>
+<p>
+<br><br>
+The changes brought by agriculture evoked new concepts of time and place.  Life was oriented around the growing seasons of crops like wheat.  By 4000 BCE the Sumerians had developed a complex mathematical measurement system that resulted in the creation of arithmetic, geometry, and algebra as well as a lunisolar calendar.  These measuring tools originally served bureaucratic functions and enabled matters such as crop yields and distributions to be tallied.
+New measures for society also became necessary to organize the larger populations. The fortunes of agricultural abundance were coupled with new forms of order ranging from legal codes to military organisation. There is evidence that the Samarra culture had fortified walls and posts on the outskirts of their settlements and by the time of the Sumerians, the first descriptions of warfare were recorded. 
+<br>
+The Code of Hammurabi (1754 BCE), written in ancient Babylonia, in what is now modern day Iraq, is one of the world’s earliest written legal documents. It defines terms for subjects as diverse as divorce, theft, trade, slander, slavery, animal rental, and the duties of workers. There are even codes for the production and drinking of beer.  This legal code is emblematic of the complexity into which Neolithic societies had developed.  
+</p>
+</div>
+
+</div>
+<!-- ----------- horizontal scrolling container end--------------- -->
+
+</div>
+<div class="background" style="background-image:url(assets/back7.jpg);background-position: top center;background-size: 100% auto;"></div>
+</slide>
+<!-- ----------- slide 8 --------------- -->
+<slide id="SPREAD_OF_A_REVOLUTION" class="ground slide8" >
+<div class="content slide8 animate" >
+
+<span class="heuristica h2 pretitle">OF A REVOLUTION</span>
+<span class="museo h1 title">THE SPREAD</span>
+<span class="museo p text blackback">
+ILLUSTRATOR TEXT PROBLEM : 䔀愀爀氀礀 一攀漀氀椀琀栀椀挀 
+</span>
+
+</div> 
+<div class="background" style="background-image:url(assets/back8.jpg)">
+</div>
+</slide>
+<!-- ----------- slide 9 --------------- -->
+<slide id="SPREAD_OF_A_REVOLUTION_MAP" class="ground slide9" >
+
+<!-- <div class="content slide9" ></div> -->
+
+<div class="background map map6" >
+<div id="slideBtn8" class="slideBtn"></div>
+<div id="slideBtn9" class="slideBtn"></div>
+<div id="slideBtn10" class="slideBtn"></div>
+<div id="slideBtn11" class="slideBtn"></div>
+<div id="slideBtn12" class="slideBtn"></div>
+<div id="slideBtn13" class="slideBtn"></div>
+<div id="slideBtn14" class="slideBtn"></div>
+<div id="slideBtn15" class="slideBtn"></div>
+<!-- ----------- slide content 1 --------------- -->
+
+<div id="slideIn8" class="slideIn scroll">
+<h5 class="orange">BRITISH ISLES & SCANDINAVIA</h5>
+<p><span class="lightorange">By 3000 BCE</span>, wheat had reached the British Isles and Scandinavia</p>
+<img src="assets/IMG_00008.jpg" />
+<img src="assets/paintings-sweden.jpg" />
+</div>
+<!-- ----------- slide content 2 --------------- -->
+<div id="slideIn9" class="slideIn scroll">
+<h5 class="orange">BRITISH ISLES & SCANDINAVIA</h5>
+<p><span class="lightorange">By 3000 BCE</span>, wheat had reached the British Isles and Scandinavia</p>
+<img src="assets/IMG_00008.jpg" />
+<img src="assets/paintings-sweden.jpg" />
+</div>
+<!-- ----------- slide content 3 --------------- -->
+<div id="slideIn10" class="slideIn scroll">
+
+<h5 class="orange">ANCIENT ROME</h5>
+<p>Gallo-Roman art depicts farming practices.</p><br><br>
+<img src="assets/roman-harvester.jpg" />
+<p><span class="lightorange">Starting in 500 BCE</span>,  farms in Rome were small and family-owned. The Greeks of this period, however, had started using crop rotation and had large estates. Rome's contact with Carthage, Greece and the Hellenistic East in the 3rd and 2nd centuries improved  agricultural methods. Roman agriculture reached its height in productivity and efficiency during the late Republic and early Empire.
+</p>
+<img src="assets/roman-gau.jpg" />
+
+</div>
+<!-- ----------- slide content 4 --------------- -->
+<div id="slideIn11" class="slideIn scroll">
+<img src="assets/slide-11.png" />
+</div>
+<!-- ----------- slide content 5 --------------- -->
+<div id="slideIn12" class="slideIn scroll">
+<img src="assets/slide-12.png" />
+</div>
+<!-- ----------- slide content 6 --------------- -->
+<div id="slideIn13" class="slideIn scroll">
+<img src="assets/slide-13.png" />
+</div>
+<!-- ----------- slide content 7 --------------- -->
+<div id="slideIn14" class="slideIn scroll">
+<img src="assets/slide-14.png" />
+</div>
+<!-- ----------- slide content 8 --------------- -->
+<div id="slideIn15" class="slideIn scroll">
+<img src="assets/slide-15.png" />
+</div>
+<div class="svgholder">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1920px" height="1080px">
+
+<g>
+	<path fill="none" stroke="#C86D59" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="4,7" d="M796.9,630.9
+		c-14.7-22.4-39.7-49-79.3-59.2c-73.3-18.9-122.3,22.9-122.3,22.9"/>
+	<path fill="none" stroke="#C86D59" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="4,7" d="M823.1,625.6
+		c-1.1-30.2-9.9-78.9-51-114.5c-63.8-55.2-133.4-37.7-133.4-37.7s-10.9,1.8-22.4,6.9"/>
+	<path fill="none" stroke="#C86D59" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="4,7" d="M776.3,684
+		c-47,26.2-101.2,41.2-158.8,41.2c-180.2,0-326.2-146.1-326.2-326.2"/>
+	<path fill="none" stroke="#C86D59" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="4,7" d="M1292.9,879.6
+		c-38.4,31.8-85.7,53.9-138.7,61.6c-153.8,22.5-296.7-83.9-319.2-237.7"/>
+	<path fill="none" stroke="#FBC251" stroke-miterlimit="10" d="M291.6,385"/>
+	<path fill="none" stroke="#C86D59" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="4,7" d="M705,750.7
+		c38.1,0,71.5-20.1,90.2-50.2"/>
+	<path fill="none" stroke="#C86D59" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="4,7" d="M472.5,504.9
+		c28.6-72.1,99-123.1,181.3-123.1c107.7,0,195,87.3,195,195c0,20.5-3.2,40.3-9,58.9"/>
+	<path fill="none" stroke="#C86D59" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="4,7" d="M852.6,648
+		c59.6-55.9,96.9-135.5,96.9-223.7c0-169.4-137.3-306.7-306.7-306.7c-76.2,0-145.9,27.8-199.5,73.8c0,0-29.5,22.2-32.9,38.4"/>
+</g>
+</svg>
+
+
+</div>
+<img class="mapLay" src="assets/back9-dots-places.svg" />
+<img class="mapBot" src="assets/back9.jpg" />
+</div>
+
+</div>
+</slide>
+
+<div id="counter"></div>
+<div id="currSlide"></div>
+</body>
+</html>
