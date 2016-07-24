@@ -1,0 +1,64 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 19, 2016, 8:20:23 PM
+    Author     : Sergio Gómez <sergio@tequilalabs.mx>
+*/
+
+body{
+    background-color: #eaeaea;
+}
+
+.card {
+    padding: 5px;
+    background: #fff;
+    margin: 10px;
+    position:relative;
+    width:auto;
+    height:auto;
+    z-index: 3;
+    opacity: 0.5;
+    padding: 10px;
+    
+    -webkit-transition-timing-function: ease-out; /* Safari and Chrome */
+    transition-timing-function: ease-out;
+
+    border-radius: 8px;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.2);
+
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+.card > *{
+    display: block;
+}
+
+.card .content{
+    width:100%;
+    height:auto;
+}
+
+.cxlarge {
+    width: 320px;
+}
+
+.clarge{
+    width: 210px;
+}
+
+.cmedium{
+    width: 160px;
+}
+
+.stage{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
