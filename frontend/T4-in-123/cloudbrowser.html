@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Cloud Browser | Concept</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/stage.css" />
+        <link rel="stylesheet" type="text/css" href="css/card.css" />
+    </head>
+    <body>
+        <div id="concept_stage" class="stage">
+
+            <div draggable="true" class="card clarge" categories="corn,wheat">
+                <div class="card-content">
+                    <span class="card-title">Video</span>
+                    <iframe class="content"
+                            src="https://www.youtube.com/embed/-q7Fz7NIMWM">
+                    </iframe> 
+                </div>
+            </div>
+            <div draggable="true" class="card cmedium" categories="rye">
+                <div class="card-content">
+                    <span class="card-title">Image</span>
+                    <img class="content" alt="crops" src="http://brucestutz.com/wp-content/uploads/2012/03/gmo_wheat_field.jpg" />
+                </div>
+            </div>
+
+            <div draggable="true" class="card cxlarge" categories="corn,rye">
+                <div class="card-content">
+                    <span class="card-title">Text</span>
+                    <div class="content">
+                        <p>Lorem ipsum dolor</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac lacus et mauris lobortis facilisis ut eget elit. Integer vulputate posuere tellus, mollis gravida velit fermentum et. Nam faucibus tortor nulla, in laoreet est blandit eget. Fusce est nunc, mattis non ante ut, porttitor gravida tortor. Curabitur in tincidunt libero, eu aliquet nisl. Vivamus tortor sem, bibendum vitae urna quis, ultrices pharetra mi. In ut condimentum magna, eu scelerisque odio. In et fermentum dolor. Sed maximus dictum ex, eget condimentum enim semper eu. </p>
+                    </div>
+                </div>
+            </div>
+
+            <div draggable="true" class="card cxlarge" categories="corn">
+                <div class="card-content">
+                    <span class="card-title">Image</span>
+                    <img class="content" alt="crops" src="http://foodtank.com/assets/images/head/10_ways_to_support_family_farmers.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+
+        </div>
+
+        <!-- LIBS -->
+        <script src="js/jquery-3.1.0.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/hammer.min.js"></script>
+        <!-- SOURCES -->
+
+        <script src="js/card.js"></script>
+        <script src="js/stage.js"></script>
+    </body>
+</html>

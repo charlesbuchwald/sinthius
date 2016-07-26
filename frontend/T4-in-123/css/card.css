@@ -1,0 +1,84 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 19, 2016, 8:20:23 PM
+    Author     : Sergio Gómez <it@sergio.im>
+*/
+
+
+
+.card {
+    margin:0;
+    position:relative;
+    width:auto;
+    height:auto;
+    opacity: 1;
+    display:inline-block;
+    background-color: blue;
+}
+
+.card .card-content{
+    margin:0;
+    position: relative;
+    width: auto;
+    height: auto;
+    background: #fff;
+    padding: 10px;
+    
+    -webkit-transition: box-shadow 0.4s ease-in-out;
+    -moz-transition: box-shadow 0.4s ease-in-out;
+    -o-transition: box-shadow 0.4s ease-in-out;
+    transition: box-shadow 0.4s ease-in-out;
+    
+    -webkit-transition: transform 0.4s ease-in-out;
+    -moz-transition: transform 0.4s ease-in-out;
+    -o-transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+}
+
+
+.card[layer="bottom"]{
+    z-index: 10;
+}
+.card[layer="bottom"] .card-content{
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+    transform: scale(1, 1);
+}
+.card[layer="middle"]{
+    z-index: 100;
+}
+.card[layer="middle"] .card-content{
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.3);
+    transform: scale(1.05, 1.05);
+}
+.card[layer="top"]{
+    z-index: 1000;
+}
+.card[layer="top"] .card-content{
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
+    transform: scale(1.1, 1.1);
+}
+
+.card > *{
+    display: block;
+}
+
+.card .content{
+    width:100%;
+    height:auto;
+}
+
+.cxlarge {
+    width: 320px;
+}
+
+.clarge{
+    width: 210px;
+}
+
+.cmedium{
+    width: 160px;
+}
