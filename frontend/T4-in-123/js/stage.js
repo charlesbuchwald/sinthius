@@ -5,15 +5,19 @@
     if (typeof Card === 'undefined') {
         throw "Error Module [stage]:: Card is not defined.";
     }
+    //Card -->
+    if (typeof Menu === 'undefined') {
+        throw "Error Module [stage]:: Menu is not defined.";
+    }
 
     //MODULE EXPORTS
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
             //AMD MODULE
             typeof define === 'function' && define.amd ? define(factory) :
             //GLOBAL REFERENCE
-            global.Stage = factory($,document, Card);
+            global.Stage = factory($,document, Card, Menu);
 
-})(this, function ($, document, Card) {
+})(this, function ($, document, Card, Menu) {
     'use strict';
 
     /**
@@ -23,7 +27,12 @@
      * @constructor
      */
     var Stage = function (ele, opts) {
-        
+        /**
+         * Menu object bounded to the stage.
+         * @protected
+         * @type {Menu}
+         */
+        this.menu = null;
         
         /**
          * Card Array
@@ -32,11 +41,17 @@
          */
         this.cards = [];
         /**
-         * Stores the reference to the current focused card
-         * @type {Card}
+         * List of all available categoires as pair of key-value.
+         * @type {Object}
          * @protected
          */
-        this.currentFocusedCard = null;
+        this.categories = {};
+        /**
+         * JQuery object that contains the available menu holders
+         * @type {JQuery}
+         * @protected
+         */
+        this.JQmenuHolder = $('[data-menu="categories"]');
         
 
         //CALL TO PROTO METHOD init.
@@ -68,6 +83,20 @@
                 this.initCard(el);
             }
             
+            //CATEGORIES --->
+            /** @type {Menu} */
+            this.menu = new Menu(this.categories);
+            this.menu.onSelect(function(category){
+                /** @param {Card} card */
+                me.iterateCards(function(card){
+                    if(card.hasCategory(category)){
+                        card.moveLayerMiddle();
+                    }else{
+                        card.moveLayerBottom();
+                    }
+                });
+            });
+            
         },
         /**
          * Initiates the Card element into the stage.
@@ -79,17 +108,18 @@
             var card = new Card(element);
             
             //EVENTS FOR GLOBAL CONTROL
-            card.ham.on("tap",(function(me,c){
+            card.ham.on("pinchstart tap",(function(me,c){
                 return function(event){
                     me.focus(c);
                 };
             })(this,card));
             
-            card.ham.on("pinchstart",(function(me,c){
-                return function(event){
-                    me.forceFocus(c);
-                };
-            })(this,card));
+            //ADD TO AVAILABLE CATEGORIES
+            var cats = card.categories;
+            for(var i in cats){
+                this.categories[i] = true; 
+            }
+            
             
             this.cards.push(card);
         },
@@ -99,15 +129,15 @@
          * @returns {undefined}
          */
         focus:function(card){
-            if(this.currentFocusedCard){
-                this.currentFocusedCard.moveLayerBack();
-            }
-            if(card !== this.currentFocusedCard){
-                card.moveLayerTop();
-                this.currentFocusedCard = card;
-            }else{
-                this.currentFocusedCard = null;
-            }
+            //ONLY ONE CARD CAN BE FOCUSED.
+            /** @param {Card} singlecard */
+            this.iterateCards(function(singlecard){
+                if(singlecard.isTop()){
+                    singlecard.moveLayerBack();
+                }
+            });
+            
+            card.moveLayerTop();
             
         },
         /**
@@ -119,6 +149,32 @@
         forceFocus:function(card){
             card.moveLayerTop();
             this.currentFocusedCard = card;
+        },
+        
+        /**
+         * Iterates over all the cards.
+         * @param {function} callback function that will be executed on each step of the iteration.
+         * @public
+         * @returns {undefined}
+         */
+        iterateCards:function(callback){
+            var c = this.cards,
+            l = c.length,
+            i;
+    
+            for(i = 0; i < l; i++){
+                callback.call(this,c[i]);
+            }
+            
+        },
+        /**
+         * Renders a menu with all the collected categories.
+         * @private
+         * @returns {undefined}
+         */
+        renderCategoryMenu: function(){
+            var cats = this.categories;
+            var jq = this.JQmenuHolder;
         }
     };
 

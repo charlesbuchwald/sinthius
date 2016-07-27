@@ -189,6 +189,30 @@
             this.moveLayerBottom();
         },
         /**
+         * If the current card's layer is TOP layer.
+         * @public
+         * @returns {Boolean}
+         */
+        isTop:function(){
+            return this.currentLayerLevel == this.TOPLAYER;
+        },
+        /**
+         * If the current card's layer is TOP layer.
+         * @public
+         * @returns {Boolean}
+         */
+        isMiddle:function(){
+            return this.currentLayerLevel == this.MIDDLELAYER;
+        },
+        /**
+         * If the current card's layer is TOP layer.
+         * @public
+         * @returns {Boolean}
+         */
+        isBottom:function(){
+            return this.currentLayerLevel == this.BOTTOMLAYER;
+        },
+        /**
          * Moves the card to the top virtual layer
          * @public
          * @returns {undefined}
@@ -252,6 +276,21 @@
                 return true;
             }
             return false;
+        },
+        /**
+         * Gets the current calculated origin point in X (including offsets)
+         * @public
+         * @returns {number}
+         */
+        currentOriginX: function(){
+            var el = this.element;
+            
+            return this.originX - ((this.currentWidth()-el.offsetWidth)/2);
+        },
+        currentOriginY:function(){
+            var el = this.element;
+            
+            return this.originY - ((this.currentHeight()-el.offsetHeight)/2);
         },
         /**
          * Gets the current element  width size in pixel number.
@@ -322,29 +361,31 @@
          * @returns {boolean}
          */
         validateTransformation:function(tm){
-            var realTranslateX = this.originX + tm.translate.x;
-            var realTranslateY = this.originY + tm.translate.y;
+            var orx = this.currentOriginX();
+            var ory = this.currentOriginY();
+            var realTranslateX = orx + tm.translate.x;
+            var realTranslateY = ory + tm.translate.y;
             
             //BOUNDRIES LIMIT
             //x axis limited to half (plus the center offset) the current size of the card -->
             if(realTranslateX + this.currentWidth() > this.getCanvasWidth()){
                 //console.log("is larger than canvas", realTranslateX,this.currentWidth(),realTranslateX + this.currentWidth());
-                tm.translate.x = this.getCanvasWidth()-this.originX-this.currentWidth();
+                tm.translate.x = this.getCanvasWidth()-orx-this.currentWidth();
                 //return false;
             }
             if(realTranslateX < 0){
-                tm.translate.x = 0-this.originX;
+                tm.translate.x = 0-orx;
                 //return false;
             }
             //y axis limited to half (plus the center offset) the current size of the card -->
             if(realTranslateY + this.currentHeight() > this.getCanvasHeight()){
                 //console.log("current height",this.currentHeight());
                 //console.log("canvas height",this.getCanvasHeight())
-                tm.translate.y = this.getCanvasHeight()-this.originY-this.currentHeight();
+                tm.translate.y = this.getCanvasHeight()-ory-this.currentHeight();
                 //return false;
             }
             if(realTranslateY < 0){
-                tm.translate.y = 0-this.originY;
+                tm.translate.y = 0-ory;
                 //return false;
             }
             
@@ -414,7 +455,7 @@
         onPinch:function(event){
             var tm = this.globalTransformations;
             tm.scale = this.currentScale * event.scale;
-            console.log(tm.scale);
+            //console.log(tm.scale);
             tm = this.executeTransform(tm);
             
             this.lastScale = tm.scale;
