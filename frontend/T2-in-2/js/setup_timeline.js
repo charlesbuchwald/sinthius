@@ -45,14 +45,19 @@
 	 var width = 0;
     	var i = 0;
     	
-    	$('#scrollhorSlide'+(index+1)).hammer().bind("swipeleft", function(event) {
-    console.log("You swiped left - " + $(this).css('margin-left') );
+    	var thisWidth = 0;
+    	thisWidth = parseInt($(this).css('width'));
+    	
+// ------------------------ swipeleft-----------------------------
+
+$('#scrollhorSlide'+(index+1)).hammer().bind("swipeleft", function(event) {
+    console.log("You swiped left - " + $(this).children('slider').css('margin-left') + 'width'+thisWidth );
     event.preventDefault();
     
 	scrollContainer = $(this).attr('id');
 	
 	prevSlide = parseInt($('#'+scrollContainer).attr('current'));
-	if(prevSlide < $('#scrollhorSlide'+(index+1)).children().length - 1){
+	if(prevSlide < $('#scrollhorSlide'+(index+1)).children('slider').children().length - 1){
 
 		thisSlide = Math.abs(prevSlide+1);
 		$('#'+scrollContainer).attr('current', thisSlide);
@@ -64,61 +69,90 @@
 		offset = thisSlide*100;
 		distance = Math.abs(prevSlide - thisSlide);
 		time = distance*0.5;
-		margin = '-'+offset+'vw';
+		margin = '-'+offset+'%';
 
-		$('#'+scrollContainer).css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
+		$('#'+scrollContainer).children('slider').css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
 		console.log(prevSlide+'prev - next'+thisSlide);
 	} else {console.log('end');}
 });
-        	
+        	 // ------------------------ swipe right-----------------------------
+
 $('#scrollhorSlide'+(index+1)).hammer().bind("swiperight", function(event) {
-    console.log("You swiped right - " + $(this).css('margin-left') );
+    console.log("You swiped right - " + $(this).children('slider').css('margin-left') );
 
     event.preventDefault();
 	scrollContainer = $(this).attr('id');
 	
 	prevSlide = parseInt($('#'+scrollContainer).attr('current'));
 	if(!prevSlide < 1){
-	thisSlide = Math.abs(prevSlide-1);
+		thisSlide = Math.abs(prevSlide-1);
 		$('#'+scrollContainer).attr('current', thisSlide);
 	
 	
 
-	$('#'+scrollContainer).siblings('menuhor').children('.horLink').removeClass('active');
-	$('#'+scrollContainer).siblings('menuhor').children('.horLink').eq(thisSlide).addClass('active');
+		$('#'+scrollContainer).siblings('menuhor').children('.horLink').removeClass('active');
+		$('#'+scrollContainer).siblings('menuhor').children('.horLink').eq(thisSlide).addClass('active');
 	
-	console.log(prevSlide +'..'+ thisSlide);
+		console.log(prevSlide +'..'+ thisSlide);
 
 
-	offset = thisSlide*100;
-	distance = Math.abs(prevSlide - thisSlide);
-	time = distance*0.5;
-	margin = '-'+offset+'vw';
+		offset = thisSlide*100;
+		distance = Math.abs(prevSlide - thisSlide);
+		time = distance*0.5;
+		margin = '-'+offset+'%';
 
-	$('#'+scrollContainer).css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
+		$('#'+scrollContainer).children('slider').css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
 
 	
     } else {console.log('start');}
-    });
+});
 		
+// ------------------------ setup container and slides position-----------------------------
 
 		
-		$(this).children('div').not('.indicator').each(function(i) {
-				 
+			$(this).children('slider').children('div').not('.indicator').each(function(i) {
+				newMenuItem = $(this).attr('id');
+				newMenuItemTitle = newMenuItem.replace(/_/g , " ");
+				newMenuItemTitle = newMenuItemTitle.replace(/plus/g , "&");
+				newMenuItemTitle = newMenuItemTitle.replace(/dpunkt/g , ":");
+				$('menuHor').eq(index).append('<div class="horLink '+i+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></div>');
 
-		newMenuItem = $(this).attr('id');
-		newMenuItemTitle = newMenuItem.replace(/_/g , " ");
-newMenuItemTitle = newMenuItemTitle.replace(/plus/g , "&");
-newMenuItemTitle = newMenuItemTitle.replace(/comma/g , ",");
-newMenuItemTitle = newMenuItemTitle.replace(/dpunkt/g , ":");
-$('menuHor').eq(index).append('<div class="horLink '+i+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></div>');
-
-    	width += $(this).outerWidth( true );
-    	$(this).attr('jswidth',$(this).outerWidth( true ));
+    			width += $(this).outerWidth( true );
+    			$(this).attr('jswidth',$(this).outerWidth( true )).css('width',thisWidth+'px');;
 			});
-		$(this).css('width',width+'px');
-		$('menuHor').eq(index).children('.horLink').first().addClass('active');
-		});
+			
+	$(this).children('slider').css('width',width+'px');
+	$('menuHor').eq(index).children('.horLink').first().addClass('active');
+	});
+	
+	
+	 $('.horLink').click(function(e){
+		e.preventDefault();
+		scrollContainer = $(this).parent().siblings('.scrollhorSlide');
+		slider = $(this).parent().siblings('.scrollhorSlide').attr('id');
+		$(this).siblings('.horLink').removeClass('active');
+		$(this).addClass('active');
+		prevSlide = scrollContainer.attr('current');
+
+		that = parseInt($(this).index()-1);
+		scrollContainer.attr('current', that);
+		thisSlide = scrollContainer.attr('current');
+
+
+		console.log(prevSlide +'..'+ thisSlide);
+
+
+		offset = thisSlide*100;
+		distance = Math.abs(prevSlide - thisSlide);
+		time = distance*0.5;
+		margin = '-'+offset+'%';
+
+		scrollContainer.children('slider').css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
+
+		console.log(that+'clicked -'+offset+'vw - distance - '+distance+'menunr - '+scrollContainer);
+		currentMenu = that;
+		return false;
+})
  
   }
   
@@ -194,88 +228,7 @@ return false;
 })
 
 }
-// ------------------------ drag-zoom-----------------------------   
         		
-function hammerIt(elm) {
-hammertime = new Hammer(elm, {});
-hammertime.get('pinch').set({
-    enable: true
-});
-var posX = 0,
-    posY = 0,
-    scale = 1,
-    last_scale = 1,
-    last_posX = 0,
-    last_posY = 0,
-    max_pos_x = 0,
-    max_pos_y = 0,
-    transform = "",
-    el = elm;
-
-hammertime.on('doubletap pan pinch panend pinchend', function(ev) {
-    if (ev.type == "doubletap") {
-        transform =
-            "translate3d(0, 0, 0) " +
-            "scale3d(2, 2, 1) ";
-        scale = 2;
-        last_scale = 2;
-        try {
-            if (window.getComputedStyle(el, null).getPropertyValue('-webkit-transform').toString() != "matrix(1, 0, 0, 1, 0, 0)") {
-                transform =
-                    "translate3d(0, 0, 0) " +
-                    "scale3d(1, 1, 1) ";
-                scale = 1;
-                last_scale = 1;
-            }
-        } catch (err) {}
-        el.style.webkitTransform = transform;
-        transform = "";
-    }
-
-    //pan    
-    if (scale != 1) {
-        posX = last_posX + ev.deltaX;
-        posY = last_posY + ev.deltaY;
-        max_pos_x = Math.ceil((scale - 1) * el.clientWidth / 2);
-        max_pos_y = Math.ceil((scale - 1) * el.clientHeight / 2);
-        if (posX > max_pos_x) {
-            posX = max_pos_x;
-        }
-        if (posX < -max_pos_x) {
-            posX = -max_pos_x;
-        }
-        if (posY > max_pos_y) {
-            posY = max_pos_y;
-        }
-        if (posY < -max_pos_y) {
-            posY = -max_pos_y;
-        }
-    }
-
-
-    //pinch
-    if (ev.type == "pinch") {
-        scale = Math.max(.999, Math.min(last_scale * (ev.scale), 4));
-    }
-    if(ev.type == "pinchend"){last_scale = scale;}
-
-    //panend
-    if(ev.type == "panend"){
-    last_posX = posX < max_pos_x ? posX : max_pos_x;
-    last_posY = posY < max_pos_y ? posY : max_pos_y;
-    }
-
-    if (scale != 1) {
-        transform =
-            "translate3d(" + posX + "px," + posY + "px, 0) " +
-            "scale3d(" + scale + ", " + scale + ", 1)";
-    }
-
-    if (transform) {
-        el.style.webkitTransform = transform;
-    }
-});
-}
 
 // ------------------------ setup triggers-----------------------------   
 function getTriggers(){
@@ -437,37 +390,11 @@ console.log(triggers);
   		getTriggers();
 		skrollrSetup();
 		setupScrollHor();
-		var popups = document.getElementsByClassName('popup');
-		hammerIt(popups);
+		
 			 var currentMenu = 0;
   
   
   
-		 $('.horLink').click(function(e){
-		e.preventDefault();
-		scrollContainer = $(this).parent().siblings('.scrollhorSlide').attr('id');
-		$('#'+scrollContainer).siblings('menuhor').children('.horLink').removeClass('active');
-		$(this).addClass('active');
-		prevSlide = $('#'+scrollContainer).attr('current');
-
-		that = parseInt($(this).index()-1);
-		$(this).parent().siblings('.scrollhorSlide').attr('current', that);
-		thisSlide = $('#'+scrollContainer).attr('current');
-
-
-		console.log(prevSlide +'..'+ thisSlide);
-
-
-		offset = thisSlide*100;
-		distance = Math.abs(prevSlide - thisSlide);
-		time = distance*0.5;
-		margin = '-'+offset+'vw';
-
-		$('#'+scrollContainer).css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
-
-		console.log(that+'clicked -'+offset+'vw - distance - '+distance+'menunr - '+scrollContainer);
-		currentMenu = that;
-		return false;
-})
+		
 		$('body').css('opacity','1');
 	});

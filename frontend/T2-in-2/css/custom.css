@@ -1,5 +1,7 @@
 /* ------------------------------custom setup ----------------------------*/
-slide{overflow: visible;box-shadow: none;}
+slide{
+  overflow: visible;box-shadow: none;
+  }
 
 /* ------------------------------slide1 ----------------------------*/
 
@@ -23,7 +25,9 @@ slide{overflow: visible;box-shadow: none;}
     font-family: "heurastica";
     font-size: 5em;
 }
-.slide1 .text{position: absolute;left: 12.5vw;top: 30vh;width: 23vw;vw;/* font-size: 2em; *//* color: #191919; */}
+.slide1 .text{
+  position: absolute;left: 12.5vw;top: 30vh;width: 23vw;vw;/* font-size: 2em; *//* color: #191919; */
+  }
  slide .image{
     position:absolute;
     bottom:0;
@@ -88,29 +92,25 @@ slide{overflow: visible;box-shadow: none;}
      position: absolute;
      left: 0vw;
      top: 0vh;
-     width: 38vw;
+     width: 100vw;
+     height: 100vh;
 }
 .slide3 .text {
      position: absolute;
      left: 13vw;
-     top: 39vh;
-     width: 30vw;
+     top: 51vh;
+     width: 27vw;
 }
 .slide3 .title{
-    top: 17vh;
-    left: 5vw;
+    top: 8vh;
+    left: 9vw;
     }
 .slide3 .posttitle{top: 12vh;left: 5vw;}
 
 .slide3.bot .text{position: absolute;left: 5%;top: 35vh;width: 60%;}
 .slide3.bot .text2{position: absolute;left: 5%;top: 67vh;width: 60%;}
 .imageheader > .title{position:absolute;width: 43%;top: 50%;left: 0%;height: 32%;line-height: 300%;text-align:center;color:#FFF;background-color: rgba(0,0,0,0.4);}
-.emmer,.einkorn{
-    height: 25vh;
-    width: 40%;
-    /* border: 1px solid; */
- 
-    }
+
     
 .slide3.scrollHor {
     float: left;
@@ -119,19 +119,48 @@ slide{overflow: visible;box-shadow: none;}
     text-align: right;
 }
 
+.slide3 .scrollhorSlide {
+  height: 80vh;
+  bottom: 5vh;
+  right: 0;
+  top: auto;
+  width: 55vw;
+  overflow-y: hidden;
+  padding: 0;
+  }
 
-.einkorn {
-    background-image: url(../assets/einkorn.jpg);
-  background-size: 200% auto;
-    background-position: top right;
+.slide3 .scrollhorSlide slider > div{
+  width: 100%;
+  height: 100%;
+  /* right: 5vh; */
+  /* height: 50vh; */
+  /* bottom: 5vh; */
+  float: left;
+  /* top: 0; */
+  position: relative;
+  }
+.slide3 .scrollhorSlide slider > div h3{
+  float: left;
+  margin: 4vh 0;
+  width: 100%;
 }
+  .slide3 .scrollhorSlide slider > div p{
+    width: 43%;
+    margin-right: 7%;
+    margin-bottom: 1%;
+    display: inline-block;
+}
+.slide3 menuHor{
+  position:absolute;
+  z-index: 22;
+  right: 0;
+  left: auto;
+  bottom: auto;
+  width: 55vw;
+  top: 3vh;
+  text-align: center;
+  }
 
-.emmer {
-    background-image: url(../assets/emmer.jpg);
-    left: 40%;
-       background-size: 100% auto;
-    background-position: center 80%;
-}
 /* ------------------------------slide4 ----------------------------*/
 .content.slide4 .posttitle {
     position: absolute;
@@ -141,10 +170,11 @@ slide{overflow: visible;box-shadow: none;}
 
 .content.slide4 .title {
     position: absolute;
-    top: 79vh;
-    right: 26%;
-    left: auto;
+    top: 10vh;
+    /* right: 26%; */
+    left: 25vw;
 }
+
 
 .content.slide4 .pretext {
     position: absolute;
@@ -161,8 +191,8 @@ slide{overflow: visible;box-shadow: none;}
 
 .content.slide4 .text {
     position: absolute;
-    left: 12%;
-    top: 21vh;
+    right: 10vw;
+    top: 28.5vh;
     width: 28%;
     /* text-align: justify; */
 }
@@ -171,18 +201,59 @@ slide{overflow: visible;box-shadow: none;}
      position: absolute;
      left: 0vw;
      top: 0vh;
-     width: 38vw;
+     width: 100vw;
+     height: 100vh;
 }
 .slide5 .text {
      position: absolute;
-     left: 13vw;
-     top: 39vh;
+     left: 10vw;
+     top: 21vh;
      width: 30vw;
 }
 .slide5 .title{
     top: 17vh;
     left: 5vw;
     }
+.slide5 .scrollhorSlide {
+  height: 90vh;
+  bottom: auto;
+  right: 0;
+  top: 0vh;
+  width: 50vw;
+  overflow-y: hidden;
+  padding: 0;
+  }
+
+.slide5 .scrollhorSlide slider > div{
+  width: 100%;
+  height: 100%;
+  /* right: 5vh; */
+  /* height: 50vh; */
+  /* bottom: 5vh; */
+  float: left;
+  /* top: 0; */
+  }
+.slide5 .scrollhorSlide slider > div h3{
+  float: left;
+  margin: 4vh 0;
+  width: 100%;
+}
+  .slide5 .scrollhorSlide slider > div p{
+    width: 43%;
+    margin-right: 7%;
+    margin-bottom: 1%;
+    display: inline-block;
+}
+.slide5 menuHor{
+  position:absolute;
+  z-index: 22;
+  right: 0;
+  left: auto;
+  bottom: 0vh;
+  width: 55vw;
+  top: auto;
+  text-align: center;
+  }
 
 /* ------------------------------slide6----------------------------*/
 .slide6 .scrollhorSlide{
@@ -213,43 +284,7 @@ slide{overflow: visible;box-shadow: none;}
 .slide6.scrollhor{
   overflow: hidden;
 }
-menuHor{position:absolute;z-index: 2;left: 40vw;right:0;top: 5vh;width: 55vw;}
-menuHor a{
 
-  display:inline-block;
-  text-align:center;
-}
-.horLink {
-    text-decoration: none;
-    color: #000;
-    float: left;
-    margin-bottom: 2vh;
-    margin-right: 4vw;
-    /* background-image: url('../assets/menu-btn-next.svg'); */
-    background-position: top right;
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-    /* width: 100%; */
-    /* height: 2vh; */
-    line-height: 1vh;
-    opacity:0.5;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-.horLink.active{opacity: 1;}
-menuHor .menuDot {
-    float: left;
-    font-size: 2em;
-    width: 100%;
-}
-
-menuHor .menuTitle {
-    float: left;
-    width: 100%;
-    text-align: left;
-    display: none;
-}
 /* ------------------------------slide7----------------------------*/
 .slide7 .title {
     top: 18vh;
@@ -275,6 +310,48 @@ position: absolute;
 .slide7 .pretext{
     top: 12vh;
 }
+.slide7 .scrollhorSlide {
+  height: 90vh;
+  bottom: auto;
+  right: 0;
+  top: 10vh;
+  width: 100vw;
+  overflow: hidden;
+  padding: 0;
+  }
+
+.slide7 .scrollhorSlide slider > div{
+  width: 100%;
+  height: 100%;
+  /* right: 5vh; */
+  /* height: 50vh; */
+  /* bottom: 5vh; */
+  float: left;
+  /* top: 0; */
+  position: relative;
+  }
+.slide7 .scrollhorSlide slider > div h3{
+  float: left;
+  margin: 4vh 0;
+  width: 100%;
+}
+  .slide7 .scrollhorSlide slider > div p{
+    width: 43%;
+    margin-right: 7%;
+    margin-bottom: 1%;
+    display: inline-block;
+}
+.slide7 menuHor{
+  position:absolute;
+  z-index: 22;
+  right: 0;
+  left: auto;
+  bottom: auto;
+  width: 100vw;
+  top: 2vh;
+  text-align: center;
+  }
+
 /* ------------------------------slide8----------------------------*/
 
 
@@ -306,54 +383,57 @@ position: absolute;
   overflow: hidden;
 }
 
-#CHICOMECOATL  .background.center-right, #CHALCHIUTLICUE .background.center-right{
-    background-position: 75% 30%;
-    background-size: auto 80%;
-    background-repeat: no-repeat;
-    position: absolute;
+.slide8 .scrollhorSlide {
+  height: 80vh;
+  bottom: 5vh;
+  right: 0;
+  top: auto;
+  width: 55vw;
+  overflow-y: hidden;
+  padding: 0;
+  }
+
+.slide8 .scrollhorSlide slider > div{
+  width: 100%;
+  height: 100%;
+  /* right: 5vh; */
+  /* height: 50vh; */
+  /* bottom: 5vh; */
+  float: left;
+  /* top: 0; */
+  position: relative;
+  }
+  .slide8 .scrollhorSlide slider > div img{
+  width: 100%;
+  height: 100%;
+  /* right: 5vh; */
+  /* height: 50vh; */
+  /* bottom: 5vh; */
+  float: left;
+  /* top: 0; */
+  position: relative;
+  }
+.slide8 .scrollhorSlide slider > div h3{
+  float: left;
+  margin: 4vh 0;
+  width: 100%;
 }
-#TLALOC .background.center-right, #CHALCHIUTLICUE .background.center-right{
-    background-position: 80% 30%;
-    background-size: auto 60%;
-    background-repeat: no-repeat;
-    position: absolute;
+  .slide8 .scrollhorSlide slider > div p{
+    width: 43%;
+    margin-right: 7%;
+    margin-bottom: 1%;
+    display: inline-block;
 }
-#CHALCHIUTLICUE .background.center-right {
-    background-position: 78% 20%;
-    background-size: auto 70%;
-    background-repeat: no-repeat;
-    position: absolute;
-}
-#CINTEOTL .background.center-right, #XILONEN .background.center-right{
-    background-position: 72% 20%;
-    background-size: auto 70%;
-    background-repeat: no-repeat;
-    position: absolute;
-}
-note {
-    position: absolute;
-    right: 2vw;
-    top: 20vh;
-    color: #000;
-    width: 15vw;
-}
-#TLALOC note, #CHALCHIUTLICUE note  {
-    position: absolute;
-    right: 10vw;
-    top: 27vh;
-    color: #000;
-    width: 15vw;
-}
-#CHICOMECOATL note, #CINTEOTL note  {
-    position: absolute;
-    right: 4vw;
-    top: 34vh;
-    color: #000;
-    width: 15vw;
-}
-note > *{
-    margin-bottom:2vh;
-}
+.slide8 menuHor{
+  position:absolute;
+  z-index: 22;
+  right: 0;
+  left: auto;
+  bottom: auto;
+  width: 55vw;
+  top: 3vh;
+  text-align: center;
+  }
 /* ------------------------------slide9----------------------------*/
 
 .slide9 .text{position: absolute;left: 0vw;bottom: 0vh;width: 40vw;/* font-size: 2em; *//* color: #191919; */}

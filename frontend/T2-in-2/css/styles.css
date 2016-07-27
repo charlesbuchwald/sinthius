@@ -12,7 +12,7 @@ background: transparent;
 border: 0;
 margin: 0;
 padding: 0;
-vertical-align: baseline;
+vertical-align: baseline; 
 } 
 body {line-height: 1;min-height: 100vh;opacity:0;
 
@@ -85,15 +85,19 @@ cursor:pointer;
 body{  font-family: 'museo-sans-500';}
 .heuristica{font-family: 'Heuristica Italic';/* font-style:italic; */font-weight: 100;}
 .museo{font-family: "museo-sans-500";/* font-weight: 100; */}
-h3, span.h3 {
-    font-size: 1.8em;
-}
-.bold, strong{font-weight: 900;}
-.italic{font-style: italic;}
+p, .p{
+  font-family: 'museo-sans-500';
+  font-size: 1.1em;
+  letter-spacing: 0.05em;
+  line-height: 180%;
+  }
+
 h1, span.h1 {
-    font-size: 6em;
+    font-size: 5.5em;
     /* font-weight: 900; */
     /* font-family: "museo-sans-900"; */
+    letter-spacing: -0.01em;
+    line-height: 90%;
 }
 
 h4, span.h4 {
@@ -101,6 +105,9 @@ h4, span.h4 {
 }
 h5, span.h5 {
     font-size: 1.2em;
+}
+h3, span.h3 {
+    font-size: 1.8em;
 }
 h2, span.h2 {
     font-size: 3em;
@@ -114,6 +121,11 @@ h2, span.h2 {
 .slim{
     font-weight: 100;
 }
+
+.text{line-height: 180%;}
+.bold, strong{font-weight: 900;}
+.museo strong{font-family: "museo-sans-900"}
+.italic{font-style: italic;}
 .museo.slim {
     font-weight: 100;
      font-family: 'museo-sans-100';
@@ -124,9 +136,6 @@ h2, span.h2 {
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
 }
-p, .p{
-  font-family: 'museo-sans-500';
-font-size: 1.1em;letter-spacing: 0.05em;line-height: 140%;}
 
 .addCross{background-image:url(../assets/menu-btn-close.svg);width: 50px;height: 35px;/* text-align: center; */background-size: contain;background-repeat: no-repeat;background-position: center center;-ms-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
 .addInfo{
@@ -341,7 +350,7 @@ a.scrollbottom {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
   }
-}
+
 /* ------------------------------main ----------------------------*/
 
 #currSlide{
@@ -462,15 +471,16 @@ img.mapLayText {
 .popup {
     position: fixed;
     width: 40vw;
-    height: 30vh;
-    /* background: #231f20; */
-    /* padding: 2vw; */
+    height: 60vh;
+    background: #fff;
+    padding: 5vh 3vw;
     z-index: 99999;
-    opacity: 0; 
-    top: 35vh;
-    left: 30vw;
-    /* margin-top: -15vw; */
-    /* margin-left: -31%; */
+    opacity: 0;
+    top: 0vh;
+    left: 0vw;
+    /* margin: -50vh 0 0 -50vw; */
+    margin-top: 15vh;
+    margin-left: 26.5vw;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
@@ -479,16 +489,19 @@ img.mapLayText {
 opacity:1;
 }
 .popup img {
-    width: 100%;
-    margin-left: -5vh;
-    margin-top: -5vh;
-    border: solid 5vh black;
+    max-width: 35vw;
+    max-height: 35vh;
+    /* margin-left: -5vh; */
+    /* margin-top: -5vh; */
+    margin: 0 auto;
+    /* padding: 5vh 5vw; */
 }
 
 .popupImage {
     float: left;
-    width: 80%;
-    margin-left: 10%;
+    width: 100%;
+    /* margin-left: 10%; */
+    overflow: hidden;
 }
 .popupImage > img {
     width: 100%;
@@ -499,8 +512,10 @@ opacity:1;
 .popupText {
     float: left;
     margin-top: 1vh;
-        color: #FFF;
+    /* color: #FFF; */
+    height: 25vh;
     font-size: 0.9em;
+    overflow-y: scroll;
 }
 .popupClose {
     position: absolute;
@@ -509,6 +524,19 @@ opacity:1;
     width: 30px;
     height: 30px;
 }
+
+/* ------------------------------swipeshow----------------------------*/
+swipeshow{position:absolute;width: 50vw;right: 5vh;height: 50vh;bottom: 5vh;}
+swipeshow div{
+  width: 100%;
+  height: auto;
+  /* right: 5vh; */
+  /* height: 50vh; */
+  /* bottom: 5vh; */
+  position: absolute;
+  bottom: 0;
+  }
+
 /* ------------------------------svg ----------------------------*/
 
 .svgholder {
@@ -536,7 +564,7 @@ top:100vh;
 }
 .content span{z-index:10;position: absolute;}
 .content.overImage {
-    color: #FFF;
+    /* color: #FFF; */
 }
 .captionHide {
     position: absolute;
@@ -580,11 +608,20 @@ overflow-y:scroll;}
     top: 0;
     padding-top: 10vh;
     height: 80vh;
+    z-index:22;
     /* -webkit-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1); */
 /* 
     -moz-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
  */
     /* box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1); */
+}
+.scrollhorSlide slider {
+    float: left;
+    /* top: 0; */
+    height: 100%;
+    min-width: 100%;
+    /* position: relative; */
+    /* margin-left: -100%; */
 }
 
 .scrollhorcont.indicator {
@@ -597,10 +634,10 @@ overflow-y:scroll;}
 
 .scrollhorcont {
     float: left;
-    position: relative;
-    width: 30vw;
+    /* position: relative; */
+    width: 100%;
     padding: 0;
-    height: 100vh;
+    height: auto;
     background-size: contain;
     background-position: center top;
     background-repeat: no-repeat;
@@ -620,9 +657,11 @@ width:250px !important;
   
 }
 .scrollhorcont img{
-    float: left;
-    width: 100%;
-    height: auto;
+    position: absolute;
+    width: 100vw;
+    /* height: auto; */
+    /* display: inline; */
+    bottom: 0;
 }
 .scrollhorcont .mapLay{
     position: absolute;
@@ -646,6 +685,45 @@ width:250px !important;
     float: left;
     position: relative;
     margin-top: 30px;
+}
+menuHor{position:absolute;z-index: 22;left: 40vw;right:0;top: 5vh;width: 55vw;}
+menuHor a{
+
+  display:inline-block;
+  text-align:center;
+}
+.horLink {
+    text-decoration: none;
+    color: #000;
+    /* float: left; */
+    display: inline-block;
+    /* text-align: center; */
+    /* margin-bottom: 2vh; */
+    margin: 2vw;
+    /* background-image: url('../assets/menu-btn-next.svg'); */
+    background-position: top right;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    /* width: 100%; */
+    /* height: 2vh; */
+    line-height: 1vh;
+    opacity:0.5;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.horLink.active{opacity: 1;}
+menuHor .menuDot {
+    float: left;
+    font-size: 2em;
+    width: 100%;
+}
+
+menuHor .menuTitle {
+    float: left;
+    width: 100%;
+    text-align: left;
+    display: none;
 }
 
 /* ------------------------------slideins----------------------------*/
