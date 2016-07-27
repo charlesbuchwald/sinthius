@@ -1,0 +1,520 @@
+/* ------------------------------custom setup ----------------------------*/
+slide{overflow: visible;box-shadow: none;}
+
+/* ------------------------------slide1 ----------------------------*/
+
+
+.slide1 .pretitle {
+    position: absolute;
+    left: 10%;
+    top: 9vh;
+}
+.slide1 .posttitle {
+    position: absolute;
+    right: 58vw;
+    top: 6vh;
+    /* font-size: 3.5em; */
+}
+.slide1 .title {
+    position: absolute;
+    top: 15vh;
+    text-align: right;
+    right: 58vw;
+    font-family: "heurastica";
+    font-size: 5em;
+}
+.slide1 .text{position: absolute;left: 12.5vw;top: 30vh;width: 23vw;vw;/* font-size: 2em; *//* color: #191919; */}
+ slide .image{
+    position:absolute;
+    bottom:0;
+    left:100;
+    }
+.slide1 .pretext {
+    position: absolute;
+    left: 13%;
+    top: 29vh;
+    font-weight: 500;
+}
+.slide1 .pretext2 {
+    position: absolute;
+    left: 13%;
+    top: 32vh;
+    font-style: normal;
+}
+.slide1 .background {
+    background-position: bottom right;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+/* ------------------------------slide2----------------------------*/
+.content.slide2 {
+    color: #191919;
+}
+.content.slide2 .posttitle {
+    position: absolute;
+    right: 26%;
+    top: 85vh;
+}
+
+.content.slide2 .title {
+    position: absolute;
+    top: 10vh;
+    /* right: 26%; */
+    left: 25vw;
+}
+
+.content.slide2 .pretext {
+    position: absolute;
+    left: 13%;
+    top: 29vh;
+    font-weight: 500;
+}
+.content.slide2 .pretext2 {
+    position: absolute;
+    left: 13%;
+    top: 32vh;
+    font-style: normal;
+}
+
+.content.slide2 .text {
+    position: absolute;
+    right: 10vw;
+    top: 28.5vh;
+    width: 28%;
+    /* text-align: justify; */
+}
+/* ------------------------------slide3 ----------------------------*/
+.slide3 .content {
+     position: absolute;
+     left: 0vw;
+     top: 0vh;
+     width: 38vw;
+}
+.slide3 .text {
+     position: absolute;
+     left: 13vw;
+     top: 39vh;
+     width: 30vw;
+}
+.slide3 .title{
+    top: 17vh;
+    left: 5vw;
+    }
+.slide3 .posttitle{top: 12vh;left: 5vw;}
+
+.slide3.bot .text{position: absolute;left: 5%;top: 35vh;width: 60%;}
+.slide3.bot .text2{position: absolute;left: 5%;top: 67vh;width: 60%;}
+.imageheader > .title{position:absolute;width: 43%;top: 50%;left: 0%;height: 32%;line-height: 300%;text-align:center;color:#FFF;background-color: rgba(0,0,0,0.4);}
+.emmer,.einkorn{
+    height: 25vh;
+    width: 40%;
+    /* border: 1px solid; */
+ 
+    }
+    
+.slide3.scrollHor {
+    float: left;
+    /* position: initial; */
+    margin-top: 97vh;
+    text-align: right;
+}
+
+
+.einkorn {
+    background-image: url(../assets/einkorn.jpg);
+  background-size: 200% auto;
+    background-position: top right;
+}
+
+.emmer {
+    background-image: url(../assets/emmer.jpg);
+    left: 40%;
+       background-size: 100% auto;
+    background-position: center 80%;
+}
+/* ------------------------------slide4 ----------------------------*/
+.content.slide4 .posttitle {
+    position: absolute;
+    right: 26%;
+    top: 85vh;
+}
+
+.content.slide4 .title {
+    position: absolute;
+    top: 79vh;
+    right: 26%;
+    left: auto;
+}
+
+.content.slide4 .pretext {
+    position: absolute;
+    left: 13%;
+    top: 29vh;
+    font-weight: 500;
+}
+.content.slide4 .pretext2 {
+    position: absolute;
+    left: 13%;
+    top: 32vh;
+    font-style: normal;
+}
+
+.content.slide4 .text {
+    position: absolute;
+    left: 12%;
+    top: 21vh;
+    width: 28%;
+    /* text-align: justify; */
+}
+/* ------------------------------slide5----------------------------*/
+.slide5 .content {
+     position: absolute;
+     left: 0vw;
+     top: 0vh;
+     width: 38vw;
+}
+.slide5 .text {
+     position: absolute;
+     left: 13vw;
+     top: 39vh;
+     width: 30vw;
+}
+.slide5 .title{
+    top: 17vh;
+    left: 5vw;
+    }
+
+/* ------------------------------slide6----------------------------*/
+.slide6 .scrollhorSlide{
+ position: absolute;
+ padding: 0;
+ /* width: 100vw; */
+ height: 100vh;
+ -webkit-transition: all 0.5s ease-in-out;
+ -moz-transition: all 0.5s ease-in-out;
+ transition: all 0.5s ease-in-out;
+ left: 0;
+ right: 0;
+ top: 0vh;
+ bottom: 0;
+ left: 0;
+}
+.slide6 .background, .instructions {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-position: 100% 110%;
+    background-size: auto 100%;
+}
+.slide6.scrollhor{
+  overflow: hidden;
+}
+menuHor{position:absolute;z-index: 2;left: 40vw;right:0;top: 5vh;width: 55vw;}
+menuHor a{
+
+  display:inline-block;
+  text-align:center;
+}
+.horLink {
+    text-decoration: none;
+    color: #000;
+    float: left;
+    margin-bottom: 2vh;
+    margin-right: 4vw;
+    /* background-image: url('../assets/menu-btn-next.svg'); */
+    background-position: top right;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    /* width: 100%; */
+    /* height: 2vh; */
+    line-height: 1vh;
+    opacity:0.5;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.horLink.active{opacity: 1;}
+menuHor .menuDot {
+    float: left;
+    font-size: 2em;
+    width: 100%;
+}
+
+menuHor .menuTitle {
+    float: left;
+    width: 100%;
+    text-align: left;
+    display: none;
+}
+/* ------------------------------slide7----------------------------*/
+.slide7 .title {
+    top: 18vh;
+    left: 4vw;
+}
+.slide7 .midtitle {
+    top: 87vh;
+    right: 8%;
+    position: absolute;
+    z-index: 22;
+}
+.slide7 .pretitle {
+    top: 17vh;
+    left: 8%;
+}
+.slide7 .text {
+position: absolute;
+    left: 12%;
+ 
+    width: 28%;
+    top: 30vh !important;
+}
+.slide7 .pretext{
+    top: 12vh;
+}
+/* ------------------------------slide8----------------------------*/
+
+
+.slide8 .scrollhorSlide{
+ position: absolute;
+ padding: 0;
+ /* width: 100vw; */
+ height: 100vh;
+ -webkit-transition: all 0.5s ease-in-out;
+ -moz-transition: all 0.5s ease-in-out;
+ transition: all 0.5s ease-in-out;
+ left: 0;
+ right: 0;
+ top: 0vh;
+ bottom: 0;
+ left: 0;
+ z-index: 1;
+}
+.slide8 .title{left: 38vw;bottom: 20vh;z-index: 0;}
+.slide8 .posttitle{left: 38vw;bottom: 8vh;z-index: 0;}
+.slide8 .scrollhorcont .slideIn{
+  /* right: auto; */
+  /* width: 30vw; */
+  /* overflow-y:scroll; */
+  padding-top: 30vh;
+  background-color: rgba(255,255,255,1);
+}
+.slide8.scrollhor{
+  overflow: hidden;
+}
+
+#CHICOMECOATL  .background.center-right, #CHALCHIUTLICUE .background.center-right{
+    background-position: 75% 30%;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+#TLALOC .background.center-right, #CHALCHIUTLICUE .background.center-right{
+    background-position: 80% 30%;
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+#CHALCHIUTLICUE .background.center-right {
+    background-position: 78% 20%;
+    background-size: auto 70%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+#CINTEOTL .background.center-right, #XILONEN .background.center-right{
+    background-position: 72% 20%;
+    background-size: auto 70%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+note {
+    position: absolute;
+    right: 2vw;
+    top: 20vh;
+    color: #000;
+    width: 15vw;
+}
+#TLALOC note, #CHALCHIUTLICUE note  {
+    position: absolute;
+    right: 10vw;
+    top: 27vh;
+    color: #000;
+    width: 15vw;
+}
+#CHICOMECOATL note, #CINTEOTL note  {
+    position: absolute;
+    right: 4vw;
+    top: 34vh;
+    color: #000;
+    width: 15vw;
+}
+note > *{
+    margin-bottom:2vh;
+}
+/* ------------------------------slide9----------------------------*/
+
+.slide9 .text{position: absolute;left: 0vw;bottom: 0vh;width: 40vw;/* font-size: 2em; *//* color: #191919; */}
+.slide9 h3{
+
+
+margin-bottom:2vh;
+  }
+
+/* ------------------------------slide10----------------------------*/
+.slide10 .title{left: 38vw;bottom: 20vh;position: absolute;}
+.slide10 .posttitle{left: 38vw;bottom: 8vh;position: absolute;}
+.slide10 .slideIn{
+  /* right: auto; */
+  /* width: 30vw; */
+  /* overflow-y:scroll; */
+  padding-top: 30vh;
+  left: 0;
+  background-color: rgba(255,255,255,0.8);
+}
+.slide10 img{
+ position: absolute;
+ width: 100vw;
+ padding-top: 16vh;
+ right: -40vw;
+ background-color: rgba(255,255,255,0.8);
+}
+
+.slide11 .text{position: absolute;left: 0vw;bottom: 0vh;width: 40vw;height: 40vh;padding-top: 60vh;/* font-size: 2em; *//* color: #191919; */}
+.slide11 h3{
+
+
+margin-bottom:2vh;
+  }
+  
+  /* ------------------------------slide12----------------------------*/
+  .slide12 .background.center-right {
+    background-position: 85% 25%;
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+/* ------------------------------slide13----------------------------*/
+
+.slide13 .content {
+     position: absolute;
+     left: 0vw;
+     top: 0vh;
+     width: 38vw;
+}
+.slide13 .text {
+     position: absolute;
+     left: 13vw;
+     top: 30vh;
+     width: 30vw;
+}
+.slide13 .title{
+    top: 17vh;
+    left: 5vw;
+    }
+.slide13 .posttitle{top: 12vh;left: 5vw;}
+
+
+
+
+
+
+div#slideIn0 {
+    left: 5%;
+    /* width: 25%; */
+    padding: 5vh 3%;
+}
+.slideIn h4, .slideIn p{
+
+    margin-bottom:1em
+}
+div#slideBtn1 {
+    left: 41%;
+}
+
+div#slideBtn3 {
+    left: 51%;
+}
+
+
+div#slideBtn4 {
+    width: 60px;
+    height: 60px;
+    left: 22%;
+    top: 31vh;
+}
+div#slideBtn5 {
+    width: 60px;
+    height: 60px;
+    left: 27%;
+    top: 36vh;
+}
+div#slideBtn6 {
+    width: 60px;
+    height: 60px;
+    left: 37%;
+    top: 39vh;
+}
+div#slideBtn7 {
+    width: 60px;
+    height: 60px;
+    left: 22.5%;
+    top: 45vh;
+}
+div#slideBtn8 {
+    width: 60px;
+    height: 60px;
+    left: 13.5%;
+    top: 32vh;
+}
+div#slideBtn9 {
+    width: 60px;
+    height: 60px;
+    left: 19%;
+    top: 20vh;
+}
+div#slideBtn10 {
+    width: 60px;
+    height: 60px;
+    left: 23%;
+    top: 45vh;
+}
+div#slideBtn11 {
+    width: 60px;
+    height: 60px;
+    left: 30%;
+    top: 44vh;
+}
+div#slideBtn12 {
+    width: 60px;
+    height: 60px;
+    left: 29%;
+    top: 52vh;
+}
+div#slideBtn13 {
+    width: 60px;
+    height: 60px;
+    left: 35%;
+    top: 66vh;
+}
+div#slideBtn14 {
+    width: 60px;
+    height: 60px;
+    left: 40.5%;
+    top: 59vh;
+}
+div#slideBtn15 {
+    width: 60px;
+    height: 60px;
+    left: 67%;
+    top: 76vh;
+}
+
+#countTop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:99;
+}
