@@ -8,105 +8,101 @@ var slideAttr = [];
 // ------ SETUP SLIDE 1-------
 var slide1Attr = {
 '0':"transform:translate(0,100vh);",
-'100':"transform:translate(0,0vh);",
-'400':"transform:translate(0,0vh);", 
-'500':"transform:translate(0,-100vh);",
-'700':"transform:translate(0,-100vh);",
-'800':"transform:translate(0,-200vh);",
-'triggerin':"100",
-'triggerout':"400",
+'200':"transform:translate(0,0vh);",
+'600':"transform:translate(0,0vh);", 
+'800':"transform:translate(0,-100vh);",
+'801':"transform:translate(0,-200vh);",
+'triggerin':"200",
+'triggerout':"600",
 'color':"black"};
 
 slideAttr.push(slide1Attr);
 // ------ SETUP SLIDE 2-------
 var slide2Attr = {
-'400':"transform:translate(0,100vh);",
-'500':"transform:translate(0,0vh);",
-'700':"transform:translate(0,0vh);",
+'600':"transform:translate(0,100vh);",
+'800':"transform:translate(0,0vh);",
+'1200':"transform:translate(0,0vh);",
+'1500':"transform:translate(0,-170vh);",
 
-'900':"transform:translate(0,-200vh);",
-
-'1100':"transform:translate(0,-200vh);",
-'triggerin':"500",
-'triggerout':"800",
+'triggerin':"800",
+'triggerout':"1200",
 'color':"black"};
 slideAttr.push(slide2Attr);
 // ------ SETUP SLIDE 3-------
 var slide3Attr = {
 '0':"transform:translate(0,100vh);",
-'300':"transform:translate(0,100vh);", 
-'310':"transform:translate(0,100vh);", 
-'750':"transform:translate(0,100vh);", 
-'850':"transform:translate(0,0vh);", 
-'1300':"transform:translate(0,0vh);", 
-'1400':"transform:translate(0,-110vh);",
-'triggerin':"850",
-'triggerout':"1300",
-'color':"white"};
+
+'1500':"transform:translate(0,100vh);", 
+'1900':"transform:translate(0,0vh);", 
+
+'2100':"transform:translate(0,-110vh);",
+'triggerin':"1500",
+'triggerout':"1900",
+'color':"black"};
 slideAttr.push(slide3Attr);
 // ------ SETUP SLIDE 4-------
 var slide4Attr = {
-'1000':"transform:translate(0,100vh);",
+'0':"transform:translate(0,100vh);",
 
-'1301':"transform:translate(0,100vh);",
-'1400':"transform:translate(0,0vh);",
+'1900':"transform:translate(0,100vh);",
+'2100':"transform:translate(0,0vh);",
 
-'1700':"transform:translate(0,0vh);",
-'1800':"transform:translate(0,-200vh);",
+'2500':"transform:translate(0,0vh);",
+'2800':"transform:translate(0,-170vh);",
 
-'triggerin':"1400",
-'triggerout':"1700",
-'color':"white"};
+'triggerin':"2100",
+'triggerout':"2500",
+'color':"black"};
 slideAttr.push(slide4Attr);
 
 
 // ------ SETUP SLIDE 5-------
 var slide5Attr = {
 '0':"transform:translate(0,110vh);",
-'1700':"transform:translate(0,110vh);",
-'1800':"transform:translate(0,0vh);",
+'2600':"transform:translate(0,110vh);",
+'2800':"transform:translate(0,0vh);",
 
-'2000':"transform:translate(0,0vh);",
-'2100':"transform:translate(0,-110vh);",
-'triggerin':"1800",
-'triggerout':"2000",
-'color':"white"};
+'3200':"transform:translate(0,0vh);",
+'3400':"transform:translate(0,-110vh);",
+'triggerin':"2800",
+'triggerout':"3200",
+'color':"black"};
 slideAttr.push(slide5Attr);
 
 
 // ------ SETUP SLIDE 6-------
 var slide6Attr = {
 '0':"transform:translate(0,110vh);",
-'2000':"transform:translate(0,110vh);",
-'2100':"transform:translate(0,0vh);",
-'2501':"transform:translate(0,0vh);",
-'2602':"transform:translate(0,-120vh);",
-'triggerin':"2100",
-'triggerout':"2500",
+'3200':"transform:translate(0,110vh);",
+'3400':"transform:translate(0,0vh);",
+'3800':"transform:translate(0,0vh);",
+'4000':"transform:translate(0,-120vh);",
+'triggerin':"3400",
+'triggerout':"3800",
 'color':"black"};
 slideAttr.push(slide6Attr);
 // ------ SETUP SLIDE 7-------
 var slide7Attr = {
 '0':"transform:translate(0,100vh);",
-'2500':"transform:translate(0,100vh);",
-'2600':"transform:translate(0,0vh);", 
-'3000':"transform:translate(0,0vh);", 
-'3100':"transform:translate(0,-110vh);",
-'3600':"transform:translate(0,-110vh);",
-'triggerin':"2600",
-'triggerout':"3000",
-'color':"white"};
+'3800':"transform:translate(0,100vh);",
+'4000':"transform:translate(0,0vh);", 
+'4400':"transform:translate(0,0vh);", 
+'4600':"transform:translate(0,-110vh);",
+
+'triggerin':"4000",
+'triggerout':"4400",
+'color':"black"};
 slideAttr.push(slide7Attr);
 // ------ SETUP SLIDE 8-------
 var slide8Attr = {
 '0':"transform:translate(0,110vh);", 
-'3000':"transform:translate(0,110vh);", 
-'3100':"transform:translate(0,0vh);", 
-'3300':"transform:translate(0,0vh);",
-'3400':"transform:translate(0,-110vh);",
-'triggerin':"3000",
-'triggerout':"3300",
-'color':"white"};
+'4400':"transform:translate(0,110vh);", 
+'4600':"transform:translate(0,0vh);", 
+'5000':"transform:translate(0,0vh);",
+'5200':"transform:translate(0,-110vh);",
+'triggerin':"4600",
+'triggerout':"5000",
+'color':"black"};
 slideAttr.push(slide8Attr);
 // ------ SETUP SLIDE 9-------
 var slide9Attr = {
@@ -117,7 +113,7 @@ var slide9Attr = {
 '3400':"transform:translate(0,-110vh);",
 'triggerin':"3000",
 'triggerout':"3300",
-'color':"white"};
+'color':"black"};
 slideAttr.push(slide9Attr);
 // ------ SETUP SLIDE 10-------
 var slide10Attr = {
@@ -144,7 +140,7 @@ var slide11Attr = {
 '4200':"transform:translate(0,-110vh);",
 'triggerin':"3800",
 'triggerout':"4100",
-'color':"white"};
+'color':"black"};
 slideAttr.push(slide11Attr);
 // ------ SETUP SLIDE 12-------
 var slide12Attr = {
@@ -236,6 +232,7 @@ console.log('slidecount'+(index+1));
 			
 			 runTrig = parseInt(inTrig);
 			Trigrun = parseInt(outTrig) + 1;
+			initTrans = 'transform:translate(0vw,0vh)';
 			runningDir = jQuery(this).attr('running');
 			    if(runningDir == 'top'){
      			 run = 'transform:translate(0vw,-50vh)';
@@ -247,12 +244,17 @@ console.log('slidecount'+(index+1));
      			  run = 'transform:translate(50vw,0vh)';
      			  } else if (runningDir == 'topfast'){
      			  run = 'transform:translate(0vw,-100vh)';
+     			 } else if (runningDir == 'margin-top'){
+     			 maxoffset = jQuery(this).children('.runningHolder').height() - jQuery(this).height();
+     			 jQuery(this).attr('offsetmargin', maxoffset);
+     			  run = 'margin-top:'+maxoffset+'px';
+     			  initTrans = 'margin-top: 0px';
      			 }
      			 else {
      			  run = 'transform:translate(0vw,0vh)';
      			 }
 		 	
-    		   	 jQuery('slide').eq(index).find('.running').eq(count).attr('data-'+runTrig, 'transform:translate(0vw,0vh)').attr('data-'+Trigrun, run).attr('runcount',count+1);
+    		   	 jQuery('slide').eq(index).find('.running').eq(count).attr('data-'+runTrig, initTrans).attr('data-'+Trigrun, run).attr('runcount',count+1);
 				console.log('slidecount'+(index+1)+'count'+(count+1));
 				run = '';
 				

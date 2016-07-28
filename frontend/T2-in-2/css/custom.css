@@ -26,7 +26,25 @@ slide{
     font-size: 5em;
 }
 .slide1 .text{
-  position: absolute;left: 12.5vw;top: 30vh;width: 23vw;vw;/* font-size: 2em; *//* color: #191919; */
+  position: absolute;
+  left: 12.5vw;
+  top: 30vh;
+  height: 60vh;
+  width: 23vw;
+  vw;
+  overflow: hidden;
+  /* font-size: 2em; */
+  /* color: #191919; */
+  }
+  .slide1 .text .runningHolder{
+  float: left;
+  width: 100%;
+  /* left: 12.5vw; */
+  /* top: 30vh; */
+  /* width: 23vw; */
+  vw;
+  /* font-size: 2em; */
+  /* color: #191919; */
   }
  slide .image{
     position:absolute;
@@ -83,9 +101,11 @@ slide{
 .content.slide2 .text {
     position: absolute;
     right: 10vw;
-    top: 28.5vh;
+    top: 25.5vh;
     width: 28%;
+    height: 69vh;
     /* text-align: justify; */
+    overflow: hidden;
 }
 /* ------------------------------slide3 ----------------------------*/
 .slide3 .content {
@@ -98,12 +118,15 @@ slide{
 .slide3 .text {
      position: absolute;
      left: 13vw;
-     top: 51vh;
+     top: 44vh;
      width: 27vw;
+     height: 54vh;
+     overflow: hidden;
 }
 .slide3 .title{
     top: 8vh;
-    left: 9vw;
+    left: 10vw;
+    position: absolute;
     }
 .slide3 .posttitle{top: 12vh;left: 5vw;}
 
@@ -193,8 +216,10 @@ slide{
     position: absolute;
     right: 10vw;
     top: 28.5vh;
+    overflow: hidden;
     width: 28%;
     /* text-align: justify; */
+    height: 60vh;
 }
 /* ------------------------------slide5----------------------------*/
 .slide5 .content {
@@ -244,6 +269,10 @@ slide{
     margin-bottom: 1%;
     display: inline-block;
 }
+  .slide5 .scrollhorSlide slider > div img{
+   float:left;
+   position:static
+}
 .slide5 menuHor{
   position:absolute;
   z-index: 22;
@@ -287,8 +316,9 @@ slide{
 
 /* ------------------------------slide7----------------------------*/
 .slide7 .title {
-    top: 18vh;
-    left: 4vw;
+    top: 12vh;
+    position: absolute;
+    left: 6vw;
 }
 .slide7 .midtitle {
     top: 87vh;
@@ -300,21 +330,16 @@ slide{
     top: 17vh;
     left: 8%;
 }
-.slide7 .text {
-position: absolute;
-    left: 12%;
- 
-    width: 28%;
-    top: 30vh !important;
-}
+.slide7 .text {position: absolute;left: 12%;width: 30vw;top: 45vh;height: 50vh;overflow: hidden;}
 .slide7 .pretext{
     top: 12vh;
 }
+
 .slide7 .scrollhorSlide {
-  height: 90vh;
+  height: 100vh;
   bottom: auto;
   right: 0;
-  top: 10vh;
+  top: 0vh;
   width: 100vw;
   overflow: hidden;
   padding: 0;
@@ -335,7 +360,7 @@ position: absolute;
   margin: 4vh 0;
   width: 100%;
 }
-  .slide7 .scrollhorSlide slider > div p{
+  .slide7 .scrollhorSlide slider > div:last-child p{
     width: 43%;
     margin-right: 7%;
     margin-bottom: 1%;
@@ -351,7 +376,11 @@ position: absolute;
   top: 2vh;
   text-align: center;
   }
-
+.slide7 slider div .background {
+    background-position: 61.5vw 13vh;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+}
 /* ------------------------------slide8----------------------------*/
 
 
@@ -368,10 +397,10 @@ position: absolute;
  top: 0vh;
  bottom: 0;
  left: 0;
- z-index: 1;
+ /* z-index: 22; */
 }
-.slide8 .title{left: 38vw;bottom: 20vh;z-index: 0;}
-.slide8 .posttitle{left: 38vw;bottom: 8vh;z-index: 0;}
+.slide8 .title{left: 6vw;top: 15vh;z-index: 0;position: absolute;}
+.slide8 .text{left: 10vw;top: 45vh;z-index: 0;position: absolute;width: 28vw;}
 .slide8 .scrollhorcont .slideIn{
   /* right: auto; */
   /* width: 30vw; */
@@ -387,6 +416,7 @@ position: absolute;
   height: 80vh;
   bottom: 5vh;
   right: 0;
+  left: auto;
   top: auto;
   width: 55vw;
   overflow-y: hidden;

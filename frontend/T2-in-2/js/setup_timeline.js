@@ -247,16 +247,13 @@ $('slide').each(function(index){
 }
 
 function black(){
-$('body').removeClass('white black trans');
 
-$('body').addClass('black');
 // $('menu > a').removeClass('current');
 // $('scrollIndicator').css('opacity', 1);
 console.log('add black');
 }
 function white(){
-$('body').removeClass('white black trans');
-$('body').addClass('white');
+
 // $('menu > a').removeClass('current');
 // $('scrollIndicator').css('opacity', 1);
 console.log('add white');
@@ -310,13 +307,18 @@ console.log(triggers);
   									console.log('change colors');
 								if(currentPos > triggers[index].triggerin  && currentPos < triggers[index].triggerout){
 									if(triggers[index].color == "black"){
-									black();
+									$('body').removeClass('white black trans');
+
+									$('body').addClass('black');
+									console.log(triggers[index].triggerin+'<'+index+'>'+triggers[index].triggerout+'color'+triggers[index].color);
 									} else {
-									white();
+									$('body').removeClass('white black trans');
+									$('body').addClass('white');
+									console.log(triggers[index].triggerin+'<'+index+'>'+triggers[index].triggerout+'color'+triggers[index].color);
 									}
 								// $('menu > a').eq(index).addClass('current');
 								}
-							console.log(triggers[index].triggerin+'<'+index+'>'+triggers[index].triggerout+'color'+triggers[index].color);
+							
 
 							});
 					
