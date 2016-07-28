@@ -137,7 +137,10 @@ h2, div.h2 {
     column-count: 3;
 }
 
-.addCross{background-image:url(../assets/menu-btn-close.svg);width: 50px;height: 35px;/* text-align: center; */background-size: contain;background-repeat: no-repeat;background-position: center center;-ms-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
+.addCross{background-image:url(../assets/menu-btn-close.svg);width: 50px;height: 35px;/* text-align: center; */background-size: contain;background-repeat: no-repeat;background-position: center center;-ms-transform: rotate(45deg);/* -webkit-transform: rotate(45deg); *//* transform: rotate(45deg); */-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
+.text .caption {
+    display: inline-block;
+}
 .addInfo{
 background-image:url(../assets/menu-btn-info.svg);
 width: 100%;
@@ -148,10 +151,7 @@ background-repeat: no-repeat;
 background-position: center center;
 }
 .addArrow{background-image: url(../assets/arrow.svg);/* width: 100%; */height: 52px;/* text-align: center; */background-size: contain;background-repeat: no-repeat;background-position: center center;}
-.black .addCross{
-background-image:url(../assets/menu-btn-close-black.svg);
-
-}
+.black .addCross{background-image: url(../assets/plus.svg);}
 .black .addInfo{
     background-image:url(../assets/menu-btn-info-black.svg);
   }
@@ -573,21 +573,12 @@ top:100vh;
     -ms-transform: rotate(0deg);
     /* -webkit-transform: rotate(0deg); */
     -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+    /* -webkit-transform: rotate(45deg); */
+    /* transform: rotate(45deg); */
     z-index: 999;
-    transform: rotate(45deg);
+    /* transform: rotate(45deg); */
 }
-.captionHide.out {
-
-    -ms-transform: rotate(0deg);
-    /* -webkit-transform: rotate(0deg); */
-    -ms-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    z-index: 999;
-    transform: rotate(0deg);
-}
+.captionHide.out {-ms-transform: rotate(0deg);/* -webkit-transform: rotate(0deg); */-ms-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);z-index: 999;/* transform: rotate(0deg); */}
 .slideIn.caption.doubleheight {
     top: 100vh;
 }

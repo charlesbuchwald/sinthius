@@ -31,8 +31,8 @@ slideAttr.push(slide2Attr);
 // ------ SETUP SLIDE 3-------
 var slide3Attr = {
 '0':"transform:translate(0,100vh);",
-
-'1500':"transform:translate(0,100vh);", 
+'1300':"transform:translate(0,100vh);",
+'1500':"transform:translate(0,0vh);", 
 '1900':"transform:translate(0,0vh);", 
 
 '2100':"transform:translate(0,-110vh);",
