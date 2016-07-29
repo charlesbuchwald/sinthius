@@ -37,7 +37,33 @@
 }, 500);
   console.log('standby Off');
  }
- 
+  // ------------------------ setupPopUps-----------------------------
+
+function setupPopUps(){
+$('slide').each(function(index){
+count = 0;
+  	$('.popup').each(function(count){
+  		$(this).addClass('p'+count);
+  		if($(this).children('.popupImage').length){
+  			height = $(this).children('.popupImage').children('img').height();
+  			width = $(this).children('.popupImage').children('img').width();
+  			if(height > width){
+  				$(this).addClass('portrait');
+  			}else{
+  				$(this).addClass('landscape');
+  			}
+  		} 
+  		if($(this).children('.popupText').length){
+  			$(this).addClass('withText');
+  		} else if($(this).children('.popupTitle').length){
+  			$(this).addClass('withTitle'); 
+  		}
+  		
+   		
+  		//console.log('popup set width:'+width+' height:'+height);
+  	})
+  })
+}
  // ------------------------ scrollhor-----------------------------
  function setupScrollHor(){
 	
@@ -206,7 +232,14 @@ $('menu').addClass('hide');
 console.log('slide caption click');
 return false;
 })
-
+$('.captionText').click(function(e){
+e.preventDefault();
+$(this).parents('slide').children('.popup').toggleClass('out');
+$(this).toggleClass('out');
+$('menu').addClass('hide');
+console.log('slide caption pop up click');
+return false;
+})
 $('.slideBtn').click(function(e){
 e.preventDefault();
 that = $(this).attr('id')+'';
@@ -273,6 +306,7 @@ console.log(triggers);
 
 				{ 
 					smoothScrolling:true,
+					scale: 4,
 	 				render: function(data) {
         				//Log the current scroll position.
        					 $('#countTop').html(data.curTop);
@@ -337,6 +371,7 @@ console.log(triggers);
 
     //The easing function to use.
    			 easing: 'sqrt',
+   			 
 
     //How long the animation should take in ms.
    			 duration: function(currentTop, targetTop) {
@@ -381,17 +416,19 @@ console.log(triggers);
    $(document).ready(function(){
 
 		
-		parallaxSetup();
-		 menuSetup();
+		
 		
 
 	});
 	// ------------------------ on load-----------------------------
 
   $(window).load(function(){
+  parallaxSetup();
+		 menuSetup();
   		getTriggers();
 		skrollrSetup();
 		setupScrollHor();
+		setupPopUps();
 		
 			 var currentMenu = 0;
   

@@ -19,12 +19,12 @@ var slide1Attr = {
 slideAttr.push(slide1Attr);
 // ------ SETUP SLIDE 2-------
 var slide2Attr = {
-'600':"transform:translate(0,100vh);",
-'800':"transform:translate(0,0vh);",
+'700':"transform:translate(0,100vh);",
+'900':"transform:translate(0,0vh);",
 '1200':"transform:translate(0,0vh);",
 '1500':"transform:translate(0,-170vh);",
 
-'triggerin':"800",
+'triggerin':"900",
 'triggerout':"1200",
 'color':"black"};
 slideAttr.push(slide2Attr);
@@ -245,10 +245,11 @@ console.log('slidecount'+(index+1));
      			  } else if (runningDir == 'topfast'){
      			  run = 'transform:translate(0vw,-100vh)';
      			 } else if (runningDir == 'margin-top'){
-     			 maxoffset = jQuery(this).children('.runningHolder').height() - jQuery(this).height();
-     			 jQuery(this).attr('offsetmargin', maxoffset);
-     			  run = 'margin-top:'+maxoffset+'px';
+     			 maxoffset =  parseInt(jQuery(this).height() - jQuery(this).parent('.text').height()) * 1.3;
+     			 console.log('text-scroll offset >'+ maxoffset +'holder'+jQuery(this).height()+'textslide'+jQuery(this).parent('.text').height());
+     			  run = 'margin-top: -'+ maxoffset +'px;';
      			  initTrans = 'margin-top: 0px';
+     			  runTrig = runTrig + 100;
      			 }
      			 else {
      			  run = 'transform:translate(0vw,0vh)';
