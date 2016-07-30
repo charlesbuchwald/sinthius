@@ -46,12 +46,30 @@ border: none;
 a:hover{
 cursor:pointer;
 }
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
 /* ------------------------------fonts ----------------------------*/
-
 @font-face {
-  font-family: 'Heuristica-Italic';
-  src: url('../../../fonts/Heuristica-Italic.eot?#iefix') format('embedded-opentype'),  url('../fonts/Heuristica-Italic.otf')  format('opentype'),
-	     url('../../../fonts/Heuristica-Italic.woff') format('woff'), url('../fonts/Heuristica-Italic.ttf')  format('truetype'), url('../fonts/Heuristica-Italic.svg#Heuristica-Italic') format('svg');
+  font-family: 'heuristica';
+  src: url('../fonts/Heuristica-Regular.otf')  format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'heuristica-italic';
+  src: url('../fonts/Heuristica-Italic.otf')  format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'heuristica-bold';
+  src: url('../fonts/Heuristica-Bold.otf')  format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -83,7 +101,7 @@ cursor:pointer;
     position: absolute;
 }
 body{  font-family: 'museo-sans-500';}
-.heuristica{font-family: 'Heuristica Italic';/* font-style:italic; */font-weight: 100;}
+.heuristica{font-family: 'Heuristica';/* font-style:italic; */font-weight: 100;}
 .museo{font-family: "museo-sans-500";/* font-weight: 100; */}
 p, .p{
   font-family: 'museo-sans-500';
@@ -140,7 +158,9 @@ h2, div.h2 {
   
 
 .bold, strong{font-weight: 900;}
-.museo strong{font-family: "museo-sans-900"}
+.bold.heuristica{font-family: "heuristica-bold";}
+
+.museo strong, .museo.bold{font-family: "museo-sans-900"}
 .italic{font-style: italic;}
 .museo.slim {
     font-weight: 100;
@@ -153,7 +173,7 @@ h2, div.h2 {
     column-count: 3;
 }
 
-.addCross{background-image:url(../assets/plus.svg);width: 50px;height: 32px;margin-bottom: -9px;/* text-align: center; */background-size: contain;background-repeat: no-repeat;background-position: center center;-ms-transform: rotate(45deg);/* -webkit-transform: rotate(45deg); *//* transform: rotate(45deg); */-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
+.addCross{background-image: url(../assets/plus-white.svg);width: 50px;height: 40px;margin-bottom: -9px;/* text-align: center; */background-size: contain;background-repeat: no-repeat;background-position: center center;-ms-transform: rotate(45deg);/* -webkit-transform: rotate(45deg); *//* transform: rotate(45deg); */-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
 .text .caption {
     display: inline-block;
     margin-bottom: -9px;
@@ -424,6 +444,10 @@ slide.ground {
     background-size:cover;
     z-index: -1;
     }
+    .background .fullHeightImage {
+    width: 100%;
+    height: auto;
+}
     .instructions {
 z-index:99;
 display:none;
@@ -510,6 +534,7 @@ opacity:1;
 left: 0vw;
 
 }
+
 .popup img {
     /* max-width: 35vw; */
     /* max-height: 35vh; */
@@ -531,14 +556,31 @@ left: 0vw;
     text-align: center;
     height: auto;
 }
-.landscape.withTitle.popup
-{width: 30vw;margin-left: 35vw;/* height: auto; */}
+.landscape.withTitle.popup {
+  width: 30vw;
+  margin-left: 35vw;
+  /* height: auto; */
+  }
 .landscape.withTitle .popupImage {
     /* width: 100%; */
     float: left;
     text-align: center;
     width: 100%;
     height: 90%;
+}
+.landscape .popupImage {
+    /* width: 100%; */
+    float: left;
+    text-align: center;
+    width: 100%;
+    height: 90%;
+}
+.landscape .popupImage img{
+    /* width: 100%; */
+    float: left;
+    text-align: center;
+    width: 100%;
+    
 }
 .landscape.withText.popup
 {width: 40vw;margin-left: 30vw;/* height: auto; */}
@@ -677,11 +719,13 @@ overflow-y:scroll;}
     padding-top: 10vh;
     height: 80vh;
     z-index:22;
+    overflow:hidden;
     /* -webkit-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1); */
-/* 
+    /* 
     -moz-box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1);
  */
     /* box-shadow: inset 39px 0px 105px 0px rgba(0,0,0,1),inset -39px 0px 105px 0px rgba(0,0,0,1); */
+    -ms-overflow-style: none;
 }
 .scrollhorSlide slider {
     float: left;

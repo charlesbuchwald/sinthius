@@ -30,7 +30,7 @@ var slide2Attr = {
 slideAttr.push(slide2Attr);
 // ------ SETUP SLIDE 3-------
 var slide3Attr = {
-'0':"transform:translate(0,100vh);",
+
 '1300':"transform:translate(0,100vh);",
 '1500':"transform:translate(0,0vh);", 
 '1900':"transform:translate(0,0vh);", 
@@ -42,7 +42,7 @@ var slide3Attr = {
 slideAttr.push(slide3Attr);
 // ------ SETUP SLIDE 4-------
 var slide4Attr = {
-'0':"transform:translate(0,100vh);",
+
 
 '1900':"transform:translate(0,100vh);",
 '2100':"transform:translate(0,0vh);",
@@ -58,7 +58,7 @@ slideAttr.push(slide4Attr);
 
 // ------ SETUP SLIDE 5-------
 var slide5Attr = {
-'0':"transform:translate(0,110vh);",
+
 '2600':"transform:translate(0,110vh);",
 '2800':"transform:translate(0,0vh);",
 
@@ -72,7 +72,7 @@ slideAttr.push(slide5Attr);
 
 // ------ SETUP SLIDE 6-------
 var slide6Attr = {
-'0':"transform:translate(0,110vh);",
+
 '3200':"transform:translate(0,110vh);",
 '3400':"transform:translate(0,0vh);",
 '3800':"transform:translate(0,0vh);",
@@ -83,7 +83,7 @@ var slide6Attr = {
 slideAttr.push(slide6Attr);
 // ------ SETUP SLIDE 7-------
 var slide7Attr = {
-'0':"transform:translate(0,100vh);",
+
 '3800':"transform:translate(0,100vh);",
 '4000':"transform:translate(0,0vh);", 
 '4400':"transform:translate(0,0vh);", 
@@ -95,7 +95,7 @@ var slide7Attr = {
 slideAttr.push(slide7Attr);
 // ------ SETUP SLIDE 8-------
 var slide8Attr = {
-'0':"transform:translate(0,110vh);", 
+
 '4400':"transform:translate(0,110vh);", 
 '4600':"transform:translate(0,0vh);", 
 '5000':"transform:translate(0,0vh);",
@@ -106,14 +106,14 @@ var slide8Attr = {
 slideAttr.push(slide8Attr);
 // ------ SETUP SLIDE 9-------
 var slide9Attr = {
-'0':"transform:translate(0,110vh);", 
-'3000':"transform:translate(0,110vh);", 
-'3100':"transform:translate(0,0vh);", 
-'3300':"transform:translate(0,0vh);",
-'3400':"transform:translate(0,-110vh);",
-'triggerin':"3000",
-'triggerout':"3300",
-'color':"black"};
+
+'5000':"transform:translate(0,110vh);", 
+'5200':"transform:translate(0,0vh);", 
+'5600':"transform:translate(0,0vh);",
+'5800':"transform:translate(0,-110vh);",
+'triggerin':"5200",
+'triggerout':"5600",
+'color':"white"};
 slideAttr.push(slide9Attr);
 // ------ SETUP SLIDE 10-------
 var slide10Attr = {
@@ -244,6 +244,11 @@ console.log('slidecount'+(index+1));
      			  run = 'transform:translate(50vw,0vh)';
      			  } else if (runningDir == 'topfast'){
      			  run = 'transform:translate(0vw,-100vh)';
+     			  } else if (runningDir == 'toptiny'){
+     			  run = 'transform:translate(0vw,-5vh)';
+     			  } else if (runningDir == 'tinyzoom'){
+     			  initTrans = 'transform:scale(1,1)';
+     			  run = 'transform:scale(1.1,1.1)';
      			 } else if (runningDir == 'margin-top'){
      			 maxoffset =  parseInt(jQuery(this).height() - jQuery(this).parent('.text').height()) * 1.3;
      			 console.log('text-scroll offset >'+ maxoffset +'holder'+jQuery(this).height()+'textslide'+jQuery(this).parent('.text').height());

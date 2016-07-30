@@ -269,8 +269,8 @@ function getTriggers(){
 $('slide').each(function(index){
 
 	triggers.push({
-				triggerin: $(this).attr('data-triggerin'),
-				triggerout: $(this).attr('data-triggerout'),
+				triggerin: parseInt($(this).attr('data-triggerin'))*4,
+				triggerout: parseInt($(this).attr('data-triggerout')*4),
 				color: $(this).attr('data-color')
 		   		});
      
@@ -339,15 +339,18 @@ console.log(triggers);
 							$.each(triggers, function( index, value ) {
   									currentPos = data.curTop;
   									console.log('change colors');
+  									console.log(triggers[index].triggerin+'>'+index+'<'+triggers[index].triggerout+'color'+triggers[index].color);
 								if(currentPos > triggers[index].triggerin  && currentPos < triggers[index].triggerout){
 									if(triggers[index].color == "black"){
 									$('body').removeClass('white black trans');
 
 									$('body').addClass('black');
+									console.log('change to black');
 									console.log(triggers[index].triggerin+'<'+index+'>'+triggers[index].triggerout+'color'+triggers[index].color);
 									} else {
 									$('body').removeClass('white black trans');
 									$('body').addClass('white');
+									console.log('change to white');
 									console.log(triggers[index].triggerin+'<'+index+'>'+triggers[index].triggerout+'color'+triggers[index].color);
 									}
 								// $('menu > a').eq(index).addClass('current');
