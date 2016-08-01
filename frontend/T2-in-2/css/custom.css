@@ -461,8 +461,8 @@ slide{
  left: 0;
  /* z-index: 22; */
 }
-.slide8 .title{left: 14vw;top: 71vh;z-index: 0;position: absolute;}
-.slide8 .text{left: 34vw;top: 71vh;z-index: 0;position: absolute;width: 62vw;}
+.slide8 .title{left: 14vw;top: 15vh;z-index: 0;position: absolute;}
+.slide8 .text{left: 14vw;top: 47vh;z-index: 0;position: absolute;width: 30vw;}
 .slide8 .scrollhorcont .slideIn{
   /* right: auto; */
   /* width: 30vw; */

@@ -11,6 +11,7 @@ var start = scrollCount;
 var startEnd = (400 + scrollCount);
 var finish = (1000 + scrollCount);
 var finishEnd = (1400 + scrollCount);
+var color = $(this).attr('data-color');
 var object = {
 [start] :"transform:translate(0,150vh);",
  [startEnd] :"transform:translate(0,0vh);",
@@ -18,7 +19,7 @@ var object = {
 [finish] :"transform:translate(0,0vh);",
 'triggerout' : finish, 
 [finishEnd] :"transform:translate(0,-150vh);",
-'color':"black"};
+'color': color};
 console.log(object);
        jQuery.each(object,function(attribute, value){
       	//console.log(attribute+'-'+value);
