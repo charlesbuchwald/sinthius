@@ -81,7 +81,7 @@ running="bot">
 </div>
 <div class="background animate running"
 running="toptiny"
-animatein="bot" 
+animatein="top" 
 animateout="top" >
 <img class="fullHeightImage" src="assets/Page-2/BG_P2.jpg" />
 </div>
@@ -91,7 +91,9 @@ animateout="top" >
 	animatein="top" 
 	animateout="top">THE<br>SEEDS OF<br>REVOLUTION</div>
 
-	<div class="museo p text">
+	<div class="museo p text animate" 
+	animatein="bot" 
+	animateout="top">
 	<div class="runningHolder running" 
 	running="margin-top">
 		<p>In 1953, Borlaug had been meticulously crossing-breeding native Mexican wheat varieties for nearly ten years on the hunt for a rust-resistant, high yielding variety adaptable to the local region. A semi-dwarf variety developed by Japanese scientist Gonjoro Inazuka called Norin 10 had been in existence for almost twenty years, but it was only after Borlaug thought to introduce its genes into the Mexican germplasm that his research finally picked up momentum.</p> 
@@ -141,7 +143,7 @@ animateout="top" >
 </menuHor>
 
 <!-- ----------- horizontal scrolling container --------------- -->
-<div class="scrollhorSlide museo animate" id="scrollhorSlide1" current="0"
+<div class="scrollhorSlide museo " id="scrollhorSlide1" current="0"
 animatein="bot" 
 animateout="top">
 
@@ -204,7 +206,7 @@ animateout="top" >
 </menuHor>
 
 <!-- ----------- horizontal scrolling container --------------- -->
-<div class="scrollhorSlide museo animate" id="scrollhorSlide2" current="0"
+<div class="scrollhorSlide museo " id="scrollhorSlide2" current="0"
 animatein="bot" 
 animateout="top">
 
@@ -325,13 +327,14 @@ animateout="top" >
  -->
 
 <!-- ----------- horizontal scrolling container --------------- -->
-<div class="scrollhorSlide animate" id="scrollhorSlide3" current="0"
+<div class="scrollhorSlide" id="scrollhorSlide3" current="0"
 animatein="bot" 
 animateout="top">
 
 	<slider>
 		<!-- ----------- horizontal content 1 --------------- -->
 		<div class="scrollhorcont" id="ICOM">
+		<div class="arrowSlideNext"></div>
 			<div class="background" style="background-image:url(assets/Page-7/IM1_P7.jpg)">
 			
 			</div>
@@ -353,23 +356,39 @@ animateout="top">
 		</div>
 
 		<!-- ----------- horizontal content 2 --------------- -->
-		<div class="scrollhorcont " id="">
+		<div class="scrollhorcont " id="mapRegions">
+		<div class="arrowSlidePrev"></div>
 			<div class="background">
+			<div class="region americacentral fadeIn">
+			<img src="assets/Page-7/Cooperative-Regional-Programs/Region-01.svg" />
+			</div>
+			<div class="region sudamerica fadeIn">
+			<img src="assets//Page-7/Cooperative-Regional-Programs/Region-02.svg" />
+			</div>
+			<div class="region africa fadeIn">
+			<img src="assets//Page-7/Cooperative-Regional-Programs/Region-03.svg" />
+			</div>
+			<div class="region india fadeIn">
+			<img src="assets//Page-7/Cooperative-Regional-Programs/Region-04.svg" />
+			</div>
+			
 			<img class="fullWidthImage" src="assets/Page-7/Cooperative-Regional-Programs/BGMap-08.png" />
 			</div>
 
 			<div class="content slide8">
-				<div class="heuristica  h3 title italic slim">COOPERATIVE REGIONAL PROGRAMS
-				</div>
+				<div class="heuristica  h3 title italic slim">COOPERATIVE<br>REGIONAL PROGRAMS</div>
 				<div class="museo p text">
-				<p><strong>Central American and Caribbean Cooperative Maize Improvement Program:</strong> Guatemala, EI Salvador, Honduras, Nicaragua, Costa Rica, Panama, Dominican Republic and Jamaica.</p>
-				<br><br>
-				<p><strong>The Andean Zone Cooperative Program:</strong> Venezuela, Colombia, Ecuador, Peru and Bolivia.</p>
-				<br><br>
-				<p><strong>Inter- Asian Program:</strong> Thailand, Philippines, Afghanistan, Nepal, India and Pakistan.</p>
-				<br><br>
-				<p><strong>East African Program:</strong> Ethiopia, Kenya, Tanzania, Uganda.</p>
-
+					<div class="left">
+						<p><strong>Central American and Caribbean Cooperative Maize Improvement Program:</strong> Guatemala, EI Salvador, Honduras, Nicaragua, Costa Rica, Panama, Dominican Republic and Jamaica.</p>
+						<br><br>
+						<p><strong>The Andean Zone Cooperative Program:</strong> Venezuela, Colombia, Ecuador, Peru and Bolivia.</p>
+						<br><br>
+					</div>
+					<div class="right">
+						<p><strong>Inter- Asian Program:</strong> Thailand, Philippines, Afghanistan, Nepal, India and Pakistan.</p>
+						<br><br>
+						<p><strong>East African Program:</strong> Ethiopia, Kenya, Tanzania, Uganda.</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -401,7 +420,7 @@ Just two years after CIMMYT’s establishment, in 1968, the Mexican government g
 </menuHor>
 
 <!-- ----------- horizontal scrolling container --------------- -->
-<div class="scrollhorSlide museo animate" id="scrollhorSlide4" current="0"
+<div class="scrollhorSlide museo" id="scrollhorSlide4" current="0"
 animatein="bot" 
 animateout="top">
 

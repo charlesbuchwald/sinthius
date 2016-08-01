@@ -1,4 +1,4 @@
-  console.log('js loaded');
+  // console.log('js loaded');
   var triggers = [];
 
 // ------------------------ SETUP Standby-----------------------------
@@ -27,7 +27,7 @@
  $('standby').css('display','block');
 
  $('standby').css('opacity',1);
- console.log('standby On');
+ // console.log('standby On');
  }
  function stopStandBy(){
  
@@ -35,7 +35,7 @@
   setTimeout(function () {
     $('standby').css('display','none');
 }, 500);
-  console.log('standby Off');
+  // console.log('standby Off');
  }
   // ------------------------ setupPopUps-----------------------------
 
@@ -60,7 +60,7 @@ count = 0;
   		}
   		
    		
-  		//console.log('popup set width:'+width+' height:'+height);
+  		//// console.log('popup set width:'+width+' height:'+height);
   	})
   })
 }
@@ -77,7 +77,7 @@ count = 0;
 // ------------------------ swipeleft-----------------------------
 
 $('#scrollhorSlide'+(index+1)).hammer().bind("swipeleft", function(event) {
-    console.log("You swiped left - " + $(this).children('slider').css('margin-left') + 'width'+thisWidth );
+    // console.log("You swiped left - " + $(this).children('slider').css('margin-left') + 'width'+thisWidth );
     event.preventDefault();
     
 	scrollContainer = $(this).attr('id');
@@ -86,32 +86,45 @@ $('#scrollhorSlide'+(index+1)).hammer().bind("swipeleft", function(event) {
 	if(prevSlide < $('#scrollhorSlide'+(index+1)).children('slider').children().length - 1){
 
 		thisSlide = Math.abs(prevSlide+1);
+		$('#'+scrollContainer).find('.scrollhorcont').removeClass('current');
+	
+		$(this).find('.scrollhorcont').eq(thisSlide).addClass('current');
+	
+		console.log($('#'+scrollContainer).children('.scrollhorcont').eq(thisSlide).attr('id'));
 		$('#'+scrollContainer).attr('current', thisSlide);
 
 		$('#'+scrollContainer).siblings('menuhor').children('.horLink').removeClass('active');
 		$('#'+scrollContainer).siblings('menuhor').children('.horLink').eq(thisSlide).addClass('active');
 	
-		console.log(prevSlide +'..'+ thisSlide);
+		// console.log(prevSlide +'..'+ thisSlide);
 		offset = thisSlide*100;
 		distance = Math.abs(prevSlide - thisSlide);
 		time = distance*0.5;
 		margin = '-'+offset+'%';
 
 		$('#'+scrollContainer).children('slider').css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
-		console.log(prevSlide+'prev - next'+thisSlide);
-	} else {console.log('end');}
+		// console.log(prevSlide+'prev - next'+thisSlide);
+	} else {
+	 console.log('end');
+	}
 });
         	 // ------------------------ swipe right-----------------------------
 
 $('#scrollhorSlide'+(index+1)).hammer().bind("swiperight", function(event) {
-    console.log("You swiped right - " + $(this).children('slider').css('margin-left') );
+    // console.log("You swiped right - " + $(this).children('slider').css('margin-left') );
 
     event.preventDefault();
 	scrollContainer = $(this).attr('id');
 	
 	prevSlide = parseInt($('#'+scrollContainer).attr('current'));
-	if(!prevSlide < 1){
+	$(this).find('.scrollhorcont').removeClass('current');
+		
+	
 		thisSlide = Math.abs(prevSlide-1);
+			console.log($(this).find('.scrollhorcont').eq(thisSlide).attr('id'));
+		$(this).find('.scrollhorcont').eq(thisSlide).addClass('current');
+	if(!prevSlide < 1){
+		
 		$('#'+scrollContainer).attr('current', thisSlide);
 	
 	
@@ -119,7 +132,7 @@ $('#scrollhorSlide'+(index+1)).hammer().bind("swiperight", function(event) {
 		$('#'+scrollContainer).siblings('menuhor').children('.horLink').removeClass('active');
 		$('#'+scrollContainer).siblings('menuhor').children('.horLink').eq(thisSlide).addClass('active');
 	
-		console.log(prevSlide +'..'+ thisSlide);
+		// console.log(prevSlide +'..'+ thisSlide);
 
 
 		offset = thisSlide*100;
@@ -130,7 +143,9 @@ $('#scrollhorSlide'+(index+1)).hammer().bind("swiperight", function(event) {
 		$('#'+scrollContainer).children('slider').css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
 
 	
-    } else {console.log('start');}
+    } else {
+     console.log('start');
+     }
 });
 		
 // ------------------------ setup container and slides position-----------------------------
@@ -165,7 +180,7 @@ $('#scrollhorSlide'+(index+1)).hammer().bind("swiperight", function(event) {
 		thisSlide = scrollContainer.attr('current');
 
 
-		console.log(prevSlide +'..'+ thisSlide);
+		// console.log(prevSlide +'..'+ thisSlide);
 
 
 		offset = thisSlide*100;
@@ -175,7 +190,7 @@ $('#scrollhorSlide'+(index+1)).hammer().bind("swiperight", function(event) {
 
 		scrollContainer.children('slider').css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
 
-		console.log(that+'clicked -'+offset+'vw - distance - '+distance+'menunr - '+scrollContainer);
+		// console.log(that+'clicked -'+offset+'vw - distance - '+distance+'menunr - '+scrollContainer);
 		currentMenu = that;
 		return false;
 })
@@ -211,7 +226,7 @@ return false;
 $('.flag.one').click(function(e){
 e.preventDefault();
 $('.popup.one').css({'opacity': '1', 'display':'block'});
-console.log('flag one click');
+// console.log('flag one click');
 return false;
 })
 
@@ -229,7 +244,7 @@ e.preventDefault();
 $(this).siblings('.caption').toggleClass('out');
 $(this).toggleClass('out');
 $('menu').addClass('hide');
-console.log('slide caption click');
+// console.log('slide caption click');
 return false;
 })
 $('.captionText').click(function(e){
@@ -237,7 +252,7 @@ e.preventDefault();
 $(this).parents('slide').children('.popup').toggleClass('out');
 $(this).toggleClass('out');
 $('menu').addClass('hide');
-console.log('slide caption pop up click');
+// console.log('slide caption pop up click');
 return false;
 })
 $('.slideBtn').click(function(e){
@@ -246,7 +261,7 @@ that = $(this).attr('id')+'';
 slide = that.replace(/Btn/g , "In");
 $('.slideIn').not('#'+slide).removeClass('out');
 $('#'+slide).toggleClass('out');
-console.log(that+'clicked'+slide+'opened');
+// console.log(that+'clicked'+slide+'opened');
 return false;
 })
 
@@ -256,7 +271,7 @@ e.preventDefault();
 that = $(this).attr('id');
 $(this).toggleClass('out');
 $(this).siblings('.captionHide').toggleClass('out');
-console.log(that+'clicked');
+// console.log(that+'clicked');
 return false;
 })
 
@@ -283,23 +298,23 @@ function black(){
 
 // $('menu > a').removeClass('current');
 // $('scrollIndicator').css('opacity', 1);
-console.log('add black');
+// console.log('add black');
 }
 function white(){
 
 // $('menu > a').removeClass('current');
 // $('scrollIndicator').css('opacity', 1);
-console.log('add white');
+// console.log('add white');
 }        
 
 
 // ------------------------ setup skrollr-----------------------------       		
 function skrollrSetup(){
-console.log(triggers);
+// console.log(triggers);
 
 	var currentSlide = '';
 	var totalHeight = $('body').css('height');
-	console.log(totalHeight);
+	// console.log(totalHeight);
 	var doit;
       // Init Skrollr
 	        var s = skrollr.init(
@@ -311,7 +326,7 @@ console.log(triggers);
         				//Log the current scroll position.
        					 $('#countTop').html(data.curTop);
        				
-       					 console.log('progress'+data.curTop);
+       					 // console.log('progress'+data.curTop);
        				 
        	 
        
@@ -331,27 +346,27 @@ console.log(triggers);
   						doit = setTimeout(setTriggers, 50);
   					
 							function setTriggers(){
-					 		console.log('set triggers');
+					 		// console.log('set triggers');
 
                				
            
 // ------------------------ menu color and active slide-----------------------------
 							$.each(triggers, function( index, value ) {
   									currentPos = data.curTop;
-  									console.log('change colors');
-  									console.log(triggers[index].triggerin+'>'+index+'<'+triggers[index].triggerout+'color'+triggers[index].color);
+  									// console.log('change colors');
+  									// console.log(triggers[index].triggerin+'>'+index+'<'+triggers[index].triggerout+'color'+triggers[index].color);
 								if(currentPos > triggers[index].triggerin  && currentPos < triggers[index].triggerout){
 									if(triggers[index].color == "black"){
 									$('body').removeClass('white black trans');
 
 									$('body').addClass('black');
-									console.log('change to black');
-									console.log(triggers[index].triggerin+'<'+index+'>'+triggers[index].triggerout+'color'+triggers[index].color);
+									// console.log('change to black');
+									// console.log(triggers[index].triggerin+'<'+index+'>'+triggers[index].triggerout+'color'+triggers[index].color);
 									} else {
 									$('body').removeClass('white black trans');
 									$('body').addClass('white');
-									console.log('change to white');
-									console.log(triggers[index].triggerin+'<'+index+'>'+triggers[index].triggerout+'color'+triggers[index].color);
+									// console.log('change to white');
+									// console.log(triggers[index].triggerin+'<'+index+'>'+triggers[index].triggerout+'color'+triggers[index].color);
 									}
 								// $('menu > a').eq(index).addClass('current');
 								}
@@ -391,7 +406,7 @@ console.log(triggers);
   
   	link = link.toString().split('"');
     link = link[0].toString().split('#');
-	console.log($('#'+link[1]).attr('data-triggerin'));
+	// console.log($('#'+link[1]).attr('data-triggerin'));
      return $('#'+link[1]).attr('data-triggerin');
        //  return 400; Hardcoding 400 doesn't make much sense.
     },
@@ -406,7 +421,7 @@ console.log(triggers);
     //This event is triggered right before we jump/animate to a new hash.
     change: function(newHash, newTopPosition) {
         //Do stuff
-        console.log(newHash, newTopPosition)
+        // console.log(newHash, newTopPosition)
         currentSlide = newHash
     },
 
