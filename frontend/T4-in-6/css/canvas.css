@@ -1,0 +1,54 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 2, 2016, 6:58:42 PM
+    Author     : Sergio Gómez <it@segio.im>
+*/
+
+body{
+    background-color: #201f1e;
+    color:#f1e9c5;
+    font-family: sans-serif;
+}
+h1{
+    color:#79c142;
+}
+
+.row{
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.numbers-list{
+    display: block;
+    float:left;
+}
+
+.number{
+    display: inline-block;
+    float:left;
+}
+.number span{
+   text-align: center; 
+}
+.number-header{
+    border-bottom: 1px solid #79c142;
+    display: inline-block;
+    float: left;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.number-content{
+    display: inline-block;
+    float:left;
+    width: 100%;
+}
+.number-digits{
+    width: 100%;
+    display: inline-block;
+    float:left;
+}
