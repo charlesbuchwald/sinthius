@@ -3,185 +3,216 @@ function parallaxSetup(){
 // ------------------------ SETUP MOTION SLIDES-----------------------------
 var totalSlides = jQuery('slide').length;
 var scrollCount = 0;
-
 var slideAttr = [];
-// ------ SETUP SLIDE 1-------
-var slide1Attr = {
-'0':"transform:translate(0,100vh);",
-'100':"transform:translate(0,0vh);",
-'400':"transform:translate(0,0vh);", 
-'500':"transform:translate(0,-100vh);",
-'700':"transform:translate(0,-100vh);",
-'800':"transform:translate(0,-200vh);",
-'triggerin':"100",
-'triggerout':"400",
-'color':"black"};
+var object = {};
 
-slideAttr.push(slide1Attr);
-// ------ SETUP SLIDE 2-------
-var slide2Attr = {
-'400':"transform:translate(0,100vh);",
-'500':"transform:translate(0,0vh);",
-'700':"transform:translate(0,0vh);",
-
-'900':"transform:translate(0,-200vh);",
-
-'1100':"transform:translate(0,-200vh);",
-'triggerin':"500",
-'triggerout':"800",
-'color':"black"};
-slideAttr.push(slide2Attr);
-// ------ SETUP SLIDE 3-------
-var slide3Attr = {
-'0':"transform:translate(0,100vh);",
-'300':"transform:translate(0,100vh);", 
-'310':"transform:translate(0,100vh);", 
-'700':"transform:translate(0,100vh);", 
-'800':"transform:translate(0,0vh);", 
-'1000':"transform:translate(0,0vh);", 
-'1100':"transform:translate(0,-110vh);",
-'triggerin':"900",
-'triggerout':"1000",
-'color':"white"};
-slideAttr.push(slide3Attr);
-// ------ SETUP SLIDE 4-------
-var slide4Attr = {
-'1000':"transform:translate(0,100vh);",
-
-'1001':"transform:translate(0,0vh);",
-'1300':"transform:translate(0,0vh);",
-'1301':"transform:translate(0,0vh);",
-'1599':"transform:translate(0,0vh);",
-'1600':"transform:translate(0,-110vh);",
-
-'triggerin':"1100",
-'triggerout':"1300",
-'color':"white"};
-slideAttr.push(slide4Attr);
-
-
-// ------ SETUP SLIDE 5-------
-var slide5Attr = {
-'0':"transform:translate(0,110vh);",
-'1300':"transform:translate(0,110vh);",
-'1400':"transform:translate(0,0vh);",
-
-'1700':"transform:translate(0,0vh);",
-'1800':"transform:translate(0,-110vh);",
-'triggerin':"1400",
-'triggerout':"1700",
-'color':"white"};
-slideAttr.push(slide5Attr);
-
-
-// ------ SETUP SLIDE 6-------
-var slide6Attr = {
-'0':"transform:translate(0,110vh);",
-'1699':"transform:translate(0,110vh);",
-'1700':"transform:translate(0,0vh);",
-'2501':"transform:translate(0,0vh);",
-'2502':"transform:translate(0,-110vh);",
-'triggerin':"1800",
-'triggerout':"2100",
-'color':"black"};
-slideAttr.push(slide6Attr);
-// ------ SETUP SLIDE 7-------
-var slide7Attr = {
-'0':"transform:translate(0,100vh);",
-'2100':"transform:translate(0,100vh);",
-'2200':"transform:translate(0,0vh);", 
-'2500':"transform:translate(0,0vh);", 
-'2600':"transform:translate(0,-110vh);",
-'3600':"transform:translate(0,-110vh);",
-'triggerin':"2200",
-'triggerout':"2500",
-'color':"white"};
-slideAttr.push(slide7Attr);
-// ------ SETUP SLIDE 8-------
-var slide8Attr = {
-'2499':"transform:translate(0,-110vh);", 
-'2500':"transform:translate(0,0vh);", 
-
-'2900':"transform:translate(0,0vh);",
-'3300':"transform:translate(0,-110vh);",
-'triggerin':"2600",
-'triggerout':"2900",
-'color':"black"};
-slideAttr.push(slide8Attr);
-// ------ SETUP SLIDE 9-------
-var slide9Attr = {
-
-'2900':"transform:translate(0,110vh);", 
-'3000':"transform:translate(0,0vh);", 
-'3300':"transform:translate(0,0vh);",
-'3400':"transform:translate(0,-110vh);",
-'triggerin':"3000",
-'triggerout':"3300",
-'color':"white"};
-slideAttr.push(slide9Attr);
-// ------ SETUP SLIDE 10-------
-var slide10Attr = {
-
-'0':"transform:translate(0,110vh);", 
-'3299':"transform:translate(0,110vh);", 
-'3300':"transform:translate(0,0vh);", 
-'3700':"transform:translate(0,0vh);",
-'4000':"transform:translate(0,0vh);",
-'4100':"transform:translate(0,0vh);",
-'4101':"transform:translate(0,-110vh);",
-'triggerin':"3400",
-'triggerout':"3700",
-'color':"black"};
-slideAttr.push(slide10Attr);
-// ------ SETUP SLIDE 11-------
-var slide11Attr = {
-
-'0':"transform:translate(0,110vh);", 
-'3700':"transform:translate(0,110vh);", 
-'3800':"transform:translate(0,0vh);", 
-
-'4100':"transform:translate(0,0vh);",
-'4200':"transform:translate(0,-110vh);",
-'triggerin':"3800",
-'triggerout':"4100",
-'color':"white"};
-slideAttr.push(slide11Attr);
-// ------ SETUP SLIDE 12-------
-var slide12Attr = {
-
-'0':"transform:translate(0,110vh);", 
-'4099':"transform:translate(0,110vh);", 
-'4100':"transform:translate(0,0vh);", 
-
-'4500':"transform:translate(0,0vh);",
-'triggerin':"4200",
-'triggerout':"4500",
-'color':"black"};
-slideAttr.push(slide12Attr);
-// ------ SETUP SLIDE 13-------
-var slide13Attr = {
-
-'0':"transform:translate(0,110vh);",
-'4400':"transform:translate(0,110vh);",  
-'4500':"transform:translate(0,0vh);", 
-'4800':"transform:translate(0,0vh);", 
-
-'5000':"transform:translate(0,0vh);",
-'triggerin':"4500",
-'triggerout':"4800",
-'color':"white"};
-slideAttr.push(slide13Attr);
-// ------ APPLY MOTION-------
-  
-    jQuery.each(slideAttr, function(index, object) {
+jQuery('slide').each(function(index, object) {
+var start = scrollCount;
+var startEnd = (400 + scrollCount);
+var finish = (1000 + scrollCount);
+var finishEnd = (1400 + scrollCount);
+var color = $(this).attr('data-color');
+var object = {
+[start] :"transform:translate(0,150vh);",
+ [startEnd] :"transform:translate(0,0vh);",
+'triggerin': startEnd,
+[finish] :"transform:translate(0,0vh);",
+'triggerout' : finish, 
+[finishEnd] :"transform:translate(0,-150vh);",
+'color': color};
+console.log(object);
        jQuery.each(object,function(attribute, value){
-      	
+      	//console.log(attribute+'-'+value);
+
+
         jQuery('slide').eq(index).attr('data-'+attribute, value);
    		})
+   		scrollCount = scrollCount + 900;
+   		object = {};
 	});
+	
+	// ----slide override-----
+// ------ SETUP SLIDE 1-------
+// 
+// 
+// var startEnd = (400 + scrollCount);
+// var finish = (1000 + scrollCount);
+// var finishEnd = (1400 + scrollCount);
+// var slide1Attr = {
+// [scrollCount] :"transform:translate(0,150vh);",
+//  [startEnd] :"transform:translate(0,0vh);",
+// 'triggerin': [startEnd],
+// [finish] :"transform:translate(0,0vh);",
+// 'triggerout' : [finish], 
+// [finishEnd] :"transform:translate(0,-150vh);",
+// 'color':"black"};
+// slideAttr.push(slide1Attr);
+// scrollCount = scrollCount + 1400;
+// 
+// // ------ SETUP SLIDE 2-------
+// var start = scrollCount;
+// var startEnd = (400 + scrollCount);
+// var finish = (1000 + scrollCount);
+// var finishEnd = (1400 + scrollCount);
+// var slide3Attr = {
+// [start] :"transform:translate(0,150vh);",
+//  [startEnd] :"transform:translate(0,0vh);",
+// 'triggerin': [startEnd],
+// [finish] :"transform:translate(0,0vh);",
+// 'triggerout' : [finish], 
+// [finishEnd] :"transform:translate(0,-150vh);",
+// 'color':"black"};
+// slideAttr.push(slide3Attr);
+// scrollCount = scrollCount + 1400;
+// // ------ SETUP SLIDE 3-------
+// var start = scrollCount;
+// var startEnd = (400 + scrollCount);
+// var finish = (1000 + scrollCount);
+// var finishEnd = (1400 + scrollCount);
+// var slide2Attr = {
+// [start] :"transform:translate(0,150vh);",
+//  [startEnd] :"transform:translate(0,0vh);",
+// 'triggerin': [startEnd],
+// [finish] :"transform:translate(0,0vh);",
+// 'triggerout' : [finish], 
+// [finishEnd] :"transform:translate(0,-150vh);",
+// 'color':"black"};
+// slideAttr.push(slide2Attr);
+// scrollCount = scrollCount + 1400;
+// // ------ SETUP SLIDE 4-------
+// var slide4Attr = {
+// 
+// '0':"transform:translate(0,100vh);",
+// '1900':"transform:translate(0,100vh);",
+// '2100':"transform:translate(0,0vh);",
+// 
+// '2500':"transform:translate(0,0vh);",
+// '2700':"transform:translate(0,-170vh);",
+// 
+// 'triggerin':"2100",
+// 'triggerout':"2500",
+// 'color':"black"};
+// slideAttr.push(slide4Attr);
+// 
+// 
+// // ------ SETUP SLIDE 5-------
+// var slide5Attr = {
+// '0':"transform:translate(0,110vh);",
+// '2500':"transform:translate(0,110vh);",
+// '2700':"transform:translate(0,0vh);",
+// 
+// '3100':"transform:translate(0,0vh);",
+// '3300':"transform:translate(0,-110vh);",
+// 'triggerin':"2700",
+// 'triggerout':"3100",
+// 'color':"black"};
+// slideAttr.push(slide5Attr);
+// 
+// 
+// // ------ SETUP SLIDE 6-------
+// var slide6Attr = {
+// 
+// '3100':"transform:translate(0,110vh);",
+// '3300':"transform:translate(0,0vh);",
+// '3700':"transform:translate(0,0vh);",
+// '3900':"transform:translate(0,-120vh);",
+// 'triggerin':"3300",
+// 'triggerout':"3700",
+// 'color':"black"};
+// slideAttr.push(slide6Attr);
+// // ------ SETUP SLIDE 7-------
+// var slide7Attr = {
+// 
+// '3700':"transform:translate(0,100vh);",
+// '3900':"transform:translate(0,0vh);", 
+// '4300':"transform:translate(0,0vh);", 
+// '4500':"transform:translate(0,-110vh);",
+// 
+// 'triggerin':"3900",
+// 'triggerout':"4300",
+// 'color':"black"};
+// slideAttr.push(slide7Attr);
+// // ------ SETUP SLIDE 8-------
+// var slide8Attr = {
+// 
+// '4300':"transform:translate(0,150vh);", 
+// '4500':"transform:translate(0,0vh);", 
+// '4900':"transform:translate(0,0vh);",
+// '5100':"transform:translate(0,-110vh);",
+// 'triggerin':"4500",
+// 'triggerout':"4900",
+// 'color':"black"};
+// slideAttr.push(slide8Attr);
+// // ------ SETUP SLIDE 9-------
+// var slide9Attr = {
+// 
+// '4900':"transform:translate(0,110vh);", 
+// '5100':"transform:translate(0,0vh);", 
+// '5500':"transform:translate(0,0vh);",
+// 
+// 'triggerin':"5100",
+// 'triggerout':"5500",
+// 'color':"white"};
+// slideAttr.push(slide9Attr);
+// // ------ SETUP SLIDE 10-------
+// var slide10Attr = {
+// 
+// '0':"transform:translate(0,110vh);", 
+// '3299':"transform:translate(0,110vh);", 
+// '3300':"transform:translate(0,0vh);", 
+// '3700':"transform:translate(0,0vh);",
+// '4000':"transform:translate(0,0vh);",
+// '4100':"transform:translate(0,0vh);",
+// '4101':"transform:translate(0,-110vh);",
+// 'triggerin':"3400",
+// 'triggerout':"3700",
+// 'color':"black"};
+// slideAttr.push(slide10Attr);
+// // ------ SETUP SLIDE 11-------
+// var slide11Attr = {
+// 
+// '0':"transform:translate(0,110vh);", 
+// '3700':"transform:translate(0,110vh);", 
+// '3800':"transform:translate(0,0vh);", 
+// 
+// '4100':"transform:translate(0,0vh);",
+// '4200':"transform:translate(0,-110vh);",
+// 'triggerin':"3800",
+// 'triggerout':"4100",
+// 'color':"black"};
+// slideAttr.push(slide11Attr);
+// // ------ SETUP SLIDE 12-------
+// var slide12Attr = {
+// 
+// '0':"transform:translate(0,110vh);", 
+// '4099':"transform:translate(0,110vh);", 
+// '4100':"transform:translate(0,0vh);", 
+// 
+// '4500':"transform:translate(0,0vh);",
+// 'triggerin':"4200",
+// 'triggerout':"4500",
+// 'color':"black"};
+// slideAttr.push(slide12Attr);
+// // ------ SETUP SLIDE 13-------
+// var slide13Attr = {
+// 
+// '0':"transform:translate(0,110vh);",
+// '4400':"transform:translate(0,110vh);",  
+// '4500':"transform:translate(0,0vh);", 
+// '4800':"transform:translate(0,0vh);", 
+// 
+// '5000':"transform:translate(0,0vh);",
+// 'triggerin':"4500",
+// 'triggerout':"4800",
+// 'color':"white"};
+// slideAttr.push(slide13Attr);
+// ------ APPLY MOTION-------
+  
+    
 // ------------------------ SETUP SLIDES CONTENT DOMINO DELAY  -----------------------------
 var delay = 80;
 jQuery('slide').each( function(index) {
+// console.log('slidecount'+(index+1));
 i = 0;
  		inTrigin = 0;
 		 outTrigin = 0;
@@ -189,13 +220,13 @@ i = 0;
 		 outTrigout = 0;
 		 inTrig = parseInt(jQuery('slide').eq(index).attr('data-triggerin'));
 		 outTrig = parseInt(jQuery('slide').eq(index).attr('data-triggerout'));
-		inTrigin =  inTrig + (delay*i) - 100;
+		inTrigin =  inTrig + (delay*i) - 200;
        outTrigin =  inTrig + (delay*i);
        	inTrigout = outTrig + (delay*i) +1;
-       outTrigout = outTrig + (delay*i) + 100;
+       outTrigout = outTrig + (delay*i) + 200;
        // ------------------------ SETUP parent dependent in and out animation  -----------------------------
-		 jQuery('.animate').each( function() {
-		
+		 jQuery(this).find('.animate').each( function(count) {
+		jQuery(this).attr('animecount','slidecount'+(index+1)+'animate count'+count);
  		typeOfAnimIn = jQuery(this).attr('animatein');
  		typeOfAnimOut = jQuery(this).attr('animateout');
  		
@@ -228,6 +259,26 @@ i = 0;
 	
    		i++;
    		});
+
+   	       // ------------------------ SETUP parent dependent zooming elements in and out -----------------------------
+
+ 	
+		
+   		});
+jQuery('slide').each( function(index) {
+
+i = 0;
+ 		inTrigin = 0;
+		 outTrigin = 0;
+		 inTrigout = 0;
+		 outTrigout = 0;
+		 inTrig = parseInt(jQuery(this).attr('data-triggerin'));
+		 outTrig = parseInt(jQuery(this).attr('data-triggerout'));
+		inTrigin =  inTrig + (delay*i) - 200;
+       outTrigin =  inTrig + (delay*i);
+       	inTrigout = outTrig + (delay*i) +1;
+       outTrigout = outTrig + (delay*i) + 200;
+     
        // ------------------------ SETUP parent dependent running elements while slide is locked in  -----------------------------
 
 
@@ -236,6 +287,7 @@ i = 0;
 			
 			 runTrig = parseInt(inTrig);
 			Trigrun = parseInt(outTrig) + 1;
+			initTrans = 'transform:translate(0vw,0vh)';
 			runningDir = jQuery(this).attr('running');
 			    if(runningDir == 'top'){
      			 run = 'transform:translate(0vw,-50vh)';
@@ -245,43 +297,35 @@ i = 0;
      			  run = 'transform:translate(-50vw,0vh)';
      			 } else if (runningDir == 'right'){
      			  run = 'transform:translate(50vw,0vh)';
-     			 } else {
+     			  } else if (runningDir == 'topfast'){
+     			  run = 'transform:translate(0vw,-100vh)';
+     			  } else if (runningDir == 'toptiny'){
+     			  run = 'transform:translate(0vw,-5vh)';
+     			  } else if (runningDir == 'tinyzoom'){
+     			  initTrans = 'transform:scale(1,1)';
+     			  run = 'transform:scale(1.1,1.1)';
+     			 } else if (runningDir == 'margin-top'){
+     			 maxoffset =  parseInt(jQuery(this).height() - jQuery(this).parent('.text').height()) * 1.3;
+     			 // console.log('text-scroll offset >'+ maxoffset +'holder'+jQuery(this).height()+'textslide'+jQuery(this).parent('.text').height());
+     			  run = 'margin-top: -'+ maxoffset +'px;';
+     			  initTrans = 'margin-top: 0px';
+     			  runTrig = runTrig + 100;
+     			 }
+     			 else {
      			  run = 'transform:translate(0vw,0vh)';
      			 }
 		 	
-    		   	 jQuery('slide').eq(index).find('.running').eq(count).attr('data-'+runTrig, 'transform:translate(0vw,0vh)').attr('data-'+Trigrun, run).attr('runcount',count+1);
-				console.log('slidecount'+(index+1)+'count'+(count+1)+'runningdir'+runningDir +'run'+run);
+    		   	 jQuery('slide').eq(index).find('.running').eq(count).attr('data-'+runTrig, initTrans).attr('data-'+Trigrun, run).attr('runcount',count+1).attr('data-0',"transform:translate(0,0);").attr('running', 'slidecount'+(index+1)+'count'+(count+1)+'values> data-'+runTrig+'data-'+Trigrun);
 				run = '';
+				runTrig = 0;
+				Trigrun = 0;
 				
 			});
    	       // ------------------------ SETUP parent dependent zooming elements in and out -----------------------------
 
  	
-		jQuery(this).find('.zooming').each( function(count) {
 		
-			
-			 runTrig = parseInt(inTrig) + 1;
-			Trigrun = parseInt(outTrig) - 1;
-			runningDir = jQuery(this).attr('running');
-			    if(runningDir == 'top'){
-     			 run = 'transform:translate(0vw,-50vh)';
-     			 } else if (runningDir == 'bot'){
-     			  run = 'transform:translate(0vw,50vh)';
-     			 }  else if (runningDir == 'left'){
-     			  run = 'transform:translate(-50vw,0vh)';
-     			 } else if (runningDir == 'right'){
-     			  run = 'transform:translate(50vw,0vh)';
-     			 } else {
-     			  run = 'transform:translate(0vw,0vh)';
-     			 }
-		 	
-    		   	 jQuery('slide').eq(index).find('.running').eq(count).attr('data-'+runTrig, 'transform:translate(0vw,0vh)').attr('data-'+Trigrun, run).attr('runcount',count+1);
-				console.log('slidecount'+(index+1)+'count'+(count+1)+'runningdir'+runningDir +'run'+run);
-				run = '';
-				
-			});
    		});
-
 
 	
 // ------------------------MANUAL SETUP SLIDES CONTENT  -----------------------------

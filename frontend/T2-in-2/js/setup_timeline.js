@@ -1,4 +1,4 @@
-  console.log('js loaded');
+  // console.log('js loaded');
   var triggers = [];
 
 // ------------------------ SETUP Standby-----------------------------
@@ -27,7 +27,7 @@
  $('standby').css('display','block');
 
  $('standby').css('opacity',1);
- console.log('standby On');
+ // console.log('standby On');
  }
  function stopStandBy(){
  
@@ -35,9 +35,35 @@
   setTimeout(function () {
     $('standby').css('display','none');
 }, 500);
-  console.log('standby Off');
+  // console.log('standby Off');
  }
- 
+  // ------------------------ setupPopUps-----------------------------
+
+function setupPopUps(){
+$('slide').each(function(index){
+count = 0;
+  	$('.popup').each(function(count){
+  		$(this).addClass('p'+count);
+  		if($(this).children('.popupImage').length){
+  			height = $(this).children('.popupImage').children('img').height();
+  			width = $(this).children('.popupImage').children('img').width();
+  			if(height > width){
+  				$(this).addClass('portrait');
+  			}else{
+  				$(this).addClass('landscape');
+  			}
+  		} 
+  		if($(this).children('.popupText').length){
+  			$(this).addClass('withText');
+  		} else if($(this).children('.popupTitle').length){
+  			$(this).addClass('withTitle'); 
+  		}
+  		
+   		
+  		//// console.log('popup set width:'+width+' height:'+height);
+  	})
+  })
+}
  // ------------------------ scrollhor-----------------------------
  function setupScrollHor(){
 	
@@ -45,80 +71,129 @@
 	 var width = 0;
     	var i = 0;
     	
-    	$('#scrollhorSlide'+(index+1)).hammer().bind("swipeleft", function(event) {
-    console.log("You swiped left - " + $(this).css('margin-left') );
+    	var thisWidth = 0;
+    	thisWidth = parseInt($(this).css('width'));
+    	
+// ------------------------ swipeleft-----------------------------
+
+$('#scrollhorSlide'+(index+1)).hammer().bind("swipeleft", function(event) {
+    // console.log("You swiped left - " + $(this).children('slider').css('margin-left') + 'width'+thisWidth );
     event.preventDefault();
     
 	scrollContainer = $(this).attr('id');
 	
 	prevSlide = parseInt($('#'+scrollContainer).attr('current'));
-	if(prevSlide < $('#scrollhorSlide'+(index+1)).children().length - 1){
+	if(prevSlide < $('#scrollhorSlide'+(index+1)).children('slider').children().length - 1){
 
 		thisSlide = Math.abs(prevSlide+1);
+		$('#'+scrollContainer).find('.scrollhorcont').removeClass('current');
+	
+		$(this).find('.scrollhorcont').eq(thisSlide).addClass('current');
+	
+		console.log($('#'+scrollContainer).children('.scrollhorcont').eq(thisSlide).attr('id'));
 		$('#'+scrollContainer).attr('current', thisSlide);
 
 		$('#'+scrollContainer).siblings('menuhor').children('.horLink').removeClass('active');
 		$('#'+scrollContainer).siblings('menuhor').children('.horLink').eq(thisSlide).addClass('active');
 	
-		console.log(prevSlide +'..'+ thisSlide);
+		// console.log(prevSlide +'..'+ thisSlide);
 		offset = thisSlide*100;
 		distance = Math.abs(prevSlide - thisSlide);
 		time = distance*0.5;
-		margin = '-'+offset+'vw';
+		margin = '-'+offset+'%';
 
-		$('#'+scrollContainer).css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
-		console.log(prevSlide+'prev - next'+thisSlide);
-	} else {console.log('end');}
+		$('#'+scrollContainer).children('slider').css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
+		// console.log(prevSlide+'prev - next'+thisSlide);
+	} else {
+	 console.log('end');
+	}
 });
-        	
+        	 // ------------------------ swipe right-----------------------------
+
 $('#scrollhorSlide'+(index+1)).hammer().bind("swiperight", function(event) {
-    console.log("You swiped right - " + $(this).css('margin-left') );
+    // console.log("You swiped right - " + $(this).children('slider').css('margin-left') );
 
     event.preventDefault();
 	scrollContainer = $(this).attr('id');
 	
 	prevSlide = parseInt($('#'+scrollContainer).attr('current'));
+	$(this).find('.scrollhorcont').removeClass('current');
+		
+	
+		thisSlide = Math.abs(prevSlide-1);
+			console.log($(this).find('.scrollhorcont').eq(thisSlide).attr('id'));
+		$(this).find('.scrollhorcont').eq(thisSlide).addClass('current');
 	if(!prevSlide < 1){
-	thisSlide = Math.abs(prevSlide-1);
+		
 		$('#'+scrollContainer).attr('current', thisSlide);
 	
 	
 
-	$('#'+scrollContainer).siblings('menuhor').children('.horLink').removeClass('active');
-	$('#'+scrollContainer).siblings('menuhor').children('.horLink').eq(thisSlide).addClass('active');
+		$('#'+scrollContainer).siblings('menuhor').children('.horLink').removeClass('active');
+		$('#'+scrollContainer).siblings('menuhor').children('.horLink').eq(thisSlide).addClass('active');
 	
-	console.log(prevSlide +'..'+ thisSlide);
+		// console.log(prevSlide +'..'+ thisSlide);
 
 
-	offset = thisSlide*100;
-	distance = Math.abs(prevSlide - thisSlide);
-	time = distance*0.5;
-	margin = '-'+offset+'vw';
+		offset = thisSlide*100;
+		distance = Math.abs(prevSlide - thisSlide);
+		time = distance*0.5;
+		margin = '-'+offset+'%';
 
-	$('#'+scrollContainer).css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
+		$('#'+scrollContainer).children('slider').css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
 
 	
-    } else {console.log('start');}
-    });
+    } else {
+     console.log('start');
+     }
+});
 		
+// ------------------------ setup container and slides position-----------------------------
 
 		
-		$(this).children('div').not('.indicator').each(function(i) {
-				 
+			$(this).children('slider').children('div').not('.indicator').each(function(i) {
+				newMenuItem = $(this).attr('id');
+				newMenuItemTitle = newMenuItem.replace(/_/g , " ");
+				newMenuItemTitle = newMenuItemTitle.replace(/plus/g , "&");
+				newMenuItemTitle = newMenuItemTitle.replace(/dpunkt/g , ":");
+				$('menuHor').eq(index).append('<div class="horLink '+i+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></div>');
 
-		newMenuItem = $(this).attr('id');
-		newMenuItemTitle = newMenuItem.replace(/_/g , " ");
-newMenuItemTitle = newMenuItemTitle.replace(/plus/g , "&");
-newMenuItemTitle = newMenuItemTitle.replace(/comma/g , ",");
-newMenuItemTitle = newMenuItemTitle.replace(/dpunkt/g , ":");
-$('menuHor').eq(index).append('<div class="horLink '+i+'"><div class="menuDot">●</div><div class="menuTitle">'+newMenuItemTitle+'</div></div>');
-
-    	width += $(this).outerWidth( true );
-    	$(this).attr('jswidth',$(this).outerWidth( true ));
+    			width += $(this).outerWidth( true );
+    			$(this).attr('jswidth',$(this).outerWidth( true )).css('width',thisWidth+'px');;
 			});
-		$(this).css('width',width+'px');
-		$('menuHor').eq(index).children('.horLink').first().addClass('active');
-		});
+			
+	$(this).children('slider').css('width',width+'px');
+	$('menuHor').eq(index).children('.horLink').first().addClass('active');
+	});
+	
+	
+	 $('.horLink').click(function(e){
+		e.preventDefault();
+		scrollContainer = $(this).parent().siblings('.scrollhorSlide');
+		slider = $(this).parent().siblings('.scrollhorSlide').attr('id');
+		$(this).siblings('.horLink').removeClass('active');
+		$(this).addClass('active');
+		prevSlide = scrollContainer.attr('current');
+
+		that = parseInt($(this).index()-1);
+		scrollContainer.attr('current', that);
+		thisSlide = scrollContainer.attr('current');
+
+
+		// console.log(prevSlide +'..'+ thisSlide);
+
+
+		offset = thisSlide*100;
+		distance = Math.abs(prevSlide - thisSlide);
+		time = distance*0.5;
+		margin = '-'+offset+'%';
+
+		scrollContainer.children('slider').css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
+
+		// console.log(that+'clicked -'+offset+'vw - distance - '+distance+'menunr - '+scrollContainer);
+		currentMenu = that;
+		return false;
+})
  
   }
   
@@ -151,7 +226,7 @@ return false;
 $('.flag.one').click(function(e){
 e.preventDefault();
 $('.popup.one').css({'opacity': '1', 'display':'block'});
-console.log('flag one click');
+// console.log('flag one click');
 return false;
 })
 
@@ -169,17 +244,24 @@ e.preventDefault();
 $(this).siblings('.caption').toggleClass('out');
 $(this).toggleClass('out');
 $('menu').addClass('hide');
-console.log('slide caption click');
+// console.log('slide caption click');
 return false;
 })
-
+$('.captionText').click(function(e){
+e.preventDefault();
+$(this).parents('slide').children('.popup').toggleClass('out');
+$(this).toggleClass('out');
+$('menu').addClass('hide');
+// console.log('slide caption pop up click');
+return false;
+})
 $('.slideBtn').click(function(e){
 e.preventDefault();
 that = $(this).attr('id')+'';
 slide = that.replace(/Btn/g , "In");
 $('.slideIn').not('#'+slide).removeClass('out');
 $('#'+slide).toggleClass('out');
-console.log(that+'clicked'+slide+'opened');
+// console.log(that+'clicked'+slide+'opened');
 return false;
 })
 
@@ -189,93 +271,12 @@ e.preventDefault();
 that = $(this).attr('id');
 $(this).toggleClass('out');
 $(this).siblings('.captionHide').toggleClass('out');
-console.log(that+'clicked');
+// console.log(that+'clicked');
 return false;
 })
 
 }
-// ------------------------ drag-zoom-----------------------------   
         		
-function hammerIt(elm) {
-hammertime = new Hammer(elm, {});
-hammertime.get('pinch').set({
-    enable: true
-});
-var posX = 0,
-    posY = 0,
-    scale = 1,
-    last_scale = 1,
-    last_posX = 0,
-    last_posY = 0,
-    max_pos_x = 0,
-    max_pos_y = 0,
-    transform = "",
-    el = elm;
-
-hammertime.on('doubletap pan pinch panend pinchend', function(ev) {
-    if (ev.type == "doubletap") {
-        transform =
-            "translate3d(0, 0, 0) " +
-            "scale3d(2, 2, 1) ";
-        scale = 2;
-        last_scale = 2;
-        try {
-            if (window.getComputedStyle(el, null).getPropertyValue('-webkit-transform').toString() != "matrix(1, 0, 0, 1, 0, 0)") {
-                transform =
-                    "translate3d(0, 0, 0) " +
-                    "scale3d(1, 1, 1) ";
-                scale = 1;
-                last_scale = 1;
-            }
-        } catch (err) {}
-        el.style.webkitTransform = transform;
-        transform = "";
-    }
-
-    //pan    
-    if (scale != 1) {
-        posX = last_posX + ev.deltaX;
-        posY = last_posY + ev.deltaY;
-        max_pos_x = Math.ceil((scale - 1) * el.clientWidth / 2);
-        max_pos_y = Math.ceil((scale - 1) * el.clientHeight / 2);
-        if (posX > max_pos_x) {
-            posX = max_pos_x;
-        }
-        if (posX < -max_pos_x) {
-            posX = -max_pos_x;
-        }
-        if (posY > max_pos_y) {
-            posY = max_pos_y;
-        }
-        if (posY < -max_pos_y) {
-            posY = -max_pos_y;
-        }
-    }
-
-
-    //pinch
-    if (ev.type == "pinch") {
-        scale = Math.max(.999, Math.min(last_scale * (ev.scale), 4));
-    }
-    if(ev.type == "pinchend"){last_scale = scale;}
-
-    //panend
-    if(ev.type == "panend"){
-    last_posX = posX < max_pos_x ? posX : max_pos_x;
-    last_posY = posY < max_pos_y ? posY : max_pos_y;
-    }
-
-    if (scale != 1) {
-        transform =
-            "translate3d(" + posX + "px," + posY + "px, 0) " +
-            "scale3d(" + scale + ", " + scale + ", 1)";
-    }
-
-    if (transform) {
-        el.style.webkitTransform = transform;
-    }
-});
-}
 
 // ------------------------ setup triggers-----------------------------   
 function getTriggers(){
@@ -283,8 +284,8 @@ function getTriggers(){
 $('slide').each(function(index){
 
 	triggers.push({
-				triggerin: $(this).attr('data-triggerin'),
-				triggerout: $(this).attr('data-triggerout'),
+				triggerin: parseInt($(this).attr('data-triggerin'))*4,
+				triggerout: parseInt($(this).attr('data-triggerout')*4),
 				color: $(this).attr('data-color')
 		   		});
      
@@ -294,40 +295,38 @@ $('slide').each(function(index){
 }
 
 function black(){
-$('body').removeClass('white black trans');
 
-$('body').addClass('black');
 // $('menu > a').removeClass('current');
 // $('scrollIndicator').css('opacity', 1);
-console.log('add black');
+// console.log('add black');
 }
 function white(){
-$('body').removeClass('white black trans');
-$('body').addClass('white');
+
 // $('menu > a').removeClass('current');
 // $('scrollIndicator').css('opacity', 1);
-console.log('add white');
+// console.log('add white');
 }        
 
 
 // ------------------------ setup skrollr-----------------------------       		
 function skrollrSetup(){
-console.log(triggers);
+// console.log(triggers);
 
 	var currentSlide = '';
 	var totalHeight = $('body').css('height');
-	console.log(totalHeight);
+	// console.log(totalHeight);
 	var doit;
       // Init Skrollr
 	        var s = skrollr.init(
 
 				{ 
 					smoothScrolling:true,
+					scale: 4,
 	 				render: function(data) {
         				//Log the current scroll position.
        					 $('#countTop').html(data.curTop);
        				
-       					 console.log('progress'+data.curTop);
+       					 // console.log('progress'+data.curTop);
        				 
        	 
        
@@ -347,23 +346,31 @@ console.log(triggers);
   						doit = setTimeout(setTriggers, 50);
   					
 							function setTriggers(){
-					 		console.log('set triggers');
+					 		// console.log('set triggers');
 
                				
            
 // ------------------------ menu color and active slide-----------------------------
 							$.each(triggers, function( index, value ) {
   									currentPos = data.curTop;
-  									console.log('change colors');
+  									// console.log('change colors');
+  									// console.log(triggers[index].triggerin+'>'+index+'<'+triggers[index].triggerout+'color'+triggers[index].color);
 								if(currentPos > triggers[index].triggerin  && currentPos < triggers[index].triggerout){
 									if(triggers[index].color == "black"){
-									black();
+									$('body').removeClass('white black trans');
+
+									$('body').addClass('black');
+									// console.log('change to black');
+									// console.log(triggers[index].triggerin+'<'+index+'>'+triggers[index].triggerout+'color'+triggers[index].color);
 									} else {
-									white();
+									$('body').removeClass('white black trans');
+									$('body').addClass('white');
+									// console.log('change to white');
+									// console.log(triggers[index].triggerin+'<'+index+'>'+triggers[index].triggerout+'color'+triggers[index].color);
 									}
 								// $('menu > a').eq(index).addClass('current');
 								}
-							console.log(triggers[index].triggerin+'<'+index+'>'+triggers[index].triggerout+'color'+triggers[index].color);
+							
 
 							});
 					
@@ -382,6 +389,7 @@ console.log(triggers);
 
     //The easing function to use.
    			 easing: 'sqrt',
+   			 
 
     //How long the animation should take in ms.
    			 duration: function(currentTop, targetTop) {
@@ -398,7 +406,7 @@ console.log(triggers);
   
   	link = link.toString().split('"');
     link = link[0].toString().split('#');
-	console.log($('#'+link[1]).attr('data-triggerin'));
+	// console.log($('#'+link[1]).attr('data-triggerin'));
      return $('#'+link[1]).attr('data-triggerin');
        //  return 400; Hardcoding 400 doesn't make much sense.
     },
@@ -413,7 +421,7 @@ console.log(triggers);
     //This event is triggered right before we jump/animate to a new hash.
     change: function(newHash, newTopPosition) {
         //Do stuff
-        console.log(newHash, newTopPosition)
+        // console.log(newHash, newTopPosition)
         currentSlide = newHash
     },
 
@@ -426,48 +434,24 @@ console.log(triggers);
    $(document).ready(function(){
 
 		
-		parallaxSetup();
-		 menuSetup();
+		
 		
 
 	});
 	// ------------------------ on load-----------------------------
 
   $(window).load(function(){
+  parallaxSetup();
+		 menuSetup();
   		getTriggers();
 		skrollrSetup();
 		setupScrollHor();
-		var popups = document.getElementsByClassName('popup');
-		hammerIt(popups);
+		setupPopUps();
+		
 			 var currentMenu = 0;
   
   
   
-		 $('.horLink').click(function(e){
-		e.preventDefault();
-		scrollContainer = $(this).parent().siblings('.scrollhorSlide').attr('id');
-		$('#'+scrollContainer).siblings('menuhor').children('.horLink').removeClass('active');
-		$(this).addClass('active');
-		prevSlide = $('#'+scrollContainer).attr('current');
-
-		that = parseInt($(this).index()-1);
-		$(this).parent().siblings('.scrollhorSlide').attr('current', that);
-		thisSlide = $('#'+scrollContainer).attr('current');
-
-
-		console.log(prevSlide +'..'+ thisSlide);
-
-
-		offset = thisSlide*100;
-		distance = Math.abs(prevSlide - thisSlide);
-		time = distance*0.5;
-		margin = '-'+offset+'vw';
-
-		$('#'+scrollContainer).css('transition', 'all '+time+'s ease-in-out').css('margin-left', margin);
-
-		console.log(that+'clicked -'+offset+'vw - distance - '+distance+'menunr - '+scrollContainer);
-		currentMenu = that;
-		return false;
-})
+		
 		$('body').css('opacity','1');
 	});
