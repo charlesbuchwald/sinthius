@@ -28,6 +28,12 @@
      */
     var Stage = function (ele, opts) {
         /**
+         * Element that represents the canvas.
+         * @protected
+         * @type {DOMElement}
+         */
+        this.element = ele;
+        /**
          * Menu object bounded to the stage.
          * @protected
          * @type {Menu}
@@ -56,6 +62,9 @@
 
         //CALL TO PROTO METHOD init.
         this.init();
+        
+        //SORTER
+        this.sortRandom();
     };
 
     //PROTO
@@ -124,6 +133,22 @@
             this.cards.push(card);
         },
         /**
+         * Gets the current width size of the canvas element.
+         * @public
+         * @returns {number}
+         */
+        getCanvasSizeX: function(){
+            return this.element.offsetWidth;
+        },
+        /**
+         * Gets the current height size of the canvas element.
+         * @public
+         * @returns {number}
+         */
+        getCanvasSizeY: function(){
+            return this.element.offsetHeight;
+        },
+        /**
          * Handles the focus on certain card.
          * @param {Card} card
          * @returns {undefined}
@@ -168,13 +193,25 @@
             
         },
         /**
-         * Renders a menu with all the collected categories.
-         * @private
+         * Sorts the cards randomly across the available canvas.
+         * @public
          * @returns {undefined}
          */
-        renderCategoryMenu: function(){
-            var cats = this.categories;
-            var jq = this.JQmenuHolder;
+        sortRandom:function(){
+            var M = Math,
+            minX = 0,
+            minY = 0,
+            maxX = this.getCanvasSizeX(),
+            maxY = this.getCanvasSizeY();
+            
+            
+            /** @param {Card} */
+            this.iterateCards(function(card){
+                var rx = M.floor(M.random() * (maxX - minX + 1)) + minX;
+                var ry = M.floor(M.random() * (maxY - minY + 1)) + minY;
+                
+                card.moveTo(rx,ry);
+            });
         }
     };
 
@@ -185,4 +222,4 @@
 
 
 //PROVISONAL TOP HANDLERS
-new Stage(document.getElementById("conceptStage"));
+new Stage(document.getElementById("concept_stage"));

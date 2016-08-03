@@ -189,6 +189,23 @@
             this.moveLayerBottom();
         },
         /**
+         * Executes the transform by position on x and y.
+         * @param {number} x Desired position on X without offset
+         * @param {number} y Desired position on Y without offset
+         * @return {boolean}
+         */
+        moveTo: function(x,y){
+            
+            var deltaX = this.currentOriginX() - x; 
+            var deltaY = this.currentOriginY() - y;
+            
+            this.move(deltaX,deltaY);
+            
+            this.positionX = this.lastX;// - w;
+            this.positionY = this.lastY;// - h;
+        },
+        
+        /**
          * If the current card's layer is TOP layer.
          * @public
          * @returns {Boolean}
@@ -430,20 +447,10 @@
          * @returns {undefined}
          */
         onPan: function (event) {
-            
-            
             var x = this.positionX + event.deltaX;
             var y = this.positionY + event.deltaY;
-
-            var tm = this.globalTransformations;
-            tm.translate.x = x;
-            tm.translate.y = y;
-
-            tm = this.executeTransform(tm);
             
-            this.lastX = tm.translate.x;
-            this.lastY = tm.translate.y;
-            
+            this.move(x,y);
         },
         /**
          * Executes the instructions to scale the view according to the
@@ -476,6 +483,23 @@
          */
         onPinchEnd: function (event) {
             this.currentScale = this.lastScale;// - w;
+        },
+        /**
+         * Moves the card along the x and y axis by a deltaX and deltaY
+         * @param {number} x Amount of pixels to move on x
+         * @param {number} y Amount of pixels to move on y
+         * @public
+         * @returns {undefined}
+         */
+        move:function(x,y){
+            var tm = this.globalTransformations;
+            tm.translate.x = x;
+            tm.translate.y = y;
+
+            tm = this.executeTransform(tm);
+            
+            this.lastX = tm.translate.x;
+            this.lastY = tm.translate.y;
         }
     };
 
