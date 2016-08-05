@@ -13,16 +13,19 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/canvas.css" />
     </head>
     <body>
+        <div style="display: block; position: fixed; top:0;right:0;width:100px;height:20px;">
+            <span id="distancepanned"></span>
+        </div>
         <div id="main_canvas" class="canvas">
             <div id="numbers_title" class="row">
                 <div class="main-title">
-                    <h1>CIMMY</h1>
+                    <h1>CIMMYT</h1>
                     <h2>BY THE NUMBERS</h2>
                 </div>
             </div>
             <div class="row">
                 <div id="numbers_content" class="numbers-list">
-                    
+
                 </div>
             </div>
         </div>
@@ -32,13 +35,27 @@ and open the template in the editor.
         <script src="js/jquery-3.1.0.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
         <script src="js/jquery.mousewheel.min.js"></script>
-        
+
         <script src="js/endless.min.js"></script>
-        
+
         <!-- SOURCES -->
 
         <script src="js/number.js"></script>
         <script src="js/canvas.js"></script>
+
+        <script>
+
+            //PROVISONAL TOP HANDLERS
+            var canvas = new Canvas(document.getElementById("numbers_content"), [
+                {id: "n1", number: 20, content: "Lorem ipsun"},
+                {id: "n2", number: 12000, content: "Dorloa aoih iauhdiuha iduhi hida usdi uasdivguvu gsbnfihsbgus dbf"},
+                {id: "n3", number: 431, content: "asiu in ijn iniu asdiuhi asisu diaus ndiuasbdi udh i sdyab h9h iuehgiru bgihbdhsdb sudhfb sduhfb sudhbfsud hfbsu yfbusdyfbsu fbsu fbs"},
+                {id: "n4", number: 32, content: "Dorloa aoih iauhdiuha iduhi hida usdi uasdivguvu gsbnfihsbgus dbf"},
+                {id: "n5", number: 5, content: "ami ijasod aosid ubi i iusd iausnd asibd"},
+                {id: "n6", number: 19223213, content: "a aosid ubi i iusd iausnd asibd"},
+                {id: "n7", number: 931, content: "a aosid ubi i iusd iausnd asd ias dos iasudn aiudn iasu ndiuas dnsi dnasidu nsaid sanidu ansid asndia sdniausd "},
+            ]);
+        </script>
 
     </body>
 </html>
