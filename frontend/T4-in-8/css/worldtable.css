@@ -1,0 +1,11 @@
+
+/* 
+    Created on : Aug 6, 2016, 11:27:25 AM
+    Author     : Sergio Gómez <it@sergio.im>
+*/
+
+.worldmap{
+    position: relative; 
+    width: 100vw; 
+    height: 100vh;
+}
