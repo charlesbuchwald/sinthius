@@ -3,20 +3,37 @@
     <head>
         <title>CIMMYT | World Table</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <!--meta name="viewport" content="width=device-width, initial-scale=1.0"-->
+
         <link href="css/worldtable.css" rel="stylesheet" type="text/css" />
-        
+
+        <script src="js/jquery-3.1.0.min.js"></script>
+        <script src="js/hammer.min.js"></script>
         <script src="js/d3.min.js"></script>
+        <script src="js/d3-array.v1.min.js"></script>
+        <script src="js/d3-geo.v1.min.js"></script>
+        <script src="js/d3-geo-projection.v1.min.js"></script>
         <script src="js/topojson.min.js"></script>
-        <script src="js/datamaps.world.min.js"></script>
+        
+        <script src="js/map.point.js"></script>
+        <script src="js/map.js"></script>
     </head>
     <body>
-        <div id="worldmap" class="worldmap">
-            
+        <div class="table">
+            <div id="render" class="worldmap">
+
+            </div>
         </div>
         <script>
-            var map = new Datamap({element: document.getElementById('worldmap')});
+            var WorldTable = WorldMap.make(document.getElementById("render"));
+            
+            //EXAMPLE OF NODE ELEMENTS (Map Points) RENDERING -->
+            WorldTable.render([
+                {title:"Ciudad de México",longitude:-99.195454,latitude:19.3890379,radius:6,color:"#ff0000"},
+                {title:"Vancouver",longitude:-123.1939534,latitude:49.2562176,radius:12,color:"#00ff00"},
+                {title:"Beijing",longitude:115.3477954,latitude:40.2484741,radius:4,color:"#0000ff"}
+            ]);
+            
         </script>
     </body>
 </html>

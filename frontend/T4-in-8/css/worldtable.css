@@ -4,8 +4,51 @@
     Author     : Sergio Gómez <it@sergio.im>
 */
 
-.worldmap{
-    position: relative; 
+html, body{
+    margin:0;
+    overflow: hidden;
+}
+
+
+
+.table{
+    display: block;
     width: 100vw; 
     height: 100vh;
+    position: relative;
+}
+
+.worldmap{
+    background-color: #444;
+    display: block;
+    position: relative; 
+    width: 100%;
+    height:100%;
+}
+
+.stroke {
+    fill: none;
+    stroke: #777;
+    stroke-width: 1px;
+}
+
+.fill {
+    fill: none;
+}
+
+.graticule {
+    fill: none;
+    stroke: none;
+    stroke-opacity: 0.5;
+    stroke-width: 0;
+}
+
+.land {
+    fill: #999;
+}
+
+.boundary {
+    fill: none;
+    stroke: #666;
+    stroke-width: 0.5px;
 }
