@@ -12,48 +12,8 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css" />
         <link rel="stylesheet" type="text/css" href="css/stage.css" />
         <link rel="stylesheet" type="text/css" href="css/card.css" />
-    </head>
-    <body>
-        <div id="concept_stage" class="stage">
-
-            <div draggable="true" class="card clarge" categories="corn,wheat">
-                <div class="card-content">
-                    <span class="card-title">Video</span>
-                    <iframe class="content"
-                            src="https://www.youtube.com/embed/-q7Fz7NIMWM">
-                    </iframe> 
-                </div>
-            </div>
-            <div draggable="true" class="card cmedium" categories="rye">
-                <div class="card-content">
-                    <span class="card-title">Image</span>
-                    <img class="content" alt="crops" src="http://brucestutz.com/wp-content/uploads/2012/03/gmo_wheat_field.jpg" />
-                </div>
-            </div>
-
-            <div draggable="true" class="card cxlarge" categories="corn,rye">
-                <div class="card-content">
-                    <span class="card-title">Text</span>
-                    <div class="content">
-                        <p>Lorem ipsum dolor</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac lacus et mauris lobortis facilisis ut eget elit. Integer vulputate posuere tellus, mollis gravida velit fermentum et. Nam faucibus tortor nulla, in laoreet est blandit eget. Fusce est nunc, mattis non ante ut, porttitor gravida tortor. Curabitur in tincidunt libero, eu aliquet nisl. Vivamus tortor sem, bibendum vitae urna quis, ultrices pharetra mi. In ut condimentum magna, eu scelerisque odio. In et fermentum dolor. Sed maximus dictum ex, eget condimentum enim semper eu. </p>
-                    </div>
-                </div>
-            </div>
-
-            <div draggable="true" class="card cxlarge" categories="corn">
-                <div class="card-content">
-                    <span class="card-title">Image</span>
-                    <img class="content" alt="crops" src="http://foodtank.com/assets/images/head/10_ways_to_support_family_farmers.jpg" />
-                </div>
-            </div>
-        </div>
-        <div class="categories-menu">
-            <ul data-menu="categories">
-                
-            </ul>
-        </div>
-
+        
+        
         <!-- LIBS -->
         <script src="js/jquery-3.1.0.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
@@ -63,5 +23,155 @@ and open the template in the editor.
         <script src="js/card.js"></script>
         <script src="js/menu.js"></script>
         <script src="js/stage.js"></script>
+    </head>
+    <body>
+        <!-- ID "stage" -->
+        <div id="stage" class="stage">
+            <!-- STAGE SPACE FILLED PROGRAMATICALLY BY "CloudBrowser#render" -->
+        </div>
+        
+        <div class="categories-menu">
+            <!-- EXAMPLE OF CUSTOM MENU -->
+            <!-- ALL DATA CATEGORIES MENU SHOULD BE AN <UL> ELEMENT -->
+            <ul data-menu="categories">
+                <!-- EACH <LI> WILL BE A CATEGORY SORTER -->
+                <li data-categories="corn">Toggle Corn</li>
+                <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
+                <li data-categories="wheat,rye">Toggle Wheat or Rye</li>
+                <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" -->
+                <li data-categories="wheat&rye">Toggle Wheat and Rye</li>
+                <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" OR "corn" -->
+                <li data-categories="wheat&rye,corn">Toggle Wheat and Rye or Corn</li>
+            </ul>
+        </div>
+
+
+        <script>
+            //ALL EXAMPLES BELLOW USE THE GLOBAL VARIABLE "CloudBrowser" DEFINED
+            //TO BE A SINGLETON INSTANCE OF THE CLASS "Stage" FOR EACH DOCUMENT PAGE
+            //THIS DEFINITION EXISTS INSIDE "stage.js" AND SHOULD NOT BE CHANGED
+            //IF YOU DON'T KNOW WHAT YOU'RE DOING.
+
+            //GLOBAL CONFIGURATIONS - CHANGE IF NEEDED
+            CloudBrowser.Configurations = {
+                /**
+                 * Stage DOM id value
+                 * @type {string}
+                 */
+                stage: "stage", //DEFUALT VALUE
+                /**
+                 * Categories Menu jQuery selector
+                 * @type {string}
+                 */
+                menuSelector: "[data-menu='categories']", //DEFAULT VALUE
+                /**
+                 * Creates a custom menu based on the available categories.
+                 * @type {boolean}
+                 */
+                automenu: false //DEFAULT TRUE
+            };
+
+
+            //CLOUD BROWSER INIT
+            //INVOKING THIS METHOD WILL INITIATE THE CLOUDBROWSER WITH THE SET CONFIGURATIONS
+            CloudBrowser.init();
+
+
+            //EXAMPLE OF INVOKING DATA POPULATE - CHANGE IF NEEDED
+            //In this example the system will automatically render new data that.
+            //The given array/json will provide the information on the cards that need to be
+            //rendered.
+
+            /**
+             * Example of a data array for feeding the CloudBrowser
+             * @namespace DataExample
+             * @type Array
+             */
+            var exampleData = [
+                {
+                    /**
+                     * Sets the size (css class) of the card.
+                     * Posible defined values are: "csmall","cmedium","clarge","cxlarge".
+                     * You can set custom size classes on the css.
+                     * @type type
+                     */
+                    size: "clarge", //DEFAULT clarge
+                    /**
+                     * This array of string will set the card's designated categories.
+                     * @type Array<string>
+                     */
+                    categories: ["wheat", "corn"],
+                    /**
+                     * Title of the card to be displayed on top.
+                     * @type {string}
+                     */
+                    title: "Video",
+                    /**
+                     * Type of card to be rendered.
+                     * Posible values: "video","text","image","custom"
+                     * @type type
+                     */
+                    type: "video",
+                    /**
+                     * URL Path to the resource to render.
+                     * video:Only supports MP4
+                     * @type {string}
+                     */
+                    source: "assets/example.mp4",
+                    /**
+                     * Content to render inside the card's content block.
+                     * This will be render bellow the image or video if the 
+                     * card's type is set as "video", "image" or "custom".
+                     * 
+                     * This content can be either a text string or a renderable element
+                     * (DOMElement or jQuery object)
+                     * NOTE: Renderable content is only set if the "type" property is set to "custom"
+                     * 
+                     * @type {string|DOMElement|jQuery}
+                     */
+                    content: null
+                },
+                {
+                    size: "cxlarge", //DEFAULT clarge
+                    categories: ["rye", "corn"],
+                    title: "Text",
+                    type: "text",
+                    content: "Lorem ipsum dolor"
+                },
+                {
+                    size: "clarge", //DEFAULT clarge
+                    categories: ["corn"],
+                    title: "Custom",
+                    type: "custom",
+                    content: "<p>Lorem ipsum</p><p>Dolor blabla bla</p>"
+                },
+                {
+                    size: "cmedium", //DEFAULT clarge
+                    categories: ["wheat","rye","potatoes"],
+                    title: "Image",
+                    type: "image",
+                    source: "assets/example.jpg"
+                }
+            ];
+
+            //EXAMPLE OF DATA INJECTION
+            //This example will inject the "exampleData" array into the CloudBrowser
+            //This will clear the current stage of any objects and render the new injected data.
+            CloudBrowser.render(exampleData);
+
+
+            //EXAMPLE OF INVOKING METHOD FOR SELECTING CATEGORIES. - CHANGE IF NEEDED
+            //In this example the system will automaticaly try to override the
+            // category selection every 10 seconds and select "corn" as filter; it will only achieve it if the
+            // user hasn't interacted with the stage in the past 3 minutes (180 seconds)
+            // Once this time has passed the system will be able to override.
+
+            setTimeout(function () {
+                //Invoking the override method-->
+                CloudBrowser.selectCategories("corn");
+                console.log("auto corn set");
+            }, 10000);
+
+        </script>
     </body>
 </html>

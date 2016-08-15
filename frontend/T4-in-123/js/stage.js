@@ -1,3 +1,4 @@
+/** @class Stage */
 ;
 (function (global, factory) {
     //Check dependencies.
@@ -15,7 +16,7 @@
             //AMD MODULE
             typeof define === 'function' && define.amd ? define(factory) :
             //GLOBAL REFERENCE
-            global.Stage = factory($,document, Card, Menu);
+            global.Stage = factory($, document, Card, Menu);
 
 })(this, function ($, document, Card, Menu) {
     'use strict';
@@ -23,10 +24,23 @@
     /**
      * Class that handles the Stage behaviour.
      * @param {DOMElement} ele DOM Element that will act as stage container/canvas
-     * @param {Object} [opts] Optional params
      * @constructor
      */
-    var Stage = function (ele, opts) {
+    var Stage = function (ele) {
+        /**
+         * Instance's configurations.
+         * @public
+         * @static
+         * @memberOf Stage
+         */
+        this.Configurations = Stage.Configurations;
+        /**
+         * TIME IN SECONS THE STAGE HAS TO BE USER UNHANDLED IN ORDER TO
+         * BE ABLE TO USE OVERRIDE CONTROLS
+         * @type {number}
+         * @constant
+         */
+        this.USER_HANDLE_TIMEOUT = 180;
         /**
          * Element that represents the canvas.
          * @protected
@@ -39,7 +53,7 @@
          * @type {Menu}
          */
         this.menu = null;
-        
+
         /**
          * Card Array
          * @type {Array.<Card>}
@@ -53,166 +67,279 @@
          */
         this.categories = {};
         /**
+         * Marks with an UNIX timestamp the last time any card was handled.
+         * @type {number}
+         * @protected
+         */
+        this.setLastHandledAt = 0;
+        /**
          * JQuery object that contains the available menu holders
          * @type {JQuery}
          * @protected
          */
-        this.JQmenuHolder = $('[data-menu="categories"]');
-        
+        this.JQmenuHolder = null;
 
-        //CALL TO PROTO METHOD init.
-        this.init();
-        
-        //SORTER
-        this.sortRandom();
     };
 
     //PROTO
     Stage.prototype = {
-        
         /**
-         * Inits the basic configurations on the object.
-         * @private
+         * Inits the stage with the based configurations
+         * @param {string} [stagecontainer] Optional stage container to render on. This will override the "stage" set in Configurations. 
+         * @memberOf Stage
+         * @instance
+         * @public
          * @returns {undefined}
          */
-        init: function () {
+        init: function (stagecontainer) {
             var me = this;
-            
+            var configs = this.Configurations;
+
+            this.element = document.getElementById(stagecontainer || configs.stage);
+            this.JQmenuHolder = $(configs.menuSelector);
+
             //CANVAS INIT -->
-            
-            
-            //CARDS INIT -->
-            var x = document.getElementsByClassName("card");
-            var len = x.length;
-            
-            for(var i = 0; i < len; i++){
-                /** @type {DOMElement} */
-                var el = x.item(i);
-                
-                this.initCard(el);
-            }
-            
+
             //CATEGORIES --->
             /** @type {Menu} */
-            this.menu = new Menu(this.categories);
-            this.menu.onSelect(function(category){
-                /** @param {Card} card */
-                me.iterateCards(function(card){
-                    if(card.hasCategory(category)){
-                        card.moveLayerMiddle();
-                    }else{
-                        card.moveLayerBottom();
-                    }
-                });
+            this.menu = new Menu(configs.automenu);
+            this.menu.onSelect(function (category) {
+                me.innerSelectCategories(category);
             });
+
+        },
+        /**
+         * This method will render the given data into cards.
+         * Invoking this method will remove the current cards in
+         * the canvas.
+         * @public
+         * @memberOf Stage
+         * @instance
+         * @returns {undefined}
+         */
+        render: function (data) {
+            var jqElement = $(this.element);
+
+            if (data) {
+
+                jqElement.children().remove();
+                this.menu.reset();
+
+                for (var i = 0; i < data.length; i++) {
+                    this.addCard(data[i]);
+                }
+            }
+
+            //SORTER
+            this.sortRandom();
+        },
+        /**
+         * This method will render a single card by it's given data.
+         * Invoking this method will add the card into the already
+         * rendered group of cards.
+         * @public
+         * @memberOf Stage
+         * @instance
+         * @returns {undefined}
+         */
+        addCard: function (data) {
+            var dom = Card.createCardElement(data);
+            this.element.appendChild(dom);
+            this.menu.addCatetories(data.categories);
             
+            this.initCard(dom);
+        },
+        /**
+         * Once invoked this method, the stage will try to override the control of the screen to programaticaly
+         * select the given categories only if the user's last interaction allows it.
+         * @public
+         * @memberOf Stage
+         * @instance
+         * @param {string|Array} categories Is a string or an Array of strings that represent the categories that should pop over
+         * @returns {undefined}
+         */
+        selectCategories: function (categories) {
+            if (this.allowOverride()) {
+                this.innerSelectCategories(categories);
+                return true;
+            }
+            return false;
+        },
+        /**
+         * Selects cetain category to focus and display.
+         * @memberOf Stage
+         * @private
+         * @param {string|Array} categories Is a string or an Array of strings that represent the categories that should pop over
+         * @returns {undefined}
+         */
+        innerSelectCategories: function (categories) {
+            /** @param {Card} card */
+            this.iterateCards(function (card) {
+                if (card.hasCategory(categories)) {
+                    card.moveLayerMiddle();
+                } else {
+                    card.moveLayerBottom();
+                }
+            });
         },
         /**
          * Initiates the Card element into the stage.
+         * @memberOf Stage
          * @private
          * @returns {undefined}
          */
-        initCard: function(element){
+        initCard: function (element) {
+            var me = this;
             /** @type {Card} */
             var card = new Card(element);
-            
+
             //EVENTS FOR GLOBAL CONTROL
-            card.ham.on("pinchstart tap",(function(me,c){
-                return function(event){
+            card.ham.on("pinchstart tap", (function (me, c) {
+                return function (event) {
                     me.focus(c);
                 };
-            })(this,card));
-            
+            })(this, card));
+
             //ADD TO AVAILABLE CATEGORIES
             var cats = card.categories;
-            for(var i in cats){
-                this.categories[i] = true; 
+            for (var i in cats) {
+                this.categories[i] = true;
             }
-            
-            
+
+
             this.cards.push(card);
+
+            card.onHandleEnd(function () {
+                me.setLastHandledAt = new Date().getTime() / 1000;
+            });
         },
         /**
          * Gets the current width size of the canvas element.
-         * @public
+         * @memberOf Stage
+         * @private
          * @returns {number}
          */
-        getCanvasSizeX: function(){
+        getCanvasSizeX: function () {
             return this.element.offsetWidth;
         },
         /**
          * Gets the current height size of the canvas element.
-         * @public
+         * @private
+         * @memberOf Stage
          * @returns {number}
          */
-        getCanvasSizeY: function(){
+        getCanvasSizeY: function () {
             return this.element.offsetHeight;
         },
         /**
          * Handles the focus on certain card.
          * @param {Card} card
+         * @memberOf Stage
+         * @instance
+         * @public
          * @returns {undefined}
          */
-        focus:function(card){
+        focus: function (card) {
             //ONLY ONE CARD CAN BE FOCUSED.
             /** @param {Card} singlecard */
-            this.iterateCards(function(singlecard){
-                if(singlecard.isTop()){
+            this.iterateCards(function (singlecard) {
+                if (singlecard.isTop()) {
                     singlecard.moveLayerBack();
                 }
             });
-            
+
             card.moveLayerTop();
-            
+
         },
         /**
          * Forces a focus on the given card
          * @param {Card} card
-         * @public
+         * @private
+         * @memberOf Stage
          * @returns {undefined}
          */
-        forceFocus:function(card){
+        forceFocus: function (card) {
             card.moveLayerTop();
             this.currentFocusedCard = card;
         },
-        
         /**
          * Iterates over all the cards.
          * @param {function} callback function that will be executed on each step of the iteration.
-         * @public
+         * @private
+         * @memberOf Stage
          * @returns {undefined}
          */
-        iterateCards:function(callback){
+        iterateCards: function (callback) {
             var c = this.cards,
-            l = c.length,
-            i;
-    
-            for(i = 0; i < l; i++){
-                callback.call(this,c[i]);
+                    l = c.length,
+                    i;
+
+            for (i = 0; i < l; i++) {
+                callback.call(this, c[i]);
             }
-            
+
         },
         /**
          * Sorts the cards randomly across the available canvas.
          * @public
+         * @memberOf Stage
+         * @instance
          * @returns {undefined}
          */
-        sortRandom:function(){
+        sortRandom: function () {
             var M = Math,
-            minX = 0,
-            minY = 0,
-            maxX = this.getCanvasSizeX(),
-            maxY = this.getCanvasSizeY();
-            
-            
+                    minX = 0,
+                    minY = 0,
+                    maxX = this.getCanvasSizeX(),
+                    maxY = this.getCanvasSizeY();
+
+
             /** @param {Card} */
-            this.iterateCards(function(card){
+            this.iterateCards(function (card) {
                 var rx = M.floor(M.random() * (maxX - minX + 1)) + minX;
                 var ry = M.floor(M.random() * (maxY - minY + 1)) + minY;
-                
-                card.moveTo(rx,ry);
+
+                card.moveTo(rx, ry);
             });
+        },
+        /**
+         * Gets if the stage can allow an override method.
+         * @private
+         * @memberOf Stage
+         * @returns {Boolean}
+         */
+        allowOverride: function () {
+            var now = new Date().getTime();
+
+            if (this.setLastHandledAt + this.USER_HANDLE_TIMEOUT > now) {
+                return false;
+            }
+            return true;
         }
+    };
+
+    /**
+     * Global static configurations for any stage
+     * @memberOf Stage
+     * @static
+     * @public
+     */
+    Stage.Configurations = {
+        /**
+         * Stage id value
+         * @type {string}
+         */
+        stage: "stage",
+        /**
+         * Categories Menu jQuery selector
+         * @type {string}
+         */
+        menuSelector: "[data-menu='categories']",
+        /**
+         * Creates a custom menu based on the available categories.
+         * @type {boolean}
+         */
+        automenu:true
     };
 
 
@@ -221,5 +348,11 @@
 });
 
 
-//PROVISONAL TOP HANDLERS
-new Stage(document.getElementById("concept_stage"));
+
+//GLOBAL INITIALIZATION OF THE CLOUD BROWSER
+// DO NOT CHANGE -->
+(function (global) {
+    /** @type {Stage} */
+    global.CloudBrowser = new Stage(document.getElementById("stage"));
+})(this);
+// <-----
