@@ -1,7 +1,7 @@
 ;
 (function (global, factory) {
     //Check dependencies.
-    
+
     //d3 -->
     if (typeof d3 === 'undefined') {
         throw "Error Module [map]:: d3 is not defined.";
@@ -15,36 +15,54 @@
         throw "Error Module [map]:: topojson is not defined.";
     }
     
+    //Menu -->
+    if (typeof Menu === 'undefined') {
+        throw "Error Module [map]:: Menu is not defined.";
+    }
+
     //MapPoint -->
     if (typeof MapPoint === 'undefined') {
         throw "Error Module [map]:: MapPoint is not defined.";
     }
-    
+
 
     //MODULE EXPORTS
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
             //AMD MODULE
             typeof define === 'function' && define.amd ? define(factory) :
             //GLOBAL REFERENCE
-            global.WorldMap = factory($, self,d3, topojson,MapPoint);
+            global.WorldStage = factory($, self, d3, topojson, MapPoint, Menu);
 
-})(this, function ($, self, d3, topojson,MapPoint) {
+})(this, function ($, self, d3, topojson, MapPoint, Menu) {
     'use strict';
 
     /**
-     * Class that handles the WorldMap behaviour.
-     * @param {DOMElement} ele DOM Element that will act as canvas
-     * @param {Array} [data] Optional data object. Data can also be set on WorldMap#render method.
+     * Class that handles the WorldStage behaviour.
+     * @param {Array} [data] Optional data object. Data can also be set on WorldStage#render method.
      * @constructor
      */
-    var WorldMap = function (ele, data) {
+    var WorldStage = function (data) {
+        /**
+         * TIME IN SECONS THE STAGE HAS TO BE USER UNHANDLED IN ORDER TO
+         * BE ABLE TO USE OVERRIDE CONTROLS
+         * @type {number}
+         * @constant
+         */
+        this.USER_HANDLE_TIMEOUT = 180;
+        /**
+         * Local instance reference of the global configurations
+         * @type {WorldStage.Configurations}
+         * @public
+         * @memberOf WorldStage
+         */
+        this.Configurations = WorldStage.Configurations;
         /**
          * DOMElement that will hold the map canvas upon rendering.
          * the map will auto-adjust to this element's bounding limits.
          * @type {DOMElement}
          * @protected
          */
-        this.element = ele;
+        this.element = null;
         /**
          * Instance's data to be rendered. Its an array of objects
          * that contain the initial configurations of a MapPoint
@@ -82,61 +100,77 @@
          * @type {number}
          * @protected
          */
-        this.width = ele.offsetWidth;
+        this.width = null;
         /**
          * Instance's defined height taken from the element.
          * @type {number}
          * @protected
          */
-        this.height = ele.offsetHeight;
+        this.height = null;
+        /**
+         * Marks with an UNIX timestamp the last time any card was handled.
+         * @type {number}
+         * @protected
+         */
+        this.setLastHandledAt = 0;
+        /**
+         * Array of map data points
+         * @protected
+         * @type {Array<MapPoint>}
+         */
+        this.points = [];
+        
+        
+        
 
-
-        //CALL TO PROTO METHOD init.
-        this.init();
     };
 
     //PROTO
-    WorldMap.prototype = {
-        
+    WorldStage.prototype = {
         /**
          * Renders the map data with the given configurations.
          * @public
          * @param {Array} [data] Array set of initial MapPoint objects.
          * @returns {undefined}
          */
-        render:function(data){
+        render: function (data) {
             this.data = data;
             
-            for(var i = 0; i < data.length; i++){
+            this.points = [];
+            
+            for (var i = 0; i < data.length; i++) {
                 var d = data[i];
-                
-                MapPoint.make(this.mainSvg,this.projection,d);
+
+                this.points.push(MapPoint.make(this.element, this.mainSvg, this.projection, d));
             }
         },
         /**
          * Inits the basic instance's configurations.
-         * @private
+         * @param {string} [id] Optional selector id.
+         * @public
          * @returns {undefined}
          */
-        init:function(){
-            var w = this.width;
-            var h = this.height;
-            
+        init: function (id) {
+            var me = this;
+            var ele = document.getElementById(id || this.Configurations.stage);
+            var w = ele.offsetWidth;
+            var h = ele.offsetHeight;
+
             //CREATE PROJECTION (ROBINSON)
             var pro = d3.geoRobinson()
-                    .scale(w/6.4)
+                    .scale(w / 6.4)
                     .translate([w / 2, h / 2])
                     .precision(.1);
-            
+
             //CREATE PATH BASED UPON PROJECTION
             var pt = d3.geo.path()
                     .projection(pro);
-            
+
             //CREATE GRATICULE
             var gt = d3.geo.graticule();
-            
+
             //SET SVG's STYLE PROPERTIES
-            var svg = d3.select(this.element).append("svg")
+            var svg = d3.select(ele).append("svg")
                     .attr("width", w)
                     .attr("height", h);
 
@@ -159,10 +193,10 @@
                     .attr("d", pt);
 
             d3.json("js/world-50m.json", function (error, world) {
-                if (error){
+                if (error) {
                     throw error;
                 }
-                    
+
 
                 svg.insert("path", ".graticule")
                         .datum(topojson.feature(world, world.objects.land))
@@ -178,29 +212,131 @@
             });
 
             d3.select(self.frameElement).style("height", h + "px");
-            
+
             this.mainSvg = svg;
             this.path = pt;
             this.projection = pro;
             this.graticule = gt;
+            this.width = w;
+            this.height = h;
+            
+            this.element = ele;
+            
+            
+            //MENU
+            this.menus = new Menu(this.Configurations.automenu, this.Configurations.menuType);
+            this.menus.onSelect(function(){
+                me.innerSelectCategories();
+            });
+        },
+        
+        /**
+         * Once invoked this method, the stage will try to override the control of the screen to programaticaly
+         * select the given categories only if the user's last interaction allows it.
+         * @public
+         * @memberOf Stage
+         * @instance
+         * @param {string|Array} categories Is a string or an Array of strings that represent the categories that should pop over
+         * @returns {undefined}
+         */
+        selectCategories: function (categories) {
+            if (this.allowOverride()) {
+                this.innerSelectCategories(categories);
+                return true;
+            }
+            return false;
+        },
+        /**
+         * Selects cetain category to focus and display.
+         * @memberOf Stage
+         * @private
+         * @returns {undefined}
+         */
+        innerSelectCategories: function () {
+            var menus = this.menus;
+            /** @param {MapPoint} card */
+            this.iteratePoints(function (point) {
+                var cats = point.categories;
+                var m = menus.matches(cats);
+                if (m) {
+                    point.show();
+                } else {
+                    point.hide();
+                }
+            });
+        },
+        /**
+         * Iterates over all the points.
+         * @param {function} callback function that will be executed on each step of the iteration.
+         * @private
+         * @memberOf Stage
+         * @returns {undefined}
+         */
+        iteratePoints: function (callback) {
+            var c = this.points,
+                    l = c.length,
+                    i;
+
+            for (i = 0; i < l; i++) {
+                callback.call(this, c[i]);
+            }
+
+        },
+        /**
+         * Gets if the stage can allow an override method.
+         * @private
+         * @memberOf Stage
+         * @returns {Boolean}
+         */
+        allowOverride: function () {
+            var now = new Date().getTime();
+
+            if (this.setLastHandledAt + this.USER_HANDLE_TIMEOUT > now) {
+                return false;
+            }
+            return true;
         }
     };
-    
     /**
-     * Returns a WorldMap instance
-     * @param {DOMElement} element The DOMElement that will serve as a canvas for the map.
-     * @param {Array.<Object>} [data] Optionaly you can set the map's data here or invoking the instance's "render" method.
+     * Global configurations
      * @public
      * @static
-     * @returns {WorldMap}
+     * @memberOf WorldStage
      */
-    WorldMap.make = function(element,data){
-        return new WorldMap(element,data);
+    WorldStage.Configurations = {
+        /**
+         * Stage id value
+         * @type {string}
+         */
+        stage: "stage",
+        /**
+         * Categories Menu jQuery selector
+         * @type {string}
+         */
+        menuSelector: "[data-menu='categories']",
+        /**
+         * Sets if the menu should be autogenerated
+         * @type {boolean}
+         */
+        automenu:false,
+        /**
+         * Sets if the categories/tags applied to the map
+         * should stack or should they be exclusive.
+         * @type {boolean}
+         */
+        menuType: Menu.TYPE_FILTER_AND_STACK
     };
 
 
     //FACTORY's FINAL OBJECT
-    return WorldMap;
+    return WorldStage;
 });
 
 
+//GLOBAL INITIALIZATION OF THE WORLD MAP TABLE
+// DO NOT CHANGE -->
+(function (global) {
+    /** @type {WorldStage} */
+    global.WorldMap = new WorldStage();
+})(this);
+// <-----

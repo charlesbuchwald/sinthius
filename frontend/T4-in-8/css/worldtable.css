@@ -52,3 +52,40 @@ html, body{
     stroke: #666;
     stroke-width: 0.5px;
 }
+
+.menu{
+    display: block;
+    position: absolute;
+    border: 1px solid #aeaeae;
+    border-radius: 4px;
+    width:150px;
+    height:150px;
+    z-index: 99;
+}
+
+.menu-top-left{
+    top:0;
+    left:0;
+}
+
+.menu-top-right{
+    right:0;
+    top:0;
+}
+
+.menu-bottom-left{
+    left:0;
+    bottom:0;
+}
+.menu-bottom-right{
+    bottom:0;
+    right:0;
+}
+
+.menu li{
+    cursor:pointer;
+}
+
+.menu li.menu-selected{
+    border-bottom: 1px solid #0000ff;
+}
