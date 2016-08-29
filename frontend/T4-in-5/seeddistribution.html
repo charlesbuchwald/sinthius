@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seed Distribution</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="css/canvas.css" rel="stylesheet" type="text/css" />
+
+        <script src="js/jquery-3.1.0.min.js"></script>
+        <script src="js/hammer.min.js"></script>
+
+
+        <script src="js/canvas.js"></script>
+    </head>
+    <body>
+        <div class="canvas-container">
+            <div class="canvas">
+                <!-- SVG WILL BE ADDED PROGRAMATICALY -->
+                <img id="stage" src="assets/sample.jpeg" />
+            </div>
+        </div>
+        <script>
+            /**
+             * @param {window} window
+             * @param {document} document
+             * @param {Canvas} SeedCanvas
+             * @returns {undefined}
+             */
+            (function (window, document, SeedCanvas) {
+
+                //INIT THE CANVAS
+                SeedCanvas.init();
+
+                //TODO EXAMPLE SVG
+                var svg = null;
+                //POINTS
+                var points = [
+                    {x: 100, y: 100, name: "Something", tags: ["wheat", "maize"]},
+                    {x: 200, y: 200, name: "Something", tags: ["blue", "maize"]},
+                    {x: 300, y: 300, name: "Something", tags: ["yelow", "maize"]},
+                    {x: 400, y: 400, name: "Something", tags: ["rye", "maize"]},
+                    {x: 500, y: 500, name: "Something", tags: ["wheat", "maize"]}
+                ];
+
+                //EXAMPLE
+                SeedCanvas.render(svg, points);
+
+            })(window, document, SeedCanvas);
+        </script>
+    </body>
+</html>
