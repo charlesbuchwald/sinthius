@@ -21,6 +21,9 @@
         <script src="js/map.card.js"></script>
         <script src="js/map.point.js"></script>
         <script src="js/map.js"></script>
+        
+        
+        <script src="js/connector.js"></script>
     </head>
     <body>
         <div class="table">
@@ -226,6 +229,16 @@
 
             //EXAMPLE OF NODE ELEMENTS (Map Points) RENDERING -->
             WorldMap.render(exampleData);
+            
+            //SETS THE BROADCAST MODE
+            WorldMap.setBroadcastMode(true);
+            
+            //WHEN THE WORLDMAP GETS TAGS SELECTED ON BROADCAST MODE THEN
+            //USING THE CONNECTOR OBJECT THE DATA IS SET.
+            WorldMap.onBroadcastSelection(function(tags){
+                Connector.broadcast(tags);
+            });
+            
 
         </script>
     </body>

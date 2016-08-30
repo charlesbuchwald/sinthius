@@ -155,12 +155,11 @@
         },
         /**
          * Executes the callback set by "onSelect" method.
-         * @param {jQuery} li Click event target Li object.
          * @private
          * @returns {undefined}
          */
-        dispatchData: function (li) {
-            this.selectCallback && this.selectCallback.call(this, li);
+        dispatchData: function () {
+            this.selectCallback && this.selectCallback.call(this, this.categoryStack);
         },
         /**
          * Adds data to the category stack
