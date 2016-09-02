@@ -63,11 +63,34 @@
          * @readonly
          */
         this.observing = false;
+        /**
+         * A list of possible IP's to send the broadcast.
+         * @type {Array}
+         * @protected
+         */
+        this.broadcastElementIPs = []; 
 
     };
 
     //PROTO
     Connector.prototype = {
+        /**
+         * When invoked the method will lookup in the API's node list the matching
+         * elements and add them to the pool of broadcast screens.
+         * @param {string} findby Possible values: "name","ip"
+         * @param {type} elements
+         * @returns {undefined}
+         */
+        connect:function(findby,elements){
+            switch(findby){
+                case "name":
+                    this.findNames(elements);
+                    break;
+                case "ip":
+                    this.broadcastElementIPs = elements;
+                    break;
+            }
+        },
         /**
          * Becomes an observer of a node's changes in the data being set.
          * @param {function} callback Function to call when the socket sends a data change.
@@ -109,12 +132,81 @@
          * @returns {undefined}
          */
         broadcast: function (data, success, error) {
-            var url = this.apiUrl + this.configurations.methods.set;
-            url += "?data=" + encodeURI(JSON.stringify(data));
-
-            var options = {method: "GET", success: success, error: error};
-
-            $.ajax(url, options);
+            for(var i in this.broadcastElementIPs){
+                var ip = this.broadcastElementIPs[i];
+                var url = "http://"+ip+this.configurations.methods.set;
+                
+                url += "?data=" + encodeURI(JSON.stringify(data));
+                var options = {method: "GET", success: success, error: error};
+                $.ajax(url, options);
+            }
+        },
+        /**
+         * Requests this screen lock
+         * @public
+         * @returns {undefined}
+         */
+        lock:function(){
+            var me = this;
+            var furl = this.configurations.api+"/node/lock";
+            $.ajax({
+                url:furl,
+                method:"GET",
+                dataType:"json"
+            });
+        },
+        /**
+         * Requests this screen unlock
+         * @public
+         * @returns {undefined}
+         */
+        unlock:function(){
+            var me = this;
+            var furl = this.configurations.api+"/node/unlock";
+            $.ajax({
+                url:furl,
+                method:"GET",
+                dataType:"json"
+            });
+        },
+        /**
+         * Finds the IP's of the names in the list.
+         * @param {Array} list
+         * @private
+         * @returns {undefined}
+         */
+        findNames:function(list){
+            var me = this;
+            var furl = this.configurations.api+"/nodes/cache";
+            $.ajax({
+                url:furl,
+                method:"GET",
+                dataType:"json",
+                success:function(json){
+                    me.matchNames(json.response,list);
+                }
+            });
+        },
+        /**
+         * Matches the names in the list to the ones in the result to store a list of IPs
+         * @private
+         * @returns {undefined}
+         */
+        matchNames:function(responselist,list){
+            var finallist = [];
+            
+            for(var i in responselist){
+                var ob = responselist[i];
+                
+                var name = ob.name;
+                var ip = ob.ip+":"+ob.port;
+                var index = list.indexOf(name);
+                
+                if(index !== -1){
+                    finallist.push(ip);
+                }
+            }
+            this.broadcastElementIPs = finallist;
         }
 
     };
