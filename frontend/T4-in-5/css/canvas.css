@@ -8,6 +8,11 @@ and open the template in the editor.
     Author     : Sergio Gómez <it@sergio.im>
 */
 
+body,html{
+    margin:0;
+    padding:0;
+}
+
 .canvas-container{
     display: block;
     width:100vw;

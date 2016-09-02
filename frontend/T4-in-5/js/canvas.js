@@ -247,7 +247,7 @@
          */
         executeTransform: function (tm) {
             var el = this.element;
-            //tm = this.validateTransformation(tm);
+            tm = this.validateTransformation(tm);
             if (tm) {
                 var value = [
                     'translate3d(' + tm.translate.x + 'px, ' + tm.translate.y + 'px, 0)',
@@ -282,7 +282,7 @@
             var ch = this.currentHeight();
             var canvasWidth = this.getCanvasWidth();
             var canvasHeight = this.getCanvasHeight();
-
+            
             //BOUNDRIES LIMIT
             //x axis limited to half (plus the center offset) the current size of the card -->
             if (realTranslateX  > 0) {
@@ -290,8 +290,8 @@
                 tm.translate.x = 0;
                 //return false;
             }
-            if (realTranslateX < canvasWidth) {
-                tm.translate.x = 0 - canvasWidth;
+            if (realTranslateX < ((cw - canvasWidth)*-1)) {
+                tm.translate.x = ((cw - canvasWidth)*-1);
                 //return false;
             }
             //y axis limited to half (plus the center offset) the current size of the card -->
@@ -301,8 +301,8 @@
                 tm.translate.y = 0;
                 //return false;
             }
-            if (realTranslateY < canvasHeight) {
-                tm.translate.y = 0 - canvasHeight;
+            if (realTranslateY < ((ch-canvasHeight)*-1)) {
+                tm.translate.y = ((ch-canvasHeight)*-1);
                 //return false;
             }
 
