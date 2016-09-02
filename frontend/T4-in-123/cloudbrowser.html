@@ -19,7 +19,8 @@ and open the template in the editor.
         <script src="js/jquery-ui.min.js"></script>
         <script src="js/hammer.min.js"></script>
         <!-- SOURCES -->
-
+        
+        <script src="js/connector.js"></script>
         <script src="js/card.js"></script>
         <script src="js/menu.js"></script>
         <script src="js/stage.js"></script>
@@ -158,6 +159,16 @@ and open the template in the editor.
             //This example will inject the "exampleData" array into the CloudBrowser
             //This will clear the current stage of any objects and render the new injected data.
             CloudBrowser.render(exampleData);
+            
+            
+            //Lock when handle
+            CloudBrowser.onHandle(function(){
+                Connector.lock();
+            });
+            //Lock when handle has timed-out
+            CloudBrowser.onUnhandle(function(){
+                Connector.unlock();
+            });
 
 
             //EXAMPLE OF INVOKING METHOD FOR SELECTING CATEGORIES. - CHANGE IF NEEDED
@@ -165,12 +176,12 @@ and open the template in the editor.
             // category selection every 10 seconds and select "corn" as filter; it will only achieve it if the
             // user hasn't interacted with the stage in the past 3 minutes (180 seconds)
             // Once this time has passed the system will be able to override.
-
-            setTimeout(function () {
-                //Invoking the override method-->
-                CloudBrowser.selectCategories("corn");
-                console.log("auto corn set");
-            }, 10000);
+            Connector.observe(function(data){
+                CloudBrowser.selectCategories(data);
+                //Unlock after data set
+                Connector.unlock();
+            });
+            
 
         </script>
     </body>
