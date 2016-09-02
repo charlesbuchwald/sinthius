@@ -109,6 +109,24 @@
 
         },
         /**
+         * On handle event
+         * @param {function} callback
+         * @returns {undefined}
+         * @public
+         */
+        onHandle:function(callback){
+            this.onHandleCallback = callback;
+        },
+        /**
+         * On unhandle event.
+         * @param {function} callback
+         * @returns {undefined}
+         * @public
+         */
+        onUnhandle:function(callback){
+            this.onHandleEndCallback = callback;
+        },
+        /**
          * This method will render the given data into cards.
          * Invoking this method will remove the current cards in
          * the canvas.
@@ -211,6 +229,10 @@
 
             card.onHandleEnd(function () {
                 me.setLastHandledAt = new Date().getTime() / 1000;
+                me.onHandleEndCallback && me.onHandleEndCallback.call();
+            });
+            card.onHandle(function(){
+                me.onHandleCallback && me.onHandleCallback.call();
             });
         },
         /**

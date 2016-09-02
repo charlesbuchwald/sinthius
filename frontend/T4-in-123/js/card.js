@@ -118,6 +118,12 @@
          */
         this.lastScale = 1;
         /**
+         * Function to be called when the card is being handled.
+         * @protected
+         * @type {function}
+         */
+        this.onHandleCallback = null;
+        /**
          * Function to be called when the card is finished being handled.
          * @protected
          * @type {function} 
@@ -165,6 +171,7 @@
             //Hammer events
             this.ham.on('panstart', function (evt) {
                 me.onPanStart(evt);
+                me.onHandleCallback && me.onHandleCallback.call(me);
             });
 
             this.ham.on('panmove', function (evt) {
@@ -177,6 +184,7 @@
             });
             this.ham.on('pinchmove', function (evt) {
                 me.onPinch(evt);
+                me.onHandleCallback && me.onHandleCallback.call(me);
             });
             this.ham.on('pinchend', function (evt) {
                 me.onPinchEnd(evt);
@@ -202,6 +210,13 @@
 
             //DEFAULT LAYER BOTTOM
             this.moveLayerBottom();
+        },
+        /**
+         * Function to be called when any card is being handled
+         * @returns {undefined}
+         */
+        onHandle: function(callback){
+            this.onHandleCallback = callback;
         },
         /**
          * Sets a callback to be called when the card is being handled by a touch event.
