@@ -82,3 +82,19 @@ and open the template in the editor.
 .cmedium{
     width: 160px;
 }
+
+
+.caption{
+    display: block;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.caption span{
+    display: block;
+    font-size: 10px;
+    height: 100%;
+    text-align: left;
+    width: 100%;
+}

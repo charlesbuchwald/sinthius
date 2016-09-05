@@ -106,7 +106,6 @@
             this.menu.onSelect(function (category) {
                 me.innerSelectCategories(category);
             });
-
         },
         /**
          * On handle event
@@ -114,7 +113,7 @@
          * @returns {undefined}
          * @public
          */
-        onHandle:function(callback){
+        onHandle: function (callback) {
             this.onHandleCallback = callback;
         },
         /**
@@ -123,7 +122,7 @@
          * @returns {undefined}
          * @public
          */
-        onUnhandle:function(callback){
+        onUnhandle: function (callback) {
             this.onHandleEndCallback = callback;
         },
         /**
@@ -164,7 +163,7 @@
             var dom = Card.createCardElement(data);
             this.element.appendChild(dom);
             this.menu.addCatetories(data.categories);
-            
+
             this.initCard(dom);
         },
         /**
@@ -193,7 +192,15 @@
         innerSelectCategories: function (categories) {
             /** @param {Card} card */
             this.iterateCards(function (card) {
-                if (card.hasCategory(categories)) {
+                var state = true;
+                for (var i = 0; i < categories.length; i++) {
+                    var b = categories[i];
+                    if (b && b.length && !card.hasCategory(b)) {
+                        state = false;
+                        continue;
+                    }
+                }
+                if (state) {
                     card.moveLayerMiddle();
                 } else {
                     card.moveLayerBottom();
@@ -231,7 +238,7 @@
                 me.setLastHandledAt = new Date().getTime() / 1000;
                 me.onHandleEndCallback && me.onHandleEndCallback.call();
             });
-            card.onHandle(function(){
+            card.onHandle(function () {
                 me.onHandleCallback && me.onHandleCallback.call();
             });
         },
@@ -361,7 +368,7 @@
          * Creates a custom menu based on the available categories.
          * @type {boolean}
          */
-        automenu:true
+        automenu: true
     };
 
 

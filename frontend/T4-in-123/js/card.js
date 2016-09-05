@@ -642,11 +642,19 @@
 
         //CARD CONTENT
         var content = Card.createCardContent(data);
+        var caption = $(doc.createElement("div"));
+        caption.addClass("caption");
+        
+        var captiontext = $(doc.createElement("span"));
+        captiontext.text(data.caption);
+        
+        caption.append(captiontext);
 
         //ADD
         main.append(sub);
         sub.append(title);
         sub.append(content);
+        sub.append(caption);
 
         //RETURNS THE DOMELEMENT INSIDE THE JQUERY
         return main[0];

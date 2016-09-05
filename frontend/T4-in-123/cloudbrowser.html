@@ -34,16 +34,44 @@ and open the template in the editor.
         <div class="categories-menu">
             <!-- EXAMPLE OF CUSTOM MENU -->
             <!-- ALL DATA CATEGORIES MENU SHOULD BE AN <UL> ELEMENT -->
-            <ul data-menu="categories">
+            <ul name="topics" data-menu="categories" data-behaviour="exclusive">
                 <!-- EACH <LI> WILL BE A CATEGORY SORTER -->
-                <li data-categories="corn">Toggle Corn</li>
+                <li class="menu-selected" data-categories="topic1">Topic 1</li>
                 <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
-                <li data-categories="wheat,rye">Toggle Wheat or Rye</li>
+                <li data-categories="topic2">Topic 2</li>
                 <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" -->
-                <li data-categories="wheat&rye">Toggle Wheat and Rye</li>
-                <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" OR "corn" -->
-                <li data-categories="wheat&rye,corn">Toggle Wheat and Rye or Corn</li>
+                <li data-categories="topic3">Topic 3</li>
             </ul>
+            <ul name="grains" data-menu="categories" data-behaviour="exclusive">
+                <!-- EACH <LI> WILL BE A CATEGORY SORTER -->
+                <li data-categories="maize">Maize</li>
+                <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
+                <li data-categories="wheat">Wheat</li>
+                <li class="menu-selected" data-categories="wheat,maize">All</li>
+            </ul>
+            <ul name="region-asia" data-menu="categories" data-behaviour="acumulative">
+                <!-- EACH <LI> WILL BE A CATEGORY SORTER -->
+                
+                <li data-categories="china,thailand,indonesia">Asia</li>
+                <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
+                <li data-categories="china">China</li>
+                <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" -->
+                <li data-categories="thailand">Thailand</li>
+                <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" OR "corn" -->
+                <li data-categories="indonesia">Indonesia</li>
+                
+                <li data-categories="brazil,peru,venezuela">Latinamerica</li>
+                <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
+                <li data-categories="brazil">Brazil</li>
+                <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" -->
+                <li data-categories="peru">Peru</li>
+                <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" OR "corn" -->
+                <li data-categories="venezuela">Venezuela</li>
+            </ul>
+            
+            
+            <!--   -->
+            
         </div>
 
 
@@ -101,7 +129,7 @@ and open the template in the editor.
                      * This array of string will set the card's designated categories.
                      * @type Array<string>
                      */
-                    categories: ["wheat", "corn"],
+                    categories: ["wheat", "topic1","china"],
                     /**
                      * Title of the card to be displayed on top.
                      * @type {string}
@@ -130,28 +158,32 @@ and open the template in the editor.
                      * 
                      * @type {string|DOMElement|jQuery}
                      */
-                    content: null
+                    content: null,
+                    caption:"Hello there"
                 },
                 {
                     size: "cxlarge", //DEFAULT clarge
-                    categories: ["rye", "corn"],
+                    categories: ["topic1","maize","brazil"],
                     title: "Text",
                     type: "text",
-                    content: "Lorem ipsum dolor"
+                    content: "Lorem ipsum dolor",
+                    caption:"I'm caption"
                 },
                 {
                     size: "clarge", //DEFAULT clarge
-                    categories: ["corn"],
+                    categories: ["topic2","maize","thailand"],
                     title: "Custom",
                     type: "custom",
-                    content: "<p>Lorem ipsum</p><p>Dolor blabla bla</p>"
+                    content: "<p>Lorem ipsum</p><p>Dolor blabla bla</p>",
+                    caption:"And this is another"
                 },
                 {
                     size: "cmedium", //DEFAULT clarge
-                    categories: ["wheat","rye","potatoes"],
+                    categories: ["topic3","wheat","peru"],
                     title: "Image",
                     type: "image",
-                    source: "assets/example.jpg"
+                    source: "assets/example.jpg",
+                    caption:"Finally this one"
                 }
             ];
 
@@ -182,6 +214,8 @@ and open the template in the editor.
                 Connector.unlock();
             });
             
+            //MENU INIT
+            CloudBrowser.menu.init();
 
         </script>
     </body>
