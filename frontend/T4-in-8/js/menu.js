@@ -81,6 +81,15 @@
                 });
             }
         },
+        setDefault:function(){
+            var me = this;
+            this.JQmenuHolder.find("li.menu-selected").each(function(){
+                var data = $(this).attr("data-categories");
+                me.categoryStack = me.categoryStack.concat(data.split(","));
+                        
+            });
+            me.dispatchData(me.categoryStack);
+        },
         /**
          * This menu will render
          * @public

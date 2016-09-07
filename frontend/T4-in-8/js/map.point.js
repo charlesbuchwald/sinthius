@@ -30,14 +30,7 @@
      * Class that handles the MapPoint behaviour.
      * @param {jQuery} canvas           Macro canvas for the cards.
      * @param {d3.Geo.Projection} projection d3 Projection object that will handle the coordiates calculation.
-     * @param {object} data             Data object for rendering the point.
-     * @param {number} data.latitude    Object's latitude.
-     * @param {number} data.longitude   Object's longitude.
-     * @param {number} data.radius      Object's radius.
-     * @param {string} data.color       Object's color in hex string or rgb function (css)
-     * @param {string} data.cssclass    Object's set of css classes to assign
-     * @param {jQuery} data.content     Object's content as a jQuery object.
-     * @param {Array}  data.categories  Object's categories array.
+     * @param {Array} data             Data object for rendering the point.
      * @constructor
      */
     var MapPoint = function (canvas,svg, projection, data) {
@@ -99,8 +92,23 @@
          * @private
          */
         this.macroCanvas = canvas;
-        
-
+        /**
+         * Default radius.
+         * @type Number
+         */
+        this.radius = 5;
+        /**
+         * Default point color
+         * @type String
+         */
+        this.color = "#ff0000";
+        /**
+         * Object containing the real x and y positions 
+         * of the point whithin the canvas.
+         * @protected
+         * @type Object
+         */
+        this.realPosition = {};
 
         //CALL TO PROTO METHOD init.
         this.init();
@@ -118,7 +126,7 @@
             this.point.transition()
                     /*.ease(this.TRANSITION_EASE)*/
                     .duration(this.TRANSITION_DURATION)
-                    .attr("r", this.data.point.radius);
+                    .attr("r", this.radius);
         },
         /**
          * Hides the point
@@ -141,18 +149,20 @@
          */
         init:function(){
             var me = this;
-            var data = this.data;
-            var pointData = data.point;
+            //ONLY THE FIRST INFO FOR THE POINT
+            var data = this.data[0];
+            //var pointData = data.point;
             var pointVector = this.svg.append("circle");
             
             //RADIUS -->
-            pointData.radius = pointData.radius || 0;
-            pointVector.attr("r",pointData.radius);
+            //pointData.radius = this.radius || 0;
+            pointVector.attr("r",this.radius);
             
             //COLOR -->
-            if(pointData.color){
-                pointVector.attr("fill",pointData.color);
-            }
+            pointVector.attr("fill",this.color);
+            
+            pointVector.attr("class","type-"+data.type);
+            
             
             //OTHER ATTRIBS
             pointVector.on("click",function(event){
@@ -160,14 +170,26 @@
             });
             
             //LOCATION -->
-            var translation = me.projection([pointData.longitude,pointData.latitude]);
+            var translation = me.projection([data.latitude+Math.round(Math.random()),data.longitude+Math.round(Math.random())]);
             
             pointVector.attr("transform", function() {return "translate(" + translation + ")";});
             
             this.point = pointVector;
-            
+            this.realPosition = translation;
             
             this.addCard();
+        },
+        /**
+         * Evals all the media inside the point agains the incoming category
+         * @param {Array} categorySelection
+         * @returns {undefined}
+         */
+        inject:function(categorySelection){
+            if(!this.card.select(categorySelection)){
+                this.hide();
+            }else{
+                this.show();
+            }
         },
         /**
          * This method will render a single card associated with the point
@@ -180,7 +202,7 @@
             var dom = Card.createCardElement(this.data);
             this.macroCanvas.appendChild(dom);
             
-            this.card = new Card(dom);
+            this.card = new Card(dom,{pointPosition:this.realPosition});
             
         },
         /**
@@ -189,8 +211,15 @@
          * @returns {undefined}
          */
         trigger:function(event){
-            var x = event.clientX + this.data.point.radius;
-            var y = event.clientY + this.data.point.radius;
+            var x = event.clientX + this.radius;
+            var y = event.clientY + this.radius;
+            var mc = $(this.macroCanvas);
+            if(x > mc.width()/2){
+                x = event.clientX - this.radius - $(this.card.element).width();
+            }
+            if(y > mc.height()/2){
+                y = event.clientY - this.radius - $(this.card.element).height();
+            }
             
             this.card.moveTo(x,y);
             this.card.toggle();
@@ -257,14 +286,7 @@
      * Returns a MapPoint instance
      * @param {jQuery} canvas           Macro canvas for the cards.
      * @param {d3.Geo.Projection} projection d3 Projection object that will handle the coordiates calculation.
-     * @param {object} data             Data object for rendering the point.
-     * @param {number} data.latitude    Object's latitude.
-     * @param {number} data.longitude   Object's longitude.
-     * @param {number} data.radius      Object's radius.
-     * @param {string} data.color       Object's color in hex string or rgb function (css)
-     * @param {string} data.cssclass    Object's set of css classes to assign
-     * @param {jQuery} data.content     Object's content as a jQuery object.
-     * @param {Array}  data.categories  Object's categories array.
+     * @param {Array} data             Data object for rendering the point.
      * @public
      * @static
      * @returns {MapPoint}

@@ -11,14 +11,13 @@ and open the template in the editor.
 
 
 .card {
-    margin:0;
-    position:absolute;
+    margin:5px;
+    position:relative;
     width:auto;
     height:auto;
     opacity: 1;
     display:inline-block;
     background-color: blue;
-    z-index: 1;
 }
 
 .card .card-content{
@@ -82,4 +81,16 @@ and open the template in the editor.
 
 .cmedium{
     width: 160px;
+}
+
+.main-container{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    max-width: 440px;
+}
+
+.close-button{
+    background-color: #FF0000;
+    border-radius: 50%;
 }

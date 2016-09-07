@@ -25,7 +25,7 @@
      */
     var Card = function (ele, opts) {
         this.DURATION = 300;
-        
+
         //CONSTANTS CLASSES FOR THE LAYERS
         this.BOTTOMLAYER = "bottom";
         this.MIDDLELAYER = "middle";
@@ -146,8 +146,9 @@
          * @public
          * @returns {undefined}
          */
-        toggle:function(){
+        toggle: function () {
             $(this.element).toggle(this.DURATION);
+            
         },
         /**
          * Shows the card
@@ -156,6 +157,38 @@
          */
         show: function () {
             $(this.element).show(this.DURATION);
+            $(this.element).find(".card").show();
+        },
+        /**
+         * Hides and shows the proper elements within the card
+         * if no elements remain, it returns a false.
+         * @param {Array} categories
+         * @returns {Boolean}
+         * @public
+         */
+        select:function(categories){
+            var card = $(this.element);
+            var state = false;
+            if((typeof categories).toLowerCase()=="string"){
+                categories = [categories];
+            }
+            card.find(".card").each(function(){
+                var c = $(this);
+                var tags = c.attr("categories");
+                
+                for(var i = 0; i < categories.length;i++){
+                    var singleCat = categories[i];
+                    
+                    if(tags.indexOf(singleCat)!==-1){
+                        state = true;
+                        c.show();
+                    }else{
+                        c.hide();
+                    }
+                }
+            });
+            
+            return state;
         },
         /**
          * Hides the card
@@ -179,19 +212,19 @@
             var ele = this.element;
             this.ham = new Hammer(ele);
 
-//            //Hammer events
-//            this.ham.on('panstart', function (evt) {
-//                me.onPanStart(evt);
-//            });
-//
-//            this.ham.on('panmove', function (evt) {
-//                me.onPan(evt);
-//            });
+            //Hammer events
+            this.ham.on('panstart', function (evt) {
+                me.onPanStart(evt);
+            });
 
-//            this.ham.on('panend', function (evt) {
-//                me.onPanEnd(evt);
-//                me.onHandleEndCallback && me.onHandleEndCallback.call(me);
-//            });
+            this.ham.on('panmove', function (evt) {
+                me.onPan(evt);
+            });
+
+            this.ham.on('panend', function (evt) {
+                me.onPanEnd(evt);
+                me.onHandleEndCallback && me.onHandleEndCallback.call(me);
+            });
             this.ham.on('pinchmove', function (evt) {
                 me.onPinch(evt);
             });
@@ -217,6 +250,16 @@
 
             //DEFAULT LAYER BOTTOM
             this.moveLayerBottom();
+        },
+        /**
+         * Sets the final attribs according to the final pan position.
+         * @memberof Card
+         * @private
+         * @returns {undefined}
+         */
+        onPanEnd: function (event) {
+            this.positionX = this.lastX;// - w;
+            this.positionY = this.lastY;// - h;
         },
         /**
          * Sets a callback to be called when the card is being handled by a touch event.
@@ -426,16 +469,6 @@
          * @private
          * @returns {undefined}
          */
-        onPanEnd: function (event) {
-            this.positionX = this.lastX;// - w;
-            this.positionY = this.lastY;// - h;
-        },
-        /**
-         * Sets the final attribs according to the final pan position.
-         * @memberof Card
-         * @private
-         * @returns {undefined}
-         */
         onPinchEnd: function (event) {
             this.currentScale = this.lastScale;// - w;
         },
@@ -468,39 +501,60 @@
      * @static
      * @returns {DOMElement}
      */
-    Card.createCardElement = function (data) {
+    Card.createCardElement = function (dataarray) {
         var doc = document;
+        
+        var hugecontainer = $(doc.createElement("div"));
+        hugecontainer.addClass("main-container");
+        hugecontainer.css("display", "none");
+        
+        for (var i = 0; i < dataarray.length; i++) {
 
-        //MAIN -
-        var main = $(doc.createElement("div"));
-        main.css("display", "none");
-        main.attr("draggable", "true");
-        main.addClass("card");
-        main.addClass(data.size || "clarge");
-        main.attr("data-type", data.type || "text");
+            var data = dataarray[i];
+            //MAIN -
+            var main = $(doc.createElement("div"));
+           
+            //main.attr("draggable", "true");
+            main.addClass("card");
+            main.addClass(data.size || "clarge");
+            main.attr("data-type", data.type || "text");
 
-        //CATEGORIES
-        main.attr("categories", data.categories.join(","));
+            //CATEGORIES
+            main.attr("categories", data.categories.join(","));
 
-        //CARD SUB
-        var sub = $(doc.createElement("div"));
-        sub.addClass("card-content");
+            var closeelement = $(doc.createElement("div"));
+            closeelement.addClass("close-button");
+            var closeinnner = $(doc.createElement("span"));
+            closeelement.append(closeinnner);
+            
+            closeelement.on("click",function(){
+                $(this).closest(".card").toggle(400);
+            });
+            
+            main.append(closeelement);
 
-        //CARD TITLE
-        var title = $(doc.createElement("span"));
-        title.addClass("card-title");
-        title.text(data.title);
+            //CARD SUB
+            var sub = $(doc.createElement("div"));
+            sub.addClass("card-content");
 
-        //CARD CONTENT
-        var content = Card.createCardContent(data);
+            //CARD TITLE
+            var title = $(doc.createElement("span"));
+            title.addClass("card-title");
+            title.text(data.title);
 
-        //ADD
-        main.append(sub);
-        sub.append(title);
-        sub.append(content);
+            //CARD CONTENT
+            var content = Card.createCardContent(data,main);
 
-        //RETURNS THE DOMELEMENT INSIDE THE JQUERY
-        return main[0];
+            //ADD
+            main.append(sub);
+            sub.append(title);
+            sub.append(content);
+            
+            hugecontainer.append(main);
+            //RETURNS THE DOMELEMENT INSIDE THE JQUERY
+        }
+        
+        return hugecontainer[0];
 
     };
 
@@ -511,9 +565,11 @@
      * @static
      * @returns {DOMElement}
      */
-    Card.createCardContent = function (data) {
+    Card.createCardContent = function (data,main) {
         var dom = null;
         var doc = document;
+        
+        data.source = "assets/t4"+data.source;
 
         switch (data.type) {
             case "video":
@@ -533,10 +589,27 @@
 
                 break;
             case "text":
-            case "custom":
             default:
                 dom = $(doc.createElement("div"));
-                dom.append(data.content);
+                $.ajax({
+                    method:"get",
+                    dataType:"text",
+                    url:data.source,
+                    success:(function(d,m){
+                     return function(txt){
+                         d.append(txt);
+                         var len = txt.length;
+                         
+                         if(len >= 0 && len < 250){
+                             m.addClass("content-small");
+                         }else if(len >= 250 && len < 400){
+                             m.addClass("content-medium");
+                         }else if(len > 400){
+                             m.addClass("content-large");
+                         }
+                     } ;  
+                })(dom,main)});
+                
                 break;
         }
 

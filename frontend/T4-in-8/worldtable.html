@@ -4,7 +4,7 @@
         <title>CIMMYT | World Table</title>
         <meta charset="UTF-8">
         <!--meta name="viewport" content="width=device-width, initial-scale=1.0"-->
-        
+
         <link href="css/card.css" rel="stylesheet" type="text/css" />
         <link href="css/worldtable.css" rel="stylesheet" type="text/css" />
 
@@ -16,19 +16,45 @@
         <script src="js/d3-geo.v1.min.js"></script>
         <script src="js/d3-geo-projection.v1.min.js"></script>
         <script src="js/topojson.min.js"></script>
-        
+
         <script src="js/menu.js"></script>
         <script src="js/map.card.js"></script>
         <script src="js/map.point.js"></script>
         <script src="js/map.js"></script>
-        
-        
+
+
         <script src="js/connector.js"></script>
     </head>
     <body>
         <div class="table">
-            <!-- TOP LEFT MENU - REGIONS -->
-            <div class="menu menu-top-left">
+            <div class="menu bottom-menu menu-fixed">
+                <ul data-menu="categories" data-behaviour="exclusive">
+                    <!-- 13 topics -->
+                    <li class="menu-selected" data-categories="agricultural-innovations">Agricultural Innovations</li>
+                    <li data-categories="cereals-south-asia">Cereals South Asia</li>
+                    <li data-categories="disease-stress-resistant-wheat">Disease Stress Resistant Wheat</li>
+                    <li data-categories="drought-tolerant-maize">Drought Tolerant Maize</li>
+                    <li data-categories="food-future">Food Future</li>
+                    <li data-categories="gender">Gender</li>
+                    <li data-categories="heat-stress-tolerant-maize">Heat Stress Tolerant Maize</li>
+                    <li data-categories="nutrition-market-oriented-grains">Nutrition Market Oriented Grains</li>
+                    <li data-categories="rapid-response">Rapid Response</li>
+                    <li data-categories="seed-distribution-impact-partnerships">Seed Distribution Impact Partnerships</li>
+                    <li data-categories="sustainable-intensification">Sustainable Intensification</li>
+                    <li data-categories="unlocking-genetic-resources">Unlocking Genetic Resources</li>
+                    <li data-categories="working-farmers">Working Farmers</li>
+                    
+                    <!-- 7 Futures -->
+                    <li data-categories="f-1">Future 1</li>
+                    <li data-categories="f-2">Future 2</li>
+                    <li data-categories="f-3">Future 3</li>
+                    <li data-categories="f-4">Future 4</li>
+                    <li data-categories="f-5">Future 5</li>
+                    <li data-categories="f-6">Future 6</li>
+                    <li data-categories="f-7">Future 7</li>
+                </ul>
+            </div>
+            <!--div class="menu menu-top-left">
                 <span class="menu-title">Regions</span>
                 <ul data-menu="categories">
                     <li data-categories="africa">Africa</li>
@@ -37,7 +63,6 @@
                     <li data-categories="middleeast">Middle East</li>
                 </ul>
             </div>
-            <!-- TOP RIGHT MENU - CROPS -->
             <div class="menu menu-top-right">
                 <span class="menu-title">Crops</span>
                 <ul data-menu="categories">
@@ -47,8 +72,6 @@
                     <li data-categories="soy">Soy</li>
                 </ul>
             </div>
-
-            <!-- BOTTOM LEFT MENU - Decades -->
             <div class="menu menu-bottom-left">
                 <span class="menu-title">Decades</span>
                 <ul data-menu="categories">
@@ -58,8 +81,6 @@
                     <li data-categories="2010">2010's</li>
                 </ul>
             </div>
-
-            <!-- BOTTOM LEFT MENU - Decades -->
             <div class="menu menu-bottom-right">
                 <span class="menu-title">Colors</span>
                 <ul data-menu="categories">
@@ -68,9 +89,7 @@
                     <li data-categories="green">Green</li>
                     <li data-categories="yellow">Yellow</li>
                 </ul>
-            </div>
-
-            <!-- MAP CANVAS -->
+            </div-->
             <div id="stage" class="worldmap">
                 <!-- THIS AREA WILL BE PROGRAMATICALY FILLED WITH THE MAP -->
             </div>
@@ -78,20 +97,20 @@
         <script>
             //CONNECTOR INIT
             //SET THE CONNECTOR
-            Connector.connect("name",[
+            Connector.connect("name", [
                 "t4_in_1",
                 "t4_in_2",
                 "t4_in_3"
             ]);
-           
-            
-           
-            
+
+
+
+
             //ALL EXAMPLES BELLOW USE THE GLOBAL VARIABLE "WorldMap" DEFINED
             //TO BE A SINGLETON INSTANCE OF THE CLASS "WorldStage" FOR EACH DOCUMENT PAGE
             //THIS DEFINITION EXISTS INSIDE "map.js" AND SHOULD NOT BE CHANGED
             //IF YOU DON'T KNOW WHAT YOU'RE DOING.
-            
+
             //GLOBAL CONFIGURATIONS - CHANGE IF NEEDED
             WorldMap.Configurations = {
                 /**
@@ -108,148 +127,28 @@
                  * Menu behaviour
                  * @type Boolean
                  */
-                menuType:Menu.TYPE_FILTER_AND_STACK //DEFAULT
+                menuType: Menu.TYPE_FILTER //DEFAULT
             };
-            
-            
-            
+
+
+
             //WORLD MAP INIT
             //INVOKING THIS METHOD WILL INITIATE THE WORLSTAGE WITH THE SET CONFIGURATIONS
             WorldMap.init();
-            
-            
-            //EXAMPLE OF INVOKING DATA POPULATE - CHANGE IF NEEDED
-            //In this example the system will automatically render new data that.
-            //The given array/json will provide the information on the cards that need to be
-            //rendered.
-            /**
-             * Example of a data array for feeding the WorldMap
-             * @namespace DataExample
-             * @type Array
-             */
-            var exampleData = [
-                {
-                    /**
-                     * Point data.
-                     * @type {Object}
-                     */
-                    point:{
-                        /**
-                         * Radius of the point, set in pixel's.
-                         * @type {number}
-                         */
-                        radius:10,
-                        /**
-                         * Decimal latitude of the point.
-                         * @type {number}
-                         */
-                        latitude:0,
-                        /**
-                         * Decimal longitude of the point.
-                         * @type {number}
-                         */
-                        longitude:0,
-                        /**
-                         * Hexadecimal string or RGB CSS function of the point's color.
-                         * @type {string}
-                         */
-                        color:"#ff0000"
-                    },
-                    /**
-                     * Sets the size (css class) of the card.
-                     * Posible defined values are: "csmall","cmedium","clarge","cxlarge".
-                     * You can set custom size classes on the css.
-                     * @type {string}
-                     */
-                    size: "clarge", //DEFAULT clarge
-                    /**
-                     * This array of string will set the card's designated categories.
-                     * @type {Array<string>}
-                     */
-                    categories: ["1980","red","africa","wheat", "corn"],
-                    /**
-                     * Title of the card to be displayed on top.
-                     * @type {string}
-                     */
-                    title: "Africa's Wheat in 1980",
-                    /**
-                     * Type of card to be rendered.
-                     * Posible values: "video","text","image","custom"
-                     * @type {string}
-                     */
-                    type: "video",
-                    /**
-                     * URL Path to the resource to render.
-                     * video:Only supports MP4
-                     * @type {string}
-                     */
-                    source: "assets/example.mp4",
-                    /**
-                     * Content to render inside the card's content block.
-                     * This will be render bellow the image or video if the 
-                     * card's type is set as "video", "image" or "custom".
-                     * 
-                     * This content can be either a text string or a renderable element
-                     * (DOMElement or jQuery object)
-                     * NOTE: Renderable content is only set if the "type" property is set to "custom"
-                     * 
-                     * @type {string|DOMElement|jQuery}
-                     */
-                    content: null
-                },
-                {
-                    point:{
-                        radius:Math.round(Math.random()*20),
-                        latitude:19.3890379,
-                        longitude:-99.195454,
-                        color:"#ff0000"
-                    },
-                    size: "cxlarge", //DEFAULT clarge
-                    categories: ["rye", "corn"],
-                    title: "Ciudad de México",
-                    type: "text",
-                    content: "Lorem ipsum dolor"
-                },
-                {
-                    point:{
-                        radius:Math.round(Math.random()*20),
-                        latitude:49.2562176,
-                        longitude:-123.1939534,
-                        color:"#ff0000"
-                    },
-                    size: "clarge", //DEFAULT clarge
-                    categories: ["corn","2000","asia"],
-                    title: "Vancouver",
-                    type: "custom",
-                    content: "<p>Lorem ipsum</p><p>Dolor blabla bla</p>"
-                },
-                {
-                    point:{
-                        radius:Math.round(Math.random()*20),
-                        latitude:40.2484741,
-                        longitude:115.3477954,
-                        color:"#ff0000"
-                    },
-                    size: "cmedium", //DEFAULT clarge
-                    categories: ["wheat","rye","potatoes","1990","southamerica"],
-                    title: "Beijing",
-                    type: "image",
-                    source: "assets/example.jpg"
-                }
-            ];
 
-            //EXAMPLE OF NODE ELEMENTS (Map Points) RENDERING -->
-            WorldMap.render(exampleData);
             
+            //EXAMPLE OF NODE ELEMENTS (Map Points) RENDERING -->
+            WorldMap.render("js/allmedia-singlecountry.json");
+
             //SETS THE BROADCAST MODE
             WorldMap.setBroadcastMode(true);
-            
+
             //WHEN THE WORLDMAP GETS TAGS SELECTED ON BROADCAST MODE THEN
             //USING THE CONNECTOR OBJECT THE DATA IS SET.
-            WorldMap.onBroadcastSelection(function(tags){
-                Connector.broadcast(tags);
+            WorldMap.onBroadcastSelection(function (tags) {
+                Connector.broadcast({tags:tags});
             });
-            
+
 
         </script>
     </body>

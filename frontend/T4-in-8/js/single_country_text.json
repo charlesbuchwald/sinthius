@@ -1,0 +1,2818 @@
+{
+	"data": [{
+		"source": "/texts/australia-cimmyt-partnership-supports-afghan-research-on-wheat-and-maize.txt",
+		"type": "text",
+		"country": "afghanistan",
+		"latitude": 65.370274,
+		"longitude": 33.249126,
+		"categories": [
+			"maize", "wheat", "sustainable-intensification", "asia", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/sustainable-wheat-and-maize-production-in-afghanistan.txt",
+		"type": "text",
+		"country": "afghanistan",
+		"latitude": 65.370275,
+		"longitude": 33.249127,
+		"categories": [
+			"maize", "wheat", "sustainable-intensification", "sustainable-wheat-maize-production-afghanistan", "asia", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/international-winter-wheat-improvement-program.txt",
+		"type": "text",
+		"country": "afghanistan",
+		"latitude": 65.370276,
+		"longitude": 33.249128,
+		"categories": [
+			"wheat", "food-future", "international-winter-wheat-improvement", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "afghanistan",
+		"latitude": 65.370277,
+		"longitude": 33.249129,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "afghanistan",
+		"latitude": 65.370278,
+		"longitude": 33.249130,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cereals-south-asia.txt",
+		"type": "text",
+		"country": "afghanistan",
+		"latitude": 65.370279,
+		"longitude": 33.249131,
+		"categories": [
+			"maize", "wheat", "cereals-south-asia", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/understanding-gender-in-wheat-based-livelihoods-for-enhanced-wheat-r4d.txt",
+		"type": "text",
+		"country": "afghanistan",
+		"latitude": 65.370280,
+		"longitude": 33.249132,
+		"categories": [
+			"wheat", "gender", "understanding-gender-wheat-based-livelihoods-wheat-r4d", "asia", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/fighting-hunger-with-rust-resistant-seed.txt",
+		"type": "text",
+		"country": "afghanistan",
+		"latitude": 65.370281,
+		"longitude": 33.249133,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "africa", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/durable-rust-resistance-in-wheat-phase-ii.txt",
+		"type": "text",
+		"country": "afghanistan",
+		"latitude": 65.370282,
+		"longitude": 33.249134,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "asia", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-winter-wheat-improvement-program.txt",
+		"type": "text",
+		"country": "armenia",
+		"latitude": 44.798595,
+		"longitude": 4.051562,
+		"categories": [
+			"wheat", "food-future", "international-winter-wheat-improvement", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "armenia",
+		"latitude": 44.798596,
+		"longitude": 4.051563,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "armenia",
+		"latitude": 44.798597,
+		"longitude": 4.051564,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cimmyt-promotes-wheat-improvement-collaboration-between-china-and-australia.txt",
+		"type": "text",
+		"country": "australia",
+		"latitude": 134.530388,
+		"longitude": -26.537326,
+		"categories": [
+			"wheat", "seed-distribution-impact-partnerships", "oceania", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-winter-wheat-improvement-program.txt",
+		"type": "text",
+		"country": "azerbaijan",
+		"latitude": 48.147663,
+		"longitude": 40.201411,
+		"categories": [
+			"wheat", "food-future", "international-winter-wheat-improvement", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "azerbaijan",
+		"latitude": 48.147664,
+		"longitude": 40.201412,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "azerbaijan",
+		"latitude": 48.147665,
+		"longitude": 40.201413,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "bangladesh",
+		"latitude": 90.164266,
+		"longitude": 24.395328,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "bangladesh",
+		"latitude": 90.164267,
+		"longitude": 24.395329,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cereals-south-asia.txt",
+		"type": "text",
+		"country": "bangladesh",
+		"latitude": 90.164268,
+		"longitude": 24.395330,
+		"categories": [
+			"maize", "wheat", "cereals-south-asia", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cereal-systems-initiatives-for-south-asia-mechanization-and-irrigation-project-launched-in-bangladesh.txt",
+		"type": "text",
+		"country": "bangladesh",
+		"latitude": 90.164269,
+		"longitude": 24.395331,
+		"categories": [
+			"maize", "wheat", "sustainable-intensification", " cereals-south-asia", "cereals-systems-south-asia-csisa", "cereal-systems-initiative-south-asia-mechanization-irrigation", "asia", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "bangladesh",
+		"latitude": 90.164270,
+		"longitude": 24.395332,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/fighting-hunger-with-rust-resistant-seed.txt",
+		"type": "text",
+		"country": "bangladesh",
+		"latitude": 90.164271,
+		"longitude": 24.395333,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "africa", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "bangladesh",
+		"latitude": 90.164272,
+		"longitude": 24.395334,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/rapid-development-of-climte-resilient-wheat.txt",
+		"type": "text",
+		"country": "bangladesh",
+		"latitude": 90.164273,
+		"longitude": 24.395335,
+		"categories": [
+			"wheat", "food-future", "rapid-climate-resilient-wheat-varieties-south-asia-genomic-selection", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/durable-rust-resistance-in-wheat-phase-ii.txt",
+		"type": "text",
+		"country": "bangladesh",
+		"latitude": 90.164274,
+		"longitude": 24.395336,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "asia", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cereal-systems-initiative-for-south-asia-csisa.txt",
+		"type": "text",
+		"country": "bangladesh",
+		"latitude": 90.164275,
+		"longitude": 24.395337,
+		"categories": [
+			"maize", "wheat", "cereals-south-asia", "cereals-systems-south-asia-csisa", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cereal-systems-initiative-for-south-asia-mechanization-and-irrigation.txt",
+		"type": "text",
+		"country": "bangladesh",
+		"latitude": 90.164276,
+		"longitude": 24.395338,
+		"categories": [
+			"maize", "wheat", "sustainable-intensification", "cereal-systems-initiative-south-asia-mechanization-irrigation", "asia", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/sustainable-and-resilient-farming-systems.txt",
+		"type": "text",
+		"country": "bangladesh",
+		"latitude": 90.164277,
+		"longitude": 24.395339,
+		"categories": [
+			"wheat", "sustainable-intensification", "sustainable-resilient-farming-systems-the-eastern-gangetic-plains", "asia", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/stress-tolerant-maize-for-africa-stma.txt",
+		"type": "text",
+		"country": "benin",
+		"latitude": 2.197122,
+		"longitude": 10.028758,
+		"categories": [
+			"maize", "drought-tolerant-maize", "stress-tolerant-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/dh-maize.txt",
+		"type": "text",
+		"country": "benin",
+		"latitude": 2.197123,
+		"longitude": 10.028759,
+		"categories": [
+			"maize", "food-future", "doubled-haploid-facility-strengthening-maize-africa", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "benin",
+		"latitude": 2.197124,
+		"longitude": 10.028760,
+		"categories": [
+			"gender", "socioeconomic-constraints-incentives-technology-southern-africa", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/managing-maize-lethal-necrosis-in-eastern-africa.txt",
+		"type": "text",
+		"country": "benin",
+		"latitude": 2.197125,
+		"longitude": 10.028761,
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "benin",
+		"latitude": 2.197126,
+		"longitude": 10.028762,
+		"categories": [
+			"sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/improved-maize-for-african-soils.txt",
+		"type": "text",
+		"country": "benin",
+		"latitude": 2.197127,
+		"longitude": 10.028763,
+		"categories": [
+			"maize", "sustainable-intensification", "improved-maize-african-soils", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/tamasa-taking-maize-agronomy-to-scale-in-africa.txt",
+		"type": "text",
+		"country": "benin",
+		"latitude": 2.197128,
+		"longitude": 10.028764,
+		"categories": [
+			"maize", "sustainable-intensification", "taking-maize-agronomy-scale-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "benin",
+		"latitude": 2.197129,
+		"longitude": 10.028765,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/cereals-south-asia.txt",
+		"type": "text",
+		"country": "bhutan",
+		"latitude": 90.428844,
+		"longitude": 27.482788,
+		"categories": [
+			"maize", "wheat", "cereals-south-asia", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "bhutan",
+		"latitude": 90.428845,
+		"longitude": 27.482789,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/bhutan-maize-provides-quality-protein-and-defies-fungus.txt",
+		"type": "text",
+		"country": "bhutan",
+		"latitude": 90.428846,
+		"longitude": 27.482790,
+		"categories": [
+			"maize", "food-future", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/global-partnership-propels-wheat-productivity-in-china.txt",
+		"type": "text",
+		"country": "china",
+		"latitude": 109.160503,
+		"longitude": 30.551228,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "identification-utilization-novel-sources-resistance-spring-durum-wheat", "asia", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/identification-and-utilization-of-novel-sources-of-resistance-to-crown-rot-and-the-root-lesion.txt",
+		"type": "text",
+		"country": "china",
+		"latitude": 109.160504,
+		"longitude": 30.551229,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "identification-utilization-novel-sources-resistance-spring-durum-wheat", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/collaborative-wheat-breeding-for-durable-resistance-to-stripe-rust-in-china.txt",
+		"type": "text",
+		"country": "china",
+		"latitude": 109.160505,
+		"longitude": 30.551230,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cimmyt-promotes-wheat-improvement-collaboration-between-china-and-australia.txt",
+		"type": "text",
+		"country": "china",
+		"latitude": 109.160506,
+		"longitude": 30.551231,
+		"categories": [
+			"wheat", "seed-distribution-impact-partnerships", "oceania", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "china",
+		"latitude": 109.160507,
+		"longitude": 30.551232,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "colombia",
+		"latitude": -74.079808,
+		"longitude": 4.785,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/the-cimmyt-academy-a-new-dimension-of-capacity-building.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "cuba",
+		"latitude": -78.898491,
+		"longitude": 21.967707,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "egypt",
+		"latitude": 30.403451,
+		"longitude": 30.228815,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/fighting-hunger-with-rust-resistant-seed.txt",
+		"type": "text",
+		"country": "egypt",
+		"latitude": 30.403452,
+		"longitude": 30.228816,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "africa", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/understanding-gender-in-wheat-based-livelihoods-for-enhanced-wheat-r4d.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861837,
+		"longitude": 8.327995,
+		"categories": [
+			"wheat", "gender", "understanding-gender-wheat-based-livelihoods-wheat-r4d", "asia", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861838,
+		"longitude": 8.327996,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861839,
+		"longitude": 8.327997,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/fighting-hunger-with-rust-resistant-seed.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861840,
+		"longitude": 8.327998,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "africa", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/ethiopia-wheat-rust-scaling.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861841,
+		"longitude": 8.327999,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "ethiopia-wheat-rust-scaling", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/nutritious-maize-for-ethiopia.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861842,
+		"longitude": 8.328000,
+		"categories": [
+			"maize", "nutrition-market-oriented-grains", "nutritious-maize-ethiopia", "africa", "f-1", "f-6"
+		]
+	}, {
+		"source": "/texts/ethiopia-el-nino-emergency-seed-response.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861843,
+		"longitude": 8.328001,
+		"categories": [
+			"maize", "wheat", "seed-distribution-impact-partnerships", "ethiopia-el-nino-emergency-seed-response", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/scientists-learn-about-doubled-haploids.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861844,
+		"longitude": 8.328002,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/drought-tolerant-maize-for-africa-seed-scaling-dtmass.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861845,
+		"longitude": 8.328003,
+		"categories": [
+			"maize", "drought-tolerant-maize", "drought-tolerant-maize-for-africa-seed-scaling", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-of-maize-legume-cropping-systems-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861846,
+		"longitude": 8.328004,
+		"categories": [
+			"maize", "sustainable-intensification", "sustainable-intensification-maize-cropping-systems-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/stress-tolerant-maize-for-africa-stma.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861847,
+		"longitude": 8.328005,
+		"categories": [
+			"maize", "drought-tolerant-maize", "stress-tolerant-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/dh-maize.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861848,
+		"longitude": 8.328006,
+		"categories": [
+			"maize", "food-future", "doubled-haploid-facility-strengthening-maize-africa", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861837,
+		"longitude": 8.327995,
+		"categories": [
+			"gender", "socioeconomic-constraints-incentives-technology-southern-africa", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/managing-maize-lethal-necrosis-in-eastern-africa.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861838,
+		"longitude": 8.327996,
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861839,
+		"longitude": 8.327997,
+		"categories": [
+			"sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/improved-maize-for-african-soils.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861840,
+		"longitude": 8.327998,
+		"categories": [
+			"maize", "sustainable-intensification", "improved-maize-african-soils", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/tamasa-taking-maize-agronomy-to-scale-in-africa.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861841,
+		"longitude": 8.327999,
+		"categories": [
+			"maize", "sustainable-intensification", "taking-maize-agronomy-scale-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861842,
+		"longitude": 8.328000,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/female-friendly-seeder-boosts-african-conservation-agriculture.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861843,
+		"longitude": 8.328001,
+		"categories": [
+			"maize", "wheat", "gender", " sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861844,
+		"longitude": 8.328002,
+		"categories": [
+			"maize", "wheat", "sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/cimmyt-and-conservation-agriculture-in-africa.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861845,
+		"longitude": 8.328003,
+		"categories": [
+			"maize", "sustainable-intensification", " working-farmers ", "africa", "f-1", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/durable-rust-resistance-in-wheat-phase-ii.txt",
+		"type": "text",
+		"country": "ethiopia",
+		"latitude": 40.861846,
+		"longitude": 8.328004,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "asia", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-winter-wheat-improvement-program.txt",
+		"type": "text",
+		"country": "georgia",
+		"latitude": 42.62785,
+		"longitude": 42.061378,
+		"categories": [
+			"wheat", "food-future", "international-winter-wheat-improvement", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "georgia",
+		"latitude": 42.62786,
+		"longitude": 42.061379,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "georgia",
+		"latitude": 42.62787,
+		"longitude": 42.061380,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "georgia",
+		"latitude": 42.62788,
+		"longitude": 42.061381,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "germany",
+		"latitude": 10.385281,
+		"longitude": 50.214012,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/stress-tolerant-maize-for-africa-stma.txt",
+		"type": "text",
+		"country": "ghana",
+		"latitude": -1.016,
+		"longitude": 8.359014,
+		"categories": [
+			"maize", "drought-tolerant-maize", "stress-tolerant-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/dh-maize.txt",
+		"type": "text",
+		"country": "ghana",
+		"latitude": -1.015,
+		"longitude": 8.359015,
+		"categories": [
+			"maize", "food-future", "doubled-haploid-facility-strengthening-maize-africa", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "ghana",
+		"latitude": -1.014,
+		"longitude": 8.359016,
+		"categories": [
+			"gender", "socioeconomic-constraints-incentives-technology-southern-africa", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/managing-maize-lethal-necrosis-in-eastern-africa.txt",
+		"type": "text",
+		"country": "ghana",
+		"latitude": -1.013,
+		"longitude": 8.359017,
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "ghana",
+		"latitude": -1.012,
+		"longitude": 8.359018,
+		"categories": [
+			"sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/improved-maize-for-african-soils.txt",
+		"type": "text",
+		"country": "ghana",
+		"latitude": -1.011,
+		"longitude": 8.359019,
+		"categories": [
+			"maize", "sustainable-intensification", "improved-maize-african-soils", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/tamasa-taking-maize-agronomy-to-scale-in-africa.txt",
+		"type": "text",
+		"country": "ghana",
+		"latitude": -1.010,
+		"longitude": 8.359020,
+		"categories": [
+			"maize", "sustainable-intensification", "taking-maize-agronomy-scale-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "ghana",
+		"latitude": -1.009,
+		"longitude": 8.359021,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/seed-scaling-buena-milpa.txt",
+		"type": "text",
+		"country": "guatemala",
+		"latitude": -90.444828,
+		"longitude": 15.248501,
+		"categories": [
+			"maize", "seed-distribution-impact-partnerships", "seed-scaling-buena-milpa", "latin-america", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193315,
+		"longitude": 19.77691,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193316,
+		"longitude": 19.77692,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cereals-south-asia.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193317,
+		"longitude": 19.77693,
+		"categories": [
+			"maize", "wheat", "cereals-south-asia", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193318,
+		"longitude": 19.77694,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193319,
+		"longitude": 19.77695,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/scientists-learn-about-doubled-haploids.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193320,
+		"longitude": 19.77696,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193321,
+		"longitude": 19.77697,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/diversification-and-conservation-in-indias-cropping-systems.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193322,
+		"longitude": 19.77698,
+		"categories": [
+			"maize", "wheat", "agricultural-innovations", " sustainable-intensification", " cereals-south-asia ", "asia", "f-1", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/improving-food-security-women-start-collective-maize-farming-in-tribal-india.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193323,
+		"longitude": 19.77699,
+		"categories": [
+			"maize", "gender", " sustainable-intensification", "sustainable-modernization-traditional-agriculture", "asia", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/icar-cimmyt-organize-molecular-tools-in-wheat-training.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193324,
+		"longitude": 19.77700,
+		"categories": [
+			"wheat", "sustainable-intensification", " cereals-south-asia", "asia", "f-1", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/rapid-development-of-climte-resilient-wheat.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193325,
+		"longitude": 19.77701,
+		"categories": [
+			"wheat", "food-future", "rapid-climate-resilient-wheat-varieties-south-asia-genomic-selection", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/durable-rust-resistance-in-wheat-phase-ii.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193326,
+		"longitude": 19.77702,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "asia", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cereal-systems-initiative-for-south-asia-csisa.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193327,
+		"longitude": 19.77703,
+		"categories": [
+			"maize", "wheat", "cereals-south-asia", "cereals-systems-south-asia-csisa", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cereal-systems-initiative-for-south-asia-mechanization-and-irrigation.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193328,
+		"longitude": 19.77704,
+		"categories": [
+			"maize", "wheat", "sustainable-intensification", "cereal-systems-initiative-south-asia-mechanization-irrigation", "asia", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/sustainable-and-resilient-farming-systems.txt",
+		"type": "text",
+		"country": "india",
+		"latitude": 78.193329,
+		"longitude": 19.77705,
+		"categories": [
+			"wheat", "sustainable-intensification", "sustainable-resilient-farming-systems-the-eastern-gangetic-plains", "asia", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/international-winter-wheat-improvement-program.txt",
+		"type": "text",
+		"country": "iran",
+		"latitude": 52.350192,
+		"longitude": 34.665239,
+		"categories": [
+			"wheat", "food-future", "international-winter-wheat-improvement", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "iran",
+		"latitude": 52.350193,
+		"longitude": 34.665240,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "iran",
+		"latitude": 52.350194,
+		"longitude": 34.665241,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "iran",
+		"latitude": 52.350195,
+		"longitude": 34.665242,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "italy",
+		"latitude": 13.213625,
+		"longitude": 42.203350,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/international-winter-wheat-improvement-program.txt",
+		"type": "text",
+		"country": "kazakhstan",
+		"latitude": 67.199803,
+		"longitude": 49.263535,
+		"categories": [
+			"wheat", "food-future", "international-winter-wheat-improvement", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "kazakhstan",
+		"latitude": 67.199804,
+		"longitude": 49.263536,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "kazakhstan",
+		"latitude": 67.199805,
+		"longitude": 49.263537,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "kazakhstan",
+		"latitude": 67.199806,
+		"longitude": 49.263538,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965286,
+		"longitude": 1.445401,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965287,
+		"longitude": 1.445402,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/scientists-learn-about-doubled-haploids.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965288,
+		"longitude": 1.445403,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/drought-tolerant-maize-for-africa-seed-scaling-dtmass.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965289,
+		"longitude": 1.445404,
+		"categories": [
+			"maize", "drought-tolerant-maize", "drought-tolerant-maize-for-africa-seed-scaling", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-of-maize-legume-cropping-systems-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965290,
+		"longitude": 1.445405,
+		"categories": [
+			"maize", "sustainable-intensification", "sustainable-intensification-maize-cropping-systems-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/stress-tolerant-maize-for-africa-stma.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965291,
+		"longitude": 1.445406,
+		"categories": [
+			"maize", "drought-tolerant-maize", "stress-tolerant-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/dh-maize.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965292,
+		"longitude": 1.445407,
+		"categories": [
+			"maize", "food-future", "doubled-haploid-facility-strengthening-maize-africa", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965293,
+		"longitude": 1.445408,
+		"categories": [
+			"gender", "socioeconomic-constraints-incentives-technology-southern-africa", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/managing-maize-lethal-necrosis-in-eastern-africa.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965294,
+		"longitude": 1.445409,
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965295,
+		"longitude": 1.445410,
+		"categories": [
+			"sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/improved-maize-for-african-soils.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965296,
+		"longitude": 1.445411,
+		"categories": [
+			"maize", "sustainable-intensification", "improved-maize-african-soils", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/tamasa-taking-maize-agronomy-to-scale-in-africa.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965297,
+		"longitude": 1.445412,
+		"categories": [
+			"maize", "sustainable-intensification", "taking-maize-agronomy-scale-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965298,
+		"longitude": 1.445413,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/female-friendly-seeder-boosts-african-conservation-agriculture.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965299,
+		"longitude": 1.445414,
+		"categories": [
+			"maize", "wheat", "gender", " sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965300,
+		"longitude": 1.445415,
+		"categories": [
+			"maize", "wheat", "sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/water-efficient-maize-for-africa-phase-ii.txt",
+		"type": "text",
+		"country": "kenya",
+		"latitude": 37.965301,
+		"longitude": 1.445416,
+		"categories": [
+			"maize", "drought-tolerant-maize", "water-efficient-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-winter-wheat-improvement-program.txt",
+		"type": "text",
+		"country": "kyrgyzstan",
+		"latitude": 75.080456,
+		"longitude": 41.442738,
+		"categories": [
+			"wheat", "food-future", "international-winter-wheat-improvement", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "kyrgyzstan",
+		"latitude": 75.080457,
+		"longitude": 41.442739,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "kyrgyzstan",
+		"latitude": 75.080458,
+		"longitude": 41.442740,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "malawi",
+		"latitude": 34.18017,
+		"longitude": -13.894817,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-of-maize-legume-cropping-systems-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "malawi",
+		"latitude": 34.18018,
+		"longitude": -13.894816,
+		"categories": [
+			"maize", "sustainable-intensification", "sustainable-intensification-maize-cropping-systems-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/stress-tolerant-maize-for-africa-stma.txt",
+		"type": "text",
+		"country": "malawi",
+		"latitude": 34.18019,
+		"longitude": -13.894815,
+		"categories": [
+			"maize", "drought-tolerant-maize", "stress-tolerant-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/dh-maize.txt",
+		"type": "text",
+		"country": "malawi",
+		"latitude": 34.18020,
+		"longitude": -13.894814,
+		"categories": [
+			"maize", "food-future", "doubled-haploid-facility-strengthening-maize-africa", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "malawi",
+		"latitude": 34.18021,
+		"longitude": -13.894813,
+		"categories": [
+			"gender", "socioeconomic-constraints-incentives-technology-southern-africa", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/managing-maize-lethal-necrosis-in-eastern-africa.txt",
+		"type": "text",
+		"country": "malawi",
+		"latitude": 34.18022,
+		"longitude": -13.894812,
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "malawi",
+		"latitude": 34.18023,
+		"longitude": -13.894811,
+		"categories": [
+			"sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/improved-maize-for-african-soils.txt",
+		"type": "text",
+		"country": "malawi",
+		"latitude": 34.18024,
+		"longitude": -13.894810,
+		"categories": [
+			"maize", "sustainable-intensification", "improved-maize-african-soils", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/tamasa-taking-maize-agronomy-to-scale-in-africa.txt",
+		"type": "text",
+		"country": "malawi",
+		"latitude": 34.18025,
+		"longitude": -13.894809,
+		"categories": [
+			"maize", "sustainable-intensification", "taking-maize-agronomy-scale-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "malawi",
+		"latitude": 34.18026,
+		"longitude": -13.894808,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/conservation-agriculture-in-malawi.txt",
+		"type": "text",
+		"country": "malawi",
+		"latitude": 34.18027,
+		"longitude": -13.894807,
+		"categories": [
+			"maize", "sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/cimmyt-and-conservation-agriculture-in-africa.txt",
+		"type": "text",
+		"country": "malawi",
+		"latitude": 34.18028,
+		"longitude": -13.894806,
+		"categories": [
+			"maize", "sustainable-intensification", " working-farmers ", "africa", "f-1", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/durable-rust-resistance-in-wheat-phase-ii.txt",
+		"type": "text",
+		"country": "malawi",
+		"latitude": 34.18029,
+		"longitude": -13.894805,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "asia", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cereals-south-asia.txt",
+		"type": "text",
+		"country": "maldives",
+		"latitude": 73.541762,
+		"longitude": 1.913486,
+		"categories": [
+			"maize", "wheat", "cereals-south-asia", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/stress-tolerant-maize-for-africa-stma.txt",
+		"type": "text",
+		"country": "mali",
+		"latitude": -5.382658,
+		"longitude": 14.387657,
+		"categories": [
+			"maize", "drought-tolerant-maize", "stress-tolerant-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/dh-maize.txt",
+		"type": "text",
+		"country": "mali",
+		"latitude": -5.382657,
+		"longitude": 14.387658,
+		"categories": [
+			"maize", "food-future", "doubled-haploid-facility-strengthening-maize-africa", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "mali",
+		"latitude": -5.382656,
+		"longitude": 14.387659,
+		"categories": [
+			"gender", "socioeconomic-constraints-incentives-technology-southern-africa", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/managing-maize-lethal-necrosis-in-eastern-africa.txt",
+		"type": "text",
+		"country": "mali",
+		"latitude": -5.382655,
+		"longitude": 14.387660,
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "mali",
+		"latitude": -5.382654,
+		"longitude": 14.387661,
+		"categories": [
+			"sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/improved-maize-for-african-soils.txt",
+		"type": "text",
+		"country": "mali",
+		"latitude": -5.382653,
+		"longitude": 14.387662,
+		"categories": [
+			"maize", "sustainable-intensification", "improved-maize-african-soils", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/tamasa-taking-maize-agronomy-to-scale-in-africa.txt",
+		"type": "text",
+		"country": "mali",
+		"latitude": -5.382652,
+		"longitude": 14.387663,
+		"categories": [
+			"maize", "sustainable-intensification", "taking-maize-agronomy-scale-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "mali",
+		"latitude": -5.382651,
+		"longitude": 14.387664,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "mexico",
+		"latitude": -98.844097,
+		"longitude": 19.530317,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "mexico",
+		"latitude": -98.844096,
+		"longitude": 19.530318,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/scientists-learn-about-doubled-haploids.txt",
+		"type": "text",
+		"country": "mexico",
+		"latitude": -98.844095,
+		"longitude": 19.530319,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/fighting-tar-spot-complex-in-mexico.txt",
+		"type": "text",
+		"country": "mexico",
+		"latitude": -98.844094,
+		"longitude": 19.530320,
+		"categories": [
+			"maize", "unlocking-genetic-resources", " working-farmers", "seed-discovery", "latin-america", "f-1", "f-2", "f-3", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/ancient-maize-landraces-please-modern-palates-and-profit-smallholder-farmers.txt",
+		"type": "text",
+		"country": "mexico",
+		"latitude": -98.844093,
+		"longitude": 19.530321,
+		"categories": [
+			"maize", "working-farmers", "sustainable-modernization-traditional-agriculture", "latin-america", "f-1", "f-3", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/gathering-insights-from-above-new-remote-sensing-platform-in-obregon.txt",
+		"type": "text",
+		"country": "mexico",
+		"latitude": -98.844092,
+		"longitude": 19.530322,
+		"categories": [
+			"maize", "wheat", "working-farmers", "sustainable-modernization-traditional-agriculture", "latin-america", "f-1", "f-3", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-masagro-maize-network.txt",
+		"type": "text",
+		"country": "mexico",
+		"latitude": -98.844091,
+		"longitude": 19.530323,
+		"categories": [
+			"maize", "working-farmers", "sustainable-modernization-traditional-agriculture", "latin-america", "f-1", "f-3", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/masagro.txt",
+		"type": "text",
+		"country": "mexico",
+		"latitude": -98.844090,
+		"longitude": 19.530324,
+		"categories": [
+			"maize", "working-farmers", "sustainable-modernization-traditional-agriculture", "latin-america", "f-1", "f-3", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/drought-tolerant-maize-for-africa-seed-scaling-dtmass.txt",
+		"type": "text",
+		"country": "mozambique",
+		"latitude": 35.097780,
+		"longitude": -18.740842,
+		"categories": [
+			"maize", "drought-tolerant-maize", "drought-tolerant-maize-for-africa-seed-scaling", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-of-maize-legume-cropping-systems-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "mozambique",
+		"latitude": 35.097781,
+		"longitude": -18.740841,
+		"categories": [
+			"maize", "sustainable-intensification", "sustainable-intensification-maize-cropping-systems-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/water-efficient-maize-for-africa-phase-ii.txt",
+		"type": "text",
+		"country": "mozambique",
+		"latitude": 35.097782,
+		"longitude": -18.740840,
+		"categories": [
+			"maize", "drought-tolerant-maize", "water-efficient-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cimmyt-and-conservation-agriculture-in-africa.txt",
+		"type": "text",
+		"country": "mozambique",
+		"latitude": 35.097783,
+		"longitude": -18.740839,
+		"categories": [
+			"maize", "sustainable-intensification", " working-farmers ", "africa", "f-1", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/durable-rust-resistance-in-wheat-phase-ii.txt",
+		"type": "text",
+		"country": "mozambique",
+		"latitude": 35.097784,
+		"longitude": -18.740838,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "asia", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999796,
+		"longitude": 28.019751,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999797,
+		"longitude": 28.019752,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cereals-south-asia.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999798,
+		"longitude": 28.019753,
+		"categories": [
+			"maize", "wheat", "cereals-south-asia", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999799,
+		"longitude": 28.019754,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/fighting-hunger-with-rust-resistant-seed.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999800,
+		"longitude": 28.019755,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "africa", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999801,
+		"longitude": 28.019756,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/icar-cimmyt-organize-molecular-tools-in-wheat-training.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999802,
+		"longitude": 28.019757,
+		"categories": [
+			"wheat", "sustainable-intensification", " cereals-south-asia", "asia", "f-1", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/rapid-development-of-climte-resilient-wheat.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999803,
+		"longitude": 28.019758,
+		"categories": [
+			"wheat", "food-future", "rapid-climate-resilient-wheat-varieties-south-asia-genomic-selection", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/durable-rust-resistance-in-wheat-phase-ii.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999804,
+		"longitude": 28.019759,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "asia", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/hill-maize-research-project.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999805,
+		"longitude": 28.019760,
+		"categories": [
+			"maize", "cereals-south-asia", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/seed-scaling-csisa-in-nepal.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999806,
+		"longitude": 28.019761,
+		"categories": [
+			"wheat", "seed-distribution-impact-partnerships", "seed-scaling-csisa-wheat-lentil-nepal", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cereal-systems-initiative-for-south-asia-csisa.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999807,
+		"longitude": 28.019762,
+		"categories": [
+			"maize", "wheat", "cereals-south-asia", "cereals-systems-south-asia-csisa", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cereal-systems-initiative-for-south-asia-mechanization-and-irrigation.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999808,
+		"longitude": 28.019763,
+		"categories": [
+			"maize", "wheat", "sustainable-intensification", "cereal-systems-initiative-south-asia-mechanization-irrigation", "asia", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/sustainable-and-resilient-farming-systems.txt",
+		"type": "text",
+		"country": "nepal",
+		"latitude": 83.999809,
+		"longitude": 28.019764,
+		"categories": [
+			"wheat", "sustainable-intensification", "sustainable-resilient-farming-systems-the-eastern-gangetic-plains", "asia", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/scientists-learn-about-doubled-haploids.txt",
+		"type": "text",
+		"country": "netherlands",
+		"latitude": 5.948399,
+		"longitude": 52.339555,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/stress-tolerant-maize-for-africa-stma.txt",
+		"type": "text",
+		"country": "nigeria",
+		"latitude": 8.089248,
+		"longitude": 9.099684,
+		"categories": [
+			"maize", "drought-tolerant-maize", "stress-tolerant-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/dh-maize.txt",
+		"type": "text",
+		"country": "nigeria",
+		"latitude": 8.089249,
+		"longitude": 9.099685,
+		"categories": [
+			"maize", "food-future", "doubled-haploid-facility-strengthening-maize-africa", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "nigeria",
+		"latitude": 8.089250,
+		"longitude": 9.099686,
+		"categories": [
+			"gender", "socioeconomic-constraints-incentives-technology-southern-africa", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/managing-maize-lethal-necrosis-in-eastern-africa.txt",
+		"type": "text",
+		"country": "nigeria",
+		"latitude": 8.089251,
+		"longitude": 9.099687,
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "nigeria",
+		"latitude": 8.089252,
+		"longitude": 9.099688,
+		"categories": [
+			"sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/improved-maize-for-african-soils.txt",
+		"type": "text",
+		"country": "nigeria",
+		"latitude": 8.089253,
+		"longitude": 9.099689,
+		"categories": [
+			"maize", "sustainable-intensification", "improved-maize-african-soils", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/tamasa-taking-maize-agronomy-to-scale-in-africa.txt",
+		"type": "text",
+		"country": "nigeria",
+		"latitude": 8.089254,
+		"longitude": 9.099690,
+		"categories": [
+			"maize", "sustainable-intensification", "taking-maize-agronomy-scale-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "nigeria",
+		"latitude": 8.089255,
+		"longitude": 9.099691,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/international-winter-wheat-improvement-program.txt",
+		"type": "text",
+		"country": "pakistan",
+		"latitude": 70.634024,
+		"longitude": 30.170543,
+		"categories": [
+			"wheat", "food-future", "international-winter-wheat-improvement", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "pakistan",
+		"latitude": 70.634025,
+		"longitude": 30.170544,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "pakistan",
+		"latitude": 70.634026,
+		"longitude": 30.170545,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cereals-south-asia.txt",
+		"type": "text",
+		"country": "pakistan",
+		"latitude": 70.634027,
+		"longitude": 30.170546,
+		"categories": [
+			"maize", "wheat", "cereals-south-asia", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/understanding-gender-in-wheat-based-livelihoods-for-enhanced-wheat-r4d.txt",
+		"type": "text",
+		"country": "pakistan",
+		"latitude": 70.634028,
+		"longitude": 30.170547,
+		"categories": [
+			"wheat", "gender", "understanding-gender-wheat-based-livelihoods-wheat-r4d", "asia", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "pakistan",
+		"latitude": 70.634029,
+		"longitude": 30.170548,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/fighting-hunger-with-rust-resistant-seed.txt",
+		"type": "text",
+		"country": "pakistan",
+		"latitude": 70.634030,
+		"longitude": 30.170549,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "africa", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/durable-rust-resistance-in-wheat-phase-ii.txt",
+		"type": "text",
+		"country": "pakistan",
+		"latitude": 70.634031,
+		"longitude": 30.170550,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "asia", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/agricultural-innovation-in-pakistan.txt",
+		"type": "text",
+		"country": "pakistan",
+		"latitude": 70.634032,
+		"longitude": 30.170551,
+		"categories": [
+			"maize", "wheat", "agricultural-innovations", "agricultural-innovations-pakistan", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/agricultural-innovation-in-pakistan.txt",
+		"type": "text",
+		"country": "pakistan",
+		"latitude": 70.634033,
+		"longitude": 30.170552,
+		"categories": [
+			"maize", "wheat", "agricultural-innovations", "agricultural-innovations-pakistan", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/scientists-learn-about-doubled-haploids.txt",
+		"type": "text",
+		"country": "peru",
+		"latitude": -75.574536,
+		"longitude": -10.665153,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/scientists-learn-about-doubled-haploids.txt",
+		"type": "text",
+		"country": "philippines",
+		"latitude": 121.030646,
+		"longitude": 14.544698,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "rwanda",
+		"latitude": 29.968168,
+		"longitude": -1.866701,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+		"type": "text",
+		"country": "southafrica",
+		"latitude": 24.399083,
+		"longitude": -29.958903,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/stress-tolerant-maize-for-africa-stma.txt",
+		"type": "text",
+		"country": "southafrica",
+		"latitude": 24.399084,
+		"longitude": -29.958902,
+		"categories": [
+			"maize", "drought-tolerant-maize", "stress-tolerant-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/dh-maize.txt",
+		"type": "text",
+		"country": "southafrica",
+		"latitude": 24.399085,
+		"longitude": -29.958901,
+		"categories": [
+			"maize", "food-future", "doubled-haploid-facility-strengthening-maize-africa", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "southafrica",
+		"latitude": 24.399086,
+		"longitude": -29.958900,
+		"categories": [
+			"gender", "socioeconomic-constraints-incentives-technology-southern-africa", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/managing-maize-lethal-necrosis-in-eastern-africa.txt",
+		"type": "text",
+		"country": "southafrica",
+		"latitude": 24.399087,
+		"longitude": -29.958899,
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "southafrica",
+		"latitude": 24.399088,
+		"longitude": -29.958898,
+		"categories": [
+			"sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/improved-maize-for-african-soils.txt",
+		"type": "text",
+		"country": "southafrica",
+		"latitude": 24.399089,
+		"longitude": -29.958897,
+		"categories": [
+			"maize", "sustainable-intensification", "improved-maize-african-soils", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/tamasa-taking-maize-agronomy-to-scale-in-africa.txt",
+		"type": "text",
+		"country": "southafrica",
+		"latitude": 24.399090,
+		"longitude": -29.958896,
+		"categories": [
+			"maize", "sustainable-intensification", "taking-maize-agronomy-scale-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "southafrica",
+		"latitude": 24.399091,
+		"longitude": -29.958895,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/water-efficient-maize-for-africa-phase-ii.txt",
+		"type": "text",
+		"country": "southafrica",
+		"latitude": 24.399092,
+		"longitude": -29.958894,
+		"categories": [
+			"maize", "drought-tolerant-maize", "water-efficient-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/scientists-learn-about-doubled-haploids.txt",
+		"type": "text",
+		"country": "southkorea",
+		"latitude": 128.043529,
+		"longitude": 36.570059,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/cereals-south-asia.txt",
+		"type": "text",
+		"country": "srilanka",
+		"latitude": 80.869961,
+		"longitude": 7.385722,
+		"categories": [
+			"maize", "wheat", "cereals-south-asia", "asia", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "sudan",
+		"latitude": 30.361959,
+		"longitude": 14.849553,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-winter-wheat-improvement-program.txt",
+		"type": "text",
+		"country": "tajikistan",
+		"latitude": 71.355946,
+		"longitude": 38.776693,
+		"categories": [
+			"wheat", "food-future", "international-winter-wheat-improvement", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "tajikistan",
+		"latitude": 71.355946,
+		"longitude": 38.776694,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "tajikistan",
+		"latitude": 71.355946,
+		"longitude": 38.776695,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/drought-tolerant-maize-for-africa-seed-scaling-dtmass.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551069,
+		"longitude": -5.758297,
+		"categories": [
+			"maize", "drought-tolerant-maize", "drought-tolerant-maize-for-africa-seed-scaling", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-of-maize-legume-cropping-systems-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551070,
+		"longitude": -5.758296,
+		"categories": [
+			"maize", "sustainable-intensification", "sustainable-intensification-maize-cropping-systems-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/stress-tolerant-maize-for-africa-stma.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551071,
+		"longitude": -5.758295,
+		"categories": [
+			"maize", "drought-tolerant-maize", "stress-tolerant-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/dh-maize.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551072,
+		"longitude": -5.758294,
+		"categories": [
+			"maize", "food-future", "doubled-haploid-facility-strengthening-maize-africa", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551073,
+		"longitude": -5.758293,
+		"categories": [
+			"gender", "socioeconomic-constraints-incentives-technology-southern-africa", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/managing-maize-lethal-necrosis-in-eastern-africa.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551074,
+		"longitude": -5.758292,
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551075,
+		"longitude": -5.758291,
+		"categories": [
+			"sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/improved-maize-for-african-soils.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551076,
+		"longitude": -5.758290,
+		"categories": [
+			"maize", "sustainable-intensification", "improved-maize-african-soils", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/tamasa-taking-maize-agronomy-to-scale-in-africa.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551077,
+		"longitude": -5.758289,
+		"categories": [
+			"maize", "sustainable-intensification", "taking-maize-agronomy-scale-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551078,
+		"longitude": -5.758288,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/female-friendly-seeder-boosts-african-conservation-agriculture.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551079,
+		"longitude": -5.758287,
+		"categories": [
+			"maize", "wheat", "gender", " sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551080,
+		"longitude": -5.758286,
+		"categories": [
+			"maize", "wheat", "sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/water-efficient-maize-for-africa-phase-ii.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551081,
+		"longitude": -5.758285,
+		"categories": [
+			"maize", "drought-tolerant-maize", "water-efficient-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/cimmyt-and-conservation-agriculture-in-africa.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551082,
+		"longitude": -5.758284,
+		"categories": [
+			"maize", "sustainable-intensification", " working-farmers ", "africa", "f-1", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/durable-rust-resistance-in-wheat-phase-ii.txt",
+		"type": "text",
+		"country": "tanzania",
+		"latitude": 35.551083,
+		"longitude": -5.758283,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "asia", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/scientists-learn-about-doubled-haploids.txt",
+		"type": "text",
+		"country": "thailand",
+		"latitude": 100.806588,
+		"longitude": 14.076757,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/international-winter-wheat-improvement-program.txt",
+		"type": "text",
+		"country": "turkey",
+		"latitude": 34.223149,
+		"longitude": 38.899832,
+		"categories": [
+			"wheat", "food-future", "international-winter-wheat-improvement", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "turkey",
+		"latitude": 34.223150,
+		"longitude": 38.899833,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "turkey",
+		"latitude": 34.223151,
+		"longitude": 38.899834,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "uganda",
+		"latitude": 32.385901,
+		"longitude": 1.108242,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/drought-tolerant-maize-for-africa-seed-scaling-dtmass.txt",
+		"type": "text",
+		"country": "uganda",
+		"latitude": 32.385902,
+		"longitude": 1.108243,
+		"categories": [
+			"maize", "drought-tolerant-maize", "drought-tolerant-maize-for-africa-seed-scaling", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/stress-tolerant-maize-for-africa-stma.txt",
+		"type": "text",
+		"country": "uganda",
+		"latitude": 32.385903,
+		"longitude": 1.108244,
+		"categories": [
+			"maize", "drought-tolerant-maize", "stress-tolerant-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/dh-maize.txt",
+		"type": "text",
+		"country": "uganda",
+		"latitude": 32.385904,
+		"longitude": 1.108245,
+		"categories": [
+			"maize", "food-future", "doubled-haploid-facility-strengthening-maize-africa", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "uganda",
+		"latitude": 32.385905,
+		"longitude": 1.108246,
+		"categories": [
+			"gender", "socioeconomic-constraints-incentives-technology-southern-africa", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/managing-maize-lethal-necrosis-in-eastern-africa.txt",
+		"type": "text",
+		"country": "uganda",
+		"latitude": 32.385906,
+		"longitude": 1.108247,
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "uganda",
+		"latitude": 32.385907,
+		"longitude": 1.108248,
+		"categories": [
+			"sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/improved-maize-for-african-soils.txt",
+		"type": "text",
+		"country": "uganda",
+		"latitude": 32.385908,
+		"longitude": 1.108249,
+		"categories": [
+			"maize", "sustainable-intensification", "improved-maize-african-soils", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/tamasa-taking-maize-agronomy-to-scale-in-africa.txt",
+		"type": "text",
+		"country": "uganda",
+		"latitude": 32.385909,
+		"longitude": 1.108250,
+		"categories": [
+			"maize", "sustainable-intensification", "taking-maize-agronomy-scale-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "uganda",
+		"latitude": 32.385910,
+		"longitude": 1.108251,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/water-efficient-maize-for-africa-phase-ii.txt",
+		"type": "text",
+		"country": "uganda",
+		"latitude": 32.385911,
+		"longitude": 1.108252,
+		"categories": [
+			"maize", "drought-tolerant-maize", "water-efficient-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "unitedstates",
+		"latitude": -100.791308,
+		"longitude": 37.883274,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-winter-wheat-improvement-program.txt",
+		"type": "text",
+		"country": "uzbekistan",
+		"latitude": 64.786948,
+		"longitude": 40.995625,
+		"categories": [
+			"wheat", "food-future", "international-winter-wheat-improvement", "asia", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/climate-resilient-maize-for-asia.txt",
+		"type": "text",
+		"country": "uzbekistan",
+		"latitude": 64.786948,
+		"longitude": 40.995626,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+		"type": "text",
+		"country": "uzbekistan",
+		"latitude": 64.786948,
+		"longitude": 40.995627,
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/emerging-threats-stem-rust-yellow-rust.txt",
+		"type": "text",
+		"country": "worldwide",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "stem-rust-yellow-rust", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/heterosis-screening-and-development-of-heterotic-pools-in-wheat.txt",
+		"type": "text",
+		"country": "worldwide",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"wheat", "food-future", "heterosis-screening-development-heterotic-pools-wheat", "worldwide", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/international-wheat-yield-partnership.txt",
+		"type": "text",
+		"country": "worldwide",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"wheat", "food-future", "international-wheat-yield-partnership", "worldwide", ""
+		]
+	}, {
+		"source": "/texts/wheat-an-international-collaborative-effort-to-raise-the-productivity-of-wheat-farming-systems-.txt",
+		"type": "text",
+		"country": "worldwide",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"wheat", "food-future", " sustainable-intensification", "worldwide", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/consortium-praise-for-maize-and-wheat-gender-strategies.txt",
+		"type": "text",
+		"country": "worldwide",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "gender", "worldwide", "f-1"
+		]
+	}, {
+		"source": "/texts/integrating-gender-into-wheat-and-maize-crps.txt",
+		"type": "text",
+		"country": "worldwide",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "gender", "sustainable-modernization-traditional-agriculture", "worldwide", "f-1"
+		]
+	}, {
+		"source": "/texts/cgiar-global-study-on-gender-norms-and-agency-for-agricultural-innovation.txt",
+		"type": "text",
+		"country": "worldwide",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "gender", "cgiar-global-study-gender-norms-agricultural-innovation", "worldwide", "f-1"
+		]
+	}, {
+		"source": "/texts/harvest-plus.txt",
+		"type": "text",
+		"country": "worldwide",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "nutrition-market-oriented-grains", "harvest-plus", "worldwide", "f-1", "f-6"
+		]
+	}, {
+		"source": "/texts/climate-change-agriculture-and-food-security.txt",
+		"type": "text",
+		"country": "worldwide",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "sustainable-intensification", " food-future", "worldwide", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/maize-global-alliance-to-improve-the-food-security-and-livelihoods-of-the-resource-poor-in-the-developing-world.txt",
+		"type": "text",
+		"country": "worldwide",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "sustainable-intensification", " food-future", "worldwide", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/seeds-of-discovery.txt",
+		"type": "text",
+		"country": "worldwide",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "seed-discovery", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/take-it-to-the-farmer.txt",
+		"type": "text",
+		"country": "worldwide",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "working-farmers", " sustainable-intensification", "take-it-to-the-farmer", "worldwide", "f-1", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "yemen",
+		"latitude": 46.194725,
+		"longitude": 15.076260,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+		"type": "text",
+		"country": "zambia",
+		"latitude": 27.891705,
+		"longitude": -14.516689,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/drought-tolerant-maize-for-africa-seed-scaling-dtmass.txt",
+		"type": "text",
+		"country": "zambia",
+		"latitude": 27.891706,
+		"longitude": -14.516688,
+		"categories": [
+			"maize", "drought-tolerant-maize", "drought-tolerant-maize-for-africa-seed-scaling", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/stress-tolerant-maize-for-africa-stma.txt",
+		"type": "text",
+		"country": "zambia",
+		"latitude": 27.891707,
+		"longitude": -14.516687,
+		"categories": [
+			"maize", "drought-tolerant-maize", "stress-tolerant-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/dh-maize.txt",
+		"type": "text",
+		"country": "zambia",
+		"latitude": 27.891708,
+		"longitude": -14.516686,
+		"categories": [
+			"maize", "food-future", "doubled-haploid-facility-strengthening-maize-africa", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "zambia",
+		"latitude": 27.891709,
+		"longitude": -14.516685,
+		"categories": [
+			"gender", "socioeconomic-constraints-incentives-technology-southern-africa", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/managing-maize-lethal-necrosis-in-eastern-africa.txt",
+		"type": "text",
+		"country": "zambia",
+		"latitude": 27.891710,
+		"longitude": -14.516684,
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "zambia",
+		"latitude": 27.891711,
+		"longitude": -14.516683,
+		"categories": [
+			"sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/improved-maize-for-african-soils.txt",
+		"type": "text",
+		"country": "zambia",
+		"latitude": 27.891712,
+		"longitude": -14.516682,
+		"categories": [
+			"maize", "sustainable-intensification", "improved-maize-african-soils", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/tamasa-taking-maize-agronomy-to-scale-in-africa.txt",
+		"type": "text",
+		"country": "zambia",
+		"latitude": 27.891713,
+		"longitude": -14.516681,
+		"categories": [
+			"maize", "sustainable-intensification", "taking-maize-agronomy-scale-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "zambia",
+		"latitude": 27.891714,
+		"longitude": -14.516680,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/cimmyt-and-conservation-agriculture-in-africa.txt",
+		"type": "text",
+		"country": "zambia",
+		"latitude": 27.891715,
+		"longitude": -14.516679,
+		"categories": [
+			"maize", "sustainable-intensification", " working-farmers ", "africa", "f-1", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/durable-rust-resistance-in-wheat-phase-ii.txt",
+		"type": "text",
+		"country": "zambia",
+		"latitude": 27.891716,
+		"longitude": -14.516678,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "asia", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/training-supports-wheats-dramatic-rise-in-zambia.txt",
+		"type": "text",
+		"country": "zambia",
+		"latitude": 27.891717,
+		"longitude": -14.516677,
+		"categories": [
+			"wheat", "working-farmers", "africa", "f-1", "f-3", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/scientists-learn-about-doubled-haploids.txt",
+		"type": "text",
+		"country": "zimbabwe",
+		"latitude": 30.423591,
+		"longitude": -19.281833,
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/stress-tolerant-maize-for-africa-stma.txt",
+		"type": "text",
+		"country": "zimbabwe",
+		"latitude": 30.423592,
+		"longitude": -19.281832,
+		"categories": [
+			"maize", "drought-tolerant-maize", "stress-tolerant-maize-for-africa", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/dh-maize.txt",
+		"type": "text",
+		"country": "zimbabwe",
+		"latitude": 30.423593,
+		"longitude": -19.281831,
+		"categories": [
+			"maize", "food-future", "doubled-haploid-facility-strengthening-maize-africa", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-in-e-and-s-africa.txt",
+		"type": "text",
+		"country": "zimbabwe",
+		"latitude": 30.423594,
+		"longitude": -19.281830,
+		"categories": [
+			"gender", "socioeconomic-constraints-incentives-technology-southern-africa", "africa", "f-1"
+		]
+	}, {
+		"source": "/texts/managing-maize-lethal-necrosis-in-eastern-africa.txt",
+		"type": "text",
+		"country": "zimbabwe",
+		"latitude": 30.423595,
+		"longitude": -19.281829,
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "zimbabwe",
+		"latitude": 30.423596,
+		"longitude": -19.281828,
+		"categories": [
+			"sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/improved-maize-for-african-soils.txt",
+		"type": "text",
+		"country": "zimbabwe",
+		"latitude": 30.423597,
+		"longitude": -19.281827,
+		"categories": [
+			"maize", "sustainable-intensification", "improved-maize-african-soils", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/tamasa-taking-maize-agronomy-to-scale-in-africa.txt",
+		"type": "text",
+		"country": "zimbabwe",
+		"latitude": 30.423598,
+		"longitude": -19.281826,
+		"categories": [
+			"maize", "sustainable-intensification", "taking-maize-agronomy-scale-africa", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+		"type": "text",
+		"country": "zimbabwe",
+		"latitude": 30.423599,
+		"longitude": -19.281825,
+		"categories": [
+			"maize", "wheat", "food-future", "spurring-transformation-agriculture-remote-sensing", "asia", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/female-friendly-seeder-boosts-african-conservation-agriculture.txt",
+		"type": "text",
+		"country": "zimbabwe",
+		"latitude": 30.423600,
+		"longitude": -19.281824,
+		"categories": [
+			"maize", "wheat", "gender", " sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+		"type": "text",
+		"country": "zimbabwe",
+		"latitude": 30.423601,
+		"longitude": -19.281823,
+		"categories": [
+			"maize", "wheat", "sustainable-intensification", "farm-mechanization-conservation-agriculture-sustainable-intensification", "africa", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/cimmyt-and-conservation-agriculture-in-africa.txt",
+		"type": "text",
+		"country": "zimbabwe",
+		"latitude": 30.423602,
+		"longitude": -19.281822,
+		"categories": [
+			"maize", "sustainable-intensification", " working-farmers ", "africa", "f-1", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/durable-rust-resistance-in-wheat-phase-ii.txt",
+		"type": "text",
+		"country": "zimbabwe",
+		"latitude": 30.423603,
+		"longitude": -19.281821,
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "durable-rust-resistance-wheat", "asia", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/agricultural-innovations.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "agricultural-innovations", "worldwide", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/curbing-maize-post-harvest-losses.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "agricultural-innovations", " seed-distribution-impact-partnerships", "africa", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/disease-stress-resistant-wheat.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"wheat", "disease-stress-resistant-wheat", "worldwide", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/drought-tolerant-maize.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "drought-tolerant-maize", "africa", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/making-maize-climate-ready.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "drought-tolerant-maize", " heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "drought-tolerant-maize-for-africa-seed-scaling", "stress-tolerant-maize-for-africa", "africa", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/food-future.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "food-future", "worldwide", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/gender.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "gender", "worldwide", "f-1"
+		]
+	}, {
+		"source": "/texts/heat-stress-tolerant-maize-for-asia.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "climate-resilient-maize-asia-food-security-income-tropics", "international-maize-improvement-consortium-asia", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/heat-stress-tolerant-maize.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "heat-stress-tolerant-maize", "asia", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/nutrition-market-oriented-grains.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "nutrition-market-oriented-grains", "worldwide", "f-1", "f-6"
+		]
+	}, {
+		"source": "/texts/cimmyt-and-kari-lead-fight-against-maize-lethal-necrosis-in-eastern-africa.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/maize-lethal-necrosis-building-a-comprehensive-response.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "rapid-response", "maize-lethal-necrosis-africa-accelerated-development-delivery", "africa", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/rapid-response.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "rapid-response", "worldwide", "f-1", "f-2", "f-5"
+		]
+	}, {
+		"source": "/texts/seed-distribution-impact-partnerships.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "seed-distribution-impact-partnerships", "worldwide", "f-1", "f-2", "f-3", "f-4", "f-5", "f-6"
+		]
+	}, {
+		"source": "/texts/high-temperature-modeling.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"wheat", "sustainable-intensification", "worldwide", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "sustainable-intensification", "worldwide", "f-1", "f-4"
+		]
+	}, {
+		"source": "/texts/unlocking-genetic-resources.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "unlocking-genetic-resources", "worldwide", "f-2", "f-7"
+		]
+	}, {
+		"source": "/texts/making-the-most-of-appropriate-machinery-across-regions.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "working-farmers", "sustainable-modernization-traditional-agriculture", "africa", "asia", "latin-america", "f-1", "f-3", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/working-farmers.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "working-farmers", "worldwide", "f-1", "f-3", "f-5", "f-6", "f-7"
+		]
+	}, {
+		"source": "/texts/enhancing-cimmyts-impact.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "", "worldwide", "f-1"
+		]
+	}, {
+		"source": "/texts/novel-genetic-diversity-and-tools.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "", "worldwide", "f-2"
+		]
+	}, {
+		"source": "/texts/giving-farmers-easier-access-to-better-varieties.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "", "worldwide", "f-3"
+		]
+	}, {
+		"source": "/texts/sustainable-intensification-to-improve-farmer-livelihoods.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "", "worldwide", "f-4"
+		]
+	}, {
+		"source": "/texts/reaching-the-last-mile.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": [
+			"maize", "wheat", "", "worldwide", "f-5"
+		]
+	}, {
+		"source": "/texts/boosting-good-nutrition-and-incomes.txt",
+		"type": "text",
+		"country": "",
+		"latitude": "",
+		"longitude": "",
+		"categories": ["maize", "wheat", "", "worldwide", "f-6"]
+	}]
+}

@@ -132,7 +132,7 @@
          */
         this.broadcastSelectionCallback = null;
 
-
+        this.mapmade = false;
     };
 
     //PROTO
@@ -163,15 +163,61 @@
          * @returns {undefined}
          */
         render: function (data) {
-            this.data = data;
-
-            this.points = [];
-
-            for (var i = 0; i < data.length; i++) {
-                var d = data[i];
-
-                this.points.push(MapPoint.make(this.element, this.mainSvg, this.projection, d));
+            if((typeof data).toLowerCase() == "string"){
+                this.remoteRender(data);
+                return;
             }
+            
+            var me = this;
+            if (this.mapmade) {
+                this.data = data;
+
+                this.points = [];
+                //ITERATE TO EVAL
+                var keymap = {};
+                
+                for (var i = 0; i < data.length; i++) {
+                    var d = data[i];
+                    if(d.country && d.country != ""){
+                        var key = d.country+d.type;
+                        if(!keymap[key]){
+                            keymap[key]=[];
+                        }
+                        keymap[key].push(d);
+                    }
+                    
+                }
+                for(var i in keymap){
+                    var set = keymap[i];
+                    this.points.push(MapPoint.make(this.element, this.mainSvg, this.projection, set));
+                }
+            }else{
+                setTimeout(function(){
+                    me.render(data);
+                },1000);
+            }
+            
+            this.menus.setDefault();
+        },
+        /**
+         * Renders from a json data
+         * @param {String} url
+         * @returns {undefined}
+         * @public
+         */
+        remoteRender:function(url){
+            var me = this;
+            $.ajax({
+                url:url,
+                dataType:"json",
+                method:"get",
+                success:function(data){
+                    me.render(data.data);
+                },
+                error:function(e){
+                    console.error(e);
+                }
+            });
         },
         /**
          * Inits the basic instance's configurations.
@@ -187,7 +233,7 @@
 
             //CREATE PROJECTION (ROBINSON)
             var pro = d3.geoRobinson()
-                    .scale(w / 6.4)
+                    .scale(w / 5.5)
                     .translate([w / 2, h / 2])
                     .precision(.1);
 
@@ -227,9 +273,23 @@
                 }
 
 
-                svg.insert("path", ".graticule")
-                        .datum(topojson.feature(world, world.objects.land))
-                        .attr("class", "land")
+                /* svg.insert("path", ".graticule")
+                 .datum(topojson.feature(world, world.objects.land))
+                 .attr("class", "land")
+                 .attr("d", pt);*/
+
+                svg.selectAll(".countries")
+                        .data(topojson.feature(world, world.objects.countries).features)
+                        .enter()
+                        .append("path")
+                        .on("mouseover", function () {
+                            d3.select(this).style("fill", "#e3e8ca");
+                        })
+                        .on("mouseout", function () {
+                            d3.select(this).style("fill", "#aeaeae");
+                        })
+                        .attr("style", "fill:" + "#aeaeae")
+                        .attr("class", "country")
                         .attr("d", pt);
 
                 svg.insert("path", ".graticule")
@@ -238,6 +298,8 @@
                         }))
                         .attr("class", "boundary")
                         .attr("d", pt);
+                
+                me.mapmade = true;
             });
 
             d3.select(self.frameElement).style("height", h + "px");
@@ -289,13 +351,7 @@
             var menus = this.menus;
             /** @param {MapPoint} card */
             this.iteratePoints(function (point) {
-                var cats = point.categories;
-                var m = menus.matches(cats);
-                if (m) {
-                    point.show();
-                } else {
-                    point.hide();
-                }
+                point.inject(selection);
             });
         },
         /**

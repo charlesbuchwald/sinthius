@@ -671,6 +671,8 @@
     Card.createCardContent = function (data) {
         var dom = null;
         var doc = document;
+        
+        data.source = "assets/t4"+data.source;
 
         switch (data.type) {
             case "video":
@@ -693,7 +695,15 @@
             case "custom":
             default:
                 dom = $(doc.createElement("div"));
-                dom.append(data.content);
+                $.ajax({
+                    method:"get",
+                    dataType:"text",
+                    url:data.source,
+                    success:(function(d){
+                     return function(txt){
+                         d.append(txt);
+                     } ;  
+                })(dom)});
                 break;
         }
 

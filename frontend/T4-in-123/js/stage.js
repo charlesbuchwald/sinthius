@@ -135,6 +135,10 @@
          * @returns {undefined}
          */
         render: function (data) {
+            if((typeof data).toLowerCase() == "string"){
+                this.remoteRender(data);
+                return;
+            }
             var jqElement = $(this.element);
 
             if (data) {
@@ -149,6 +153,26 @@
 
             //SORTER
             this.sortRandom();
+        },
+        /**
+         * Renders from a json data
+         * @param {String} url
+         * @returns {undefined}
+         * @public
+         */
+        remoteRender:function(url){
+            var me = this;
+            $.ajax({
+                url:url,
+                dataType:"json",
+                method:"get",
+                success:function(data){
+                    me.render(data.data);
+                },
+                error:function(e){
+                    console.error(e);
+                }
+            });
         },
         /**
          * This method will render a single card by it's given data.

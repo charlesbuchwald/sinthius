@@ -1,0 +1,1797 @@
+{
+	"data": [
+		{
+			"source": "/texts/australia-cimmyt-partnership-supports-afghan-research-on-wheat-and-maize.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"sustainable-intensification",
+				"asia",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				"afghanistan"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/sustainable-wheat-and-maize-production-in-afghanistan.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"sustainable-intensification",
+				"sustainable-wheat-maize-production-afghanistan",
+				"asia",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				"afghanistan"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/international-winter-wheat-improvement-program.txt",
+			"categories": [
+				"wheat",
+				"food-future",
+				"international-winter-wheat-improvement",
+				"asia",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"afghanistan",
+				"armenia",
+				"azerbaijan",
+				"georgia",
+				"iran",
+				"kazakhstan",
+				"kyrgyzstan",
+				"pakistan",
+				"tajikistan",
+				"turkey",
+				"uzbekistan"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/climate-resilient-maize-for-asia.txt",
+			"categories": [
+				"maize",
+				"heat-stress-tolerant-maize",
+				"climate-resilient-maize-asia-food-security-income-tropics",
+				"asia",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"afghanistan",
+				"armenia",
+				"azerbaijan",
+				"georgia",
+				"iran",
+				"kazakhstan",
+				"kyrgyzstan",
+				"pakistan",
+				"tajikistan",
+				"turkey",
+				"uzbekistan",
+				"nepal",
+				"bangladesh",
+				"india"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/international-maize-improvement-consortium-imic-for-asia.txt",
+			"categories": [
+				"maize",
+				"heat-stress-tolerant-maize",
+				"international-maize-improvement-consortium-asia",
+				"asia",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"afghanistan",
+				"armenia",
+				"azerbaijan",
+				"georgia",
+				"iran",
+				"kazakhstan",
+				"kyrgyzstan",
+				"pakistan",
+				"tajikistan",
+				"turkey",
+				"uzbekistan",
+				"nepal",
+				"bangladesh",
+				"india"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/cereals-south-asia.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"cereals-south-asia",
+				"asia",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"afghanistan",
+				"pakistan",
+				"bangladesh",
+				"bhutan",
+				"india",
+				"maldives",
+				"nepal",
+				"srilanka"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/understanding-gender-in-wheat-based-livelihoods-for-enhanced-wheat-r4d.txt",
+			"categories": [
+				"wheat",
+				"gender",
+				"understanding-gender-wheat-based-livelihoods-wheat-r4d",
+				"asia",
+				"africa",
+				"f-1"
+			],
+			"countries": [
+				"afghanistan",
+				"pakistan",
+				"ethiopia"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/cereal-systems-initiatives-for-south-asia-mechanization-and-irrigation-project-launched-in-bangladesh.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"sustainable-intensification",
+				" cereals-south-asia",
+				"cereals-systems-south-asia-csisa",
+				"cereal-systems-initiative-south-asia-mechanization-irrigation",
+				"asia",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				"bangladesh"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/capacity-building-to-combat-wheat-rusts.txt",
+			"categories": [
+				"wheat",
+				"disease-stress-resistant-wheat",
+				"worldwide",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"bangladesh",
+				"bhutan",
+				"egypt",
+				"ethiopia",
+				"india",
+				"kenya",
+				"mexico",
+				"nepal",
+				"pakistan",
+				"rwanda",
+				"sudan",
+				"uganda",
+				"unitedstates",
+				"yemen",
+				"zambia"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/bhutan-maize-provides-quality-protein-and-defies-fungus.txt",
+			"categories": [
+				"maize",
+				"food-future",
+				"asia",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"bhutan"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/global-partnership-propels-wheat-productivity-in-china.txt",
+			"categories": [
+				"wheat",
+				"disease-stress-resistant-wheat",
+				"identification-utilization-novel-sources-resistance-spring-durum-wheat",
+				"asia",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"china"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/identification-and-utilization-of-novel-sources-of-resistance-to-crown-rot-and-the-root-lesion.txt",
+			"categories": [
+				"wheat",
+				"disease-stress-resistant-wheat",
+				"identification-utilization-novel-sources-resistance-spring-durum-wheat",
+				"asia",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"china"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/collaborative-wheat-breeding-for-durable-resistance-to-stripe-rust-in-china.txt",
+			"categories": [
+				"wheat",
+				"disease-stress-resistant-wheat",
+				"asia",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"china"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/cimmyt-promotes-wheat-improvement-collaboration-between-china-and-australia.txt",
+			"categories": [
+				"wheat",
+				"seed-distribution-impact-partnerships",
+				"oceania",
+				"asia",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"china",
+				"australia"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/genetic-analysis-and-plant-breeding.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"unlocking-genetic-resources",
+				"worldwide",
+				"f-2",
+				"f-7"
+			],
+			"countries": [
+				"china",
+				"colombia",
+				"cuba",
+				"ethiopia",
+				"georgia",
+				"germany",
+				"india",
+				"iran",
+				"italy",
+				"kazakhstan",
+				"kenya",
+				"malawi",
+				"mexico",
+				"southafrica"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/fighting-hunger-with-rust-resistant-seed.txt",
+			"categories": [
+				"wheat",
+				"disease-stress-resistant-wheat",
+				"durable-rust-resistance-wheat",
+				"africa",
+				"asia",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"egypt",
+				"ethiopia",
+				"bangladesh",
+				"nepal",
+				"afghanistan",
+				"pakistan"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/ethiopia-wheat-rust-scaling.txt",
+			"categories": [
+				"wheat",
+				"disease-stress-resistant-wheat",
+				"ethiopia-wheat-rust-scaling",
+				"africa",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"ethiopia"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/nutritious-maize-for-ethiopia.txt",
+			"categories": [
+				"maize",
+				"nutrition-market-oriented-grains",
+				"nutritious-maize-ethiopia",
+				"africa",
+				"f-1",
+				"f-6"
+			],
+			"countries": [
+				"ethiopia"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/ethiopia-el-nino-emergency-seed-response.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"seed-distribution-impact-partnerships",
+				"ethiopia-el-nino-emergency-seed-response",
+				"africa",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"ethiopia"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/scientists-learn-about-doubled-haploids.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"unlocking-genetic-resources",
+				"worldwide",
+				"f-2",
+				"f-7"
+			],
+			"countries": [
+				"ethiopia",
+				"india",
+				"kenya",
+				"mexico",
+				"netherlands",
+				"peru",
+				"philippines",
+				"southkorea",
+				"thailand",
+				"zimbabwe"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/drought-tolerant-maize-for-africa-seed-scaling-dtmass.txt",
+			"categories": [
+				"maize",
+				"drought-tolerant-maize",
+				"drought-tolerant-maize-for-africa-seed-scaling",
+				"africa",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"ethiopia",
+				"kenya",
+				"mozambique",
+				"tanzania",
+				"uganda",
+				"zambia"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/sustainable-intensification-of-maize-legume-cropping-systems-in-e-and-s-africa.txt",
+			"categories": [
+				"maize",
+				"sustainable-intensification",
+				"sustainable-intensification-maize-cropping-systems-africa",
+				"africa",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				"ethiopia",
+				"kenya",
+				"tanzania",
+				"malawi",
+				"mozambique"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/stress-tolerant-maize-for-africa-stma.txt",
+			"categories": [
+				"maize",
+				"drought-tolerant-maize",
+				"stress-tolerant-maize-for-africa",
+				"africa",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"ethiopia",
+				"kenya",
+				"tanzania",
+				"uganda",
+				"malawi",
+				"southafrica",
+				"zambia",
+				"zimbabwe",
+				"benin",
+				"ghana",
+				"mali",
+				"nigeria"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/dh-maize.txt",
+			"categories": [
+				"maize",
+				"food-future",
+				"doubled-haploid-facility-strengthening-maize-africa",
+				"africa",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"ethiopia",
+				"kenya",
+				"tanzania",
+				"uganda",
+				"malawi",
+				"southafrica",
+				"zambia",
+				"zimbabwe",
+				"benin",
+				"ghana",
+				"mali",
+				"nigeria"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/sustainable-intensification-in-e-and-s-africa.txt",
+			"categories": [
+				"gender",
+				"socioeconomic-constraints-incentives-technology-southern-africa",
+				"africa",
+				"f-1"
+			],
+			"countries": [
+				"ethiopia",
+				"kenya",
+				"tanzania",
+				"uganda",
+				"malawi",
+				"southafrica",
+				"zambia",
+				"zimbabwe",
+				"benin",
+				"ghana",
+				"mali",
+				"nigeria"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/managing-maize-lethal-necrosis-in-eastern-africa.txt",
+			"categories": [
+				"maize",
+				"rapid-response",
+				"maize-lethal-necrosis-africa-accelerated-development-delivery",
+				"africa",
+				"f-1",
+				"f-2",
+				"f-5"
+			],
+			"countries": [
+				"ethiopia",
+				"kenya",
+				"tanzania",
+				"uganda",
+				"malawi",
+				"southafrica",
+				"zambia",
+				"zimbabwe",
+				"benin",
+				"ghana",
+				"mali",
+				"nigeria"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+			"categories": [
+				"sustainable-intensification",
+				"farm-mechanization-conservation-agriculture-sustainable-intensification",
+				"africa",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				"ethiopia",
+				"kenya",
+				"tanzania",
+				"uganda",
+				"malawi",
+				"southafrica",
+				"zambia",
+				"zimbabwe",
+				"benin",
+				"ghana",
+				"mali",
+				"nigeria"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/improved-maize-for-african-soils.txt",
+			"categories": [
+				"maize",
+				"sustainable-intensification",
+				"improved-maize-african-soils",
+				"africa",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				"ethiopia",
+				"kenya",
+				"tanzania",
+				"uganda",
+				"malawi",
+				"southafrica",
+				"zambia",
+				"zimbabwe",
+				"benin",
+				"ghana",
+				"mali",
+				"nigeria"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/tamasa-taking-maize-agronomy-to-scale-in-africa.txt",
+			"categories": [
+				"maize",
+				"sustainable-intensification",
+				"taking-maize-agronomy-scale-africa",
+				"africa",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				"ethiopia",
+				"kenya",
+				"tanzania",
+				"uganda",
+				"malawi",
+				"southafrica",
+				"zambia",
+				"zimbabwe",
+				"benin",
+				"ghana",
+				"mali",
+				"nigeria"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/spurring-a-transformation-for-agriculture-through-remote-sensing-stars.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"food-future",
+				"spurring-transformation-agriculture-remote-sensing",
+				"asia",
+				"africa",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"ethiopia",
+				"kenya",
+				"tanzania",
+				"uganda",
+				"malawi",
+				"southafrica",
+				"zambia",
+				"zimbabwe",
+				"benin",
+				"ghana",
+				"mali",
+				"nigeria",
+				"india",
+				"nepal",
+				"bangladesh"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/female-friendly-seeder-boosts-african-conservation-agriculture.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"gender",
+				" sustainable-intensification",
+				"farm-mechanization-conservation-agriculture-sustainable-intensification",
+				"africa",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				"ethiopia",
+				"kenya",
+				"tanzania",
+				"zimbabwe"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/farm-mechanization-and-conservation-agriculture-for-sustainable-intensification.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"sustainable-intensification",
+				"farm-mechanization-conservation-agriculture-sustainable-intensification",
+				"africa",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				"ethiopia",
+				"kenya",
+				"tanzania",
+				"zimbabwe"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/seed-scaling-buena-milpa.txt",
+			"categories": [
+				"maize",
+				"seed-distribution-impact-partnerships",
+				"seed-scaling-buena-milpa",
+				"latin-america",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"guatemala"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/diversification-and-conservation-in-indias-cropping-systems.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"agricultural-innovations",
+				" sustainable-intensification",
+				" cereals-south-asia ",
+				"asia",
+				"f-1",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"india"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/improving-food-security-women-start-collective-maize-farming-in-tribal-india.txt",
+			"categories": [
+				"maize",
+				"gender",
+				" sustainable-intensification",
+				"sustainable-modernization-traditional-agriculture",
+				"asia",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				"india"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/icar-cimmyt-organize-molecular-tools-in-wheat-training.txt",
+			"categories": [
+				"wheat",
+				"sustainable-intensification",
+				" cereals-south-asia",
+				"asia",
+				"f-1",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"india",
+				"nepal"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/rapid-development-of-climte-resilient-wheat.txt",
+			"categories": [
+				"wheat",
+				"food-future",
+				"rapid-climate-resilient-wheat-varieties-south-asia-genomic-selection",
+				"asia",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"india",
+				"nepal",
+				"bangladesh"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/water-efficient-maize-for-africa-phase-ii.txt",
+			"categories": [
+				"maize",
+				"drought-tolerant-maize",
+				"water-efficient-maize-for-africa",
+				"africa",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"kenya",
+				"mozambique",
+				"tanzania",
+				"southafrica",
+				"uganda"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/conservation-agriculture-in-malawi.txt",
+			"categories": [
+				"maize",
+				"sustainable-intensification",
+				"africa",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				"malawi"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/cimmyt-and-conservation-agriculture-in-africa.txt",
+			"categories": [
+				"maize",
+				"sustainable-intensification",
+				" working-farmers ",
+				"africa",
+				"f-1",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"malawi",
+				"mozambique",
+				"tanzania",
+				"zambia",
+				"zimbabwe",
+				"ethiopia"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/durable-rust-resistance-in-wheat-phase-ii.txt",
+			"categories": [
+				"wheat",
+				"disease-stress-resistant-wheat",
+				"durable-rust-resistance-wheat",
+				"asia",
+				"africa",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"malawi",
+				"mozambique",
+				"tanzania",
+				"zambia",
+				"zimbabwe",
+				"ethiopia",
+				"nepal",
+				"bangladesh",
+				"india",
+				"afghanistan",
+				"pakistan"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/fighting-tar-spot-complex-in-mexico.txt",
+			"categories": [
+				"maize",
+				"unlocking-genetic-resources",
+				" working-farmers",
+				"seed-discovery",
+				"latin-america",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"mexico"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/ancient-maize-landraces-please-modern-palates-and-profit-smallholder-farmers.txt",
+			"categories": [
+				"maize",
+				"working-farmers",
+				"sustainable-modernization-traditional-agriculture",
+				"latin-america",
+				"f-1",
+				"f-3",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"mexico"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/gathering-insights-from-above-new-remote-sensing-platform-in-obregon.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"working-farmers",
+				"sustainable-modernization-traditional-agriculture",
+				"latin-america",
+				"f-1",
+				"f-3",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"mexico"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/international-maize-improvement-consortium-masagro-maize-network.txt",
+			"categories": [
+				"maize",
+				"working-farmers",
+				"sustainable-modernization-traditional-agriculture",
+				"latin-america",
+				"f-1",
+				"f-3",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"mexico"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/masagro.txt",
+			"categories": [
+				"maize",
+				"working-farmers",
+				"sustainable-modernization-traditional-agriculture",
+				"latin-america",
+				"f-1",
+				"f-3",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"mexico"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/hill-maize-research-project.txt",
+			"categories": [
+				"maize",
+				"cereals-south-asia",
+				"asia",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"nepal"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/seed-scaling-csisa-in-nepal.txt",
+			"categories": [
+				"wheat",
+				"seed-distribution-impact-partnerships",
+				"seed-scaling-csisa-wheat-lentil-nepal",
+				"asia",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"nepal"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/cereal-systems-initiative-for-south-asia-csisa.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"cereals-south-asia",
+				"cereals-systems-south-asia-csisa",
+				"asia",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"nepal",
+				"bangladesh",
+				"india"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/cereal-systems-initiative-for-south-asia-mechanization-and-irrigation.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"sustainable-intensification",
+				"cereal-systems-initiative-south-asia-mechanization-irrigation",
+				"asia",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				"nepal",
+				"bangladesh",
+				"india"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/sustainable-and-resilient-farming-systems.txt",
+			"categories": [
+				"wheat",
+				"sustainable-intensification",
+				"sustainable-resilient-farming-systems-the-eastern-gangetic-plains",
+				"asia",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				"nepal",
+				"bangladesh",
+				"india"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/agricultural-innovation-in-pakistan.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"agricultural-innovations",
+				"agricultural-innovations-pakistan",
+				"asia",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"pakistan"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/agricultural-innovation-in-pakistan.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"agricultural-innovations",
+				"agricultural-innovations-pakistan",
+				"asia",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"pakistan"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/emerging-threats-stem-rust-yellow-rust.txt",
+			"categories": [
+				"wheat",
+				"disease-stress-resistant-wheat",
+				"stem-rust-yellow-rust",
+				"worldwide",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				"worldwide"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/heterosis-screening-and-development-of-heterotic-pools-in-wheat.txt",
+			"categories": [
+				"wheat",
+				"food-future",
+				"heterosis-screening-development-heterotic-pools-wheat",
+				"worldwide",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"worldwide"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/international-wheat-yield-partnership.txt",
+			"categories": [
+				"wheat",
+				"food-future",
+				"international-wheat-yield-partnership",
+				"worldwide",
+				""
+			],
+			"countries": [
+				"worldwide"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/wheat-an-international-collaborative-effort-to-raise-the-productivity-of-wheat-farming-systems-.txt",
+			"categories": [
+				"wheat",
+				"food-future",
+				" sustainable-intensification",
+				"worldwide",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"worldwide"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/consortium-praise-for-maize-and-wheat-gender-strategies.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"gender",
+				"worldwide",
+				"f-1"
+			],
+			"countries": [
+				"worldwide"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/integrating-gender-into-wheat-and-maize-crps.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"gender",
+				"sustainable-modernization-traditional-agriculture",
+				"worldwide",
+				"f-1"
+			],
+			"countries": [
+				"worldwide"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/cgiar-global-study-on-gender-norms-and-agency-for-agricultural-innovation.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"gender",
+				"cgiar-global-study-gender-norms-agricultural-innovation",
+				"worldwide",
+				"f-1"
+			],
+			"countries": [
+				"worldwide"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/harvest-plus.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"nutrition-market-oriented-grains",
+				"harvest-plus",
+				"worldwide",
+				"f-1",
+				"f-6"
+			],
+			"countries": [
+				"worldwide"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/climate-change-agriculture-and-food-security.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"sustainable-intensification",
+				" food-future",
+				"worldwide",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"worldwide"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/maize-global-alliance-to-improve-the-food-security-and-livelihoods-of-the-resource-poor-in-the-developing-world.txt",
+			"categories": [
+				"maize",
+				"sustainable-intensification",
+				" food-future",
+				"worldwide",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"worldwide"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/seeds-of-discovery.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"unlocking-genetic-resources",
+				"seed-discovery",
+				"worldwide",
+				"f-2",
+				"f-7"
+			],
+			"countries": [
+				"worldwide"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/take-it-to-the-farmer.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"working-farmers",
+				" sustainable-intensification",
+				"take-it-to-the-farmer",
+				"worldwide",
+				"f-1",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"worldwide"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/training-supports-wheats-dramatic-rise-in-zambia.txt",
+			"categories": [
+				"wheat",
+				"working-farmers",
+				"africa",
+				"f-1",
+				"f-3",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				"zambia"
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/agricultural-innovations.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"agricultural-innovations",
+				"worldwide",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/curbing-maize-post-harvest-losses.txt",
+			"categories": [
+				"maize",
+				"agricultural-innovations",
+				" seed-distribution-impact-partnerships",
+				"africa",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/disease-stress-resistant-wheat.txt",
+			"categories": [
+				"wheat",
+				"disease-stress-resistant-wheat",
+				"worldwide",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/drought-tolerant-maize.txt",
+			"categories": [
+				"maize",
+				"drought-tolerant-maize",
+				"africa",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/making-maize-climate-ready.txt",
+			"categories": [
+				"maize",
+				"drought-tolerant-maize",
+				" heat-stress-tolerant-maize",
+				"climate-resilient-maize-asia-food-security-income-tropics",
+				"drought-tolerant-maize-for-africa-seed-scaling",
+				"stress-tolerant-maize-for-africa",
+				"africa",
+				"asia",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/food-future.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"food-future",
+				"worldwide",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/gender.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"gender",
+				"worldwide",
+				"f-1"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/heat-stress-tolerant-maize-for-asia.txt",
+			"categories": [
+				"maize",
+				"heat-stress-tolerant-maize",
+				"climate-resilient-maize-asia-food-security-income-tropics",
+				"international-maize-improvement-consortium-asia",
+				"asia",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/heat-stress-tolerant-maize.txt",
+			"categories": [
+				"maize",
+				"heat-stress-tolerant-maize",
+				"asia",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/nutrition-market-oriented-grains.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"nutrition-market-oriented-grains",
+				"worldwide",
+				"f-1",
+				"f-6"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/cimmyt-and-kari-lead-fight-against-maize-lethal-necrosis-in-eastern-africa.txt",
+			"categories": [
+				"maize",
+				"rapid-response",
+				"maize-lethal-necrosis-africa-accelerated-development-delivery",
+				"africa",
+				"f-1",
+				"f-2",
+				"f-5"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/maize-lethal-necrosis-building-a-comprehensive-response.txt",
+			"categories": [
+				"maize",
+				"rapid-response",
+				"maize-lethal-necrosis-africa-accelerated-development-delivery",
+				"africa",
+				"f-1",
+				"f-2",
+				"f-5"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/rapid-response.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"rapid-response",
+				"worldwide",
+				"f-1",
+				"f-2",
+				"f-5"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/seed-distribution-impact-partnerships.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"seed-distribution-impact-partnerships",
+				"worldwide",
+				"f-1",
+				"f-2",
+				"f-3",
+				"f-4",
+				"f-5",
+				"f-6"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/high-temperature-modeling.txt",
+			"categories": [
+				"wheat",
+				"sustainable-intensification",
+				"worldwide",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/sustainable-intensification.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"sustainable-intensification",
+				"worldwide",
+				"f-1",
+				"f-4"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/unlocking-genetic-resources.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"unlocking-genetic-resources",
+				"worldwide",
+				"f-2",
+				"f-7"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/making-the-most-of-appropriate-machinery-across-regions.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"working-farmers",
+				"sustainable-modernization-traditional-agriculture",
+				"africa",
+				"asia",
+				"latin-america",
+				"f-1",
+				"f-3",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/working-farmers.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"working-farmers",
+				"worldwide",
+				"f-1",
+				"f-3",
+				"f-5",
+				"f-6",
+				"f-7"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/enhancing-cimmyts-impact.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"",
+				"worldwide",
+				"f-1"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/novel-genetic-diversity-and-tools.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"",
+				"worldwide",
+				"f-2"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/giving-farmers-easier-access-to-better-varieties.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"",
+				"worldwide",
+				"f-3"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/sustainable-intensification-to-improve-farmer-livelihoods.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"",
+				"worldwide",
+				"f-4"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/reaching-the-last-mile.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"",
+				"worldwide",
+				"f-5"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+			"source": "/texts/boosting-good-nutrition-and-incomes.txt",
+			"categories": [
+				"maize",
+				"wheat",
+				"",
+				"worldwide",
+				"f-6"
+			],
+			"countries": [
+				""
+			],
+			"type": "text"
+		},
+		{
+		"source": "/texts/the-cimmyt-academy-a-new-dimension-of-capacity-building.txt",
+		"categories": [
+			"maize",
+			"wheat"
+		],
+		"countries": [
+			""
+		],
+		"type": "text"
+	}
+	]
+}
