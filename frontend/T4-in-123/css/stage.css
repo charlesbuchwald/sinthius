@@ -51,11 +51,14 @@ body{
     background-color: #eaeaea;
     margin:0;
     padding:0;
-    color: #fff;
+    color: #DDD4B0;
     font-family: 'museo-sans-500';
 
 }
+p {
 
+    font-family: 'museo-sans-500';
+}
 .stage{
     width:100%;
     height:100vh;
@@ -236,7 +239,7 @@ ul[name="regions"]{
      position: fixed;
      right: 0vw;
      bottom: 0;
-     width: 27vw;
+     width: 41vw;
      height: 50vh;
      overflow-y: scroll;
      overflow-x: visible;
@@ -246,10 +249,15 @@ ul[name="regions"]{
 ul[name="regions"] li{
     float:left;
     clear:initial;
-    width: 23%;
+    width: 20%;
     text-align: center;
     padding: 1vh 1vw;
+    position: relative;
+    height: 3vh;
     }
+ul[name="regions"] li .land-title{position: absolute;left: 0;right: 0;bottom: 0;}
+    ul[name="regions"] li .flag{position: absolute;}
+
     ul[name="regions"] li.title_li{
     float:left;
     width:100%;
@@ -261,7 +269,7 @@ ul[data-menu="categories"] li.title_li {
     font-size:120%;
     text-align: center;
     font-weight:900;
-    margin: 2vh 0;
+    margin: 6vh 0 2vh 0;
     }
 ul[data-menu="categories"] li.title_li::before {
 content:' ';
