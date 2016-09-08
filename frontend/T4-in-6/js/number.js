@@ -19,7 +19,7 @@
      * @param {number} margin Margins
      * @constructor
      */
-    var CNumber = function (params, width, margin) {
+    var CNumber = function (params, width, margin,i,defaultLanguage) {
         /**
          * Factor to which the speed will lower to create
          * an easing effect
@@ -45,12 +45,7 @@
          * @type {DOMElement}
          */
         this.jqelement = null;
-        /**
-         * Element object that represents the card as a view.
-         * @protected
-         * @type {jQuery}
-         */
-        this.jqelement = null;
+        
         /**
          * Object that holds the CNumber parameters.
          * @protected
@@ -87,6 +82,8 @@
          * @type {number}
          */
         this.easeInterval = null;
+        
+        this.lang = defaultLanguage;
 
         //CALL TO PROTO METHOD init.
         this.prepare();
@@ -111,6 +108,25 @@
          */
         getLeft:function(){
             return this.originLeft;
+        },
+        /**
+         * Sets the language to display
+         * @param {type} lang
+         * @returns {undefined}
+         */
+        setLanguage:function(lang){
+            this.lang = lang;
+            this.changeLanguage();
+        },
+        /**
+         * Cahnges the display of the language
+         * @returns {undefined}
+         */
+        changeLanguage:function(){
+            if(this.jqelement){
+                this.jqelement.find(".lang-text").hide();
+                this.jqelement.find("[lang='"+this.lang+"']").show();
+            }
         },
         /**
          * Registers a new function that will receive updates on the left prop change.
@@ -232,7 +248,7 @@
         buildContainer: function () {
             var el = $(document.createElement("div"));
             el.addClass("number");
-            el.attr("id", this.parameters.id);
+            //el.attr("id", this.parameters.id);
             el.css("width", this.width + "px");
             el.css("margin-left", this.margin + "px");
             el.css("margin-right", this.margin + "px");
@@ -281,11 +297,20 @@
          */
         buildBody: function () {
             var content = this.parameters.content;
-            var el = $(document.createElement("span"));
-
+            var el = $(document.createElement("div"));
             el.addClass("number-content");
-            el.text(content);
-
+            
+            console.log("thislang",this.lang);
+            for(var i in content){
+                var innerSpan = $(document.createElement("span"));
+                innerSpan.attr("lang",i);
+                innerSpan.addClass("lang-text");
+                innerSpan.text(content[i]);
+                if(i != this.lang){
+                    innerSpan.hide();
+                }
+                el.append(innerSpan);
+            }
             return el;
 
         },
@@ -305,7 +330,7 @@
             el.css("font-size", fontsize + "px");
             el.css("height", height + "px");
             el.css("line-height",height + "px");
-            el.text(this.format(num));
+            el.text(num);
 
             return el;
         },

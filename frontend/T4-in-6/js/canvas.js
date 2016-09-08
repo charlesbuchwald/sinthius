@@ -26,20 +26,21 @@
      * @param {DOMElement} ele DOM Element that will act as canvas
      * @constructor
      */
-    var Canvas = function (ele, data) {
+    var Canvas = function (ele, data, defaultLang) {
         //CONSTANTS --->
         /** NUMBER CARD WIDTH */
-        this.WIDTH = 300;
+        this.WIDTH = 350;
         /** MARGIN WIDTH */
         this.MARGIN = 10;
         
+        this.lang = defaultLang;
         /**
          * Determines how many extra linear elements must be
          * placed in order to cover all canvas area.
          * @type {number}
          * @protected
          */
-        this.extras = 0;
+        this.extras = 2;
 
         /**
          * Real Card number distance
@@ -130,6 +131,19 @@
          */
         init: function () {
             var me = this;
+            
+            if((typeof this.numbers).toLowerCase() == "string"){
+                $.ajax({
+                    url:this.numbers,
+                    dataType:"json",
+                    method:"get",
+                    success:function(data){
+                        me.numbers = data.data;
+                        me.init();
+                    }
+                });
+                return;
+            }
 
             this.loadNumberCards();
 
@@ -149,7 +163,23 @@
 
             //PAN CONFIGURATIONS
             this.ham.get('pan').set({threshold: 0, direction: Hammer.DIRECTION_HORIZONTAL});
+            
+            
+            $("[lang]").on("click",function(){
+                var l = $(this).attr("lang");
+                $("[lang]").removeClass("selected-lang");
+                $(this).addClass("selected-lang");
+                console.log("change lang",l);
+                me.changeLanguage(l);
+            });
 
+        },
+        changeLanguage:function(lang){
+            this.lang = lang;
+            for(var i in this.wheel){
+                var w = this.wheel[i];
+                w.setLanguage(lang);
+            }
         },
         /**
          * Gets the number of extra cards that should be loaded to the left and to the right
@@ -208,7 +238,7 @@
             var n = this.numbers;
             var ri = this.realIndex(i);
 
-            var num = new CNumber(n[ri], this.WIDTH, this.MARGIN, i);
+            var num = new CNumber(n[ri], this.WIDTH, this.MARGIN, i, this.lang);
             if (first) {
                 
                 this.registerFirstNumber(num);
@@ -368,7 +398,7 @@
                 this.currentRightIndex = this.realIndex(this.currentRightIndex + 1);
 
                 //ADD ELEMENT TO THE LAST
-                var cnumber = new CNumber(this.numbers[this.currentRightIndex], this.WIDTH, this.MARGIN);
+                var cnumber = new CNumber(this.numbers[this.currentRightIndex], this.WIDTH, this.MARGIN,this.currentRightIndex,this.lang);
                 this.registerLastNumber(cnumber);
 
                 //REMOVE FIRST ELEMENT OF THE WHEEL
@@ -386,7 +416,7 @@
                 this.currentLeftIndex = this.realIndex(this.currentLeftIndex - 1);
 
                 //ADD ELEMENT TO THE LAST
-                var cnumber = new CNumber(this.numbers[this.currentLeftIndex], this.WIDTH, this.MARGIN);
+                var cnumber = new CNumber(this.numbers[this.currentLeftIndex], this.WIDTH, this.MARGIN, this.currentLeftIndex, this.lang);
                 this.registerFirstNumber(cnumber);
 
                 //REMOVE FIRST ELEMENT OF THE WHEEL

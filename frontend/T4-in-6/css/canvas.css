@@ -66,3 +66,14 @@ h1{
     display: inline-block;
     float:left;
 }
+
+.lang-menu{
+    display: block;
+    position: fixed;
+    top:1em;
+    right:1em;
+}
+
+.lang-menu ul li{
+    color:#fff;
+}

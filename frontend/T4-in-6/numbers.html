@@ -17,6 +17,12 @@ and open the template in the editor.
             <span id="distancepanned"></span>
         </div>
         <div id="main_canvas" class="canvas">
+            <div class="lang-menu">
+                <ul>
+                    <li lang="es">Español</li>
+                    <li lang="en" class="selected-lang">English</li>
+                </ul>
+            </div>
             <div id="numbers_title" class="row">
                 <div class="main-title">
                     <h1>CIMMYT</h1>
@@ -44,17 +50,17 @@ and open the template in the editor.
         <script src="js/canvas.js"></script>
 
         <script>
-
+            var data = [
+                {id: "n1", number: 20, content:{"es":"Lorem ipsun","en":"asdasdsadadas"}},
+                {id: "n2", number: 12000, content:{"es":"Lorem ipsun","en":"asdasdsadadas"}},
+                {id: "n3", number: 431, content:{"es":"Lorem ipsun","en":"asdasdsadadas"}},
+                {id: "n4", number: 32, content:{"es":"Lorem ipsun","en":"asdasdsadadas"}},
+                {id: "n5", number: 5, content:{"es":"Lorem ipsun","en":"asdasdsadadas"}},
+                {id: "n6", number: 19223213, content:{"es":"Lorem ipsun","en":"asdasdsadadas"}},
+                {id: "n7", number: 931, content:{"es":"Lorem ipsun","en":"asdasdsadadas"}},
+            ];
             //PROVISONAL TOP HANDLERS
-            var canvas = new Canvas(document.getElementById("numbers_content"), [
-                {id: "n1", number: 20, content: "Lorem ipsun"},
-                {id: "n2", number: 12000, content: "Dorloa aoih iauhdiuha iduhi hida usdi uasdivguvu gsbnfihsbgus dbf"},
-                {id: "n3", number: 431, content: "asiu in ijn iniu asdiuhi asisu diaus ndiuasbdi udh i sdyab h9h iuehgiru bgihbdhsdb sudhfb sduhfb sudhbfsud hfbsu yfbusdyfbsu fbsu fbs"},
-                {id: "n4", number: 32, content: "Dorloa aoih iauhdiuha iduhi hida usdi uasdivguvu gsbnfihsbgus dbf"},
-                {id: "n5", number: 5, content: "ami ijasod aosid ubi i iusd iausnd asibd"},
-                {id: "n6", number: 19223213, content: "a aosid ubi i iusd iausnd asibd"},
-                {id: "n7", number: 931, content: "a aosid ubi i iusd iausnd asd ias dos iasudn aiudn iasu ndiuas dnsi dnasidu nsaid sanidu ansid asndia sdniausd "},
-            ]);
+            var canvas = new Canvas(document.getElementById("numbers_content"), "js/numbers-data.json", "en");
         </script>
 
     </body>
