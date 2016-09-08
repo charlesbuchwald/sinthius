@@ -12,7 +12,8 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css" />
         <link rel="stylesheet" type="text/css" href="css/stage.css" />
         <link rel="stylesheet" type="text/css" href="css/card.css" />
-        
+        <link rel="stylesheet" type="text/css" href="css/filters.css" />
+           <link rel="stylesheet" type="text/css" href="css/flags.css" />
         
         <!-- LIBS -->
         <script src="js/jquery-3.1.0.min.js"></script>
@@ -24,6 +25,7 @@ and open the template in the editor.
         <script src="js/card.js"></script>
         <script src="js/menu.js"></script>
         <script src="js/stage.js"></script>
+        
     </head>
     <body>
         <!-- ID "stage" -->
@@ -38,11 +40,31 @@ and open the template in the editor.
             <!-- ALL DATA CATEGORIES MENU SHOULD BE AN <UL> ELEMENT -->
             <ul name="topics" data-menu="categories" data-behaviour="exclusive">
                 <!-- EACH <LI> WILL BE A CATEGORY SORTER -->
-                <li class="menu-selected" data-categories="topic1">Topic 1</li>
+                <li class="title_li">TOPICS</li>
+                <li class="menu-selected" data-categories="agricultural-innovations">Agricultural Innovations</li>
                 <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
-                <li data-categories="topic2">Topic 2</li>
+                <li data-categories="cereals-south-asia">Cereals in South Asia</li>
                 <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" -->
-                <li data-categories="topic3">Topic 3</li>
+                <li data-categories="disease-stress-resistant-wheat">Disease and Stress Resistant Wheat</li>
+                <li data-categories="drought-tolerant-maize">Drought Tolerant Maize</li>
+                <li data-categories="food-future">Food for the Future</li>
+                <li data-categories="gender">Gender</li>
+                <li data-categories="heat-stress-tolerant-maize">Heat Stress Tolerant Maize</li>
+                <li data-categories="nutrition-market-oriented-grains">Nutrition and Market Oriented Grains</li>
+                <li data-categories="rapid-response">Rapid Response</li>
+                <li data-categories="seed-distribution-impact-partnerships">Seed Distribution, Impact and Partnerships</li>
+                <li data-categories="sustainable-intensification">Sustainable Intensification</li>
+                <li data-categories="unlocking-genetic-resources">Unlocking Genetic Resources</li>
+                <li data-categories="working-farmers">Working with Farmers</li>
+                <li class="title_li">CIMMYT BY THE FUTURE</li>
+                <li data-categories="f-1">ENHANCING CIMMYT’S IMPACT</li>
+                <li data-categories="f-2">NOVEL GENETIC DIVERSITY AND TOOLS</li>
+                <li data-categories="f-3">GIVING FARMERS EASIER ACCESS TO BETTER VARIETIES</li>
+                <li data-categories="f-4">SUSTAINABLE INTENSIFICATION TO IMPROVE FARMER LIVELIHOODS</li>
+                <li data-categories="f-5">REACHING THE LAST MILE</li>
+                <li data-categories="f-6">BOOSTING GOOD NUTRITION AND INCOMES</li>
+                <li data-categories="f-7">THE “CIMMYT ACADEMY”: A New Dimension of Capacity Building</li>
+
             </ul>
             <ul name="grains" data-menu="categories" data-behaviour="exclusive">
                 <!-- EACH <LI> WILL BE A CATEGORY SORTER -->
@@ -51,24 +73,81 @@ and open the template in the editor.
                 <li data-categories="wheat">Wheat</li>
                 <li class="menu-selected" data-categories="wheat,maize">All</li>
             </ul>
-            <ul name="region-asia" data-menu="categories" data-behaviour="acumulative">
+            <ul name="regions" data-menu="categories" data-behaviour="acumulative">
                 <!-- EACH <LI> WILL BE A CATEGORY SORTER -->
                 
-                <li data-categories="china,thailand,indonesia">Asia</li>
+                <li class="title_li" data-categories="afghanistan,azerbaijan,bangladesh,bhutan,china,india,iran,kazakhstan,kyrgyzstan,maldives,nepal,pakistan,philippines,south-korea,sri-lanka,tajikistan,thailand,turkey,uzbekistan,yemen">Asia</li>
                 <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
-                <li data-categories="china">China</li>
+               
                 <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" -->
-                <li data-categories="thailand">Thailand</li>
-                <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" OR "corn" -->
-                <li data-categories="indonesia">Indonesia</li>
                 
-                <li data-categories="brazil,peru,venezuela">Latinamerica</li>
-                <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
-                <li data-categories="brazil">Brazil</li>
-                <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" -->
-                <li data-categories="peru">Peru</li>
                 <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" OR "corn" -->
-                <li data-categories="venezuela">Venezuela</li>
+                <li  data-categories="afghanistan"><span class="land-title">Afghanistan</span><span class="flag flag-af"></span></li>
+                <li data-categories="azerbaijan"><span class="land-title">Azerbaijan</span><span class="flag flag-az"></span></li>
+                <li  data-categories="bangladesh"><span class="land-title">BANGLADESH</span><span class="flag flag-bd"></span></li>
+                <li  data-categories="bhutan"><span class="land-title">bhutan</span><span class="flag flag-bt"></span></li>
+                 <li  data-categories="china"><span class="land-title">China</span><span class="flag flag-cn"></span></li>
+                <li  data-categories="india"><span class="land-title">INDIA</span><span class="flag flag-in"></span></li>
+                <li  data-categories="iran"><span class="land-title">Iran</span><span class="flag flag-ir"></span></li>
+                <li  data-categories="kazakhstan"><span class="land-title">Kazakhstan</span><span class="flag flag-kz"></span></li>
+                <li  data-categories="kyrgyzstan"><span class="land-title">Kyrgyzstan</span><span class="flag flag-kg"></span></li>
+                <li  data-categories="maldives"><span class="land-title">maldives</span><span class="flag flag-mv"></span></li>
+                <li  data-categories="nepal"><span class="land-title">nepal</span><span class="flag flag-np"></span></li>
+                <li  data-categories="pakistan"><span class="land-title">pakistan</span><span class="flag flag-pk"></span></li>
+                <li  data-categories="philippines"><span class="land-title">Philippines</span><span class="flag flag-ph"></span></li>
+                <li  data-categories="south-korea"><span class="land-title">South Korea</span><span class="flag flag-kr"></span></li>
+                <li  data-categories="sri-lanka"><span class="land-title">sri lanka</span><span class="flag flag-lk"></span></li>
+                <li  data-categories="india"><span class="land-title">Tajikistan</span><span class="flag flag-tj"></span></li>
+                <li  data-categories="thailand"><span class="land-title">Thailand</span><span class="flag flag-th"></span></li>
+                <li  data-categories="turkey"><span class="land-title">Turkey</span><span class="flag flag-tr"></span></li>
+                <li  data-categories="uzbekistan"><span class="land-title">Uzbekistan</span><span class="flag flag-uz"></span></li>
+                <li  data-categories="yemen"><span class="land-title">Yemen</span><span class="flag flag-ye"></span></li>
+                
+                <li class="title_li" data-categories="armenia,benin,egypt,ethiopia,ghana,kenya,malawi,mali,mozambique,nigeria,rwanda,south-africa,sudan,tanzania,uganda,zambia,zimbabwe">Latinamerica</li>
+                <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
+                <li  data-categories="colombia"><span class="land-title">Colombia</span><span class="flag flag-co"></span></li>
+                <li  data-categories="cuba"><span class="land-title">Cuba</span><span class="flag flag-cu"></span></li>
+                <li  data-categories="ecuador"><span class="land-title">ecuador</span><span class="flag flag-ec"></span></li>
+                <li  data-categories="guatemala"><span class="land-title">guatemala</span><span class="flag flag-gt"></span></li>
+                <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" -->
+                 <li  data-categories="mexico"><span class="land-title">Mexico</span><span class="flag flag-mx"></span></li>
+                <li  data-categories="peru"><span class="land-title">Peru</span><span class="flag flag-pe"></span></li>
+                
+                <li class="title_li" data-categories="colombia,cuba,ecuador,guatemala,peru,mexico">Africa</li>
+                <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
+                <li  data-categories="armenia"><span class="land-title">Armenia</span><span class="flag flag-am"></span></li>
+                <li  data-categories="benin"><span class="land-title">Benin</span><span class="flag flag-bj"></span></li>
+                <li  data-categories="egypt"><span class="land-title">Egypt</span><span class="flag flag-eg"></span></li>
+                <li  data-categories="ethiopia"><span class="land-title">Ethiopia</span><span class="flag flag-et"></span></li>
+                <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" -->
+                 <li  data-categories="kenya"><span class="land-title">Kenya</span><span class="flag flag-ke"></span></li>
+                <li  data-categories="malawi"><span class="land-title">Malawi</span><span class="flag flag-mw"></span></li>
+                <li  data-categories="mali"><span class="land-title">Mali</span><span class="flag flag-ml"></span></li>
+                <li  data-categories="mozambique"><span class="land-title">Mozambique</span><span class="flag flag-mz"></span></li>
+                <li  data-categories="nigeria"><span class="land-title">Nigeria</span><span class="flag flag-ng"></span></li>
+                <li  data-categories="south-africa"><span class="land-title">South Africa</span><span class="flag flag-sa"></span></li>
+                <li  data-categories="sudan"><span class="land-title">Sudan</span><span class="flag flag-sd"></span></li>
+                <li  data-categories="tanzania"><span class="land-title">Tanzania</span><span class="flag flag-tz"></span></li>
+                <li  data-categories="uganda"><span class="land-title">Uganda</span><span class="flag flag-ug"></span></li>
+                <li  data-categories="zambia"><span class="land-title">Zambia</span><span class="flag flag-zm"></span></li>
+                <li  data-categories="zimbabwe"><span class="land-title">Zimbabwe</span><span class="flag flag-zw"></span></li>
+                
+                <li class="title_li" data-categories="georgia,germany,italy,netherlands">Europe</li>
+                <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
+                <li  data-categories="georgia"><span class="land-title">Georgia</span><span class="flag flag-ge"></span></li>
+                <li  data-categories="germany"><span class="land-title">Germany</span><span class="flag flag-de"></span></li>
+                <li  data-categories="italy"><span class="land-title">Italy</span><span class="flag flag-it"></span></li>
+                <li  data-categories="netherlands"><span class="land-title">Netherlands</span><span class="flag flag-nl"></span></li>
+                <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" OR "corn" -->
+                <li class="title_li" data-categories="australia">Oceania</li>
+                <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
+                <li  data-categories="australia"><span class="land-title">Australia</span><span class="flag flag-au"></span></li>
+               
+                <li class="title_li" data-categories="united-states">North America</li>
+                <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
+                <li  data-categories="united-states"><span class="land-title">United States</span><span class="flag flag-us"></span></li>
+                <!-- This element will toggle Cards containing categories that have both "wheat" AND "rye" OR "corn" -->
+                
             </ul>
             
             
@@ -113,11 +192,86 @@ and open the template in the editor.
             //The given array/json will provide the information on the cards that need to be
             //rendered.
 
+            /**
+             * Example of a data array for feeding the CloudBrowser
+             * @namespace DataExample
+             * @type Array
+             */
+            var exampleData = [
+                {
+                    /**
+                     * Sets the size (css class) of the card.
+                     * Posible defined values are: "csmall","cmedium","clarge","cxlarge".
+                     * You can set custom size classes on the css.
+                     * @type type
+                     */
+                    size: "clarge", //DEFAULT clarge
+                    /**
+                     * This array of string will set the card's designated categories.
+                     * @type Array<string>
+                     */
+                    categories: ["wheat", "topic1","china"],
+                    /**
+                     * Title of the card to be displayed on top.
+                     * @type {string}
+                     */
+                    title: "Video",
+                    /**
+                     * Type of card to be rendered.
+                     * Posible values: "video","text","image","custom"
+                     * @type type
+                     */
+                    type: "video",
+                    /**
+                     * URL Path to the resource to render.
+                     * video:Only supports MP4
+                     * @type {string}
+                     */
+                    source: "assets/example.mp4",
+                    /**
+                     * Content to render inside the card's content block.
+                     * This will be render bellow the image or video if the 
+                     * card's type is set as "video", "image" or "custom".
+                     * 
+                     * This content can be either a text string or a renderable element
+                     * (DOMElement or jQuery object)
+                     * NOTE: Renderable content is only set if the "type" property is set to "custom"
+                     * 
+                     * @type {string|DOMElement|jQuery}
+                     */
+                    content: null,
+                    caption:"Hello there"
+                },
+                {
+                    size: "cxlarge", //DEFAULT clarge
+                    categories: ["topic1","maize","brazil"],
+                    title: "Text",
+                    type: "text",
+                    content: "Lorem ipsum dolor",
+                    caption:"I'm caption"
+                },
+                {
+                    size: "clarge", //DEFAULT clarge
+                    categories: ["topic2","maize","thailand"],
+                    title: "Custom",
+                    type: "custom",
+                    content: "<p>Lorem ipsum</p><p>Dolor blabla bla</p>",
+                    caption:"And this is another"
+                },
+                {
+                    size: "cmedium", //DEFAULT clarge
+                    categories: ["topic3","wheat","peru"],
+                    title: "Image",
+                    type: "image",
+                    source: "assets/example.jpg",
+                    caption:"Finally this one"
+                }
+            ];
 
             //EXAMPLE OF DATA INJECTION
             //This example will inject the "exampleData" array into the CloudBrowser
             //This will clear the current stage of any objects and render the new injected data.
-            CloudBrowser.render("js/allmedia_multicountry.json");
+            CloudBrowser.render(exampleData);
             
             
             //Lock when handle
@@ -136,7 +290,7 @@ and open the template in the editor.
             // user hasn't interacted with the stage in the past 3 minutes (180 seconds)
             // Once this time has passed the system will be able to override.
             Connector.observe(function(data){
-                CloudBrowser.selectCategories(data.tags);
+                CloudBrowser.selectCategories(data);
                 //Unlock after data set
                 Connector.unlock();
             });

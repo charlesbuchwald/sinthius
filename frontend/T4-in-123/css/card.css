@@ -17,7 +17,7 @@ and open the template in the editor.
     height:auto;
     opacity: 1;
     display:inline-block;
-    background-color: blue;
+    background-color: #fff;
 }
 
 .card .card-content{
@@ -25,7 +25,7 @@ and open the template in the editor.
     position: relative;
     width: auto;
     height: auto;
-    background: #fff;
+    background-color: #1F1F1F;
     padding: 10px;
     
     -webkit-transition: box-shadow 0.4s ease-in-out;
@@ -98,3 +98,4 @@ and open the template in the editor.
     text-align: left;
     width: 100%;
 }
+

@@ -7,13 +7,58 @@ and open the template in the editor.
     Created on : Jul 23, 2016, 8:59:37 PM
     Author     : Sergio Gómez <sergio@tequilalabs.mx>
 */
+/* ------------------------------fonts ----------------------------*/
+@font-face {
+  font-family: 'heuristica';
+  src: url('../fonts/Heuristica-Regular.otf')  format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'heuristica-italic';
+  src: url('../fonts/Heuristica-Italic.otf')  format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'heuristica-bold';
+  src: url('../fonts/Heuristica-Bold.otf')  format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'museo-sans-100';
+  src: url('../fonts/MuseoSans-100.otf?#iefix') format('embedded-opentype'),  url('../fonts/MuseoSans-100.otf')  format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo-sans-500';
+  src: url('../fonts/MuseoSans-500.otf?#iefix') format('embedded-opentype'),  url('../fonts/MuseoSans-500.otf')  format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'museo-sans-900';
+  src: url('../fonts/MuseoSans-900.otf?#iefix') format('embedded-opentype'),  url('../fonts/MuseoSans-900.otf')  format('opentype');
+  font-weight:900;
+  font-style: normal;
+}
+
 
 body{
     background-color: #eaeaea;
     margin:0;
     padding:0;
-}
+    color: #DDD4B0;
+    font-family: 'museo-sans-500';
 
+}
+p {
+
+    font-family: 'museo-sans-500';
+}
 .stage{
     width:100%;
     height:100vh;
@@ -26,29 +71,209 @@ body{
 .categories-menu{
     position: fixed;
     width: 100%;
-    height: 100px;
-    background-color: rgba(255,255,255,0.3);
+    background-color: #1F1F1F;
     z-index: 99999;
     bottom:0;
     left:0;
+    height: 15vh;
 }
 
+
 .menu-selected{
-    border-bottom: 2px #aeaeff solid;
-    
+    color: #FFF;
+}
+ul{
+
+    list-style:none;
 }
 
 ul[data-menu="categories"]{
     position: relative;
     display: block;
 }
+ul[name="topics"]{
+    position:fixed;
+    left: 0vw;
+    bottom:0;
+    width:30vw;
+    height:50vh;
+    overflow-y: scroll;
+    overflow-x: visible;
+    background-color: #1F1F1F;
+}
+ul li{font-family: 'museo-sans-900';
+background-position: -10px 0%;
+background-size: 50px;
+background-repeat: no-repeat;color: #DDD4B0;letter-spacing: 1px;text-transform: uppercase;}
+ul[name="topics"] li{
+padding-left:20%;
+}
 ul[data-menu="categories"] li{
     position: relative;
-    display: inline-block;
-    padding: 1em;
+    float:left;
+    clear: both;
+    padding: 1em 0 0 10%;
+    width: 80%;
     font-size: 16px;
-    color:#444;
-    background-color:#fff;
-    margin: 5px;
- 
+    /* color:#444; */
+    margin: 1vh 0;
 }
+ul[name="topics"] li:nth-child(2){
+ background-image:url(../assets/AgriculturalInnovation.svg);
+
+}
+ul[name="topics"] li:nth-child(3){
+ background-image:url(../assets/CerealsInSouth.svg);
+ /* background-position: -10% center; */
+ /* background-size: 50px; */
+ /* background-repeat: no-repeat; */
+}
+ul[name="topics"] li:nth-child(4){
+ background-image:url(../assets/Disease_Wheat.svg);
+
+}
+ul[name="topics"] li:nth-child(5){
+ background-image:url(../assets/DroughtTolerantM.svg);
+
+}
+ul[name="topics"] li:nth-child(6){
+ background-image:url(../assets/FoodForThe.svg);
+
+}
+ul[name="topics"] li:nth-child(7){
+ background-image:url(../assets/Gender.svg);
+
+}
+ul[name="topics"] li:nth-child(8){
+ background-image:url(../assets/HeatStress_Maize.svg);
+
+}
+ul[name="topics"] li:nth-child(9){
+ background-image:url(../assets/NutritionMarketGrains.svg);
+
+}
+ul[name="topics"] li:nth-child(10){
+ background-image:url(../assets/RapidResponse.svg);
+
+}
+ul[name="topics"] li:nth-child(11){
+ background-image:url(../assets/SeedDistribution.svg);
+
+}
+ul[name="topics"] li:nth-child(12){
+ background-image:url(../assets/SustainableIntensification.svg);
+
+}
+ul[name="topics"] li:nth-child(13){
+ background-image:url(../assets/Unlocking.svg);
+
+}
+ul[name="topics"] li:nth-child(14){
+ background-image:url(../assets/WorkingWithF.svg);
+
+}
+ul[name="topics"] li:nth-child(16){
+ background-image:url(../assets/BoostingGoog.svg);
+
+}
+ul[name="topics"] li:nth-child(17){
+ background-image:url(../assets/EnhacingCimmyt.svgz);
+
+}
+ul[name="topics"] li:nth-child(18){
+ background-image:url(../assets/GivingFarmers.svgz);
+
+}
+ul[name="topics"] li:nth-child(19){
+ background-image:url(../assets/Novel-genetic.svgz);
+
+}
+ul[name="topics"] li:nth-child(20){
+ background-image:url(../assets/ReachingTheLAst.svgz);
+
+}
+ul[name="topics"] li:nth-child(21){
+ background-image:url(../assets/SustIntensification.svgz);
+
+}
+ul[name="topics"] li:nth-child(22){
+ background-image:url(../assets/TheCimmytA.svg);
+
+}
+
+
+ul[name="grains"]{
+      position:fixed;
+      left: 32vw;
+      bottom:0;
+      width:30vw;
+      /* height:50vh; */
+      overflow-y: scroll;
+      overflow-x: visible;
+      background-color: #1F1F1F;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 1vh;
+}
+ul[name="grains"] li{
+  float:left;
+  width: auto;
+  clear: none;
+  height: 10vh;
+  padding: 0;
+  text-align: center;
+  width: 23%;
+}
+ul[name="grains"] li:nth-child(1){
+  background-size: 70% 70%;
+  background-position: bottom center;
+  background-image:url(../assets/maze.svg);
+}
+ul[name="grains"] li:nth-child(2){
+    background-size: 70% 70%;
+  background-position: bottom center;
+  background-image:url(../assets/wheat.svg);
+
+}
+ul[name="regions"]{
+     position: fixed;
+     right: 0vw;
+     bottom: 0;
+     width: 41vw;
+     height: 50vh;
+     overflow-y: scroll;
+     overflow-x: visible;
+     background-color: #1F1F1F;
+     padding: 0 3vw;
+}
+ul[name="regions"] li{
+    float:left;
+    clear:initial;
+    width: 20%;
+    text-align: center;
+    padding: 1vh 1vw;
+    position: relative;
+    height: 3vh;
+    }
+ul[name="regions"] li .land-title{position: absolute;left: 0;right: 0;bottom: 0;}
+    ul[name="regions"] li .flag{position: absolute;}
+
+    ul[name="regions"] li.title_li{
+    float:left;
+    width:100%;
+    margin: 0;
+    padding: 0;
+    }
+
+ul[data-menu="categories"] li.title_li {
+    font-size:120%;
+    text-align: center;
+    font-weight:900;
+    margin: 6vh 0 2vh 0;
+    }
+ul[data-menu="categories"] li.title_li::before {
+content:' ';
+background-image:url(assets/Arrows-T4-01.svg);
+width:30px;
+height:10px;
+    }
