@@ -166,6 +166,7 @@
             
             //OTHER ATTRIBS
             pointVector.on("click",function(event){
+                
                 me.trigger(d3.event);
             });
             
@@ -173,6 +174,7 @@
             var translation = me.projection([data.latitude+Math.round(Math.random()),data.longitude+Math.round(Math.random())]);
             
             pointVector.attr("transform", function() {return "translate(" + translation + ")";});
+            pointVector.attr("selected",false);
             
             this.point = pointVector;
             this.realPosition = translation;
@@ -202,7 +204,7 @@
             var dom = Card.createCardElement(this.data);
             this.macroCanvas.appendChild(dom);
             
-            this.card = new Card(dom,{pointPosition:this.realPosition});
+            this.card = new Card(dom,{pointPosition:this.realPosition}, this.point);
             
         },
         /**
@@ -211,6 +213,7 @@
          * @returns {undefined}
          */
         trigger:function(event){
+            var me = this;
             var x = event.clientX + this.radius;
             var y = event.clientY + this.radius;
             var mc = $(this.macroCanvas);
@@ -222,7 +225,17 @@
             }
             
             this.card.moveTo(x,y);
-            this.card.toggle();
+            this.card.toggle(function(){
+                this.reset();
+                if(this.isHidden){
+                    this.point.attr("selected","true");
+                }else{
+                    this.point.attr("selected","false");
+                }
+                
+            });
+            
+            
         },
         /**
          * Given the category the method will return a boolean if the card matches the category

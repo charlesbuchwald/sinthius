@@ -23,7 +23,7 @@
      * @param {Object} [opts]
      * @constructor
      */
-    var Card = function (ele, opts) {
+    var Card = function (ele, opts, parent) {
         this.DURATION = 300;
 
         //CONSTANTS CLASSES FOR THE LAYERS
@@ -34,7 +34,8 @@
         //CONSTANTS FOR SCALE LIMITS
         this.SCALE_ULIMIT = 1.5;
         this.SCALE_ILIMIT = 1;
-
+        
+        this.point = parent;
         /**
          * Card Type
          * @public
@@ -134,6 +135,10 @@
          * @type {string}
          */
         this.previousLayerLevel = null;
+        /**
+         * Current state of the card
+         */
+        this.isHidden = true;
 
         //CALL TO PROTO METHOD init.
         this.init();
@@ -146,8 +151,18 @@
          * @public
          * @returns {undefined}
          */
-        toggle: function () {
-            $(this.element).toggle(this.DURATION);
+        toggle: function (callback) {
+            var me = this;
+            if(this.isHidden){
+                this.show(callback);
+            }else{
+                this.hide(callback);
+            }
+//            $(this.element).animate({
+//                height:"toggle"
+//            },this.DURATION,function(){
+//                callback && callback.call(me);
+//            });
             
         },
         /**
@@ -155,9 +170,13 @@
          * @public
          * @returns {undefined}
          */
-        show: function () {
-            $(this.element).show(this.DURATION);
+        show: function (callback) {
+            var me = this;
+            $(this.element).animate({height:"toggle"},this.DURATION,function(){
+                 callback && callback.call(me);
+            });
             $(this.element).find(".card").show();
+            this.isHidden = false;
         },
         /**
          * Hides and shows the proper elements within the card
@@ -195,8 +214,21 @@
          * @public
          * @returns {undefined}
          */
-        hide: function () {
-            $(this.element).hide(this.DURATION);
+        hide: function (callback) {
+            var me = this;
+            $(this.element).animate({height:"toggle"},this.DURATION,function(){
+                 callback && callback.call(me);
+            });
+//            $(this.element).hide();
+            this.isHidden = true;
+        },
+        /**
+         * Resets the position of the card
+         * @returns {undefined}
+         */
+        reset:function(){
+            this.move(this.originalX,this.originalY);
+            
         },
         /**
          * Inits the basic configurations on the object.
@@ -213,9 +245,9 @@
             this.ham = new Hammer(ele);
 
             //Hammer events
-            this.ham.on('panstart', function (evt) {
-                me.onPanStart(evt);
-            });
+//            this.ham.on('panstart', function (evt) {
+//                me.onPanStart(evt);
+//            });
 
             this.ham.on('panmove', function (evt) {
                 me.onPan(evt);
@@ -245,8 +277,9 @@
 
             this.originX = rect.left;
             this.originY = rect.top;
-
-
+            
+            this.originalX = rect.left;
+            this.originalY = rect.top;
 
             //DEFAULT LAYER BOTTOM
             this.moveLayerBottom();
@@ -401,6 +434,7 @@
             tm = this.validateTransformation(tm);
             if (tm) {
                 var value = [
+                    'translate3d(' + tm.translate.x + 'px, ' + tm.translate.y + 'px, 0)',
                     'scale(' + tm.scale + ', ' + tm.scale + ')',
                     'rotate3d(' + tm.rx + ',' + tm.ry + ',' + tm.rz + ',' + tm.angle + 'deg)'
                 ];
