@@ -184,7 +184,7 @@
          * @returns {undefined}
          */
         addCard: function (data) {
-            var dom = Card.createCardElement(data);
+            var dom = Card.createCardElement(data,this.Configurations);
             this.element.appendChild(dom);
             this.menu.addCatetories(data.categories);
 

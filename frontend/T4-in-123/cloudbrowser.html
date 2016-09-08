@@ -178,7 +178,12 @@ and open the template in the editor.
                  * Creates a custom menu based on the available categories.
                  * @type {boolean}
                  */
-                automenu: false //DEFAULT TRUE
+                automenu: false, //DEFAULT TRUE,
+                /**
+                 * Sets the base media path for loading the data
+                 * @type String
+                 */
+                mediaPath:"assets/theme4"
             };
 
 
@@ -271,7 +276,7 @@ and open the template in the editor.
             //EXAMPLE OF DATA INJECTION
             //This example will inject the "exampleData" array into the CloudBrowser
             //This will clear the current stage of any objects and render the new injected data.
-            CloudBrowser.render(exampleData);
+            CloudBrowser.render("js/allmedia_multicountry.json");
             
             
             //Lock when handle

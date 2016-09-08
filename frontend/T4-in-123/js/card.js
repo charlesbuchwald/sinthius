@@ -618,7 +618,7 @@
      * @static
      * @returns {DOMElement}
      */
-    Card.createCardElement = function (data) {
+    Card.createCardElement = function (data,configurations) {
         var doc = document;
 
         //MAIN -
@@ -641,7 +641,7 @@
         title.text(data.title);
 
         //CARD CONTENT
-        var content = Card.createCardContent(data);
+        var content = Card.createCardContent(data,configurations);
         var caption = $(doc.createElement("div"));
         caption.addClass("caption");
         
@@ -668,11 +668,11 @@
      * @static
      * @returns {DOMElement}
      */
-    Card.createCardContent = function (data) {
+    Card.createCardContent = function (data,configurations) {
         var dom = null;
         var doc = document;
-        
-        data.source = "assets/t4"+data.source;
+        var path = configurations.mediaPath || "";
+        data.source = path+data.source;
 
         switch (data.type) {
             case "video":
