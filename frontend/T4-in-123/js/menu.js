@@ -55,6 +55,10 @@
 
         this.expander = $("[menu-action='expand']");
         this.colapser = $("[menu-action='collapse']");
+        
+        
+        this.max = this.container.attr("menu-max-size");
+        this.min = this.container.attr("menu-min-size");
 
         //this.init();
 
@@ -104,12 +108,12 @@
         },
         open: function () {
             this.container.animate({
-                height: "600px"
+                height: this.max
             });
         },
         close: function () {
             this.container.animate({
-                height: "100px"
+                height: this.min
             });
         },
         /**
