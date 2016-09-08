@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<title>T2-IN-3</title>
+	 <!-- Load Leaflet from a https CDN, not http. Look for updates at http://leafletjs.com/download.html -->
+  <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css"/>
+  <script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
+  <!-- load jQuery  -->
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <!-- load Font-Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <!-- Load leaflet.extra-markers from local directory -->
+  <script src="markers/leaflet.extra-markers.min.js"></script>
+  	<script type="text/javascript" charset="utf-8" src="js/script.js"></script>
+  <link rel="stylesheet" href="markers/leaflet.extra-markers.min.css">
+  <link rel="stylesheet" href="style.css">
+	<link href="css/styles.css"  media="all" rel="stylesheet">
+	<link href="css/custom.css"  media="all" rel="stylesheet">
+
+<!-- 
+	<script type="text/javascript" charset="utf-8" src="js/swipedrag.js"></script>
+ -->
+</head>
+<body class="black">
+
+
+<!-- ----------- standBy--------------- -->
+<standby class="museo">
+
+</standby>
+<!-- ----------- standBy--------------- -->
+<vplayer class="museo">
+
+<video autoplay="autoplay" controls>   
+<source src="" type="video/mp4" /> 
+Your browser does not support the video tag. 
+</video>
+</vplayer> 
+
+</standby>
+<div id="countTop">
+</div>
+<!-- ----------- scrollIndicators --------------- -->
+<!-- 
+<scrollindicator class="museo">
+<a class="scrolltop addArrow" ></a>
+<a class="scrollbottom addArrow" ></a>
+</scrollindicator>
+ -->
+<!-- ----------- menuInstruction --------------- -->
+<menutop class="museo">
+<a class="instructionsHide addInfo" ></a>
+
+</menutop>
+<!-- ----------- menu slides --------------- -->
+<menu class="museo">
+<a class="instructionsHide addInfo" ></a>
+<a class="menuHide addMenu" ></a>
+<a class="languageSwitch english addLang" ></a>
+<div id="menuHolder">
+
+</div>
+
+</menu>
+
+<!-- ----------- instructions --------------- -->
+<div class="instructions" style="background-image:url(assets/instructions.svg)" ></div>
+
+<!-- ----------- slide 1 --------------- -->
+<slide id="AN_INTERNATIONAL_CENTER" data-es="UN CENTRO INTERNACIONAL" class="top slide1" data-color="black">
+
+<div class="content slide1" >
+	<div class="heuristica h1 posttitle bold">
+	<span class="english">AN<br>INTERNATIONAL<br>CENTER</span>
+	<span class="spanish"> Un<br>centro<br>internacional</span>
+	</div>
+	
+	<div class="museo p text overflowscroll">
+	<div class="overflowscrollfade"></div>
+		<div class="overflowyscroll">
+			<div class="runningHolder">
+				<span class="english">
+				<p>
+				CIMMYT works with more than 300 global partners from the public and private sectors, national institutions, international research organizations and seed companies to mobilize global resources for research and development with the aim of strengthening the strategic impact of farming systems in Asia, Africa and Latin America. 
+				<br><br>
+				Since its founding in 1966, CIMMYT has assisted countries across the world to establish agricultural research and training programs. These collaborations evolved into the forty-five regional offices which CIMMYT has operated worldwide. These programs expanded research to address local needs and constraints, creating an ever-evolving pool of technologies, seed varieties and impact studies. The research programs were increasingly important players in harnessing proven technologies to combatting drought, heat, insects and diseases, and poor crop management practices which threaten sustainable agriculture worldwide. CIMMYT is a trusted leader in facilitating this global, cross-disciplinary partnership.
+				</p>
+				</span>
+				<span class="spanish">
+				<p>
+				El CIMMYT trabaja con más de 300 socios globales de los sectores público y privado, instituciones nacionales, organizaciones internacionales de investigación y empresas de semillas para movilizar recursos para la investigación y desarrollo con el objetivo de fortalecer el impacto estratégico de los sistemas agrícolas de Asia, África y América Latina. 
+				<br><br>
+				Desde su fundación en 1966, el CIMMYT ha ayudado a los países de todo el mundo a establecer programas de investigación y capacitación agrícola. Estas colaboraciones se tradujeron en las cuarenta y cinco oficinas regionales que el CIMMYT ha operado en todo el mundo. Estos programas ampliaron la investigación para abordar las necesidades y limitaciones locales, creando un fondo de tecnologías siempre en evolución, variedades de semillas, y estudios de impacto. Los programas de investigación fueron cada vez más importantes en el aprovechamiento de tecnologías probadas para combatir sequía, calor, insectos y enfermedades, así como las prácticas de manejo de cosechas pobres que amenazaban la agricultura sostenible en todo el mundo. El CIMMYT es un líder confiable en la facilitación de esta alianza global y multidisciplinaria.
+				</p>
+				</span>
+			</div>
+		</div>
+	</div>	
+</div>
+<div class="background"
+style="background-image:url(assets/Page-1/Image_P1.jpg)">
+</div>
+</slide>
+
+<!-- ----------- slide 2 --------------- -->
+<slide id="A_TOUR_THROUGH_THE_MEXICAN_FARMLANDS" data-es="Un recorrido por las tierras de cultivo mexicanas" class="top slide2 height50"
+ data-color="black">
+
+
+
+<div class="content slide2">
+	<div class="heuristica bold h1 title animate" 
+	animatein="top" 
+	animateout="top">
+	<span class="english">
+
+	CIMMYT<br>REGIONAL<br>OFFICES
+	</span>
+	<span class="spanish">
+	
+	Oficinas<br>regionales<br>del CIMMYT
+
+	</span>
+
+
+</div>
+<div id="title" class="title-text">
+    <h3>Insert Title of Leaflet Storymap</h3>
+    <small>Scroll <i class="fa fa-chevron-down"></i></small>
+  </div>
+
+  <div id="narration">
+    <div id="contents">
+      <div id="space-at-the-top" class="space-at-the-top"></div>
+    </div>
+  </div>
+
+  <div id="mapWorld">
+  </div>
+
+</slide>
+
+<!-- ----------- slide 3 --------------- -->
+<slide id="THE_OFFICE_OF_SPECIAL_STUDIES" data-es="La oficina de estudios especiales " class="top slide3 height50"
+ data-color="black">
+
+
+
+
+<div class="background running" running="toptiny">
+<!-- img class="fullHeightImage" src="assets/Page-3/BG_P3.jpg" / -->
+</div>
+
+<div class="content slide3">
+	<div class="heuristica bold h1 title animate" 
+	animatein="top" 
+	animateout="top">
+	<span class="english">
+	THE OFFICE<br>OF SPECIAL<br>STUDIES
+	</span>
+	<span class="spanish">
+	La oficina<br>de estudios<br>especiales 
+	</span>
+
+</div>
+
+	<div class="museo p text animate blackback running" running="toptiny"
+	animatein="bot" 
+	animateout="top">
+	<span class="english">
+	
+	<p>
+The scientists recognized that Mexico’s largely agriculture-based economy was unable to meet the needs of its population due to systemic gaps in education, research, organization and resources. In their extensive report they recommended that the Rockefeller Foundation send a team of qualified agricultural scientists to Mexico. 
+</p>
+	</span>
+	<span class="spanish">
+		<p>
+Los científicos reconocieron que la economía mexicana basada en gran parte en la agricultura era incapaz de satisfacer las necesidades de su población debido a lagunas sistémicas en educación, investigación, organización y recursos. En su extenso informe recomendaron que la Fundación Rockefeller enviara un equipo de científicos agrícolas a México. 
+		</p>
+	</span>
+	</div>
+</div>
+
+	
+
+<div class="background">
+<!-- 
+<img class="illu" src="assets/Page-3/Illustration-Maguey.svg" />
+ -->
+</div>
+</div>
+</slide>
+
+<!-- ----------- slide 4 --------------- -->
+<slide id="THE_EXPERIMENT_STATION_SYSTEM " data-es="EL SISTEMA DE ESTACIÓN EXPERIMENTAL" class="top slide4 height100"
+ data-color="black">
+<div class="year">
+	1944-1950
+	</div>
+<div class="background running" running="toptiny">
+<!-- 
+<img class="fullHeightImage" src="assets/Page-4/BG_P4.jpg" />
+ -->
+</div>
+
+<div class="content slide4">
+	<div class="heuristica bold h1 title animate" 
+	animatein="top" 
+	animateout="top">
+	<span class="english">
+		THE<br>EXPERIMENT<br>STATION SYSTEM 
+
+	</span>
+	<span class="spanish">
+		EL SISTEMA<br>DE ESTACIÓN<br>EXPERIMENTAL
+
+	</span>
+	</div>
+
+	
+
+</div>
+</slide>
+
+
+<!-- ----------- finish slides --------------- -->
+
+
+	<script type="text/javascript" charset="utf-8" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/hammer.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery.hammer.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/skrollr.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/skrollr.menu.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/setup_timeline.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/parallax_setup_timeline.js"></script>
+
+	
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+
+
+#mapWorld {
+    position: absolute;
+    right: 0;
+    width: 67vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+#narration {
+    position: absolute;
+    width: 33vw;
+    min-width: 300px;
+    left: 0px;
+    top: 0vh;
+    height: 100vh;
+    overflow: auto;
+    z-index: 99;
+    /* background: rgba(254,254,254, 1.0); */ /* to apply opacity background only. */
+}
+
+
+#contents, #contents2 {
+    position: absolute;
+    padding: 0%;
+    width: 100%;
+    margin-top: 32vh; /*Adjust if Title header needs more space */
+    height: 58vh; /* Adjust to fit max Description length, one setting for all; alternative is 100% */
+    overflow-y: scroll;
+    /* position: relative; */
+    overflow-x: visible;
+    z-index: 2;
+    /* margin-left: 10%; */
+    /* border-left: 1px solid black; */
+}
+#timeline {
+ position: absolute;
+ width: 6%;
+ left: 0px;
+ top: 32vh;
+ height: 61vh;
+ overflow: auto;
+ z-index: 0;
+ border-right: 1px solid black;
+}
+
+#contents .space-at-the-top, #contents2 .space-at-the-top {
+    height: 30px;
+    margin: 0px;
+}
+
+#contents .space-at-the-bottom, #contents2 .space-at-the-bottom {
+    height: 20vh;
+    margin: 0px;
+    text-align: left;
+    padding-top: 70px;
+    float: left;
+    width: 20vw;
+    position: relative;
+    background: white;
+    z-index: 100;
+}
+
+#chapter {
+    position: absolute;
+    z-index: 999;
+    margin: 10px;
+    display: block;
+    text-align: center;
+    color: #fff;
+}
+
+#title {
+    position: absolute;
+    left: 0px;
+    top: 10vh;
+    background-color: white;
+    width: 30vw;
+    min-width: 300px;
+    z-index: 100;
+    margin: 0px;
+    padding: 0px;
+}
+
+h3 {
+    margin-bottom: 0px;
+}
+
+.image-container {
+    /* margin + padding = imageContainerMargin in script.js */
+    /* Important for scrolling! */
+    margin: 50px 0 0 0;
+    padding: 0px 15% 20px 0vw;
+    text-align: left;
+    position: relative;
+    width: 58%;
+    float: right;
+}
+
+.image-container img {
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Three lines that center vertically */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.img-holder {
+    margin: 0px;
+    height: 200px;
+    max-height: 200px;
+    width: 100%;
+}
+
+.title-text {
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
+
+.chapter-header {
+    display: block;
+    text-align: center;
+    font-size: 120%;
+}
+
+.source {
+    font-size: 9pt;
+    margin: 20px;
+}
+
+.description {
+    margin: 20px;
+    text-align: left;
+    font-size: 11pt;
+    padding: 20px;
+}
+
+.image-container.inFocus {
+    opacity: 1.0;
+    /* background-color: #f0f0f0; */
+}
+.image-container.inFocus::before{content:'';background:url(assets/timeline-indicator.svg);position:absolute;width: 1.8vw;height: 2vw;left: -8vw;top: 0vh;font-size: 4em;}
+.image-container.outFocus {
+    /* opacity: 0.3; */
+    /* background-color: white; */
+}
+
+@media only screen and (max-device-width: 480px) {
+  ::-webkit-scrollbar {
+      display: none;
+  }
+  #mapWorld {
+    width: 100vw;
+  }
+  #title {
+    width: 80%;
+    left: 10%;
+    min-width: 0;
+  }
+  #narration {
+    width: 80%;
+    min-width: 0;
+    left: 10%;
+    background: none;
+    opacity: 0.8;
+  }
+  .description {
+      padding: 0;
+      padding-bottom: 10px;
+  }
+  .leaflet-control-container {
+      display: none;
+  }
+}
+
+
+.timelineYear {
+    position: absolute;
+    top: 0vh;
+    left: -9vh;
+    padding: 1vh;
+    z-index: 99;
+    font-size: 1.5em;
+    background-color: #fff;
+    border-bottom: 1px solid black;
+}
+#container1 .timelineYear {padding-top: 7vh;margin-top: -7vh;}
+
+div#rendermap, div#rendermap2  {
+    position: absolute;
+    width: 70vw;
+    right: 0;
+    height: 100vh;
+}
+div#rendermap2  {
+    position: absolute;
+    width: 55vw;
+    right: 8vw;
+    top:25vh;
+    height: 100vh;
+}
+#rendermap img, #rendermap2 img {
+    position: absolute;
+    width: 100%;
+}
+#rendermap img.inFocus, #rendermap2 img.inFocus {
+opacity:1;
+}
+#rendermap img.outFocus, #rendermap2 img.outFocus  {
+opacity:0;
+}
+
+.image-container p{
+    margin-bottom: 4vh;
+}
