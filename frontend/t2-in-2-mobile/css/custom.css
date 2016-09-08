@@ -7,30 +7,31 @@ slide{
 
 
 .slide1 .pretitle {
-    position: absolute;
-    left: 10%;
-    top: 9vh;
+    float:left;
+    margin-left: 10%;
+    margin-top: 9vh;
 }
 .slide1 .posttitle {
-    position: absolute;
-    right: 58vw;
-    top: 6vh;
+    float:right;
+    margin-right: 58vw;
+    margin-top: 6vh;
     /* font-size: 3.5em; */
 }
 .slide1 .title {
-    position: absolute;
-    top: 15vh;
+    float:right;
+    margin-top: 1vh;
     text-align: right;
-    right: 58vw;
+    margin-right: 58vw;
     font-family: "heuristica";
     font-size: 5em;
 }
 .slide1 .text{
-  position: absolute;
-  left: 12.5vw;
-  top: 40vh;
-  height: 38vh;
-  width: 23vw;
+  float:left;
+  margin-left: 3.5vw;
+  margin-top: 108vh;
+  margin-bottom: 10vh;
+  /* height: 38vh; */
+  width: 90vw;
   vw;
   /* overflow: hidden; */
   /* font-size: 2em; */
@@ -41,127 +42,125 @@ slide{
   width: 100%;
   position: relative;
   z-index: 1;
-  /* left: 12.5vw; */
-  /* top: 30vh; */
+  /* margin-left: 12.5vw; */
+  /* margin-top: 30vh; */
   /* width: 23vw; */
-  vw;
+  
   /* font-size: 2em; */
   /* color: #191919; */
   }
  slide .image{
     position:absolute;
     bottom:0;
-    left:100;
+    margin-left:100;
     }
 .slide1 .pretext {
-    position: absolute;
-    left: 13%;
-    top: 29vh;
+    float:left;
+    margin-left: 13%;
+    margin-top: 29vh;
     font-weight: 500;
 }
 .slide1 .pretext2 {
-    position: absolute;
-    left: 13%;
-    top: 32vh;
+    float:left;
+    margin-left: 13%;
+    margin-top: 32vh;
     font-style: normal;
 }
-.slide1 .background {
-    background-position: bottom right;
-    background-size: 60%;
-    background-repeat: no-repeat;
-}
+.slide1 .background img{
+width:100%; height:auto;}
 /* ------------------------------slide2----------------------------*/
 .content.slide2 {
     color: #191919;
 }
 .content.slide2 .posttitle {
-    position: absolute;
-    right: 26%;
-    top: 85vh;
+    float:left;
+    margin-right: 26%;
+    margin-top: 85vh;
 }
 
 .content.slide2 .title {
-    position: absolute;
-    top: 10vh;
-    /* right: 26%; */
-    left: 25vw;
+    float:left;
+    margin-top: 10vh;
+    /* margin-right: 26%; */
+    margin-left: 25vw;
 }
 
 .content.slide2 .pretext {
-    position: absolute;
-    left: 13%;
-    top: 29vh;
+    float:left;
+    margin-left: 13%;
+    margin-top: 29vh;
     font-weight: 500;
 }
 .content.slide2 .pretext2 {
-    position: absolute;
-    left: 13%;
-    top: 32vh;
+    float:left;
+    margin-left: 13%;
+    margin-top: 32vh;
     font-style: normal;
 }
 
 .content.slide2 .text {
-    position: absolute;
-    right: 7vw;
-    top: 25.5vh;
-    width: 33vw;
-    height: 31vh;
+    float:left;
+    margin-left: 3.5vw;
+    margin-top: 114.5vh;
+    width: 90vw;
+    /* height: 31vh; */
     /* text-align: justify; */
     /* overflow: hidden; */
-    /* padding-left: 10vw; */
+    /* padding-margin-left: 10vw; */
 }
 .slide2 .overflowyscroll {
-    padding-left: 20vw;
-    margin-left: -20vw;
+    padding-margin-left: 20vw;
+    margin-margin-left: -20vw;
 }
 .slide2 .popup{
-    left: 0vw;
+    margin-left: 0vw;
     height: 41.5vh;
-    margin-top: 30vh;
+    margin-margin-top: 30vh;
 }
 /* ------------------------------slide3 ----------------------------*/
 .slide3 .content {
-     position: absolute;
-     left: 0vw;
-     top: 0vh;
+     float:left;
+     margin-left: 0vw;
+     margin-top: 0vh;
      width: 100vw;
-     height: 100vh;
+     /* height: 100vh; */
 }
 .slide3 .text {
-     position: absolute;
-     left: 13vw;
-     top: 48vh;
-     width: 27vw;
-     height: 47vh;
+     float:left;
+     margin-left: 5vw;
+     margin-top: 11vh;
+     width: 90vw;
+     /* height: 47vh; */
      /* overflow: hidden; */
 }
 .slide3 .title{
-    top: 8vh;
-    left: 10vw;
-    position: absolute;
+    margin-top: 8vh;
+    margin-left: 10vw;
+    float:left;
     width: 37vw;
     /* text-transform: uppercase; */
     }
-.slide3 .posttitle{top: 12vh;left: 5vw;}
+.slide3 .posttitle{margin-top: 12vh;margin-left: 5vw;}
 
-.slide3.bot .text{position: absolute;left: 5%;top: 35vh;width: 60%;}
-.slide3.bot .text2{position: absolute;left: 5%;top: 67vh;width: 60%;}
-.imageheader > .title{position:absolute;width: 43%;top: 50%;left: 0%;height: 32%;line-height: 300%;text-align:center;color:#FFF;background-color: rgba(0,0,0,0.4);}
+.slide3.bot .text{float:left;margin-left: 5%;margin-top: 35vh;width: 60%;}
+.slide3.bot .text2{float:left;margin-left: 5%;margin-top: 67vh;width: 60%;}
+.imageheader > .title{position:absolute;width: 43%;margin-top: 50%;margin-left: 0%;height: 32%;line-height: 300%;text-align:center;color:#FFF;background-color: rgba(0,0,0,0.4);}
 
     
 .slide3.scrollHor {
     float: left;
     /* position: initial; */
-    margin-top: 97vh;
+    margin-margin-top: 97vh;
     text-align: right;
 }
 
 .slide3 .scrollhorSlide {
   height: 80vh;
   bottom: 5vh;
-  right: 0;
-  top: auto;
-  width: 55vw;
+  margin-right: 0;
+  margin-left: 5vw;
+  margin-top: auto;
+  width: 90vw;
   overflow-y: hidden;
   padding: 0;
   }
@@ -169,13 +168,13 @@ slide{
 .slide3 .scrollhorSlide slider > div{
   width: 100%;
   height: 100%;
-  /* right: 5vh; */
+  /* margin-right: 5vh; */
   /* height: 50vh; */
   /* bottom: 5vh; */
   float: left;
-  /* top: 0; */
+  /* margin-top: 0; */
   position: relative;
-  padding-right: 40px;
+  padding-margin-right: 40px;
   }
 .slide3 .scrollhorSlide slider > div h3{
   float: left;
@@ -184,82 +183,84 @@ slide{
 }
   .slide3 .scrollhorSlide slider > div p{
     width: 43%;
-    margin-right: 7%;
+    margin-margin-right: 7%;
     margin-bottom: 1%;
     display: inline-block;
 }
 .slide3 menuHor{
-  position:absolute;
-  z-index: 22;
-  right: 0;
-  left: auto;
+  float: left;
+  /* z-index: 22; */
+  /* margin-right: 0; */
+  margin-left: 5vw;
   bottom: auto;
-  width: 55vw;
-  top: 3vh;
+  width: 90vw;
+  margin-top: 3vh;
   text-align: center;
+  position: relative;
   }
 
 /* ------------------------------slide4 ----------------------------*/
 .content.slide4 .posttitle {
-    position: absolute;
-    right: 26%;
-    top: 85vh;
+    float:left;
+    margin-right: 26%;
+    margin-top: 85vh;
 }
 
 .content.slide4 .title {
-    position: absolute;
-    top: 10vh;
-    /* right: 26%; */
-    left: 25vw;
+    float:left;
+    margin-top: 10vh;
+    /* margin-right: 26%; */
+    margin-left: 25vw;
 }
 
 
 .content.slide4 .pretext {
-    position: absolute;
-    left: 13%;
-    top: 29vh;
+    float:left;
+    margin-left: 13%;
+    margin-top: 29vh;
     font-weight: 500;
 }
 .content.slide4 .pretext2 {
-    position: absolute;
-    left: 13%;
-    top: 32vh;
+    float:left;
+    margin-left: 13%;
+    margin-top: 32vh;
     font-style: normal;
 }
 
 .content.slide4 .text {
-    position: absolute;
-    right: 28vw;
-    top: 28.5vh;
+    float:left;
+    margin-left: 5vw;
+    margin-top: 128.5vh;
     /* overflow: hidden; */
-    width: 29%;
+    width: 90vw;
     /* text-align: justify; */
-    height: 29vh;
+    /* height: 29vh; */
 }
 /* ------------------------------slide5----------------------------*/
 .slide5 .content {
-     position: absolute;
-     left: 0vw;
-     top: 0vh;
+     float:left;
+     margin-left: 0vw;
+     margin-top: 0vh;
      width: 100vw;
-     height: 100vh;
+     /* height: 100vh; */
 }
 .slide5 .text {
-     position: absolute;
-     left: 13vw;
-     top: 21vh;
-     width: 31vw;
+     float:left;
+     margin-left: 5vw;
+     margin-top: 21vh;
+     width: 90vw;
 }
 .slide5 .title{
-    top: 17vh;
-    left: 5vw;
+    margin-top: 17vh;
+    margin-left: 5vw;
     }
 .slide5 .scrollhorSlide {
   height: 90vh;
+  float: left;
   bottom: auto;
-  right: 0;
-  top: 0vh;
-  width: 50vw;
+  margin-left: 5vw;
+  margin-top: 0vh;
+  width: 90vw;
   overflow-y: hidden;
   padding: 0;
   }
@@ -267,11 +268,11 @@ slide{
 .slide5 .scrollhorSlide slider > div{
   width: 100%;
   height: 100%;
-  /* right: 5vh; */
+  /* margin-right: 5vh; */
   /* height: 50vh; */
   /* bottom: 5vh; */
   float: left;
-  /* top: 0; */
+  /* margin-top: 0; */
   }
   .slide5 .scrollhorcont:nth-child(2) p {
     float: left;
@@ -285,7 +286,7 @@ slide{
 }
   .slide5 .scrollhorSlide slider .left, .slide5 .scrollhorSlide slider .right{
     width: 43%;
-    margin-right: 7%;
+    margin-margin-right: 7%;
     margin-bottom: 1%;
   float:left;
     line-height:100%;
@@ -299,36 +300,37 @@ slide{
    position:static
 }
 .slide5 menuHor{
-  position:absolute;
+  float: left;
+  position: relative;
   z-index: 22;
-  right: 0;
-  left: auto;
+  margin-right: 0;
+  margin-left: 5vw;
   bottom: 0vh;
-  width: 55vw;
-  top: auto;
+  width: 90vw;
+  margin-top: auto;
   text-align: center;
   }
 
 /* ------------------------------slide6----------------------------*/
 .slide6 .scrollhorSlide{
- position: absolute;
+ float:left;
  padding: 0;
  /* width: 100vw; */
  height: 100vh;
  -webkit-transition: all 0.5s ease-in-out;
  -moz-transition: all 0.5s ease-in-out;
  transition: all 0.5s ease-in-out;
- left: 0;
- right: 0;
- top: 0vh;
+ margin-left: 0;
+ margin-right: 0;
+ margin-top: 0vh;
  bottom: 0;
- left: 0;
+ margin-left: 0;
 }
 .slide6 .background, .instructions {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
+    float:left;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
     bottom: 0;
     height: 100%;
     width: 100%;
@@ -341,42 +343,42 @@ slide{
 
 /* ------------------------------slide7----------------------------*/
 .slide7 .title {
-    top: 12vh;
-    position: absolute;
-    left: 8vw;
+    margin-top: 12vh;
+    float:left;
+    margin-left: 8vw;
 }
 .slide7_2 .title {
-    top: 69vh;
-    position: absolute;
-    left: 8vw;
+    margin-top: 14vh;
+    float:left;
+    margin-left: 8vw;
 }
 .slide7 .midtitle {
-    top: 87vh;
-    right: 8%;
-    position: absolute;
+    margin-top: 87vh;
+    margin-right: 8%;
+    float:left;
     z-index: 22;
 }
 .slide7 .pretitle {
-    top: 17vh;
-    left: 8%;
+    margin-top: 17vh;
+    margin-left: 8%;
 }
-.slide7 .text {position: absolute;left: 14%;width: 30vw;top: 45vh;height: 41vh;/* overflow: hidden; */}
-.slide7_2 .text {position: absolute;left: 34vw;width: 60vw;top: 68.3vh;height: 41vh;/* overflow: hidden; */}
+.slide7 .text {float:left;margin-left: 5vw;width: 90vw;margin-top: 199vh;/* height: 41vh; *//* overflow: hidden; */}
+.slide7_2 .text {float:left;margin-left: 7vw;width: 77vw;margin-top: 12.3vh;/* height: 41vh; *//* overflow: hidden; */}
 .slide7_2 .text .left, .slide7_2 .text .right {
 float:left;
 width:45%;
-margin-right:5%;
+margin-margin-right:5%;
   }
 
 .slide7 .pretext{
-    top: 12vh;
+    margin-top: 12vh;
 }
 
 .slide7 .scrollhorSlide {
   height: 100vh;
   bottom: auto;
-  right: 0;
-  top: 0vh;
+  margin-right: 0;
+  margin-top: 0vh;
   width: 100vw;
   overflow: hidden;
   padding: 0;
@@ -385,11 +387,11 @@ margin-right:5%;
 .slide7 .scrollhorSlide slider > div{
   width: 100%;
   height: 100%;
-  /* right: 5vh; */
+  /* margin-right: 5vh; */
   /* height: 50vh; */
   /* bottom: 5vh; */
   float: left;
-  /* top: 0; */
+  /* margin-top: 0; */
   position: relative;
   }
 .slide7 .scrollhorSlide slider > div h3{
@@ -399,35 +401,35 @@ margin-right:5%;
 }
   .slide7 > .scrollhorSlide slider > div:last-child p{
     width: 43%;
-    margin-right: 7%;
+    margin-margin-right: 7%;
     margin-bottom: 1%;
     display: inline-block;
 }
 .slide7 menuHor{
   position:absolute;
   z-index: 22;
-  right: 0;
-  left: auto;
+  margin-right: 0;
+  margin-left: auto;
   bottom: auto;
   width: 100vw;
-  top: 2vh;
+  margin-top: 2vh;
   text-align: center;
   }
   .slide7 .arrowSlideNext, .slide7 .arrowSlidePrev{
   position:absolute;
   z-index: 30;
-  right: auto;
-  left: 89vw;
+  margin-right: auto;
+  margin-left: 89vw;
   bottom: auto;
   width: 6vw;
-  top: 0vh;
+  margin-top: 0vh;
   height: 100vh;
   text-align: center;
   background-image: url(../assets/slide-arrow.svg);
   background-position: 120% center;
   background-repeat: no-repeat;
   }
-.slide7 .arrowSlidePrev{left: 0%;transform: rotate(180deg);}
+.slide7 .arrowSlidePrev{margin-left: 0%;transform: rotate(180deg);}
 .arrowSlideNext {}
 
 .arrowSlideNext {}
@@ -437,7 +439,7 @@ margin-right:5%;
     background-repeat: no-repeat;
 }
 .slide7 .region {
-    position: absolute;
+    float:left;
     z-index: 30;
     width: 20%;
     height: 20%;
@@ -448,25 +450,25 @@ margin-right:5%;
 }
 .slide7 .region.americacentral {
  
- left: 30.1%;
-    top: 24.4%;
+ margin-left: 30.1%;
+    margin-top: 24.4%;
     width: 2.5%;
 }
 .slide7 .region.sudamerica {
  
-   left: 32.1%;
-    top: 34.2%;
+   margin-left: 32.1%;
+    margin-top: 34.2%;
     width: 4.2%;
 }
 .slide7 .region.africa {
-     left: 52.1%;
-    top: 30.2%;
+     margin-left: 52.1%;
+    margin-top: 30.2%;
     width: 3.1%;
 }
 .slide7 .region.india {
  
-  left: 57.4%;
-    top: 25.5%;
+  margin-left: 57.4%;
+    margin-top: 25.5%;
     width: 12.1%;
 }
 .slide7 .scrollhorcont.current .region{
@@ -478,27 +480,27 @@ margin-right:5%;
 
 
 .slide8 .scrollhorSlide{
- position: absolute;
+ float:left;
  padding: 0;
  /* width: 100vw; */
  height: 100vh;
  -webkit-transition: all 0.5s ease-in-out;
  -moz-transition: all 0.5s ease-in-out;
  transition: all 0.5s ease-in-out;
- left: 0;
- right: 0;
- top: 0vh;
+ margin-left: 0;
+ margin-right: 0;
+ margin-top: 0vh;
  bottom: 0;
- left: 0;
+ margin-left: 0;
  /* z-index: 22; */
 }
-.slide8 .title{left: 14vw;top: 15vh;z-index: 0;position: absolute;}
-.slide8 .text{left: 14vw;top: 43.2vh;z-index: 0;position: absolute;width: 29vw;}
+.slide8 .title{margin-left: 14vw;margin-top: 15vh;z-index: 0;float:left;}
+.slide8 .text{margin-left: 5vw;margin-top: 8.2vh;z-index: 0;float:left;width: 90vw;}
 .slide8 .scrollhorcont .slideIn{
-  /* right: auto; */
+  /* margin-right: auto; */
   /* width: 30vw; */
   /* overflow-y:scroll; */
-  padding-top: 30vh;
+  padding-margin-top: 30vh;
   background-color: rgba(255,255,255,1);
 }
 .slide8 .text .left{
@@ -511,7 +513,7 @@ margin-right:5%;
   width:45%;}
   .slide7 > .scrollhorSlide slider > div:last-child p{
     width: auto;
-    margin-right: 0;
+    margin-margin-right: 0;
     
 }
 .slide8.scrollhor{
@@ -521,32 +523,33 @@ margin-right:5%;
 .slide8 .scrollhorSlide {
   height: 80vh;
   bottom: 5vh;
-  right: 9vw;
-  left: auto;
-  top: auto;
-  width: 45vw;
+  /* margin-right: 9vw; */
+  margin-left: 5vw;
+  margin-top: auto;
+  width: 90vw;
   overflow-y: hidden;
   padding: 0;
+  float: left;
   }
 
 .slide8 .scrollhorSlide slider > div{
   width: 100%;
   height: 100%;
-  /* right: 5vh; */
+  /* margin-right: 5vh; */
   /* height: 50vh; */
   /* bottom: 5vh; */
   float: left;
-  /* top: 0; */
+  /* margin-top: 0; */
   position: relative;
   }
   .slide8 .scrollhorSlide slider > div img{
   width: 100%;
   height: auto;
-  /* right: 5vh; */
+  /* margin-right: 5vh; */
   /* height: 50vh; */
   /* bottom: 5vh; */
   float: left;
-  /* top: 0; */
+  /* margin-top: 0; */
   position: relative;
   }
 .slide8 .scrollhorSlide slider > div h3{
@@ -556,82 +559,83 @@ margin-right:5%;
 }
   .slide8 .scrollhorSlide slider > div p{
     width: 43%;
-    margin-right: 7%;
+    margin-margin-right: 7%;
     margin-bottom: 1%;
     display: inline-block;
 }
 .slide8 menuHor{
-  position:absolute;
+  float: left;
   z-index: 22;
-  right: 9vw;
-  left: auto;
+  /* margin-right: 9vw; */
+  margin-left: 5vw;
   bottom: auto;
-  width: 45vw;
-  top: 3vh;
+  width: 90vw;
+  margin-top: 3vh;
   text-align: center;
   }
 /* ------------------------------slide9----------------------------*/
 .slide9{color:#fff;}
 .content.slide9 .posttitle {
-    position: absolute;
-    right: 26%;
-    top: 85vh;
+    float:left;
+    margin-right: 26%;
+    margin-top: 85vh;
 }
 
 .content.slide9 .title {
-    position: absolute;
-    top: 18vh;
-    /* right: 26%; */
-    left: 50vw;
+    float:left;
+    margin-top: 19vh;
+    /* margin-right: 26%; */
+    margin-left: 50vw;
 }
 
 
 .content.slide9 .pretext {
-    position: absolute;
-    left: 13%;
-    top: 29vh;
+    float:left;
+    margin-left: 13%;
+    margin-top: 29vh;
     font-weight: 500;
 }
 .content.slide9 .pretext2 {
-    position: absolute;
-    left: 13%;
-    top: 32vh;
+    float:left;
+    margin-left: 13%;
+    margin-top: 32vh;
     font-style: normal;
 }
 
 .content.slide9 .text {
-    position: absolute;
-    right: 13vw;
-    top: 49.5vh;
+    float:left;
+    color: #000;
+    margin-left: 5vw;
+    margin-top: 76.5vh;
     /* overflow: hidden; */
-    width: 31%;
+    width: 90vw;
     /* text-align: justify; */
-    height: 44vh;
+    /* height: 44vh; */
 }
-.slide9 .popup.landscape.out{ height:50vh; left: 20vw; }
+.slide9 .popup.landscape.out{ height:50vh; margin-left: 20vw; }
 .slide9 .fullHeightImage {
     width: 105%;
 }
 /* ------------------------------slide10----------------------------*/
-.slide10 .title{left: 38vw;bottom: 20vh;position: absolute;}
-.slide10 .posttitle{left: 38vw;bottom: 8vh;position: absolute;}
+.slide10 .title{margin-left: 38vw;bottom: 20vh;float:left;}
+.slide10 .posttitle{margin-left: 38vw;bottom: 8vh;float:left;}
 .slide10 .slideIn{
-  /* right: auto; */
+  /* margin-right: auto; */
   /* width: 30vw; */
   /* overflow-y:scroll; */
-  padding-top: 30vh;
-  left: 0;
+  padding-margin-top: 30vh;
+  margin-left: 0;
   background-color: rgba(255,255,255,0.8);
 }
 .slide10 img{
- position: absolute;
+ float:left;
  width: 100vw;
- padding-top: 16vh;
- right: -40vw;
+ padding-margin-top: 16vh;
+ margin-right: -40vw;
  background-color: rgba(255,255,255,0.8);
 }
 
-.slide11 .text{position: absolute;left: 0vw;bottom: 0vh;width: 40vw;height: 40vh;padding-top: 60vh;/* font-size: 2em; *//* color: #191919; */}
+.slide11 .text{float:left;margin-left: 0vw;bottom: 0vh;width: 40vw;height: 40vh;padding-margin-top: 60vh;/* font-size: 2em; *//* color: #191919; */}
 .slide11 h3{
 
 
@@ -643,27 +647,27 @@ margin-bottom:2vh;
     background-position: 85% 25%;
     background-size: auto 60%;
     background-repeat: no-repeat;
-    position: absolute;
+    float:left;
 }
 /* ------------------------------slide13----------------------------*/
 
 .slide13 .content {
-     position: absolute;
-     left: 0vw;
-     top: 0vh;
+     float:left;
+     margin-left: 0vw;
+     margin-top: 0vh;
      width: 38vw;
 }
 .slide13 .text {
-     position: absolute;
-     left: 13vw;
-     top: 30vh;
+     float:left;
+     margin-left: 13vw;
+     margin-top: 30vh;
      width: 30vw;
 }
 .slide13 .title{
-    top: 17vh;
-    left: 5vw;
+    margin-top: 17vh;
+    margin-left: 5vw;
     }
-.slide13 .posttitle{top: 12vh;left: 5vw;}
+.slide13 .posttitle{margin-top: 12vh;margin-left: 5vw;}
 
 
 
@@ -671,7 +675,7 @@ margin-bottom:2vh;
 
 
 div#slideIn0 {
-    left: 5%;
+    margin-left: 5%;
     /* width: 25%; */
     padding: 5vh 3%;
 }
@@ -680,91 +684,104 @@ div#slideIn0 {
     margin-bottom:1em
 }
 div#slideBtn1 {
-    left: 41%;
+    margin-left: 41%;
 }
 
 div#slideBtn3 {
-    left: 51%;
+    margin-left: 51%;
 }
 
 
 div#slideBtn4 {
     width: 60px;
     height: 60px;
-    left: 22%;
-    top: 31vh;
+    margin-left: 22%;
+    margin-top: 31vh;
 }
 div#slideBtn5 {
     width: 60px;
     height: 60px;
-    left: 27%;
-    top: 36vh;
+    margin-left: 27%;
+    margin-top: 36vh;
 }
 div#slideBtn6 {
     width: 60px;
     height: 60px;
-    left: 37%;
-    top: 39vh;
+    margin-left: 37%;
+    margin-top: 39vh;
 }
 div#slideBtn7 {
     width: 60px;
     height: 60px;
-    left: 22.5%;
-    top: 45vh;
+    margin-left: 22.5%;
+    margin-top: 45vh;
 }
 div#slideBtn8 {
     width: 60px;
     height: 60px;
-    left: 13.5%;
-    top: 32vh;
+    margin-left: 13.5%;
+    margin-top: 32vh;
 }
 div#slideBtn9 {
     width: 60px;
     height: 60px;
-    left: 19%;
-    top: 20vh;
+    margin-left: 19%;
+    margin-top: 20vh;
 }
 div#slideBtn10 {
     width: 60px;
     height: 60px;
-    left: 23%;
-    top: 45vh;
+    margin-left: 23%;
+    margin-top: 45vh;
 }
 div#slideBtn11 {
     width: 60px;
     height: 60px;
-    left: 30%;
-    top: 44vh;
+    margin-left: 30%;
+    margin-top: 44vh;
 }
 div#slideBtn12 {
     width: 60px;
     height: 60px;
-    left: 29%;
-    top: 52vh;
+    margin-left: 29%;
+    margin-top: 52vh;
 }
 div#slideBtn13 {
     width: 60px;
     height: 60px;
-    left: 35%;
-    top: 66vh;
+    margin-left: 35%;
+    margin-top: 66vh;
 }
 div#slideBtn14 {
     width: 60px;
     height: 60px;
-    left: 40.5%;
-    top: 59vh;
+    margin-left: 40.5%;
+    margin-top: 59vh;
 }
 div#slideBtn15 {
     width: 60px;
     height: 60px;
-    left: 67%;
-    top: 76vh;
+    margin-left: 67%;
+    margin-top: 76vh;
 }
 
 #countTop{
     position: fixed;
-    top: 0;
-    left: 0;
+    margin-top: 0;
+    margin-left: 0;
     z-index:99;
     /* display: none; */
+}
+
+div#ICOM {
+    float: left;
+}
+
+div#mapRegions {
+    float: left;
+}
+
+#mapRegions img.fullWidthImage {
+    width: 100%;
+    position: absolute;
 }

@@ -104,7 +104,7 @@ body{ font-size:16px; font-family: 'museo-sans-500';}
 .museo{font-family: "museo-sans-500";/* font-weight: 100; */}
 p, .p{
   font-family: 'museo-sans-500';
-  font-size: 1.1em;
+  font-size: 1.4em;
   letter-spacing: 0.05em;
   line-height: 180%;
   }
@@ -345,7 +345,7 @@ menu {
     font-weight: 900 !important;
     margin: 0;
     padding: 0;
-    background-color:#FFF;
+    /* background-color:#FFF; */
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
@@ -490,8 +490,9 @@ a.scrollbottom {
 .languageSwitch {
     position: absolute;
     top: 11.5vh;
-    width: 3vw;
-    height: 2.4vw;
+    width: 4vw;
+    right: 0;
+    height: 4vw;
     background-position: center center;
     background-repeat:no-repeat;
 }
@@ -524,7 +525,7 @@ left:0vw;
 
 #skrollr-body{float: left;}
 parallax{float:left;width:100%;min-height: 100vh;}
-slide {float: left;position: static;right:0;top:0;left: 0;bottom: 0;z-index: 0;/* bottom:0; */min-height: 100vh;width: 100vw;-webkit-box-shadow: 0px 10px 43px -6px rgba(0,0,0,0.66);-moz-box-shadow: 0px 10px 43px -6px rgba(0,0,0,0.66);box-shadow: 0px 10px 43px -6px rgba(0,0,0,0.66);overflow:hidden;/* -webkit-transition: all 0.8s ease-in-out; */-moz-transition: all 0.8s ease-in-out;/* transition: all 0.8s ease-in-out; */}
+slide {float: left;position: static;right:0;top:0;left: 0;bottom: 0;margin: 0 0 10vh 0;z-index: 0;/* bottom:0; *//* min-height: 100vh; */width: 100vw;-webkit-box-shadow: 0px 10px 43px -6px rgba(0,0,0,0.66);-moz-box-shadow: 0px 10px 43px -6px rgba(0,0,0,0.66);box-shadow: 0px 10px 43px -6px rgba(0,0,0,0.66);overflow:hidden;/* -webkit-transition: all 0.8s ease-in-out; */-moz-transition: all 0.8s ease-in-out;/* transition: all 0.8s ease-in-out; */}
 
 slide.doubleheight{
 height:200vh;
@@ -776,14 +777,14 @@ swipeshow div{
 /* ------------------------------content ----------------------------*/
 
 .content {
-    position: absolute;
+    float: left;
     width: 100%;
-    height: 100vh;
-    bottom: 0;
-    top: 0;
-    left: 0;
+    /* height: 100vh; */
+    /* bottom: 0; */
+    /* top: 0; */
+    /* left: 0; */
     z-index: 21;
-    right: 0;
+    /* right: 0; */
 }
 .content.bot{
 top:100vh;
@@ -821,7 +822,7 @@ overflow:scroll;
 overflow-y:scroll;}
 
 .scrollhorSlide {
-    position: absolute;
+    float: left;
     top: 0;
     padding-top: 10vh;
     height: 80vh;
@@ -906,7 +907,7 @@ width:250px !important;
     position: relative;
     margin-top: 30px;
 }
-menuHor{position:absolute;z-index: 22;left: 40vw;right:0;top: 5vh;width: 55vw;}
+menuHor{/* position:absolute; *//* z-index: 22; *//* left: 40vw; *//* right:0; *//* top: 5vh; *//* width: 55vw; */}
 menuHor a{
 
   display:inline-block;
@@ -1058,9 +1059,7 @@ body{ font-size:6px; font-family: 'museo-sans-500';}
   display:none;
   }
   .languageSwitch {
- 
-    top: 6.5vh;
-
+ top: 1.5vh;
 }
 menu {
 
@@ -1069,5 +1068,5 @@ menu {
 slide {
   float: left;
   position: relative;
-  overflow: hidden !important;
+  /* overflow: hidden !important; */
 }
