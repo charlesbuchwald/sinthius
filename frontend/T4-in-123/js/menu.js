@@ -9,9 +9,9 @@
             //AMD MODULE
             typeof define === 'function' && define.amd ? define(factory) :
             //GLOBAL REFERENCE
-            global.Menu = factory($, document,Hammer);
+            global.Menu = factory($, document, Hammer);
 
-})(this, function ($, document,Hammer) {
+})(this, function ($, document, Hammer) {
     'use strict';
 
     /**
@@ -40,7 +40,7 @@
          * @protected
          */
         this.JQmenuHolder = $('ul[data-menu="categories"]');
-        
+
         this.container = $(".categories-menu");
 
         /**
@@ -53,6 +53,8 @@
          */
         this.finalArray = [];
 
+        this.expander = $("[menu-action='expand']");
+        this.colapser = $("[menu-action='collapse']");
 
         //this.init();
 
@@ -82,20 +84,33 @@
 
             //Hammer events
             this.ham.on('swipeup', function (evt) {
-                me.container.animate({
-                    height:"600px"
-                });
+                me.open();
             });
 
             this.ham.on('swipedown', function (evt) {
-                me.container.animate({
-                    height:"100px"
-                });
+                me.close();
             });
-            
-            
-            
+
+            this.expander.on("click", function () {
+                me.open();
+            });
+            this.colapser.on("click", function () {
+                me.close();
+            });
+
+
+
             this.recollectData();
+        },
+        open: function () {
+            this.container.animate({
+                height: "600px"
+            });
+        },
+        close: function () {
+            this.container.animate({
+                height: "100px"
+            });
         },
         /**
          * This menu will render
@@ -219,7 +234,7 @@
                 });
                 fdata.push(part);
             });
-            
+
             this.selectCallback && this.selectCallback.call(this, fdata);
         }
     };
