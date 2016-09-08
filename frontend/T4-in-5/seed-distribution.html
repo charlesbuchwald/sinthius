@@ -8,7 +8,9 @@
 	 <link rel="stylesheet" type="text/css" href="css/style.css" />
 	  <!-- LIBS -->
 	       <script src="js/jquery-3.1.0.min.js"></script>
+	       <script src="js/jquery.easing.1.3.js"></script>
         <script src="js/jquery.svg.pan.zoom.js"></script>
+       
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
@@ -68,6 +70,12 @@
 <div id="goto1">
 goto1
 </div>
+<div id="goto2">
+goto2
+</div>
+<div id="goto3">
+goto3
+</div>
 </body>
 <script>
 var svgPanZoom= $("svg").svgPanZoom(
@@ -78,8 +86,8 @@ var svgPanZoom= $("svg").svgPanZoom(
         drag: true, // enables drag and drop to move the SVG events
         dragCursor: "move" // cursor to use while dragging the SVG
     },
-    animationTime: 300, // time in milliseconds to use as default for animations. Set 0 to remove the animation
-    zoomFactor: 0.25, // how much to zoom-in or zoom-out
+    animationTime: 800, // time in milliseconds to use as default for animations. Set 0 to remove the animation
+    zoomFactor: 2, // how much to zoom-in or zoom-out
     maxZoom: 3, //maximum zoom in, must be a number bigger than 1
     panFactor: 100, // how much to move the viewBox when calling .panDirection() methods
     initialViewBox: { // the initial viewBox, if null or undefined will try to use the viewBox set in the svg tag. Also accepts string in the format "X Y Width Height"
@@ -92,11 +100,42 @@ var svgPanZoom= $("svg").svgPanZoom(
 
 );
 $('#goto1').click(function(){
-svgPanZoom.zoomOut();
+svgPanZoom.zoomOut(3);
 svgPanZoom.setCenter(200, 400);
-svgPanZoom.zoomIn(3);
+setTimeout(function () {
+//svgPanZoom.reset()
+
+                 }, 900);
+setTimeout(function () {
+//svgPanZoom.zoomIn(3);
+                 }, 1700);
+
 
 })
+$('#goto2').click(function(){
+svgPanZoom.zoomOut(3);
+svgPanZoom.setCenter(100, 200);
+setTimeout(function () {
+//svgPanZoom.reset()
 
+                 }, 900);
+setTimeout(function () {
+//svgPanZoom.zoomIn(3);
+                 }, 1700);
+
+
+})
+$('#goto3').click(function(){
+//svgPanZoom.zoomOut(3);
+setTimeout(function () {
+//svgPanZoom.reset()
+svgPanZoom.setCenter(600, 800);
+                 }, 800);
+setTimeout(function () {
+//svgPanZoom.zoomIn(3);
+                 }, 1600);
+
+
+})
 </script>
 </html>

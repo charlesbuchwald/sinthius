@@ -408,7 +408,7 @@ Copyright (C) 2014 Daniel Hoffmann Bernardes, Ícaro Technologies
               height: viewBox.height
             }, {
               duration: animationTime,
-              easing: "linear",
+              easing: "easeInOutCubic",
               step: (function(value, properties) {
                 var $div;
                 $div = $animationDiv;
