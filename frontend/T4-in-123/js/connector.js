@@ -93,14 +93,16 @@
         },
         /**
          * Becomes an observer of a node's changes in the data being set.
+         * @param {string} websocket URL
          * @param {function} callback Function to call when the socket sends a data change.
          * @public
          * @returns {undefined}
          */
-        observe: function (callback) {
+        observe: function (websocket,callback) {
             if (!this.observing) {
+                
                 var me = this;
-                var ws = new WebSocket(this.socketUrl);
+                var ws = new WebSocket(websocket);
 
                 //WHEN CONNECTION IS OPEN
                 ws.onopen = function () {
@@ -124,7 +126,7 @@
                         me.observe(callback);
                     },me.RECONNECT);
                 };
-
+                this.socketUrl = websocket;
                 this.socket = ws;
                 this.observing = true;
             }

@@ -194,116 +194,53 @@ and open the template in the editor.
             CloudBrowser.init();
 
 
-            //EXAMPLE OF INVOKING DATA POPULATE - CHANGE IF NEEDED
-            //In this example the system will automatically render new data that.
-            //The given array/json will provide the information on the cards that need to be
-            //rendered.
-
-            /**
-             * Example of a data array for feeding the CloudBrowser
-             * @namespace DataExample
-             * @type Array
-             */
-            var exampleData = [
-                {
-                    /**
-                     * Sets the size (css class) of the card.
-                     * Posible defined values are: "csmall","cmedium","clarge","cxlarge".
-                     * You can set custom size classes on the css.
-                     * @type type
-                     */
-                    size: "clarge", //DEFAULT clarge
-                    /**
-                     * This array of string will set the card's designated categories.
-                     * @type Array<string>
-                     */
-                    categories: ["wheat", "topic1","china"],
-                    /**
-                     * Title of the card to be displayed on top.
-                     * @type {string}
-                     */
-                    title: "Video",
-                    /**
-                     * Type of card to be rendered.
-                     * Posible values: "video","text","image","custom"
-                     * @type type
-                     */
-                    type: "video",
-                    /**
-                     * URL Path to the resource to render.
-                     * video:Only supports MP4
-                     * @type {string}
-                     */
-                    source: "assets/example.mp4",
-                    /**
-                     * Content to render inside the card's content block.
-                     * This will be render bellow the image or video if the 
-                     * card's type is set as "video", "image" or "custom".
-                     * 
-                     * This content can be either a text string or a renderable element
-                     * (DOMElement or jQuery object)
-                     * NOTE: Renderable content is only set if the "type" property is set to "custom"
-                     * 
-                     * @type {string|DOMElement|jQuery}
-                     */
-                    content: null,
-                    caption:"Hello there"
-                },
-                {
-                    size: "cxlarge", //DEFAULT clarge
-                    categories: ["topic1","maize","brazil"],
-                    title: "Text",
-                    type: "text",
-                    content: "Lorem ipsum dolor",
-                    caption:"I'm caption"
-                },
-                {
-                    size: "clarge", //DEFAULT clarge
-                    categories: ["topic2","maize","thailand"],
-                    title: "Custom",
-                    type: "custom",
-                    content: "<p>Lorem ipsum</p><p>Dolor blabla bla</p>",
-                    caption:"And this is another"
-                },
-                {
-                    size: "cmedium", //DEFAULT clarge
-                    categories: ["topic3","wheat","peru"],
-                    title: "Image",
-                    type: "image",
-                    source: "assets/example.jpg",
-                    caption:"Finally this one"
-                }
-            ];
-
             //EXAMPLE OF DATA INJECTION
             //This example will inject the "exampleData" array into the CloudBrowser
             //This will clear the current stage of any objects and render the new injected data.
             CloudBrowser.render("js/allmedia_multicountry.json");
-            
-            
+                
+            //WHEN THE CLOUD BROWSER DETECTS INTERACTION IT WILL INSTRUCT THE API TO LOCK.
             //Lock when handle
             CloudBrowser.onHandle(function(){
                 Connector.lock();
             });
-            //Lock when handle has timed-out
+            
+            //WHEN THE CLOUD BROWSER DETECTS THE USER STOPED INTERACTING, IT WILL INSTRUCT THE API TO UNLOCK
+            //Lock when handle stops
             CloudBrowser.onUnhandle(function(){
                 Connector.unlock();
             });
+            
+            
+            //MENU INIT
+            CloudBrowser.menu.init();
+            
+            
+            
+            //OBSERVER WEBSOCKET URL THAT THIS INTERACTIVE WILL LISTEN TO
+            Connector.configurations.websocket = "ws://localhost:4000/ws/observer"; //DEFAULT
+            
+            //THIS INTERACTIVE'S API URL ADDRESS
+            Connector.configurations.api = "http://localhost:4000/api"; //DEFAULT
 
 
-            //EXAMPLE OF INVOKING METHOD FOR SELECTING CATEGORIES. - CHANGE IF NEEDED
-            //In this example the system will automaticaly try to override the
-            // category selection every 10 seconds and select "corn" as filter; it will only achieve it if the
-            // user hasn't interacted with the stage in the past 3 minutes (180 seconds)
-            // Once this time has passed the system will be able to override.
+            //WHEN CONNECTOR'S "observe" METHOD IS USED A CALLBACK IS REGISTERED AND LATER INVOKED
+            //IT IS INVOKED WHEN THE CONFIGURED "Websocket" PUSHES DATA BACK INTO THE CLIENT
             Connector.observe(function(data){
-                CloudBrowser.selectCategories(data);
+                
+                //EXAMPLE OF INVOKING METHOD FOR SELECTING CATEGORIES. - CHANGE IF NEEDED
+                //In this example the system will automaticaly try to override the
+                // category selection every 10 seconds and select "corn" as filter; it will only achieve it if the
+                // user hasn't interacted with the stage in the past 3 minutes (180 seconds)
+                // Once this time has passed the system will be able to override.
+                
+                CloudBrowser.selectCategories(data.tags);
+                
+                //SINCE PUSHING DATA BY API CALL LOCKS THE NODE, A CALL TO UNLOCK IS SEND AFTER THE INFORMATION IS SET.
                 //Unlock after data set
                 Connector.unlock();
             });
             
-            //MENU INIT
-            CloudBrowser.menu.init();
 
         </script>
     </body>
