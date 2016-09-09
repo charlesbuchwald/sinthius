@@ -277,3 +277,17 @@ background-image:url(assets/Arrows-T4-01.svg);
 width:30px;
 height:10px;
     }
+
+
+a.button[menu-action=expand] {
+    position: absolute;
+    color: #fff;
+    top: 0;
+    z-index: 9;
+}
+a.button[menu-action=collapse] {
+    position: absolute;
+    color: #fff;
+    top: 0;
+    z-index: 9;
+}

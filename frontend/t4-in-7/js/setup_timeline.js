@@ -46,10 +46,11 @@
 	 $('popper text').removeClass('show');
 	   $('popper text').eq($(this).index()).addClass('show');
 	   $('popper').addClass('show').fadeIn();
+	   console.log('open');
 	 
 	 })
 	  $('popper.show').click(function(e){
-	
+	console.log('close');
 	 	$('popper text').removeClass('show');
 	  
 	   $('popper').removeClass('show').fadeOut();

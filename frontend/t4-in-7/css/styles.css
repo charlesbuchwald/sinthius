@@ -361,8 +361,8 @@ popper {
   right:0;
   top: 7vh;
   left: 26.8vw;
+  display: none;
   bottom: 0;
-
   /* bottom:0; */
   /* height: 100vh; */
   width: 46.2vw;
@@ -1313,4 +1313,32 @@ popper .expand {
     height: 4vh;
     top: 2.3%;
     transform: rotate(44deg);
+}
+
+text {
+    position: absolute;
+    margin: 15% 10% 10% 10%;
+    left: 0;
+    top: 0;
+    width: 80%;
+    height: 75%;
+    display: none;
+}
+
+text.show {
+    display: block;
+}
+
+text p {
+    font-size: 120%;
+    line-height: 150%;
+    float: left;
+    margin: 5vh;
+}
+
+text ul {
+    margin: 5vh;
+}
+text ul li{
+    margin: 2vh 0;
 }

@@ -12,7 +12,6 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css" />
         <link rel="stylesheet" type="text/css" href="css/stage.css" />
         <link rel="stylesheet" type="text/css" href="css/card.css" />
-        <link rel="stylesheet" type="text/css" href="css/filters.css" />
            <link rel="stylesheet" type="text/css" href="css/flags.css" />
         
         <!-- LIBS -->
@@ -33,12 +32,13 @@ and open the template in the editor.
             <!-- STAGE SPACE FILLED PROGRAMATICALLY BY "CloudBrowser#render" -->
         </div>
         
-        <div class="categories-menu" menu-max-size="600px" menu-min-size="100px">
-            <a class="button" menu-action="expand">expandir</a>
-            <a class="button" menu-action="collapse">colapsar</a>
+        <div class="categories-menu" >
+            
             <!-- EXAMPLE OF CUSTOM MENU -->
             <!-- ALL DATA CATEGORIES MENU SHOULD BE AN <UL> ELEMENT -->
-            <ul name="topics" data-menu="categories" data-behaviour="exclusive">
+            <ul name="topics" data-menu="categories" data-behaviour="exclusive" class="expandable" menu-max-size="600px" menu-min-size="100px">
+            <a class="button" menu-action="expand">expandir</a>
+            <a class="button" menu-action="collapse">colapsar</a>
                 <!-- EACH <LI> WILL BE A CATEGORY SORTER -->
                 <li class="title_li">TOPICS</li>
                 <li class="menu-selected" data-categories="agricultural-innovations">Agricultural Innovations</li>
@@ -66,14 +66,16 @@ and open the template in the editor.
                 <li data-categories="f-7">THE “CIMMYT ACADEMY”: A New Dimension of Capacity Building</li>
 
             </ul>
-            <ul name="grains" data-menu="categories" data-behaviour="exclusive">
+            <ul name="grains" data-menu="categories" data-behaviour="exclusive" >
                 <!-- EACH <LI> WILL BE A CATEGORY SORTER -->
                 <li data-categories="maize">Maize</li>
                 <!-- This element will toggle Cards containing categories "wheat" OR "rye" -->
                 <li data-categories="wheat">Wheat</li>
                 <li class="menu-selected" data-categories="wheat,maize">All</li>
             </ul>
-            <ul name="regions" data-menu="categories" data-behaviour="acumulative">
+            <ul name="regions" data-menu="categories" data-behaviour="acumulative" menu-max-size="600px" menu-min-size="100px">
+            <a class="button" menu-action="expand">expandir</a>
+            <a class="button" menu-action="collapse">colapsar</a>
                 <!-- EACH <LI> WILL BE A CATEGORY SORTER -->
                 
                 <li class="title_li" data-categories="afghanistan,azerbaijan,bangladesh,bhutan,china,india,iran,kazakhstan,kyrgyzstan,maldives,nepal,pakistan,philippines,south-korea,sri-lanka,tajikistan,thailand,turkey,uzbekistan,yemen">Asia</li>
