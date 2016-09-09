@@ -33,7 +33,7 @@
      * @param {Array} data             Data object for rendering the point.
      * @constructor
      */
-    var MapPoint = function (canvas,svg, projection, data) {
+    var MapPoint = function (canvas,svg, projection, data,configurations) {
         /**
          * D3 Easing curve for transitions.
          * @constant
@@ -109,6 +109,8 @@
          * @type Object
          */
         this.realPosition = {};
+        
+        this.configurations = configurations;
 
         //CALL TO PROTO METHOD init.
         this.init();
@@ -170,8 +172,10 @@
                 me.trigger(d3.event);
             });
             
+            var rand = Math.floor(Math.random() * this.configurations.pointMaximalSeparation) + this.configurations.pointMinimalSeparation ;
+            
             //LOCATION -->
-            var translation = me.projection([data.latitude+Math.round(Math.random()),data.longitude+Math.round(Math.random())]);
+            var translation = me.projection([data.latitude+rand,data.longitude+rand]);
             
             pointVector.attr("transform", function() {return "translate(" + translation + ")";});
             pointVector.attr("selected",false);
@@ -201,7 +205,7 @@
          * @returns {undefined}
          */
         addCard: function () {
-            var dom = Card.createCardElement(this.data);
+            var dom = Card.createCardElement(this.data,this.configurations);
             this.macroCanvas.appendChild(dom);
             
             this.card = new Card(dom,{pointPosition:this.realPosition}, this.point);
@@ -304,8 +308,8 @@
      * @static
      * @returns {MapPoint}
      */
-    MapPoint.make = function(canvas, svg, projection, data){
-        return new MapPoint(canvas, svg, projection, data);
+    MapPoint.make = function(canvas, svg, projection, data,conf){
+        return new MapPoint(canvas, svg, projection, data,conf);
     };
 
 

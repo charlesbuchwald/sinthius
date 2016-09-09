@@ -189,7 +189,7 @@
                 }
                 for(var i in keymap){
                     var set = keymap[i];
-                    this.points.push(MapPoint.make(this.element, this.mainSvg, this.projection, set));
+                    this.points.push(MapPoint.make(this.element, this.mainSvg, this.projection, set,this.Configurations));
                 }
             }else{
                 setTimeout(function(){

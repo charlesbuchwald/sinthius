@@ -535,7 +535,7 @@
      * @static
      * @returns {DOMElement}
      */
-    Card.createCardElement = function (dataarray) {
+    Card.createCardElement = function (dataarray,conf) {
         var doc = document;
         
         var hugecontainer = $(doc.createElement("div"));
@@ -577,7 +577,7 @@
             title.text(data.title);
 
             //CARD CONTENT
-            var content = Card.createCardContent(data,main);
+            var content = Card.createCardContent(data,main,conf.mediaPath);
 
             //ADD
             main.append(sub);
@@ -599,11 +599,11 @@
      * @static
      * @returns {DOMElement}
      */
-    Card.createCardContent = function (data,main) {
+    Card.createCardContent = function (data,main,path) {
         var dom = null;
         var doc = document;
         
-        data.source = "assets/t4"+data.source;
+        data.source = (path||"")+data.source;
 
         switch (data.type) {
             case "video":
