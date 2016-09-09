@@ -1,0 +1,1 @@
+This folder/directory is for any images, html text, videos or other content or media files used by T1-IN-3.

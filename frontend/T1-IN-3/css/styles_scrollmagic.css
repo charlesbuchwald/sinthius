@@ -1,0 +1,180 @@
+
+
+html, body
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+background: transparent;
+border: 0;
+margin: 0;
+padding: 0;
+vertical-align: baseline;
+}
+body {line-height: 1;
+
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    color:#FFF;
+}
+h1, h2, h3, h4, h5, h6 {
+clear: both;
+}
+ol, ul {
+list-style: none;
+}
+blockquote {
+quotes: none;
+}
+blockquote:before, blockquote:after {
+content: '';
+content: none;
+}
+del {
+text-decoration:none;
+} table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+a img {
+border: none;
+}
+a:hover{
+cursor:pointer;
+}
+/* ------------------------------fonts ----------------------------*/
+
+@font-face {
+  font-family: 'Heuristica-Italic';
+  src: url('../../../fonts/Heuristica-Italic.eot?#iefix') format('embedded-opentype'),  url('../fonts/Heuristica-Italic.otf')  format('opentype'),
+	     url('../../../fonts/Heuristica-Italic.woff') format('woff'), url('../fonts/Heuristica-Italic.ttf')  format('truetype'), url('../fonts/Heuristica-Italic.svg#Heuristica-Italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'museo-sans';
+  src: url('../fonts/MuseoSans-500.otf?#iefix') format('embedded-opentype'),  url('../fonts/MuseoSans-500.otf')  format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'museo-sans';
+  src: url('../fonts/MuseoSans-900.otf?#iefix') format('embedded-opentype'),  url('../fonts/MuseoSans-900.otf')  format('opentype');
+  font-weight:900;
+  font-style: normal;
+}
+.heuristica{font-family: 'Heuristica Italic';font-style:italic;font-weight:100;}
+.museo{font-family: "museo-sans";font-weight: 100;}
+h3, span.h3 {
+    font-size: 1.8em;
+}
+
+
+h1, span.h1 {
+    font-size: 4em;
+    font-weight: 900;
+}
+h4, span.h4 {
+    font-size: 1.3em;
+}
+h5, span.h5 {
+    font-size: 1.2em;
+}
+h2, span.h2 {
+    font-size: 3em;
+}
+.green {
+    color: darkgreen;
+}
+.columns3{
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+p, .p{font-size: 1.1em;letter-spacing: 0.05em;line-height: 140%;}
+
+.addCross{background-image:url(../assets/menu-btn-close.svg);width: 50px;height: 35px;/* text-align: center; */background-size: contain;background-repeat: no-repeat;background-position: center center;-ms-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
+.addInfo{
+background-image:url(../assets/menu-btn-info.svg);
+width: 100%;
+height: 52px;
+/* text-align: center; */
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center center;
+}
+.addArrow{background-image: url(../assets/arrow.svg);width: 100%;height: 52px;/* text-align: center; */background-size: contain;background-repeat: no-repeat;background-position: center center;}
+.black .addCross{
+background-image:url(../assets/menu-btn-close-black.svg);
+
+}
+.black .addInfo{
+    background-image:url(../assets/menu-btn-info-black.svg);
+  }
+  .black .addArrow{
+    background-image: url(../assets/arrow-black.svg);
+  }
+  
+ body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+}
+#pinContainer {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+#slideContainer {
+  width: 400%;
+  height: 100vh;
+}
+.panel {
+  height: 100vh;
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+.one {
+  background-color: #000;
+  color: white;
+  h1 {
+    margin-top: 150px;
+    display: inline-block;
+  }
+  button {
+    display: block;
+    margin: 0 auto;
+  }
+}
+.two {
+  background-color: blue;
+  color: white;
+  h1 {
+    padding-top: 100px;
+    display: inline-block;
+  }
+}
+.three {
+  background-color: green;
+  color: white;
+}
+.four {
+  background-color: purple;
+  color: #FFF;
+}
+
+.horizontal-line {
+   border-top: 4px solid #FFF;
+   height: 4px;
+   width: 0px;
+   position: absolute;
+}
