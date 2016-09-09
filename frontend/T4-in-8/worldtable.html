@@ -97,10 +97,27 @@
         <script>
             //CONNECTOR INIT
             //SET THE CONNECTOR
+            
+            //The method connect in the class Connector recieves 2 parameters.
+            //1st: a string with two possible values "name" or "ip".
+            //2nd: an array of strings, each string is the name or ip value of the interactives that are going to receive the "tags".
+            //If names are used, they should be the names set for each interactive's node.
+            //If the ip's are used, pretty much just set the ip's and port
+            
+            //HERE's AN EXAMPLE WITH NAMES
+            /*
             Connector.connect("name", [
                 "t4_in_1",
                 "t4_in_2",
                 "t4_in_3"
+            ]);
+            */
+            
+            //HERE's AN EXAMPLE WITH IP's
+            Connector.connect("ip", [
+                "192.168.0.5:4000",
+                "192.168.0.6:4000",
+                "192.168.0.7:4000"
             ]);
 
 
@@ -152,7 +169,7 @@
             WorldMap.init();
 
             
-            //EXAMPLE OF NODE ELEMENTS (Map Points) RENDERING -->
+            //DATA LOADED FROM THE JSON -->
             WorldMap.render("js/allmedia-singlecountry.json");
 
             //SETS THE BROADCAST MODE
@@ -161,6 +178,8 @@
             //WHEN THE WORLDMAP GETS TAGS SELECTED ON BROADCAST MODE THEN
             //USING THE CONNECTOR OBJECT THE DATA IS SET.
             WorldMap.onBroadcastSelection(function (tags) {
+                //THIS METHOD WILL SEND THE GIVEN OBJECT (LATER PARSED AS STRING) TO THE
+                //INTERACTIVES INDICATED BEFORE BY THE METHOD "connect"
                 Connector.broadcast({tags:tags});
             });
 
